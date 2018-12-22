@@ -1,0 +1,11 @@
+.background-heading {
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  font-size: 38px;
+  font-family: "Timeburner", sans-serif;
+}
+
+.ui.selection.dropdown {
+  line-height: 2em;
+}

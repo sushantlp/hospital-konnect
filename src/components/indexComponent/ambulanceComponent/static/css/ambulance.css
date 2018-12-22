@@ -1,0 +1,40 @@
+.ambulance-container {
+  margin-top: 8vh;
+}
+.ambulance-header {
+  position: absolute;
+  bottom: 0;
+  font-weight: 600;
+  margin: 20px;
+  font-size: 14px;
+  color: white;
+  text-transform: uppercase;
+  background-color: rgb(39, 37, 37);
+  box-shadow: 4px 4px 10px 0;
+  padding: 2px;
+}
+.ambulance-card:hover {
+  transform: scale(1.04);
+  opacity: 1 !important;
+  cursor: pointer;
+}
+
+/* Not Use if use style tag*/
+.ambulance-card {
+  box-shadow: 4px 4px 10px 0;
+}
+
+.slick-prev,
+.slick-next {
+  font-size: 15px !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  content: "" !important;
+}
+
+.ambulance-container {
+  margin-top: 20px;
+  margin-bottom: -22px;
+}

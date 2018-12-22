@@ -1,0 +1,15 @@
+.box {
+  width: 10em;
+  height: 10em;
+  transform-origin: 50% 50%;
+  margin-bottom: 1em;
+  border-radius: 3%;
+}
+
+.circle {
+  width: 10em;
+  height: 10em;
+  transform-origin: 50% 50%;
+  margin-bottom: 1em;
+  border-radius: 50%;
+}

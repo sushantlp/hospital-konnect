@@ -1,0 +1,24 @@
+.specialization-container {
+  margin-top: 8vh;
+}
+.single_department {
+  text-align: center !important;
+  padding: 30px 0;
+  box-shadow: 0 0 50px rgba(153, 153, 153, 0.1);
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.single_department .dpmt-thumb {
+  min-height: 80px;
+}
+.single_department h4 {
+  margin-top: 30px;
+}
+h4 {
+  font-size: 18px;
+}
+.single_department:hover {
+  box-shadow: 0 0 50px rgba(153, 153, 153, 0.3);
+}
