@@ -2,7 +2,7 @@ import React from "react";
 
 import { Container, Header, Segment } from "semantic-ui-react";
 
-import NavHeader from "../headerComponent/header";
+import ParallaxHeader from "../headerComponent/parallax-header";
 import Footer from "../footerComponent/footer";
 
 import "../../static/css/root.css";
@@ -10,7 +10,7 @@ import "semantic-ui-css/semantic.min.css";
 
 const PrivacyComponent = () => (
   <div>
-    <NavHeader />
+    <ParallaxHeader />
     <Container>
       <div className="header-container">
         <h4 className="header-name">PRIVACY POLICY</h4>

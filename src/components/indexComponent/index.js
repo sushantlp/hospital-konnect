@@ -2,7 +2,7 @@ import React from "react";
 
 // import { Container } from "semantic-ui-react/dist/commonjs";
 
-import Header from "../headerComponent/header";
+import ParallaxHeader from "../headerComponent/parallax-header";
 import Footer from "../footerComponent/footer";
 import Search from "./searchComponent/search";
 import Specialization from "./specializationComponent/specialization";
@@ -14,7 +14,7 @@ export default class Animation extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Header />
+        <ParallaxHeader />
         <Search />
         <Specialization />
         <Hospital />

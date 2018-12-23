@@ -4,6 +4,7 @@ import { createStore, compose, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
 import "./static/css/index.css";
+import "semantic-ui-css/semantic.min.css";
 import Root from "./root";
 import * as serviceWorker from "./serviceWorker";
 import reducer from "./reducers";
