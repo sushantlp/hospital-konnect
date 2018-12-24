@@ -19,7 +19,7 @@ export default class Index extends React.Component {
               <Grid.Column width={4} style={{ cursor: "pointer" }}>
                 <HospitalFilter />
               </Grid.Column>
-              <Grid.Column width={9} style={{ cursor: "pointer" }}>
+              <Grid.Column width={8} style={{ cursor: "pointer" }}>
                 <HospitalCard />
               </Grid.Column>
             </Grid.Row>
