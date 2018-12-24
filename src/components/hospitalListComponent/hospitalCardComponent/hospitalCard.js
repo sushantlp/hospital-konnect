@@ -38,6 +38,12 @@ export default class HospitalCard extends React.Component {
                     <span className="doctor-count">71 Doctors</span>
                   </div>
                 </div>
+
+                <div>
+                  <a href="">
+                    <span className="view-profile">View Profile</span>
+                  </a>
+                </div>
               </Grid.Column>
               <Grid.Column width={6}>
                 <div className="clock-div">
@@ -120,6 +126,12 @@ export default class HospitalCard extends React.Component {
                   <div className="space-one">
                     <span className="doctor-count">71 Doctors</span>
                   </div>
+                </div>
+
+                <div>
+                  <a href="">
+                    <span className="view-profile">View Profile</span>
+                  </a>
                 </div>
               </Grid.Column>
               <Grid.Column width={6}>
@@ -205,6 +217,12 @@ export default class HospitalCard extends React.Component {
                   <div className="space-one">
                     <span className="doctor-count">71 Doctors</span>
                   </div>
+                </div>
+
+                <div>
+                  <a href="">
+                    <span className="view-profile">View Profile</span>
+                  </a>
                 </div>
               </Grid.Column>
               <Grid.Column width={6}>

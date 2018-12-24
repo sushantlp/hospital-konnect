@@ -61,3 +61,14 @@ a:hover {
   color: "rgb(38, 56, 104)";
   font-size: 1.5em;
 }
+.view-profile {
+  float: right;
+  padding-top: 2em;
+  font-size: 1em;
+  color: #787887;
+}
+
+.view-profile:hover {
+  text-decoration: underline;
+  color: #787887;
+}

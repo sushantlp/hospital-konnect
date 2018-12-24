@@ -16,10 +16,10 @@ export default class Index extends React.Component {
         <div className="hospital-div">
           <Grid stackable>
             <Grid.Row style={{ paddingLeft: "0.5em", paddingRight: "0.5em" }}>
-              <Grid.Column width={4} style={{ cursor: "pointer" }}>
+              <Grid.Column width={4}>
                 <HospitalFilter />
               </Grid.Column>
-              <Grid.Column width={8} style={{ cursor: "pointer" }}>
+              <Grid.Column width={8}>
                 <HospitalCard />
               </Grid.Column>
             </Grid.Row>
