@@ -5,6 +5,7 @@ import { Container, Grid } from "semantic-ui-react/dist/commonjs";
 import HospitalFilter from "./hospitalFilterComponent/hospitalFilter";
 import HospitalCard from "./hospitalCardComponent/hospitalCard";
 import Header from "../headerComponent/header";
+import Footer from "../footerComponent/footer";
 import "./static/css/index.css";
 
 export default class Index extends React.Component {
@@ -12,18 +13,19 @@ export default class Index extends React.Component {
     return (
       <React.Fragment>
         <Header />
-        <div className="hospital">
+        <div className="hospital-div">
           <Grid stackable>
-            <Grid.Row>
+            <Grid.Row style={{ paddingLeft: "0.5em", paddingRight: "0.5em" }}>
               <Grid.Column width={4} style={{ cursor: "pointer" }}>
                 <HospitalFilter />
               </Grid.Column>
-              <Grid.Column width={12} style={{ cursor: "pointer" }}>
+              <Grid.Column width={9} style={{ cursor: "pointer" }}>
                 <HospitalCard />
               </Grid.Column>
             </Grid.Row>
           </Grid>
         </div>
+        <Footer />
       </React.Fragment>
     );
   }

@@ -28,12 +28,12 @@ export default class HospitalFilter extends React.Component {
         <div>
           <h4 className="amenitie">Amenities</h4>
           <Checkbox label="Has Parking" className="amenitie-checkbox" />
-
+          <br />
           <Checkbox
             label="Diagnostic Lab Services"
             className="amenitie-checkbox"
           />
-
+          <br />
           <Checkbox label="24x7 Pharmacy" className="amenitie-checkbox" />
           <br />
           <Checkbox label="Cafeteria" className="amenitie-checkbox" />

@@ -31,7 +31,7 @@ export default class Animation extends React.Component {
                   className="box"
                   style={{ backgroundColor: "rgba(253, 187, 127, 1)" }}
                 >
-                  {/* <span className="Span">Hover</span> */}
+                  <span className="Span">Left-Hover</span>
                 </div>
               </Animated>
 
@@ -40,8 +40,8 @@ export default class Animation extends React.Component {
                 animationOut="pulse"
                 isVisible={true}
               >
-                <div className="box" style={{ backgroundColor: "#ff1c68" }}>
-                  {/* <span className="Span">Hover</span> */}
+                <div className="box" style={{ backgroundColor: "#EC6E98" }}>
+                  <span className="Span">Left-Hover</span>
                 </div>
               </Animated>
 
@@ -51,7 +51,7 @@ export default class Animation extends React.Component {
                 isVisible={true}
               >
                 <div className="box" style={{ backgroundColor: "#87cdab" }}>
-                  {/* <span className="Span">Hover</span> */}
+                  <span className="Span">Left-Hover</span>
                 </div>
               </Animated>
             </Grid.Column>
@@ -75,7 +75,7 @@ export default class Animation extends React.Component {
               >
                 <div
                   className="circle"
-                  style={{ backgroundColor: "#87cdab" }}
+                  style={{ backgroundColor: "#C4EEF5" }}
                 />
               </Animated>
               <Animated
@@ -97,7 +97,7 @@ export default class Animation extends React.Component {
                 isVisible={true}
               >
                 <div className="box" style={{ backgroundColor: "#9db4d6" }}>
-                  {/* <span className="Span">Right-Hover</span> */}
+                  <span className="Span">Right-Hover</span>
                 </div>
               </Animated>
               <Animated
@@ -106,7 +106,7 @@ export default class Animation extends React.Component {
                 isVisible={true}
               >
                 <div className="box" style={{ backgroundColor: "#a585bd" }}>
-                  {/* <span className="Span">Right-Hover</span> */}
+                  <span className="Span">Right-Hover</span>
                 </div>
               </Animated>
               <Animated
@@ -115,7 +115,7 @@ export default class Animation extends React.Component {
                 isVisible={true}
               >
                 <div className="box" style={{ backgroundColor: "#e48a84" }}>
-                  {/* <span className="Span">Right-Hover</span> */}
+                  <span className="Span">Right-Hover</span>
                 </div>
               </Animated>
             </Grid.Column>

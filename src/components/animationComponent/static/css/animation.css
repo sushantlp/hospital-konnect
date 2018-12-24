@@ -13,3 +13,9 @@
   margin-bottom: 1em;
   border-radius: 50%;
 }
+
+.Span {
+  line-height: 10em;
+  padding-left: 2.5em;
+  /* padding-right: 2.5em; */
+}
