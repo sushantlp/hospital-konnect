@@ -284,6 +284,19 @@ export default class HospitalCard extends React.Component {
             </div>
           </div>
         </Segment>
+
+        <Button
+          size="large"
+          style={{
+            marginTop: "1.5em",
+            marginBottom: "1.5em",
+            marginLeft: "40%",
+            backgroundColor: "#ed3237",
+            color: "white"
+          }}
+        >
+          Load More
+        </Button>
       </div>
     );
   }

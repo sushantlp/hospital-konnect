@@ -1,9 +1,11 @@
 import React from "react";
 
-import { Container, Grid } from "semantic-ui-react/dist/commonjs";
+import { Grid } from "semantic-ui-react/dist/commonjs";
 
 import HospitalFilter from "./hospitalFilterComponent/hospitalFilter";
 import HospitalCard from "./hospitalCardComponent/hospitalCard";
+import SeoLink from "./seoLinkComponent/seo-link";
+
 import Header from "../headerComponent/header";
 import Footer from "../footerComponent/footer";
 import "./static/css/index.css";
@@ -21,6 +23,9 @@ export default class Index extends React.Component {
               </Grid.Column>
               <Grid.Column width={8}>
                 <HospitalCard />
+              </Grid.Column>
+              <Grid.Column width={4}>
+                <SeoLink />
               </Grid.Column>
             </Grid.Row>
           </Grid>
