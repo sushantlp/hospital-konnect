@@ -2,8 +2,8 @@ import React from "react";
 
 import { Grid } from "semantic-ui-react/dist/commonjs";
 
-import HospitalFilter from "./hospitalFilterComponent/hospitalFilter";
-import HospitalCard from "./hospitalCardComponent/hospitalCard";
+import HospitalFilter from "./hospitalFilterComponent/hospital-filter";
+import HospitalCard from "./hospitalCardComponent/hospital-card";
 import SeoLink from "./seoLinkComponent/seo-link";
 
 import Header from "../headerComponent/header";

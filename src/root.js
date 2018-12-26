@@ -12,6 +12,7 @@ import Faq from "./components/faqComponent/faq";
 import Privacy from "./components/privacyComponent/privacy";
 import Term from "./components/termComponent/term";
 import HospitalList from "./components/hospitalListComponent";
+import HospitalDetail from "./components/hospitalDetailComponent";
 
 // Router root
 const Root = ({ store }) => (
@@ -26,6 +27,7 @@ const Root = ({ store }) => (
           <Route exact path="/animation/" component={Animation} />
           <Route exact path="/initial/" component={Initial} />
           <Route exact path="/list/" component={HospitalList} />
+          <Route exact path="/detail/" component={HospitalDetail} />
         </Switch>
       </div>
     </BrowserRouter>

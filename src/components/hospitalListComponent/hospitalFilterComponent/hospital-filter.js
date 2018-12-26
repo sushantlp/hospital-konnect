@@ -9,7 +9,7 @@ import {
 import Slider, { Range } from "rc-slider";
 
 import "rc-slider/assets/index.css";
-import "./static/css/hospitalFilter.css";
+import "./static/css/hospital-filter.css";
 
 export default class HospitalFilter extends React.Component {
   render() {

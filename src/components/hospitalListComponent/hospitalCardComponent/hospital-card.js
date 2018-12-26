@@ -9,7 +9,7 @@ import {
   Divider
 } from "semantic-ui-react/dist/commonjs";
 
-import "./static/css/hospitalCard.css";
+import "./static/css/hospital-card.css";
 
 export default class HospitalCard extends React.Component {
   render() {
