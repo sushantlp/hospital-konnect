@@ -28,13 +28,6 @@ export default class HospitalCard extends React.Component {
                 </div>
               </Grid.Column>
               <Grid.Column width={14}>
-                {/* <div>
-                  <Image
-                    floated="left"
-                    size="tiny"
-                    src="https://images1-fabric.practo.com/535a0fc2301e403ceecc1626fa5fdf0a82bc5c51ef2de.png/thumbnail"
-                  />
-                </div> */}
                 <div>
                   <h1 className="hospital-name">
                     <span>Pristine Hospital</span>

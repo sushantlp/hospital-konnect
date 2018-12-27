@@ -1,0 +1,27 @@
+.hospital-overview-title {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #414146;
+}
+
+.hospital-overview-grid {
+  margin-top: 2em;
+  color: #414146;
+}
+
+.amenities-ul {
+  padding-left: 1em;
+}
+
+.hospital-overview-ambulance {
+  font-weight: 700;
+}
+
+.hospital-overview-bed {
+  font-weight: 700;
+}
+
+.hospital-overview-timing {
+  font-weight: 700;
+}

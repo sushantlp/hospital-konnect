@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Grid, Container } from "semantic-ui-react/dist/commonjs";
+import { Grid } from "semantic-ui-react/dist/commonjs";
 
 import SeoLink from "../hospitalListComponent/seoLinkComponent/seo-link";
 import HospitalDetailCard from "./hospitalDetailCardComponent/hospital-detail-card";
@@ -17,7 +17,7 @@ export default class Index extends React.Component {
         <Header />
         <div className="hospital-detail-div">
           <Grid stackable>
-            <Grid.Row style={{ paddingLeft: "0.5em", paddingRight: "0.5em" }}>
+            <Grid.Row>
               <Grid.Column width={1} />
               <Grid.Column width={11}>
                 <HospitalDetailCard />
