@@ -3,7 +3,6 @@ import React from "react";
 import ShowMore from "react-show-more";
 import { Grid } from "semantic-ui-react";
 
-import HospitalSpecialist from "../hospitalSpecialistComponent/hospital-specialist";
 import "./static/css/hospital-overview.css";
 
 export default class HospitalOverview extends React.Component {
@@ -99,15 +98,15 @@ export default class HospitalOverview extends React.Component {
 
                   <span>
                     <ul className="amenities-ul">
-                      <li>Diagnostic Lab Service</li>
-                      <li>Emergency Service</li>
-                      <li>24X7 Pharmacy</li>
-                      <li>Cafeteria</li>
-                      <li>Bank/ATM</li>
-                      <li>Parking</li>
-                      <li>Internet/Wifi</li>
-                      <li>Prayer Room</li>
-                      <li>Laundry Room</li>
+                      <li className="amenities-li">Diagnostic Lab Service</li>
+                      <li className="amenities-li">Emergency Service</li>
+                      <li className="amenities-li">24X7 Pharmacy</li>
+                      <li className="amenities-li">Cafeteria</li>
+                      <li className="amenities-li">Bank/ATM</li>
+                      <li className="amenities-li">Parking</li>
+                      <li className="amenities-li">Internet/Wifi</li>
+                      <li className="amenities-li">Prayer Room</li>
+                      <li className="amenities-li">Laundry Room</li>
                     </ul>
                   </span>
                 </div>
@@ -136,9 +135,9 @@ export default class HospitalOverview extends React.Component {
 
                   <span>
                     <ul className="amenities-ul">
-                      <li>+918049599999</li>
-                      <li>+918049599999</li>
-                      <li>+918049599999</li>
+                      <li className="amenities-li">+918049599999</li>
+                      <li className="amenities-li">+918049599999</li>
+                      <li className="amenities-li">+918049599999</li>
                     </ul>
                   </span>
                 </div>
@@ -146,10 +145,6 @@ export default class HospitalOverview extends React.Component {
             </Grid.Row>
           </Grid>
         </div>
-
-        {/* <div className="hospital-specialist-container">
-          <HospitalSpecialist />
-        </div> */}
       </div>
     );
   }

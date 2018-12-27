@@ -14,6 +14,10 @@
   padding-left: 1em;
 }
 
+.amenities-li {
+  line-height: 2em;
+}
+
 .hospital-overview-ambulance {
   font-weight: 700;
 }

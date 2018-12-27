@@ -4,6 +4,10 @@ import { Tab, Segment } from "semantic-ui-react";
 
 import HospitalOverview from "../hospitalOverviewComponent/hospital-overview";
 import HospitalSpecialist from "../hospitalSpecialistComponent/hospital-specialist";
+import HospitalDoctor from "../hospitalDoctorComponent/hospital-doctor";
+import HospitalBed from "../hospitalBedComponent/hospital-bed";
+import HospitalAmbulance from "../hospitalAmbulanceComponent/hospital-ambulance";
+
 import "./static/css/hospital-tab.css";
 
 export default class HospitalTab extends React.Component {
@@ -40,11 +44,29 @@ export default class HospitalTab extends React.Component {
           </Tab.Pane>
         )
       },
-      { menuItem: "Doctors", render: () => <Tab.Pane>Tab 2 Content</Tab.Pane> },
-      { menuItem: "Beds", render: () => <Tab.Pane>Tab 3 Content</Tab.Pane> },
+      {
+        menuItem: "Doctors",
+        render: () => (
+          <Tab.Pane>
+            <HospitalDoctor />
+          </Tab.Pane>
+        )
+      },
+      {
+        menuItem: "Beds",
+        render: () => (
+          <Tab.Pane>
+            <HospitalBed />
+          </Tab.Pane>
+        )
+      },
       {
         menuItem: "Ambulances",
-        render: () => <Tab.Pane>Tab 3 Content</Tab.Pane>
+        render: () => (
+          <Tab.Pane>
+            <HospitalAmbulance />
+          </Tab.Pane>
+        )
       },
       {
         menuItem: "Specialists",
@@ -69,6 +91,14 @@ export default class HospitalTab extends React.Component {
           }}
         >
           <HospitalSpecialist />
+        </Segment>
+
+        <Segment
+          style={{
+            display: this.state.hidden_segment ? "none" : "block"
+          }}
+        >
+          <HospitalDoctor />
         </Segment>
       </div>
     );
