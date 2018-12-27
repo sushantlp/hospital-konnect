@@ -1,11 +1,6 @@
 import React from "react";
 
-import {
-  Dropdown,
-  Grid,
-  Icon,
-  Container
-} from "semantic-ui-react/dist/commonjs";
+import { Dropdown, Grid, Icon, Container } from "semantic-ui-react";
 
 import "semantic-ui-css/semantic.min.css";
 import "./static/css/search.css";

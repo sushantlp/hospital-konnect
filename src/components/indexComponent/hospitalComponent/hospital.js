@@ -1,7 +1,6 @@
 import React from "react";
 
-import { Card, Container, Button } from "semantic-ui-react/dist/commonjs";
-
+import { Card, Container, Button } from "semantic-ui-react";
 import "../../../static/css/root.css";
 import "./static/css/hospital.css";
 

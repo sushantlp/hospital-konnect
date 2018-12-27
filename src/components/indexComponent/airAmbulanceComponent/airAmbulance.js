@@ -1,7 +1,6 @@
 import React from "react";
 
-import { Container, Grid, Button } from "semantic-ui-react/dist/commonjs";
-
+import { Container, Grid, Button } from "semantic-ui-react";
 import "../../../static/css/root.css";
 import "./static/css/airAmbulance.css";
 

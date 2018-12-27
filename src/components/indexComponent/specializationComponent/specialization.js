@@ -1,7 +1,6 @@
 import React from "react";
 
-import { Container, Button, Grid } from "semantic-ui-react/dist/commonjs";
-
+import { Container, Button, Grid } from "semantic-ui-react";
 import "../../../static/css/root.css";
 import "./static/css/specialization.css";
 

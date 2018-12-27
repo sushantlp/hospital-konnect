@@ -1,7 +1,5 @@
 import React from "react";
 
-// import { Container } from "semantic-ui-react/dist/commonjs";
-
 import ParallaxHeader from "../headerComponent/parallax-header";
 import Footer from "../footerComponent/footer";
 import Search from "./searchComponent/search";

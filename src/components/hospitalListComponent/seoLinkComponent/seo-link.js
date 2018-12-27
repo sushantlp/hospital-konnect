@@ -1,9 +1,5 @@
 import React from "react";
 
-// import {
-
-// } from "semantic-ui-react/dist/commonjs";
-
 import "./static/css/seo-link.css";
 
 export default class SeoLink extends React.Component {

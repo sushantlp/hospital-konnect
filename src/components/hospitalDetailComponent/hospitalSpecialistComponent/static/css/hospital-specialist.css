@@ -4,3 +4,15 @@
   margin-bottom: 8px;
   color: #414146;
 }
+
+.hospital-specialist-bubble {
+  display: inline-block;
+  padding: 8px 24px;
+  border-radius: 15px;
+  background-color: #fff;
+  color: #787887;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #f0f0f5;
+  margin: 5px;
+}

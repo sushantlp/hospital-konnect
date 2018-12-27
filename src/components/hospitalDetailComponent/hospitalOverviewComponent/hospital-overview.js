@@ -1,9 +1,9 @@
 import React from "react";
 
 import ShowMore from "react-show-more";
+import { Grid } from "semantic-ui-react";
 
-import { Grid } from "semantic-ui-react/dist/commonjs";
-
+import HospitalSpecialist from "../hospitalSpecialistComponent/hospital-specialist";
 import "./static/css/hospital-overview.css";
 
 export default class HospitalOverview extends React.Component {
@@ -146,6 +146,10 @@ export default class HospitalOverview extends React.Component {
             </Grid.Row>
           </Grid>
         </div>
+
+        {/* <div className="hospital-specialist-container">
+          <HospitalSpecialist />
+        </div> */}
       </div>
     );
   }

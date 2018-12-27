@@ -1,12 +1,35 @@
 import React from "react";
 
-import { Tab } from "semantic-ui-react/dist/commonjs";
+import { Tab, Segment } from "semantic-ui-react";
 
 import HospitalOverview from "../hospitalOverviewComponent/hospital-overview";
 import HospitalSpecialist from "../hospitalSpecialistComponent/hospital-specialist";
 import "./static/css/hospital-tab.css";
 
 export default class HospitalTab extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hidden_segment: false
+    };
+  }
+
+  tabChange = (event, index) => {
+    if (index === 0) {
+      if (this.state.hidden_segment !== false) {
+        this.setState({
+          hidden_segment: false
+        });
+      }
+    } else {
+      if (this.state.hidden_segment !== true) {
+        this.setState({
+          hidden_segment: true
+        });
+      }
+    }
+  };
+
   render() {
     const panes = [
       {
@@ -36,7 +59,17 @@ export default class HospitalTab extends React.Component {
     return (
       // menu={{ pointing: true, className: "wrapped" }}
       <div className="tab-container">
-        <Tab panes={panes} />
+        <Tab
+          panes={panes}
+          onTabChange={(event, data) => this.tabChange(event, data.activeIndex)}
+        />
+        <Segment
+          style={{
+            display: this.state.hidden_segment ? "none" : "block"
+          }}
+        >
+          <HospitalSpecialist />
+        </Segment>
       </div>
     );
   }

@@ -1,14 +1,6 @@
 import React from "react";
 
-import {
-  Segment,
-  Image,
-  Grid,
-  Icon,
-  Button,
-  Divider
-} from "semantic-ui-react/dist/commonjs";
-
+import { Segment, Image, Grid, Icon, Button, Divider } from "semantic-ui-react";
 import "./static/css/hospital-card.css";
 
 export default class HospitalCard extends React.Component {

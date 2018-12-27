@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Grid } from "semantic-ui-react/dist/commonjs";
+import { Grid } from "semantic-ui-react";
 
 import HospitalFilter from "./hospitalFilterComponent/hospital-filter";
 import HospitalCard from "./hospitalCardComponent/hospital-card";

@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
-import { Container, Card, Icon } from "semantic-ui-react/dist/commonjs";
 
+import { Card, Container, Icon } from "semantic-ui-react";
 import "../../../static/css/root.css";
 import "./static/css/ambulance.css";
 
