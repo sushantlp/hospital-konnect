@@ -2,7 +2,7 @@ h3 h5 h4 {
   font-family: "Timeburner", sans-serif;
 }
 
-.hospital-name {
+.hospital-card-name {
   font-weight: 500;
   padding-left: 1em;
   color: #ed3237;
@@ -14,14 +14,14 @@ a:hover {
   color: #ed3237;
 }
 
-.hospital-specialist {
+.hospital-card-specialist {
   font-weight: 200;
   padding-left: 0.2em;
   padding-top: 0.5em;
   padding-bottom: 0.1em;
 }
 
-.doctor-count {
+.doctor-card-count {
   font-weight: 200;
   padding-left: 0.2em;
 }

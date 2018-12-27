@@ -28,14 +28,16 @@ export default class HospitalCard extends React.Component {
                 </div>
                 <div>
                   <a href="">
-                    <h4 className="hospital-name">People Tree Hospitals</h4>
+                    <h4 className="hospital-card-name">
+                      People Tree Hospitals
+                    </h4>
                   </a>
-                  <span className="hospital-specialist">
+                  <span className="hospital-card-specialist">
                     Multi-SpecialityHospital
                   </span>
 
                   <div className="space-one">
-                    <span className="doctor-count">71 Doctors</span>
+                    <span className="doctor-card-count">71 Doctors</span>
                   </div>
                 </div>
 
@@ -117,14 +119,14 @@ export default class HospitalCard extends React.Component {
                 />
                 <div>
                   <a href="">
-                    <h4 className="hospital-name">Nano Hospitals</h4>
+                    <h4 className="hospital-card-name">Nano Hospitals</h4>
                   </a>
-                  <span className="hospital-specialist">
+                  <span className="hospital-card-specialist">
                     Multi-SpecialityHospital
                   </span>
 
                   <div className="space-one">
-                    <span className="doctor-count">71 Doctors</span>
+                    <span className="doctor-card-count">71 Doctors</span>
                   </div>
                 </div>
 
@@ -206,16 +208,16 @@ export default class HospitalCard extends React.Component {
                 />
                 <div>
                   <a href="">
-                    <h4 className="hospital-name">
+                    <h4 className="hospital-card-name">
                       Marvel Multispeciality Hospital
                     </h4>
                   </a>
-                  <span className="hospital-specialist">
+                  <span className="hospital-card-specialist">
                     Multi-SpecialityHospital
                   </span>
 
                   <div className="space-one">
-                    <span className="doctor-count">71 Doctors</span>
+                    <span className="doctor-card-count">71 Doctors</span>
                   </div>
                 </div>
 

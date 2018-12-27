@@ -3,7 +3,7 @@ import React from "react";
 import { Grid, Container } from "semantic-ui-react/dist/commonjs";
 
 import SeoLink from "../hospitalListComponent/seoLinkComponent/seo-link";
-import HospitalCard from "./hospitalCardComponent/hospital-card";
+import HospitalDetailCard from "./hospitalDetailCardComponent/hospital-detail-card";
 import HospitalTab from "./hospitalTabComponent/hospital-tab";
 
 import Header from "../headerComponent/header";
@@ -20,7 +20,7 @@ export default class Index extends React.Component {
             <Grid.Row style={{ paddingLeft: "0.5em", paddingRight: "0.5em" }}>
               <Grid.Column width={1} />
               <Grid.Column width={11}>
-                <HospitalCard />
+                <HospitalDetailCard />
                 <HospitalTab />
               </Grid.Column>
               <Grid.Column width={4}>

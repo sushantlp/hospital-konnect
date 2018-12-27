@@ -12,7 +12,7 @@
   font-weight: 600;
   font-size: 1em;
   line-height: 1.3;
-  margin-left: 1.5em;
+  /* margin-left: 1.5em; */
 }
 
 .hospital-specialist {
@@ -22,7 +22,7 @@
   font-weight: 400;
   font-size: 1em;
   line-height: 1.3;
-  margin-left: 1.4em;
+  /* margin-left: 1.4em; */
 }
 
 .bed {
