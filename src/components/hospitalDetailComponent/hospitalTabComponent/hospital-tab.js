@@ -80,6 +80,7 @@ export default class HospitalTab extends React.Component {
 
     return (
       // menu={{ pointing: true, className: "wrapped" }}
+
       <div className="tab-container">
         <Tab
           panes={panes}
@@ -99,6 +100,22 @@ export default class HospitalTab extends React.Component {
           }}
         >
           <HospitalDoctor />
+        </Segment>
+
+        <Segment
+          style={{
+            display: this.state.hidden_segment ? "none" : "block"
+          }}
+        >
+          <HospitalBed />
+        </Segment>
+
+        <Segment
+          style={{
+            display: this.state.hidden_segment ? "none" : "block"
+          }}
+        >
+          <HospitalAmbulance />
         </Segment>
       </div>
     );
