@@ -19,7 +19,7 @@ export default class HospitalCard extends React.Component {
                   />
                 </div>
                 <div>
-                  <a href="">
+                  <a href="" className="hospital-card-href">
                     <h4 className="hospital-card-name">
                       People Tree Hospitals
                     </h4>
@@ -34,7 +34,7 @@ export default class HospitalCard extends React.Component {
                 </div>
 
                 <div>
-                  <a href="">
+                  <a href="" className="hospital-card-href">
                     <span className="view-profile">View Profile</span>
                   </a>
                 </div>
@@ -110,7 +110,7 @@ export default class HospitalCard extends React.Component {
                   src="https://images1-fabric.practo.com/54f55d54ec4fbcd07d620e17eb0c13ef04866fb2b80a2.jpg/thumbnail"
                 />
                 <div>
-                  <a href="">
+                  <a href="" className="hospital-card-href">
                     <h4 className="hospital-card-name">Nano Hospitals</h4>
                   </a>
                   <span className="hospital-card-specialist">
@@ -123,7 +123,7 @@ export default class HospitalCard extends React.Component {
                 </div>
 
                 <div>
-                  <a href="">
+                  <a href="" className="hospital-card-href">
                     <span className="view-profile">View Profile</span>
                   </a>
                 </div>
@@ -199,7 +199,7 @@ export default class HospitalCard extends React.Component {
                   src="https://images1-fabric.practo.com/practices/659126/marvel-hospital-and-fertility-centre-bangalore-5b5743e1ec142.png/thumbnail"
                 />
                 <div>
-                  <a href="">
+                  <a href="" className="hospital-card-href">
                     <h4 className="hospital-card-name">
                       Marvel Multispeciality Hospital
                     </h4>
@@ -214,7 +214,7 @@ export default class HospitalCard extends React.Component {
                 </div>
 
                 <div>
-                  <a href="">
+                  <a href="" className="hospital-card-href">
                     <span className="view-profile">View Profile</span>
                   </a>
                 </div>

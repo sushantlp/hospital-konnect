@@ -9,7 +9,7 @@ h3 h5 h4 {
   padding-bottom: 0.1em;
 }
 
-a:hover {
+.hospital-card-href:hover {
   text-decoration: underline;
   color: #ed3237;
 }
