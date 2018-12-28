@@ -4,7 +4,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
-console.log(__dirname);
+
 module.exports = {
   entry: "./src/index.js",
   output: {
@@ -28,7 +28,7 @@ module.exports = {
   ],
   plugins: [
     new HtmlWebpackPlugin({
-      title: "login_signup_reset_forget_frontend",
+      title: "hospital-konnect",
       hash: true,
       template: "./public/index.html" // Load a custom template (ejs by default see the FAQ for details)
     }),
