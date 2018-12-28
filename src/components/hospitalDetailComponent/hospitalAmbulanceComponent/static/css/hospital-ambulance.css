@@ -1,11 +1,11 @@
-.hospital-bed-header {
+.hospital-ambulance-header {
   font-size: 17px;
   margin-bottom: 8px;
   color: #414146;
   font-family: "Timeburner", sans-serif;
 }
 
-.hospital-bed-title {
+.hospital-ambulance-title {
   font-weight: 500;
   color: rgb(38, 56, 104);
   font-size: 1.5em;
@@ -13,7 +13,7 @@
   font-family: "Timeburner", sans-serif;
 }
 
-.hospital-bed-price {
+.hospital-ambulance-price {
   margin-bottom: 0.3em;
   margin: 0;
   color: #6a6a6e;
@@ -29,7 +29,7 @@
   margin-right: -4px;
 }
 
-.hospital-bed-available {
+.hospital-ambulance-available {
   margin-bottom: 0.3em;
   margin-top: 0;
   color: #6a6a6e;
@@ -37,11 +37,11 @@
   font-family: "Timeburner", sans-serif;
 }
 
-.hospital-bed-available-count {
+.hospital-ambulance-available-count {
   padding-left: 5px;
 }
 
-.hospital-bed-description {
+.hospital-ambulance-description {
   color: #6a6a6e;
   font-size: 1.1em;
   font-family: "Timeburner", sans-serif;

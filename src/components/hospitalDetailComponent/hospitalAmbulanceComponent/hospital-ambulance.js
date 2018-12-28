@@ -1,15 +1,15 @@
 import React from "react";
-// import ShowMore from "react-show-more";
+
 import { Segment, Grid, Icon, Button } from "semantic-ui-react";
 
-import "./static/css/hospital-bed.css";
+import "./static/css/hospital-ambulance.css";
 
 export default class HospitalBed extends React.Component {
   render() {
     return (
       <div>
-        <h2 className="hospital-bed-header">
-          <span>Beds in People Tree Hospitals</span>
+        <h2 className="hospital-ambulance-header">
+          <span>Ambulances in People Tree Hospitals</span>
         </h2>
 
         <Segment>
@@ -17,11 +17,11 @@ export default class HospitalBed extends React.Component {
             <Grid.Row columns={2}>
               <Grid.Column>
                 <div>
-                  <h3 className="hospital-bed-title">
-                    <span>Curative Card Bed</span>
+                  <h3 className="hospital-ambulance-title">
+                    <span>Patient Transport</span>
                   </h3>
 
-                  <p className="hospital-bed-price">
+                  <p className="hospital-ambulance-price">
                     <span>Price :</span>
                     <span className="hospital-price-icon">
                       <Icon name="rupee sign" size="small" />
@@ -30,10 +30,12 @@ export default class HospitalBed extends React.Component {
                     <span>1000</span>
                   </p>
 
-                  <p className="hospital-bed-available">
+                  <p className="hospital-ambulance-available">
                     <span>Availability :</span>
 
-                    <span className="hospital-bed-available-count">100</span>
+                    <span className="hospital-ambulance-available-count">
+                      100
+                    </span>
                   </p>
                 </div>
               </Grid.Column>
@@ -53,27 +55,13 @@ export default class HospitalBed extends React.Component {
 
             <Grid.Row columns={1} style={{ paddingTop: "0px" }}>
               <Grid.Column>
-                {/* <ShowMore
-                  lines={3}
-                  more="[more]"
-                  less="[shrink]"
-                  anchorClass="hospital-bed-description"
-                > */}
-                <p className="hospital-bed-description">
+                <p className="hospital-ambulance-description">
                   This is certainly going to be one of the most iconic night of
                   the year #NYE2019 Vibrate your senses with a booming sound
                   system, phenomenal light rigs and bustling atmosphere with DJ
                   Tanvi!! This #NYE enter the #3DotsBangaloreJPN & Party like
-                  you never did before. It just wouldn’t be right, if you
-                  weren’t with us when the clock strikes midnight! It’s the
-                  perfect way to kick in 2019 of the year #NYE2019 Vibrate your
-                  senses with a booming sound system, phenomenal light rigs and
-                  bustling atmosphere with DJ Tanvi!! This #NYE enter the
-                  #3DotsBangaloreJPN & Party like you never did before. It just
-                  wouldn’t be right, if you weren’t with us when the clock
-                  strikes midnight! It’s the perfect way to kick in 2019
+                  you never did before.
                 </p>
-                {/* </ShowMore> */}
               </Grid.Column>
             </Grid.Row>
           </Grid>
@@ -84,11 +72,11 @@ export default class HospitalBed extends React.Component {
             <Grid.Row columns={2}>
               <Grid.Column>
                 <div>
-                  <h3 className="hospital-bed-title">
-                    <span>Curative Card Bed</span>
+                  <h3 className="hospital-ambulance-title">
+                    <span>Mortuary</span>
                   </h3>
 
-                  <p className="hospital-bed-price">
+                  <p className="hospital-ambulance-price">
                     <span>Price :</span>
                     <span className="hospital-price-icon">
                       <Icon name="rupee sign" size="small" />
@@ -97,10 +85,12 @@ export default class HospitalBed extends React.Component {
                     <span>1000</span>
                   </p>
 
-                  <p className="hospital-bed-available">
+                  <p className="hospital-ambulance-available">
                     <span>Availability :</span>
 
-                    <span className="hospital-bed-available-count">100</span>
+                    <span className="hospital-ambulance-available-count">
+                      100
+                    </span>
                   </p>
                 </div>
               </Grid.Column>
@@ -120,27 +110,13 @@ export default class HospitalBed extends React.Component {
 
             <Grid.Row columns={1} style={{ paddingTop: "0px" }}>
               <Grid.Column>
-                {/* <ShowMore
-                  lines={3}
-                  more="[more]"
-                  less="[shrink]"
-                  anchorClass="hospital-bed-description"
-                > */}
-                <p className="hospital-bed-description">
+                <p className="hospital-ambulance-description">
                   This is certainly going to be one of the most iconic night of
                   the year #NYE2019 Vibrate your senses with a booming sound
                   system, phenomenal light rigs and bustling atmosphere with DJ
                   Tanvi!! This #NYE enter the #3DotsBangaloreJPN & Party like
-                  you never did before. It just wouldn’t be right, if you
-                  weren’t with us when the clock strikes midnight! It’s the
-                  perfect way to kick in 2019 of the year #NYE2019 Vibrate your
-                  senses with a booming sound system, phenomenal light rigs and
-                  bustling atmosphere with DJ Tanvi!! This #NYE enter the
-                  #3DotsBangaloreJPN & Party like you never did before. It just
-                  wouldn’t be right, if you weren’t with us when the clock
-                  strikes midnight! It’s the perfect way to kick in 2019
+                  you never did before.
                 </p>
-                {/* </ShowMore> */}
               </Grid.Column>
             </Grid.Row>
           </Grid>
@@ -151,11 +127,11 @@ export default class HospitalBed extends React.Component {
             <Grid.Row columns={2}>
               <Grid.Column>
                 <div>
-                  <h3 className="hospital-bed-title">
-                    <span>Curative Card Bed</span>
+                  <h3 className="hospital-ambulance-title">
+                    <span>ALS</span>
                   </h3>
 
-                  <p className="hospital-bed-price">
+                  <p className="hospital-ambulance-price">
                     <span>Price :</span>
                     <span className="hospital-price-icon">
                       <Icon name="rupee sign" size="small" />
@@ -164,10 +140,12 @@ export default class HospitalBed extends React.Component {
                     <span>1000</span>
                   </p>
 
-                  <p className="hospital-bed-available">
+                  <p className="hospital-ambulance-available">
                     <span>Availability :</span>
 
-                    <span className="hospital-bed-available-count">100</span>
+                    <span className="hospital-ambulance-available-count">
+                      100
+                    </span>
                   </p>
                 </div>
               </Grid.Column>
@@ -187,27 +165,13 @@ export default class HospitalBed extends React.Component {
 
             <Grid.Row columns={1} style={{ paddingTop: "0px" }}>
               <Grid.Column>
-                {/* <ShowMore
-                  lines={3}
-                  more="[more]"
-                  less="[shrink]"
-                  anchorClass="hospital-bed-description"
-                > */}
-                <p className="hospital-bed-description">
+                <p className="hospital-ambulance-description">
                   This is certainly going to be one of the most iconic night of
                   the year #NYE2019 Vibrate your senses with a booming sound
                   system, phenomenal light rigs and bustling atmosphere with DJ
                   Tanvi!! This #NYE enter the #3DotsBangaloreJPN & Party like
-                  you never did before. It just wouldn’t be right, if you
-                  weren’t with us when the clock strikes midnight! It’s the
-                  perfect way to kick in 2019 of the year #NYE2019 Vibrate your
-                  senses with a booming sound system, phenomenal light rigs and
-                  bustling atmosphere with DJ Tanvi!! This #NYE enter the
-                  #3DotsBangaloreJPN & Party like you never did before. It just
-                  wouldn’t be right, if you weren’t with us when the clock
-                  strikes midnight! It’s the perfect way to kick in 2019
+                  you never did before.
                 </p>
-                {/* </ShowMore> */}
               </Grid.Column>
             </Grid.Row>
           </Grid>
