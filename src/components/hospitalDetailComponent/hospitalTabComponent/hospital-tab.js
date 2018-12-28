@@ -7,6 +7,7 @@ import HospitalSpecialist from "../hospitalSpecialistComponent/hospital-speciali
 import HospitalDoctor from "../hospitalDoctorComponent/hospital-doctor";
 import HospitalBed from "../hospitalBedComponent/hospital-bed";
 import HospitalAmbulance from "../hospitalAmbulanceComponent/hospital-ambulance";
+import HospitalMap from "../hospitalMapComponent/hospital-map";
 
 import "./static/css/hospital-tab.css";
 
@@ -116,6 +117,14 @@ export default class HospitalTab extends React.Component {
           }}
         >
           <HospitalAmbulance />
+        </Segment>
+
+        <Segment
+          style={{
+            display: this.state.hidden_segment ? "none" : "block"
+          }}
+        >
+          <HospitalMap />
         </Segment>
       </div>
     );
