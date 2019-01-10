@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/sushantlp/hospital-konnect/precache-manifest.90e074e148f821af5f35276b84269c38.js"
+  "/sushantlp/hospital-konnect/precache-manifest.d2967531457f78730dcf83ac3d568360.js"
 );
 
 workbox.clientsClaim();
