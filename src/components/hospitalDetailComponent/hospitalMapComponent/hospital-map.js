@@ -30,7 +30,9 @@ const MyMapComponent = compose(
 ));
 
 const enhance = _.identity;
-console.log(process.env.REACT_APP_GOOGLE_MAP_KEY);
+
+// console.log(process.env.REACT_APP_GOOGLE_MAP_KEY);
+
 const ReactGoogleMaps = () => [
   <div key={1}>
     <h2 className="hospital-map-header">

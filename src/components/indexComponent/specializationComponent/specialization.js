@@ -13,7 +13,7 @@ export default class Specialization extends React.Component {
           <div className="underscore" />
         </div>
 
-        <Grid stackable columns="5">
+        <Grid stackable columns="6">
           <Grid.Row>
             <Grid.Column style={{ cursor: "pointer" }}>
               <div className="single_department">
@@ -28,6 +28,7 @@ export default class Specialization extends React.Component {
               </div>
             </Grid.Column>
             <Grid.Column style={{ cursor: "pointer" }}>
+
               <div className="single_department">
                 <div className="dpmt-thumb">
                   <img
@@ -75,8 +76,21 @@ export default class Specialization extends React.Component {
                 <h4>Neurology</h4>
               </div>
             </Grid.Column>
+            <Grid.Column style={{ cursor: "pointer" }}>
+              <div className="single_department">
+                <div className="dpmt-thumb">
+                  <img
+                    src="https://colorlib.com/preview/theme/medicare2/img/department/d-icon6.png"
+                    alt=""
+                  />
+                </div>
+
+                <h4>Dermatology</h4>
+              </div>
+            </Grid.Column>
           </Grid.Row>
         </Grid>
+        {/*
         <Button
           size="large"
           basic
@@ -89,6 +103,7 @@ export default class Specialization extends React.Component {
         >
           View More
         </Button>
+        */}
       </Container>
     );
   }

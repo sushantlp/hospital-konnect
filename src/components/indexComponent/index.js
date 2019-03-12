@@ -7,6 +7,8 @@ import Specialization from "./specializationComponent/specialization";
 import Hospital from "./hospitalComponent/hospital";
 import Ambulance from "./ambulanceComponent/ambulance";
 import AirAmbulance from "./airAmbulanceComponent/airAmbulance";
+import Nursing from "./nursingComponent/nursing";
+import Equipment from "./equipmentComponent/equipment";
 
 export default class Animation extends React.Component {
   render() {
@@ -17,8 +19,10 @@ export default class Animation extends React.Component {
         <Specialization />
         <Hospital />
         <Ambulance />
+        <Nursing />
+        <Equipment/>
+        
         <AirAmbulance />
-
         <Footer />
       </React.Fragment>
     );
