@@ -13,7 +13,7 @@ import Privacy from "./components/privacyComponent/privacy";
 import Term from "./components/termComponent/term";
 import HospitalList from "./components/hospitalListComponent";
 import HospitalDetail from "./components/hospitalDetailComponent";
-
+import AirAmbulance from "./components/indexComponent/airAmbulanceComponent/airAmbulance";
 // Router root
 const Root = ({ store }) => (
   <Provider store={store}>
@@ -28,6 +28,7 @@ const Root = ({ store }) => (
           <Route exact path="/initial/" component={Initial} />
           <Route exact path="/list/" component={HospitalList} />
           <Route exact path="/detail/" component={HospitalDetail} />
+          <Route exact path="/aa/" component={AirAmbulance} />
         </Switch>
       </div>
     </BrowserRouter>

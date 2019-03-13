@@ -1,3 +1,9 @@
-air-ambulance-container {
+.air-ambulance-container {
   margin-top: 8vh;
+  background-image: url(https://cdn.pixabay.com/photo/2017/10/07/16/25/helicopter-2826969_960_720.jpg);
+  background-size: cover;
+  padding: 10px;
+
 }
+
+
