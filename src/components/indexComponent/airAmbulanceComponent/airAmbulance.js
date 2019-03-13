@@ -37,14 +37,20 @@ export default class AirAmbulance extends React.Component {
             <div class="modal-background"></div>
             <div class="modal-card">
               <header class="modal-card-head">
-                <p class="modal-card-title">Modal title</p>
+                <p class="modal-card-title">Air Ambulance Booking</p>
                 <button onClick={this.tgl_ModalForm} class="delete" aria-label="close"></button>
               </header>
               <section class="modal-card-body">
                 <p>Claymore mine fluidity shoes media crypto-meta-numinous alcohol girl car drugs neon shrine shanty town engine papier-mache Shibuya. Uplink advert euro-pop camera shanty town grenade saturation point knife. Savant skyscraper lights rebar pre-crypto-A.I. numinous camera boy beef noodles rain marketing nodality vehicle 8-bit semiotics. Wristwatch semiotics 3D-printed systemic paranoid 8-bit numinous camera DIY geodesic drone footage Shibuya systema tube film jeans. Bicycle vinyl market neon geodesic industrial grade monofilament. Office semiotics advert free-market augmented reality paranoid corrupted numinous nodal point-space denim lights. </p>
+                <input class="input" type="text" placeholder="Name" /><br/>
+                <textarea class="input" type="text" placeholder="Address" rows="10">
+
+                </textarea>
+                <input class="input" type="text" placeholder="Telephone Number" /><br/>
+                <input class="input" type="text" placeholder="Email" /><br/>
               </section>
               <footer class="modal-card-foot">
-                <button class="button is-success">Save changes</button>
+                <button class="button is-success">BOOK AIR AMBULANCE</button>
                 <button class="button" onClick={this.tgl_ModalForm}>Cancel</button>
               </footer>
             </div>
