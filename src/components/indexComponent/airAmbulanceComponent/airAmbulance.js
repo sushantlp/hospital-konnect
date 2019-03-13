@@ -5,8 +5,9 @@ import "../../../static/css/root.css";
 import "./static/css/airAmbulance.css";
 
 export default class AirAmbulance extends React.Component {
-  showModalForm(){
-    console.log('modal')
+  tgl_ModalForm(){
+   var div = document.getElementById('modal');
+      div.style.display = div.style.display == "none" ? "block" : "none";    
   }
 
   render() {
@@ -23,7 +24,7 @@ export default class AirAmbulance extends React.Component {
               <Button
                 inverted
                 color="white"
-                onClick={this.showModalForm}
+                onClick={this.tgl_ModalForm}
               >
                 Book Air Ambulance
               </Button>
@@ -32,6 +33,22 @@ export default class AirAmbulance extends React.Component {
             </Grid.Column>
           </Grid.Row>
         </Grid>
+          <div class="modal" id="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+              <header class="modal-card-head">
+                <p class="modal-card-title">Modal title</p>
+                <button onClick={this.tgl_ModalForm} class="delete" aria-label="close"></button>
+              </header>
+              <section class="modal-card-body">
+                <p>Claymore mine fluidity shoes media crypto-meta-numinous alcohol girl car drugs neon shrine shanty town engine papier-mache Shibuya. Uplink advert euro-pop camera shanty town grenade saturation point knife. Savant skyscraper lights rebar pre-crypto-A.I. numinous camera boy beef noodles rain marketing nodality vehicle 8-bit semiotics. Wristwatch semiotics 3D-printed systemic paranoid 8-bit numinous camera DIY geodesic drone footage Shibuya systema tube film jeans. Bicycle vinyl market neon geodesic industrial grade monofilament. Office semiotics advert free-market augmented reality paranoid corrupted numinous nodal point-space denim lights. </p>
+              </section>
+              <footer class="modal-card-foot">
+                <button class="button is-success">Save changes</button>
+                <button class="button" onClick={this.tgl_ModalForm}>Cancel</button>
+              </footer>
+            </div>
+          </div>
       </div>
     );
   }
