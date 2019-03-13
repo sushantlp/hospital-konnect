@@ -8,119 +8,47 @@ import "./static/css/animation.css";
 export default class Animation extends React.Component {
   render() {
     return (
-      <Container
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          // padding: "0",
-          // margin: "0",
-          height: "50em",
-          width: "100%"
-        }}
-      >
-        <Grid columns="equal">
-          <Grid.Row style={{ marginLeft: "-1em" }}>
-            <Grid.Column>
-              <Animated
-                animationIn="bounceInLeft"
-                animationOut="pulse"
-                isVisible={true}
-              >
-                <div
-                  className="box"
-                  style={{ backgroundColor: "rgba(253, 187, 127, 1)" }}
-                >
-                  <span className="Span">Left-Hover</span>
+      <Container style={{ width: "89em" }}>
+        <div className="tile is-ancestor nursingcontainer">
+          <div className="tile is-vertical is-8">
+            <div className="tile">
+              <div className="tile is-parent is-vertical hospital-card">
+                <article className="tile is-child notification is-primary card">
+                  <p className="hospital-header">HOSPITAL-1</p>
+                  <p className="subtitle"></p>
+                </article>
+              </div>
+              <div className="tile is-parent hospital-card">
+                <article className="tile is-child notification is-info card">
+                  <p className="hospital-header">HOSPITAL-3</p>
+                </article>
+              </div>
+            </div>
+            <div className="tile is-parent hospital-card">
+              <article className="tile is-child notification is-danger card">
+                <p className="hospital-header">HOSPITAL-4</p>
+              </article>
+            </div>
+          </div>
+          <div className="tile is-parent hospital-card">
+            <article className="card tile is-child notification is-success">
+              <div className="content">
+                <p className="hospital-header">HOSPITAL-5</p>
+                <div className="content">
                 </div>
-              </Animated>
-
-              <Animated
-                animationIn="bounceInLeft"
-                animationOut="pulse"
-                isVisible={true}
-              >
-                <div className="box" style={{ backgroundColor: "#EC6E98" }}>
-                  <span className="Span">Left-Hover</span>
+              </div>
+            </article>
+          </div>
+          <div className="tile is-parent hospital-card">
+            <article className="card tile is-child notification is-info">
+              <div className="content">
+                <p className="hospital-header">HOSPITAL-5</p>
+                <div className="content">
                 </div>
-              </Animated>
-
-              <Animated
-                animationIn="bounceInLeft"
-                animationOut="pulse"
-                isVisible={true}
-              >
-                <div className="box" style={{ backgroundColor: "#87cdab" }}>
-                  <span className="Span">Left-Hover</span>
-                </div>
-              </Animated>
-            </Grid.Column>
-
-            <Grid.Column />
-            <Grid.Column />
-
-            <Grid.Column>
-              <Animated
-                animationIn="zoomIn"
-                animationOut="pulse"
-                isVisible={true}
-              >
-                <div className="circle" style={{ backgroundColor: "white" }} />
-              </Animated>
-
-              <Animated
-                animationIn="zoomIn"
-                animationOut="pulse"
-                isVisible={true}
-              >
-                <div
-                  className="circle"
-                  style={{ backgroundColor: "#C4EEF5" }}
-                />
-              </Animated>
-              <Animated
-                animationIn="zoomIn"
-                animationOut="pulse"
-                isVisible={true}
-              >
-                <div className="circle" style={{ backgroundColor: "white" }} />
-              </Animated>
-            </Grid.Column>
-
-            <Grid.Column />
-            <Grid.Column />
-
-            <Grid.Column>
-              <Animated
-                animationIn="bounceInRight"
-                animationOut="pulse"
-                isVisible={true}
-              >
-                <div className="box" style={{ backgroundColor: "#9db4d6" }}>
-                  <span className="Span">Right-Hover</span>
-                </div>
-              </Animated>
-              <Animated
-                animationIn="bounceInRight"
-                animationOut="pulse"
-                isVisible={true}
-              >
-                <div className="box" style={{ backgroundColor: "#a585bd" }}>
-                  <span className="Span">Right-Hover</span>
-                </div>
-              </Animated>
-              <Animated
-                animationIn="bounceInRight"
-                animationOut="pulse"
-                isVisible={true}
-              >
-                <div className="box" style={{ backgroundColor: "#e48a84" }}>
-                  <span className="Span">Right-Hover</span>
-                </div>
-              </Animated>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
+              </div>
+            </article>
+          </div>
+``        </div>                  
       </Container>
     );
   }

@@ -15,6 +15,7 @@ import HospitalList from "./components/hospitalListComponent";
 import HospitalDetail from "./components/hospitalDetailComponent";
 import AirAmbulance from "./components/indexComponent/airAmbulanceComponent/airAmbulance";
 // Router root
+
 const Root = ({ store }) => (
   <Provider store={store}>
     <BrowserRouter>
