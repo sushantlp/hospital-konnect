@@ -34,6 +34,8 @@
 .tileContainer{
   margin-top: 30px;
 
+  width: 100vw;
+  padding: 1px;
 }
 
 .doctor{
@@ -62,6 +64,7 @@
     background-position: center bottom;  
     background-size: contain;  
     text-decoration-color: black;
+    transform:scale(1.05);
 }
 
 .equipment{
@@ -77,5 +80,5 @@
     background-repeat: no-repeat;
     background-position: center bottom;  
     background-size: contain;  
-    text-decoration-color: black;
+    text-decoration-color: black;    
 }

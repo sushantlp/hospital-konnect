@@ -10,7 +10,7 @@ export default class Animation extends React.Component {
     return (
       <div>
         <Header />
-        <Container className="tileContainer">
+        <div className="tileContainer">
           <div class="tile is-ancestor">
             <div class="tile is-vertical">
               <div class="tile">
@@ -27,7 +27,7 @@ export default class Animation extends React.Component {
                 <div class="tile is-parent">
                   <article class="tile is-child hospital-card notification is-danger ambulance hover">
                     <h1>Ambulances</h1>
-                    <p>Post-engine tube human range-rover DIY concrete physical shoes A.I. savant carbon tanto courier realism. Vehicle geodesic post-j-pop construct tower euro-pop semiotics singularity math-shoes.  Construct Kowloon city nodal point euro-pop Tokyo futurity lights camera papier-mache voodoo god narrative jeans.  Network market wristwatch wonton soup soul-delay sprawl vinyl tube 3D-printed. Pen singularity hospital-cardboard  <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> 
+                    <p>Post-engine tube human range-rover DIY concrete physical shoes A.I. savant carbon tanto courier realism. Vehicle geodesic post-j-pop construct tower euro-pop semiotics singularity math-shoes.  Construct Kowloon city nodal point euro-pop Tokyo futurity lights camera papier-mache voodoo god narrative jeans.  Network market wristwatch wonton soup soul-delay sprawl vinyl tube 3D-printed. Pen singularity hospital-cardboard  <br/><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> 
                     </p>
                   </article>
                 </div>
@@ -44,7 +44,7 @@ export default class Animation extends React.Component {
              </article>
             </div>
           </div>
-       </Container>
+       </div>
       </div>        
 
     );
