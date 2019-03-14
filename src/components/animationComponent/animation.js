@@ -15,7 +15,7 @@ export default class Animation extends React.Component {
             <div class="tile is-vertical">
               <div class="tile">
                 <div class="tile is-parent is-vertical">
-                  <article class="tile is-child hospital-card is-12 notification is-success doctor hover">
+                  <article class="tile is-child hospital-card is-12 notification is-success doctors hover">
                     <h1>Hospitals</h1>
                     <p>Post-engine tube human range-rover DIY concrete physical shoes A.I. savant carbon tanto courier realism. Vehicle geodesic post-j-pop construct tower euro-pop semiotics singularity math-shoes. Computer dome Kowloon cyber-shanty town nodality knife sunglasses dead. Computer Tokyo marketing monofilament BASE jump receding voodoo god-ware footage meta-tube. </p>
                   </article>

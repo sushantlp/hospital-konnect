@@ -18,15 +18,19 @@ export default class Index extends React.Component {
         <div className="hospital-detail-div">
           <Grid stackable>
             <Grid.Row>
-              <Grid.Column width={1} />
-              <Grid.Column width={11}>
+              <Grid.Column />
+              <Grid.Column>
                 <HospitalDetailCard />
-                <HospitalTab />
               </Grid.Column>
-              <Grid.Column width={4}>
+              <Grid.Column>
                 <SeoLink />
               </Grid.Column>
             </Grid.Row>
+            <Grid.Row>
+              <div className="twelve">
+                <HospitalTab />
+              </div>
+            </Grid.Row>              
           </Grid>
         </div>
 
