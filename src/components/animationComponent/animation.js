@@ -8,48 +8,43 @@ import "./static/css/animation.css";
 export default class Animation extends React.Component {
   render() {
     return (
-      <Container style={{ width: "89em" }}>
-        <div className="tile is-ancestor nursingcontainer">
-          <div className="tile is-vertical is-8">
+      <div  className="anim">
+        <div className="tile is-ancestor">
             <div className="tile">
-              <div className="tile is-parent is-vertical hospital-card">
-                <article className="tile is-child notification is-primary card">
-                  <p className="hospital-header">HOSPITAL-1</p>
+              <div className="tile is-parent">
+                <article className="tile is-child card is-vertical">
+                  <p className="hospital-header">HOSPITALS 1</p>
                   <p className="subtitle"></p>
                 </article>
               </div>
-              <div className="tile is-parent hospital-card">
-                <article className="tile is-child notification is-info card">
-                  <p className="hospital-header">HOSPITAL-3</p>
+              <div className="tile is-parent">
+                <article className="tile is-child is-dark card">
+                  <p className="hospital-header">HOSPITALS</p>
+                  <p className="subtitle"></p>
                 </article>
               </div>
-            </div>
-            <div className="tile is-parent hospital-card">
-              <article className="tile is-child notification is-danger card">
-                <p className="hospital-header">HOSPITAL-4</p>
+            <div className="tile is-parent">
+              <article className="tile is-child is-dark card">
+                <p className="hospital-header">MEDICAL EQUIPMENT</p>
               </article>
             </div>
-          </div>
-          <div className="tile is-parent hospital-card">
-            <article className="card tile is-child notification is-success">
+          <div className="tile is-parent">
+            <article className="card tile is-child is-dark">
               <div className="content">
-                <p className="hospital-header">HOSPITAL-5</p>
+                <p className="hospital-header">AMBULANCE</p>
                 <div className="content">
                 </div>
               </div>
             </article>
           </div>
-          <div className="tile is-parent hospital-card">
-            <article className="card tile is-child notification is-info">
-              <div className="content">
-                <p className="hospital-header">HOSPITAL-5</p>
-                <div className="content">
-                </div>
-              </div>
+          <div className="tile is-parent">
+            <article className="tile is-child is-dark card">
+              <p className="hospital-header">NURSING</p>
             </article>
           </div>
-``        </div>                  
-      </Container>
+            </div>
+          </div>
+        </div>                  
     );
   }
 }

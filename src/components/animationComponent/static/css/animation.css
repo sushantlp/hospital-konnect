@@ -19,3 +19,18 @@
   padding-left: 2.5em;
   /* padding-right: 2.5em; */
 }
+
+
+.tile.tall{
+  height:500px;
+}
+
+
+.tile.is-child{
+  height: 150px;
+}
+
+.anim{
+  margin-top: 30vh;
+  padding: 10px;
+}
