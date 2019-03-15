@@ -20,17 +20,12 @@ export default class Footer extends React.Component {
   render() {
     return (
       <div className="footer-container">
-        <Segment
-          style={{
-            backgroundColor: "#263868"
-          }}
-        >
-          <Divider />
-          <Grid doubling floated="left" centered inverted stackable>
+        <Divider/>
+          <Grid doubling floated="left" centered stackable>
             <Grid.Row columns="equal">
               <Grid.Column floated="left">
-                <List horizontal link inverted relaxed>
-                  <List.Item>
+                <List horizontal link relaxed>
+                  <List.Item className='link'>
                     <Link to="/terms">Terms of Service </Link>
                   </List.Item>
                   <List.Item>
@@ -43,13 +38,13 @@ export default class Footer extends React.Component {
                 </List>
               </Grid.Column>
               <Grid.Column floated="right" textAlign="right">
-                <List horizontal link inverted>
+                <List horizontal link>
                   <List.Item
                     as="a"
                     href="https://www.facebook.com/ballyhootoday/"
                     target="_blank"
                   >
-                    <Icon inverted circular name="facebook" />
+                    <Icon circular name="facebook" />
                   </List.Item>
 
                   <List.Item
@@ -57,7 +52,7 @@ export default class Footer extends React.Component {
                     href="https://www.instagram.com/ballyhootoday/"
                     target="_blank"
                   >
-                    <Icon inverted circular name="instagram" />
+                    <Icon circular name="instagram" />
                   </List.Item>
 
                   <List.Item
@@ -65,7 +60,7 @@ export default class Footer extends React.Component {
                     href="https://twitter.com/BallyhooToday"
                     target="_blank"
                   >
-                    <Icon inverted circular name="twitter" />
+                    <Icon circular name="twitter" />
                   </List.Item>
                 </List>
               </Grid.Column>
@@ -77,7 +72,7 @@ export default class Footer extends React.Component {
             <Grid.Row>
               <Grid.Column width={6} />
               <Grid.Column>
-                <List horizontal link inverted relaxed>
+                <List horizontal link relaxed>
                   <List.Item
                     as="a"
                     target="_blank"
@@ -105,7 +100,6 @@ export default class Footer extends React.Component {
               </Grid.Column>
             </Grid.Row>
           </Grid>
-        </Segment>
       </div>
     );
   }

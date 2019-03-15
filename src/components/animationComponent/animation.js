@@ -1,7 +1,7 @@
 import React from "react";
 import {withRouter} from 'react-router-dom';
-import { Container, Grid } from "semantic-ui-react/dist/commonjs";
-import { Animated } from "react-animated-css";
+import {Container, Grid} from "semantic-ui-react/dist/commonjs";
+import {Animated} from "react-animated-css";
 import Header from "../headerComponent/header"
 import "./static/css/animation.css";
 

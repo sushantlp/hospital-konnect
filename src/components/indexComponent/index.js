@@ -17,7 +17,7 @@ export default class Animation extends React.Component {
         <ParallaxHeader />
         <Search />
         <Specialization />
-        <Hospital history={[]}/>
+        <Hospital/>
         <Ambulance />
         <Nursing />
         <Equipment/>        

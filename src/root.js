@@ -21,7 +21,7 @@ const Root = ({ store }) => (
     <BrowserRouter>
       <div>
         <Switch>
-          <Route exact path="/" component={FrontPage} />
+          <Route exact path="/" component={Animation} />
           <Route exact path="/terms/" component={Term} />
           <Route exact path="/privacy/" component={Privacy} />
           <Route exact path="/faq/" component={Faq} />
