@@ -7,7 +7,7 @@ import "./static/css/hospital-detail-card.css";
 export default class HospitalCard extends React.Component {
   render() {
     return (
-      <div>
+      <div className="hdc_container">
         <Segment>
           <Grid stackable>
             <Grid.Row>
