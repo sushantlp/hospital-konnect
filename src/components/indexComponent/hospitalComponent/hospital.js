@@ -25,16 +25,17 @@ export default class Hospital extends React.Component {
               </div>
             </div>
             <div className="tile is-parent hospital-card">
-              <article className="wideimg tile is-child notification is-danger card">
+              <article className="hos4 tile is-child notification is-danger card">
                 <p className="hospital-header">HOSPITAL-4</p>
               </article>
             </div>
           </div>
           <div className="tile is-parent hospital-card">
-            <article className="tallimg card tile is-child notification is-success">
+            <article className="hos5 card tile is-child notification is-success">
               <div className="content">
                 <p className="hospital-header">HOSPITAL-5</p>
                 <div className="content">
+                  <mark>Soul-delay computer corporation render-farm bomb market dome plastic 8-bit boat face forwards nodal point hacker corrupted.-ware systema geodesic paranoid corporation 8-bit cyber-denim sensory euro-pop A.I.. Nodal point savant bicycle sentient urban table systemic into courier. Digital apophenia RAF marketing advert sensory sub-orbital assassin hacker wonton soup footage DIY.</mark>               
                 </div>
               </div>
             </article>

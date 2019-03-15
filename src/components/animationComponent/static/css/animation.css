@@ -32,10 +32,11 @@
 
 
 .tileContainer{
-  margin-top: 30px;
-
+  margin-top: 25px;
   width: 100vw;
   padding: 1px;
+  transform: scaleY(1.1);
+
 }
 
 .doctors{

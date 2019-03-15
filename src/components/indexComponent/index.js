@@ -20,8 +20,7 @@ export default class Animation extends React.Component {
         <Hospital />
         <Ambulance />
         <Nursing />
-        <Equipment/>
-        
+        <Equipment/>        
         <AirAmbulance />
         <Footer />
       </React.Fragment>
