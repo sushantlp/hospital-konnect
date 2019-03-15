@@ -1,16 +1,20 @@
 import React from "react";
-
+import {withRouter} from 'react-router-dom';
 import { Container, Grid } from "semantic-ui-react/dist/commonjs";
 import { Animated } from "react-animated-css";
 import Header from "../headerComponent/header"
 import "./static/css/animation.css";
 
 export default class Animation extends React.Component {
+  nextPath = (path) => {
+    this.props.history.push(path);
+  }
+
   render() {
     return (
       <div>
         <Header />
-        <div className="tileContainer">
+        <div className="tileContainer" onClick={() => this.nextPath('/initial') }>
           <div class="tile is-ancestor">
             <div class="tile is-vertical">
               <div class="tile">
@@ -45,8 +49,7 @@ export default class Animation extends React.Component {
             </div>
           </div>
        </div>
-      </div>        
-
+    </div>        
     );
   }
 }

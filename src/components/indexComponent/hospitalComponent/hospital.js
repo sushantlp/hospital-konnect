@@ -1,21 +1,25 @@
 import React from "react";
+import {withRouter} from 'react-router-dom';
 import { Card, Container, Button } from "semantic-ui-react";
 import "../../../static/css/root.css";
 import "./static/css/hospital.css";
 
-export default class Hospital extends React.Component {
+class Hospital extends React.Component {
+  nextPath = (path) => {
+    console.log(path)
+    this.props.history.push(path);
+  }
+
   render() {
     return (
         <Container style={{ width: "89em" }}>
         <h4 className="header-name">HOSPITAL</h4>
         <div className="underscore" /> 
-
         <div className="tile is-ancestor nursingcontainer">
-
           <div className="tile is-vertical is-8">
             <div className="tile">
               <div className="hos1 tile is-parent is-vertical">
-                <div className="hoschild tile is-child">
+                <div className="hoschild tile is-child" onClick={() => this.nextPath('/detail')}>
                     <span className="hospital-header">HOSPITAL-1</span>
                   <p className="subtitle"></p>
                 </div>
@@ -45,3 +49,5 @@ export default class Hospital extends React.Component {
      );
   }
 }
+
+export default withRouter(Hospital)
