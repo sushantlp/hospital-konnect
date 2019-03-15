@@ -8,10 +8,13 @@
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: pink;
   -webkit-font-smoothing: subpixel-antialiased;
-
   color: black;
   text-transform: uppercase;
 }
+  .hospital-header span{
+    position: absolute;
+    bottom:0;
+  }
 
 .hospital-card:hover {
   transform: scale(1.03);
@@ -23,46 +26,28 @@
     padding:10px;
 }
 
-.hos5{
-    background-image: url('https://health.mil/-/media/Images/MHS/Photos/Belvoir-Community-Hospital.ashx');
-    background-position: center; 
-    background-size: cover;
-    font-size: 1.5em;
-}
-
-
-.hos4{
-    background-image: url('https://media.defense.gov/2018/Nov/30/2002068078/600/400/0/181126-F-IW330-1003.JPG');
-    background-position: top; 
-    background-size: cover;
-    font-size: 1.5em;
-}
-
-
 .hos1{
-  height:200px;
-  background-image: url('https://media.defense.gov/2013/Apr/29/2000054709/780/780/0/130423-F-GW519-001.JPG');
   background-size: cover;
   font-size: 1.5em;
+  background-color: blue;
 }
-
 .hos2{
-  background-image: url('https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg');
-  height:200px; 
   background-size: cover;
   font-size: 1.5em;
+  background-color: yellow;
 }
-
 .hos3{
-  background-image: url('https://media.defense.gov/2015/Mar/11/2001023401/780/780/0/150304-F-BH566-003.JPG');
-  height:300px; 
-  background-size: cover;
-  font-size: 1.5em;
+    background-size: cover;
+    font-size: 1.5em;
+    background-color: green;
+}
+.hos4{
+    background-size: cover;
+    font-size: 1.5em;
+    height: 500px;
+    background-color: red;
 }
 
-mark{
-  background-color: rgba(30,40,50,0.5);
-  color:white;
-  font-size:0.8em;
-  line-height: 1.6em;
+.hoschild{
+  padding: 10px;
 }
