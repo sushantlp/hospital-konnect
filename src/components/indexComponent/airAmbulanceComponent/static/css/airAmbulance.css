@@ -1,7 +1,6 @@
 .air-ambulance-container {
-  margin-top: 8vh;
-  background-image: url(https://www.wiltshiretimes.co.uk/resources/images/8099098.jpg);
   background-size: cover;
+  background-color: pink;
   padding: 10px;
 
 }
