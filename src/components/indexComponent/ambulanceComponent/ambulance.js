@@ -1,7 +1,8 @@
 import React from "react";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 
-import { Card, Container, Icon } from "semantic-ui-react";
+import { List, Card, Container, Icon } from "semantic-ui-react";
 import "../../../static/css/root.css";
 import "./static/css/ambulance.css";
 
@@ -73,6 +74,7 @@ function SamplePrevArrow(props) {
 }
 
 export default class Ambulance extends React.Component {
+
   render() {
     const settings = {
       dots: false,
@@ -85,21 +87,25 @@ export default class Ambulance extends React.Component {
     return (
       <Container style={{ width: "89em" }}>
         <div>
-          <div className="ambulance-container">
+          <div className="ambulance-container" >
             <h4 className="header-name">AMBULANCE</h4>
             <div className="underscore" />
           </div>
           <Slider {...settings}>
             <div>
-              <Card className="hospital-card">
-                <div className="ui fluid image">
-                  <img
-                    src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124570/ballyhoo/BALLYHOO_WEBSITE/hospital1.jpg"
-                    alt=""
-                  />
-                  <span className="hospital-header">Hospital-1</span>
-                </div>
-              </Card>
+              <List.Item className='link'>
+                <Link to="/ambulance">
+                  <Card className="hospital-card">
+                    <div className="ui fluid image">
+                      <img
+                        src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124570/ballyhoo/BALLYHOO_WEBSITE/hospital1.jpg"
+                        alt=""
+                      />
+                      <span className="hospital-header">Hospital-1</span>
+                    </div>
+                  </Card>
+                </Link>
+              </List.Item>
             </div>
             <div>
               <Card className="hospital-card">

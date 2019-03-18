@@ -44,17 +44,6 @@ export default class HospitalDoctor extends React.Component {
                     <span>Psychiatrist</span>
                   </p>
 
-                  <div className="clock-div">
-                    <span>
-                      <Icon
-                        name="clock outline"
-                        size="small"
-                        style={{ fontSize: "0.9em" }}
-                      />
-                    </span>
-                    <span className="doctor-week">MON-SUN</span>
-                    <span className="doctor-time">8:00 AM - 10:00 PM</span>
-                  </div>
                 </div>
               </Grid.Column>
             </Grid.Row>
@@ -94,17 +83,6 @@ export default class HospitalDoctor extends React.Component {
                     <span>Psychiatrist</span>
                   </p>
 
-                  <div className="clock-div">
-                    <span>
-                      <Icon
-                        name="clock outline"
-                        size="small"
-                        style={{ fontSize: "0.9em" }}
-                      />
-                    </span>
-                    <span className="doctor-week">MON-SUN</span>
-                    <span className="doctor-time">8:00 AM - 10:00 PM</span>
-                  </div>
                 </div>
               </Grid.Column>
             </Grid.Row>
@@ -144,17 +122,6 @@ export default class HospitalDoctor extends React.Component {
                     <span>Psychiatrist</span>
                   </p>
 
-                  <div className="clock-div">
-                    <span>
-                      <Icon
-                        name="clock outline"
-                        size="small"
-                        style={{ fontSize: "0.9em" }}
-                      />
-                    </span>
-                    <span className="doctor-week">MON-SUN</span>
-                    <span className="doctor-time">8:00 AM - 10:00 PM</span>
-                  </div>
                 </div>
               </Grid.Column>
 

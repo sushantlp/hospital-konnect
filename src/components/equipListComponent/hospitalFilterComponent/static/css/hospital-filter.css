@@ -1,0 +1,25 @@
+h3 h4 {
+  font-family: "Timeburner", sans-serif;
+}
+.price {
+  font-weight: 100;
+}
+.amenitie {
+  font-weight: 100;
+}
+.open {
+  font-weight: 100;
+}
+.sort-by {
+  font-weight: 100;
+}
+
+.amenitie-checkbox {
+  margin-bottom: 0.5em;
+}
+.open-checkbox {
+  margin-bottom: 0.5em;
+}
+.sort-by-radio {
+  margin-bottom: 0.5em;
+}

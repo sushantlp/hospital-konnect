@@ -1,0 +1,21 @@
+.seo-link-header {
+  font-size: 1em;
+  font-weight: 700 !important;
+  color: #a3a3a5;
+}
+
+.seo-link-locality {
+  font-size: 0.9em;
+  font-weight: 200 !important;
+  color: #a3a3a5;
+  padding-bottom: 0.5em;
+}
+
+.seo-link:hover {
+  text-decoration: underline;
+  color: #a3a3a5;
+}
+
+.seo-container {
+  margin-top: 1em;
+}

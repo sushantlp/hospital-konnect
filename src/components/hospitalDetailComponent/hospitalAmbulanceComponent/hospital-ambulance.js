@@ -1,7 +1,5 @@
 import React from "react";
-
 import { Segment, Grid, Icon, Button } from "semantic-ui-react";
-
 import "./static/css/hospital-ambulance.css";
 
 export default class HospitalBed extends React.Component {
@@ -11,7 +9,6 @@ export default class HospitalBed extends React.Component {
         <h2 className="hospital-ambulance-header">
           <span>Ambulances in People Tree Hospitals</span>
         </h2>
-
         <Segment>
           <Grid stackable>
             <Grid.Row columns={2}>
@@ -26,20 +23,26 @@ export default class HospitalBed extends React.Component {
                     <span className="hospital-price-icon">
                       <Icon name="rupee sign" size="small" />
                     </span>
-
                     <span>1000</span>
                   </p>
 
                   <p className="hospital-ambulance-available">
                     <span>Availability :</span>
-
                     <span className="hospital-ambulance-available-count">
-                      100
+                      Yes/No
                     </span>
                   </p>
-                </div>
-              </Grid.Column>
 
+                  <p className="hospital-ambulance-available">
+                    <span>Cancellation Policy</span>
+                  </p>
+
+                  <p className="hospital-ambulance-available">
+                    <span>Terms and Conditions</span>
+                  </p>
+
+                  </div>
+              </Grid.Column>
               <Grid.Column>
                 <Button
                   style={{
@@ -89,9 +92,17 @@ export default class HospitalBed extends React.Component {
                     <span>Availability :</span>
 
                     <span className="hospital-ambulance-available-count">
-                      100
+                      Yes/No
                     </span>
                   </p>
+
+                  <p className="hospital-ambulance-available">
+                    <span>Cancellation Policy</span>
+                  </p>
+                  <p className="hospital-ambulance-available">
+                    <span>Terms and Conditions</span>
+                  </p>
+
                 </div>
               </Grid.Column>
 
@@ -144,9 +155,17 @@ export default class HospitalBed extends React.Component {
                     <span>Availability :</span>
 
                     <span className="hospital-ambulance-available-count">
-                      100
+                      Yes/No
                     </span>
                   </p>
+
+                  <p className="hospital-ambulance-available">
+                    <span>Cancellation Policy</span>
+                  </p>
+                  <p className="hospital-ambulance-available">
+                    <span>Terms and Conditions</span>
+                  </p>
+                  
                 </div>
               </Grid.Column>
 

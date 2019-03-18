@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 import { Card, Container, Icon } from "semantic-ui-react";
 import "../../../static/css/root.css";
 
@@ -89,6 +90,7 @@ export default class Nursing extends React.Component {
             <div className="underscore" />
               <Slider {...settings}>
                 <div>
+                  <Link to="/nursing">
                   <Card className="hospital-card">
                     <div className="ui fluid image">
                       <img
@@ -98,6 +100,7 @@ export default class Nursing extends React.Component {
                       <span className="hospital-header">Nursing-1</span>
                     </div>
                   </Card>
+                  </Link>
                  </div>
                  <div>
                   <Card className="hospital-card">

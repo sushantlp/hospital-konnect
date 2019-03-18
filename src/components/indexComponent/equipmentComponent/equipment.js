@@ -1,6 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import { Card, Container, Icon } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 import "../../../static/css/root.css";
 
 function SampleNextArrow(props) {
@@ -89,6 +90,7 @@ export default class Equipment extends React.Component {
             <div className="underscore" />
               <Slider {...settings}>
                 <div>
+                <Link to='/equipment'>
                   <Card className="hospital-card">
                     <div className="ui fluid image">
                       <img
@@ -98,6 +100,7 @@ export default class Equipment extends React.Component {
                       <span className="hospital-header">Medical Equipment-1</span>
                     </div>
                   </Card>
+                  </Link>
                  </div>
                  <div>
                   <Card className="hospital-card">

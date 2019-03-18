@@ -1,0 +1,36 @@
+.hospital-overview-title {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #414146;
+  font-family: "Timeburner", sans-serif;
+}
+
+.hospital-overview-grid {
+  margin-top: 2em;
+  color: #414146;
+}
+
+.amenities-ul {
+  padding-left: 1em;
+}
+
+.amenities-li {
+  line-height: 2em;
+}
+
+.hospital-overview-ambulance {
+  font-weight: 700;
+}
+
+.hospital-overview-bed {
+  font-weight: 700;
+}
+
+.hospital-overview-timing {
+  font-weight: 700;
+}
+
+.hospital-specialist-container {
+  margin-top: 2em;
+}

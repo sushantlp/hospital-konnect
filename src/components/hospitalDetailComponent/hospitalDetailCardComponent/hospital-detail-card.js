@@ -1,13 +1,14 @@
 import React from "react";
-
 import { Segment, Image, Grid, Icon, Button, Divider } from "semantic-ui-react";
-
 import "./static/css/hospital-detail-card.css";
-
 export default class HospitalCard extends React.Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);    
+  }
+
   render() {
     return (
-      <div className="hdc_container">
+      <div className="hdc_container" id="#">
         <Segment>
           <Grid stackable>
             <Grid.Row>
@@ -25,28 +26,14 @@ export default class HospitalCard extends React.Component {
                   <h1 className="hospital-name">
                     <span>Pristine Hospital</span>
                   </h1>
-
                   <h2 className="hospital-address">
                     <span>West Of Chord Road, Bangalore</span>
                   </h2>
-
                   <h2 className="hospital-specialist">
                     <span>Multi-Speciality Hospital</span>
-
-                    <span className="bed">
-                      <span className="bed-dot">.</span>
-                      <span className="bed-count">100</span>
-                      <span className="bed-text">Beds</span>
-                    </span>
-
-                    <span className="doctor">
-                      <span className="doctor-dot">.</span>
-                      <span className="doctor-count">21</span>
-                      <span className="doctor-text">Doctors</span>
-                    </span>
+                    <span><br/>Open 24 Hours</span>
                   </h2>
                 </div>
-
                 <div className="call-button">
                   <Button
                     style={{
@@ -54,22 +41,51 @@ export default class HospitalCard extends React.Component {
                       color: "white",
                       opacity: "1",
                       width: "15em",
-                      height: "3em",
-                      fontSize: "1.1em",
+                      fontSize: "1em",
                       fontWeight: "500",
-                      marginTop: "4em",
-                      float: "right"
+                      marginTop: "1em"
                     }}
                   >
-                    <Icon name="phone" />
-                    Call Now
+                  <Icon name="phone" />
+                    Call: 999-999-9999
+                  </Button><br/>
+                  <Button
+                    style={{
+                      backgroundColor: "#32ed00",
+                      color: "black",
+                      opacity: "1",
+                      width: "18.55em",
+                      height: "3em",
+                      fontSize: "0.81em",
+                      fontWeight: "500",
+                      marginTop:"0.5em"
+                    }}
+                  > <Icon name="rupee" /> Registration Charges 500/-
                   </Button>
+                </div>
+                <div className="book-button">
+                  <Button
+                    style={{
+                      backgroundColor: "#263868",
+                      color: "white",
+                      opacity: "1",
+                      width: "11em",
+                      height:"5em",
+                      fontSize: "1em",
+                      fontWeight: "500",
+                      marginTop: "1em"
+                    }}
+                  >
+                  <Icon name="book" />
+                    Book Now
+                  </Button>                
                 </div>
               </Grid.Column>
             </Grid.Row>
           </Grid>
 
-          {/* <Divider />
+          {
+          /* <Divider />
 
           <div>
             <div className="phone-number-text-div">
@@ -78,7 +94,8 @@ export default class HospitalCard extends React.Component {
             <div className="phone-number-div">
               <p className="phone-number-p">080 7196 6843</p>
             </div>
-          </div> */}
+          </div> */
+        }
         </Segment>
       </div>
     );

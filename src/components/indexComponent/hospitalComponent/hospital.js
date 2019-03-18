@@ -1,5 +1,6 @@
 import React from "react";
-import {withRouter} from 'react-router-dom';
+import {Link,withRouter} from 'react-router-dom';
+
 import { Card, Container, Button } from "semantic-ui-react";
 import "../../../static/css/root.css";
 import "./static/css/hospital.css";
@@ -19,26 +20,37 @@ class Hospital extends React.Component {
           <div className="tile is-vertical is-8">
             <div className="tile">
               <div className="hos1 tile is-parent is-vertical">
-                <div className="hoschild tile is-child" onClick={() => this.nextPath('/detail')}>
-                    <span className="hospital-header">HOSPITAL-1</span>
-                  <p className="subtitle"></p>
-                </div>
+                <Link to='/detail'>
+                  <div className="hoschild tile is-child">
+                      <span>HOSPITAL-1</span>
+                  </div>
+                </Link>
               </div>
-              <div className="hos2 tile is-parent">
-                <article className="hoschild tile is-child">
-                  <p className="hospital-header">HOSPITAL-2</p>
-                </article>
-              </div>
+                <Link to='/detail'>
+                  <div className="hos2 tile is-parent">
+                    <article className="hoschild tile is-child">
+                      <p>HOSPITAL-2</p>
+                    </article>
+                  </div>
+                </Link>
             </div>
             <div className="hos3 tile is-parent">
               <article className="hoschild tile is-child">
-                <p className="hospital-header">HOSPITAL-3</p>
+                <Link to='/detail'>
+                  <div className="hoschild tile is-child">
+                      <span>HOSPITAL-3</span>
+                  </div>
+                </Link>
               </article>
             </div>
           </div>
           <div className="hos4 tile is-parent">
               <div className="hoschild content">
-                <p className="hospital-header">HOSPITAL-4</p>
+                <Link to='/detail'>
+                  <div className="hoschild tile is-child">
+                      <span>HOSPITAL-4</span>
+                  </div>
+                </Link>
                 <div className="content">
                 </div>
               </div>

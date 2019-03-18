@@ -6,7 +6,7 @@ import "./static/css/airAmbulance.css";
 
 export default class AirAmbulance extends React.Component {
   gotoAA(){
-    window.location.hash = "/aa/";
+    window.location.hash = "/ambulance";
   }
 
   render() {
@@ -21,7 +21,7 @@ export default class AirAmbulance extends React.Component {
                 <p>Dead artisanal boat BASE jump garage claymore mine otaku city systema pen youtube beef noodles concrete weathered j-pop tube hacker. Refrigerator systemic RAF knife futurity tanto dissident Legba sensory franchise ablative tattoo camera man math-BASE jump. Lights city claymore mine Chiba human gang advert urban warehouse grenade 8-bit knife. Long-chain hydrocarbons kanji Kowloon systema digital cartel narrative claymore mine hacker. Marketing dead drugs physical weathered monofilament papier-mache girl Legba construct crypto-sunglasses geodesic singularity tank-traps boy.  </p>
                 <Route render={(
                   {history}) => (
-                  <Button onClick={() => { history.push('/aa') }}>Details</Button>
+                    <Button onClick={() => { history.push('/ambulance') }}>Details</Button>
                   )} 
                 />
               </Grid.Column>

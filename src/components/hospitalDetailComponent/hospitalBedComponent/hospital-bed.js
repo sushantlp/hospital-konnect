@@ -33,7 +33,12 @@ export default class HospitalBed extends React.Component {
                   <p className="hospital-bed-available">
                     <span>Availability :</span>
 
-                    <span className="hospital-bed-available-count">100</span>
+                    <span className="hospital-bed-available-count">Yes/No</span>                  </p>
+                  <p className="hospital-bed-available">
+                    <span>Cancellation Policy</span>
+                  </p>
+                  <p className="hospital-bed-available">
+                    <span>Terms and Conditions</span>
                   </p>
                 </div>
               </Grid.Column>
@@ -99,9 +104,15 @@ export default class HospitalBed extends React.Component {
 
                   <p className="hospital-bed-available">
                     <span>Availability :</span>
-
-                    <span className="hospital-bed-available-count">100</span>
+                    <span className="hospital-bed-available-count">Yes/No</span>                  
                   </p>
+                  <p className="hospital-bed-available">
+                    <span>Cancellation Policy</span>
+                  </p>
+                  <p className="hospital-bed-available">
+                    <span>Terms and Conditions</span>
+                  </p>
+
                 </div>
               </Grid.Column>
 
@@ -167,7 +178,12 @@ export default class HospitalBed extends React.Component {
                   <p className="hospital-bed-available">
                     <span>Availability :</span>
 
-                    <span className="hospital-bed-available-count">100</span>
+                    <span className="hospital-bed-available-count">Yes/No</span>                  </p>
+                  <p className="hospital-bed-available">
+                    <span>Cancellation Policy</span>
+                  </p>
+                  <p className="hospital-bed-available">
+                    <span>Terms and Conditions</span>
                   </p>
                 </div>
               </Grid.Column>

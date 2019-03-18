@@ -8,6 +8,7 @@ import Footer from "../footerComponent/footer";
 import "./static/css/index.css";
 
 export default class Index extends React.Component {
+      
   render() {
     return (
       <div>

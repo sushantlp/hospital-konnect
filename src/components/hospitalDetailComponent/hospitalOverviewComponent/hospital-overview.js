@@ -13,11 +13,11 @@ export default class HospitalOverview extends React.Component {
           <span>About People Tree Hospitals</span>
         </h2>
 
-        <ShowMore lines={3} more="[more]" less="[shrink]" anchorClass="">
+        <ShowMore lines={3} more="[Full Description]" less="[Shrink Description]" anchorClass="">
           PEOPLE TREE Hospitals, the dream initiative of this group of highly
           qualified and experienced doctors, having been trained in some of the
           hospitals across the world, today is a reality. Here we believe that
-          quality care should become every citizen‘s birth right. We are on a
+          quality care should become every citizen‘s birth right. <br/><br/><br/><br/>We are on a
           mission to provide each and every one who enters our hospital, the
           same quality of care that we would want for ourselves, our children,
           our parents, family, and friends. We hope to transform healthcare in
@@ -74,17 +74,6 @@ export default class HospitalOverview extends React.Component {
                       | Insurance
                     </span>
                   </p>
-                  <p>
-                    Number of{" "}
-                    <span className="hospital-overview-bed">Beds - 200</span>
-                  </p>
-
-                  <p>
-                    Number of{" "}
-                    <span className="hospital-overview-ambulance">
-                      Ambulances - 4
-                    </span>
-                  </p>
                 </div>
               </Grid.Column>
             </Grid.Row>
@@ -107,22 +96,6 @@ export default class HospitalOverview extends React.Component {
                       <li className="amenities-li">Internet/Wifi</li>
                       <li className="amenities-li">Prayer Room</li>
                       <li className="amenities-li">Laundry Room</li>
-                    </ul>
-                  </span>
-                </div>
-              </Grid.Column>
-              <Grid.Column>
-                <div>
-                  <h5>
-                    <span>Awards</span>
-                  </h5>
-
-                  <span>
-                    <ul className="amenities-ul">
-                      <li>
-                        India's Most Promising & Valuable Emerging Hospitals,
-                        2014
-                      </li>
                     </ul>
                   </span>
                 </div>

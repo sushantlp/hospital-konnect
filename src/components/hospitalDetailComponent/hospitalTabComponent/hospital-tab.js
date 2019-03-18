@@ -4,6 +4,7 @@ import { Tab, Segment } from "semantic-ui-react";
 
 import HospitalOverview from "../hospitalOverviewComponent/hospital-overview";
 import HospitalSpecialist from "../hospitalSpecialistComponent/hospital-specialist";
+import HospitalServices from "../hospitalServicesComponent/hospital-services";
 import HospitalDoctor from "../hospitalDoctorComponent/hospital-doctor";
 import HospitalBed from "../hospitalBedComponent/hospital-bed";
 import HospitalAmbulance from "../hospitalAmbulanceComponent/hospital-ambulance";
@@ -76,6 +77,14 @@ export default class HospitalTab extends React.Component {
             <HospitalSpecialist />
           </Tab.Pane>
         )
+      },,
+      {
+        menuItem: "Services",
+        render: () => (
+          <Tab.Pane>
+            <HospitalServices />
+          </Tab.Pane>
+        )
       }
     ];
 
@@ -87,45 +96,7 @@ export default class HospitalTab extends React.Component {
           panes={panes}
           onTabChange={(event, data) => this.tabChange(event, data.activeIndex)}
         />
-        <Segment
-          style={{
-            display: this.state.hidden_segment ? "none" : "block"
-          }}
-        >
-          <HospitalSpecialist />
-        </Segment>
 
-        <Segment
-          style={{
-            display: this.state.hidden_segment ? "none" : "block"
-          }}
-        >
-          <HospitalDoctor />
-        </Segment>
-
-        <Segment
-          style={{
-            display: this.state.hidden_segment ? "none" : "block"
-          }}
-        >
-          <HospitalBed />
-        </Segment>
-
-        <Segment
-          style={{
-            display: this.state.hidden_segment ? "none" : "block"
-          }}
-        >
-          <HospitalAmbulance />
-        </Segment>
-
-        <Segment
-          style={{
-            display: this.state.hidden_segment ? "none" : "block"
-          }}
-        >
-          <HospitalMap />
-        </Segment>
       </div>
     );
   }
