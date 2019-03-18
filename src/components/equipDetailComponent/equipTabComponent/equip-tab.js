@@ -63,41 +63,7 @@ export default class EquipTab extends React.Component {
           panes={panes}
           onTabChange={(event, data) => this.tabChange(event, data.activeIndex)}
         />
-        <Segment
-          style={{
-            display: this.state.hidden_segment ? "none" : "block"
-          }}
-        >
-          <HospitalSpecialist />
-        </Segment>
-        <Segment
-          style={{
-            display: this.state.hidden_segment ? "none" : "block"
-          }}
-        >
-          <HospitalDoctor />
-        </Segment>
-        <Segment
-          style={{
-            display: this.state.hidden_segment ? "none" : "block"
-          }}
-        >
-          <HospitalBed />
-        </Segment>
-        <Segment
-          style={{
-            display: this.state.hidden_segment ? "none" : "block"
-          }}
-        >
-          <HospitalAmbulance />
-        </Segment>w
-        <Segment
-          style={{
-            display: this.state.hidden_segment ? "none" : "block"
-          }}
-        >
-          <HospitalMap />
-        </Segment>
+
       </div>
     );
   }

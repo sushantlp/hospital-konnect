@@ -57,19 +57,11 @@ export default class NursingTab extends React.Component {
 
     return (
       // menu={{ pointing: true, className: "wrapped" }}
-
       <div className="tab-container">
         <Tab
           panes={panes}
           onTabChange={(event, data) => this.tabChange(event, data.activeIndex)}
         />
-        <Segment
-          style={{
-            display: this.state.hidden_segment ? "none" : "block"
-          }}
-        >
-          <HospitalDoctor />
-        </Segment>
       </div>
     );
   }

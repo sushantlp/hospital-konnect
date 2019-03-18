@@ -78,8 +78,8 @@ export default class Ambulance extends React.Component {
   render() {
     const settings = {
       dots: false,
-      infinite: false,
-      slidesToShow: 4,
+      infinite: true,
+      slidesToShow: 3,
       slidesToScroll: 1,
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />
@@ -92,10 +92,10 @@ export default class Ambulance extends React.Component {
             <div className="underscore" />
           </div>
           <Slider {...settings}>
-            <div>
+            <div className='SliderContainer'>
               <List.Item className='link'>
                 <Link to="/ambulance">
-                  <Card className="hospital-card">
+                  <Card className="ui fluid card">
                     <div className="ui fluid image">
                       <img
                         src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124570/ballyhoo/BALLYHOO_WEBSITE/hospital1.jpg"
@@ -107,8 +107,8 @@ export default class Ambulance extends React.Component {
                 </Link>
               </List.Item>
             </div>
-            <div>
-              <Card className="hospital-card">
+            <div className='SliderContainer'>
+              <Card className="ui fluid card">
                 <div className="ui fluid image">
                   <img
                     src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124570/ballyhoo/BALLYHOO_WEBSITE/hospital3.jpg"
@@ -118,8 +118,8 @@ export default class Ambulance extends React.Component {
                 </div>
               </Card>
             </div>
-            <div>
-              <Card className="hospital-card">
+            <div className='SliderContainer'>
+              <Card className="ui fluid card">
                 <div className="ui fluid image">
                   <img
                     src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124571/ballyhoo/BALLYHOO_WEBSITE/hospital4.jpg"
@@ -129,8 +129,8 @@ export default class Ambulance extends React.Component {
                 </div>
               </Card>
             </div>
-            <div>
-              <Card className="hospital-card">
+            <div className='SliderContainer'>
+              <Card className="ui fluid card">
                 <div className="ui fluid image">
                   <img
                     src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124571/ballyhoo/BALLYHOO_WEBSITE/hospital8.jpg"
@@ -140,8 +140,8 @@ export default class Ambulance extends React.Component {
                 </div>
               </Card>
             </div>
-            <div>
-              <Card className="hospital-card">
+            <div className='SliderContainer'>
+              <Card className="ui fluid card">
                 <div className="ui fluid image">
                   <img
                     src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124571/ballyhoo/BALLYHOO_WEBSITE/hospital4.jpg"
@@ -151,8 +151,8 @@ export default class Ambulance extends React.Component {
                 </div>
               </Card>
             </div>
-            <div>
-              <Card className="hospital-card">
+            <div className='SliderContainer'>
+              <Card className="ui fluid card">
                 <div className="ui fluid image">
                   <img
                     src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124571/ballyhoo/BALLYHOO_WEBSITE/hospital4.jpg"

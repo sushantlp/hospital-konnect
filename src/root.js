@@ -13,7 +13,6 @@ import Privacy from "./components/privacyComponent/privacy";
 import Term from "./components/termComponent/term";
 import HospitalList from "./components/hospitalListComponent";
 import HospitalDetail from "./components/hospitalDetailComponent";
-
 import AmbulanceDetail from "./components/ambulanceDetailComponent";
 import NursingDetail from "./components/nursingDetailComponent";
 import EquipDetail from "./components/equipDetailComponent";

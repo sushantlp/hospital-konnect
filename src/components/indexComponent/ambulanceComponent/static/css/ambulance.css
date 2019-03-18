@@ -1,6 +1,7 @@
 .ambulance-container {
   margin-top: 8vh;
 }
+
 .ambulance-header {
   position: absolute;
   bottom: 0;
@@ -13,6 +14,7 @@
   box-shadow: 4px 4px 10px 0;
   padding: 2px;
 }
+
 .ambulance-card:hover {
   transform: scale(1.04);
   opacity: 1 !important;
@@ -22,6 +24,13 @@
 /* Not Use if use style tag*/
 .ambulance-card {
   box-shadow: 4px 4px 10px 0;
+  width: 150%;
+
+  margin-left: 10px;
+}
+
+.clear{
+  margin-left: 20px;
 }
 
 .slick-prev,
@@ -37,4 +46,8 @@
 .ambulance-container {
   margin-top: 20px;
   margin-bottom: -22px;
+}
+
+.ui.fluid.card{
+  padding-right: 20px;
 }

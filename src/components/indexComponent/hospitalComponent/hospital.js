@@ -44,7 +44,7 @@ class Hospital extends React.Component {
               </article>
             </div>
           </div>
-          <div className="hos4 tile is-parent">
+          <div className="hos4 tile is-parent is-vertical">
               <div className="hoschild content">
                 <Link to='/detail'>
                   <div className="hoschild tile is-child">
@@ -54,6 +54,15 @@ class Hospital extends React.Component {
                 <div className="content">
                 </div>
               </div>
+              <div className="hoschild content">
+                <Link to='/detail'>
+                  <div className="hos5 hoschild tile is-child">
+                      <span>HOSPITAL-5</span>
+                  </div>
+                </Link>
+                <div className="content">
+                </div>
+              </div>              
           </div>
         </div>                  
       </Container>   

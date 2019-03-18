@@ -46,34 +46,10 @@ export default class HospitalTab extends React.Component {
         )
       },
       {
-        menuItem: "Doctors",
+        menuItem: "Ambulance",
         render: () => (
           <Tab.Pane>
             <HospitalDoctor />
-          </Tab.Pane>
-        )
-      },
-      {
-        menuItem: "Beds",
-        render: () => (
-          <Tab.Pane>
-            <HospitalBed />
-          </Tab.Pane>
-        )
-      },
-      {
-        menuItem: "Ambulances",
-        render: () => (
-          <Tab.Pane>
-            <HospitalAmbulance />
-          </Tab.Pane>
-        )
-      },
-      {
-        menuItem: "Specialists",
-        render: () => (
-          <Tab.Pane>
-            <HospitalSpecialist />
           </Tab.Pane>
         )
       }
@@ -87,45 +63,6 @@ export default class HospitalTab extends React.Component {
           panes={panes}
           onTabChange={(event, data) => this.tabChange(event, data.activeIndex)}
         />
-        <Segment
-          style={{
-            display: this.state.hidden_segment ? "none" : "block"
-          }}
-        >
-          <HospitalSpecialist />
-        </Segment>
-
-        <Segment
-          style={{
-            display: this.state.hidden_segment ? "none" : "block"
-          }}
-        >
-          <HospitalDoctor />
-        </Segment>
-
-        <Segment
-          style={{
-            display: this.state.hidden_segment ? "none" : "block"
-          }}
-        >
-          <HospitalBed />
-        </Segment>
-
-        <Segment
-          style={{
-            display: this.state.hidden_segment ? "none" : "block"
-          }}
-        >
-          <HospitalAmbulance />
-        </Segment>
-
-        <Segment
-          style={{
-            display: this.state.hidden_segment ? "none" : "block"
-          }}
-        >
-          <HospitalMap />
-        </Segment>
       </div>
     );
   }
