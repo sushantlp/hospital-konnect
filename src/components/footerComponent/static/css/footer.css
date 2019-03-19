@@ -3,7 +3,6 @@
   margin-top: 1.5rem;
   padding: 10px;
   bottom: 0;
-
 }
 
 .list{
@@ -26,4 +25,12 @@
 
 .links{
     border: 1px solid white;
+}
+
+.center{
+  margin: 0 auto;
+}
+
+.right{
+
 }

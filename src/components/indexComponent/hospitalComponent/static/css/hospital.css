@@ -10,7 +10,8 @@
   color: black;
   text-transform: uppercase;
 }
-  .hospital-header span{
+  
+.hospital-header span{
     position: absolute;
     bottom:0;
   }
