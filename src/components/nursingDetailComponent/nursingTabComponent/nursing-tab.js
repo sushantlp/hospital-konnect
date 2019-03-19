@@ -1,14 +1,11 @@
 import React from "react";
-
 import { Tab, Segment } from "semantic-ui-react";
-
 import HospitalOverview from "../hospitalOverviewComponent/hospital-overview";
 import HospitalSpecialist from "../hospitalSpecialistComponent/hospital-specialist";
 import HospitalDoctor from "../hospitalDoctorComponent/hospital-doctor";
 import HospitalBed from "../hospitalBedComponent/hospital-bed";
 import HospitalAmbulance from "../hospitalAmbulanceComponent/hospital-ambulance";
 import HospitalMap from "../hospitalMapComponent/hospital-map";
-
 import "./static/css/hospital-tab.css";
 
 export default class NursingTab extends React.Component {
@@ -38,7 +35,7 @@ export default class NursingTab extends React.Component {
   render() {
     const panes = [
       {
-        menuItem: "Overview",
+        menuItem: "Basic Details",
         render: () => (
           <Tab.Pane>
             <HospitalOverview />
@@ -46,7 +43,7 @@ export default class NursingTab extends React.Component {
         )
       },
       {
-        menuItem: "Nursing",
+        menuItem: "Nursing Care Details",
         render: () => (
           <Tab.Pane>
             <HospitalDoctor />

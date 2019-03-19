@@ -28,23 +28,22 @@ export default class EquipCard extends React.Component {
                     <span>West Of Chord Road, Bangalore</span>
                   </h2>
 
-                  <h2 className="hospital-specialist">
-                    <span>EQUIPMENT Details</span>
 
+                  <h2 className="hospital-specialist">
+{/*                <span>EQUIPMENT Details</span>
                     <span className="bed">
                       <span className="bed-dot">.</span>
                       <span className="bed-count">100</span>
                       <span className="bed-text">Beds</span>
                     </span>
-
                     <span className="doctor">
                       <span className="doctor-dot">.</span>
                       <span className="doctor-count">21</span>
                       <span className="doctor-text">Doctors</span>
                     </span>
+*/}                  
                   </h2>
                 </div>
-
                 <div className="call-button">
                   <Button
                     style={{
@@ -67,8 +66,9 @@ export default class EquipCard extends React.Component {
             </Grid.Row>
           </Grid>
 
-          {/* <Divider />
-
+          {
+          /* 
+          <Divider />
           <div>
             <div className="phone-number-text-div">
               <span className="phone-number-text">Phone number</span>
@@ -76,7 +76,9 @@ export default class EquipCard extends React.Component {
             <div className="phone-number-div">
               <p className="phone-number-p">080 7196 6843</p>
             </div>
-          </div> */}
+          </div> 
+          */
+        }
         </Segment>
       </div>
     );

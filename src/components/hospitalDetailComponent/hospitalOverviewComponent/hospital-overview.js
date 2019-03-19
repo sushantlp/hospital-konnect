@@ -17,7 +17,8 @@ export default class HospitalOverview extends React.Component {
           PEOPLE TREE Hospitals, the dream initiative of this group of highly
           qualified and experienced doctors, having been trained in some of the
           hospitals across the world, today is a reality. Here we believe that
-          quality care should become every citizen‘s birth right. <br/><br/><br/><br/>
+          quality care should become every citizen‘s birth right. 
+          <br/><br/><br/><br/>
           We are on a mission to provide each and every one who enters our hospital, the
           same quality of care that we would want for ourselves, our children,
           our parents, family, and friends. We hope to transform healthcare in

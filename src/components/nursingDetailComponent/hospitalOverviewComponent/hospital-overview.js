@@ -1,8 +1,6 @@
 import React from "react";
-
 import ShowMore from "react-show-more";
 import { Grid } from "semantic-ui-react";
-
 import "./static/css/hospital-overview.css";
 
 export default class HospitalOverview extends React.Component {
@@ -13,7 +11,7 @@ export default class HospitalOverview extends React.Component {
           <span>About People Tree Hospitals</span>
         </h2>
 
-        <ShowMore lines={3} more="[more]" less="[shrink]" anchorClass="">
+        <ShowMore lines={3} more="[Read More]" less="[Read Less]" anchorClass="">
           PEOPLE TREE Hospitals, the dream initiative of this group of highly
           qualified and experienced doctors, having been trained in some of the
           hospitals across the world, today is a reality. Here we believe that
@@ -34,7 +32,7 @@ export default class HospitalOverview extends React.Component {
           wing of PEOPLE TREE hospitals. Foundation will work towards providing
           quality healthcare free of cost to poor & needy patients.
         </ShowMore>
-
+{/*
         <div className="hospital-overview-grid">
           <Grid stackable>
             <Grid.Row columns={3}>
@@ -43,7 +41,6 @@ export default class HospitalOverview extends React.Component {
                   <h5>
                     <span>Address</span>
                   </h5>
-
                   <span>
                     2, Tumkur Service Road, Goraguntepalya Landmark: Near BMTC
                     Bus Stop And Opposite Taj Vivanta Yeshwanthpur, Bangalore
@@ -145,6 +142,7 @@ export default class HospitalOverview extends React.Component {
             </Grid.Row>
           </Grid>
         </div>
+*/}        
       </div>
     );
   }

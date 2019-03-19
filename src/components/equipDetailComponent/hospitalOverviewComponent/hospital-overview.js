@@ -34,7 +34,7 @@ export default class HospitalOverview extends React.Component {
           wing of PEOPLE TREE hospitals. Foundation will work towards providing
           quality healthcare free of cost to poor & needy patients.
         </ShowMore>
-
+{/*
         <div className="hospital-overview-grid">
           <Grid stackable>
             <Grid.Row columns={3}>
@@ -145,6 +145,7 @@ export default class HospitalOverview extends React.Component {
             </Grid.Row>
           </Grid>
         </div>
+*/}
       </div>
     );
   }

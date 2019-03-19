@@ -23,7 +23,7 @@ export default class NursingCard extends React.Component {
               <Grid.Column width={14}>
                 <div>
                   <h1 className="hospital-name">
-                    <span>PROVIDER DETAILS</span>
+                    <span>Nursing Care Name</span>
                   </h1>
 
                   <h2 className="hospital-address">
@@ -31,7 +31,7 @@ export default class NursingCard extends React.Component {
                   </h2>
 
                   <h2 className="hospital-specialist">
-                    <span>DETAILS</span>
+{/*                 <span>DETAILS</span>
 
                     <span className="bed">
                       <span className="bed-dot">.</span>
@@ -44,6 +44,7 @@ export default class NursingCard extends React.Component {
                       <span className="doctor-count">21</span>
                       <span className="doctor-text">Doctors</span>
                     </span>
+*/}
                   </h2>
                 </div>
 
