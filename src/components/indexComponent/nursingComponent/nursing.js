@@ -9,7 +9,7 @@ export default class Nursing extends React.Component {
     return (
       <Container style={{ width: "89em" }}>
       <div className="ambulance-container">
-        <h4 className="header-name">NURSING</h4>
+        <h4 className="header-name">NURSING CARE</h4>
         <div className="underscore" /><br/>
         <div className="columns">
               <div className="column">
@@ -20,7 +20,7 @@ export default class Nursing extends React.Component {
                         src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124570/ballyhoo/BALLYHOO_WEBSITE/hospital1.jpg"
                         alt=""
                       />
-                      <span className="hospital-header">Nursing-1</span>
+                      <span className="hospital-header">Nursing Care-1</span>
                     </div>
                   </Card>
                 </Link>
@@ -33,7 +33,7 @@ export default class Nursing extends React.Component {
                         src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124570/ballyhoo/BALLYHOO_WEBSITE/hospital1.jpg"
                         alt=""
                       />
-                      <span className="hospital-header">Nursing-1</span>
+                      <span className="hospital-header">Nursing Care-2</span>
                     </div>
                   </Card>
                 </Link>
@@ -46,7 +46,7 @@ export default class Nursing extends React.Component {
                         src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124570/ballyhoo/BALLYHOO_WEBSITE/hospital1.jpg"
                         alt=""
                       />
-                      <span className="hospital-header">Nursing-1</span>
+                      <span className="hospital-header">Nursing Care-3</span>
                     </div>
                   </Card>
                 </Link>
@@ -59,7 +59,7 @@ export default class Nursing extends React.Component {
                         src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124570/ballyhoo/BALLYHOO_WEBSITE/hospital1.jpg"
                         alt=""
                       />
-                      <span className="hospital-header">Nursing-1</span>
+                      <span className="hospital-header">Nursing Care-4</span>
                     </div>
                   </Card>
                 </Link>
@@ -72,7 +72,7 @@ export default class Nursing extends React.Component {
                         src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124570/ballyhoo/BALLYHOO_WEBSITE/hospital1.jpg"
                         alt=""
                       />
-                      <span className="hospital-header">Nursing-1</span>
+                      <span className="hospital-header">Nursing Care-5</span>
                     </div>
                   </Card>
                 </Link>

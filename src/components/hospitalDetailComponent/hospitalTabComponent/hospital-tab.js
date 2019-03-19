@@ -39,7 +39,7 @@ export default class HospitalTab extends React.Component {
   render() {
     const panes = [
       {
-        menuItem: "Overview",
+        menuItem: "Basic Details",
         render: () => (
           <Tab.Pane>
             <HospitalOverview />
@@ -47,7 +47,7 @@ export default class HospitalTab extends React.Component {
         )
       },
       {
-        menuItem: "Doctors",
+        menuItem: "Doctor Details",
         render: () => (
           <Tab.Pane>
             <HospitalDoctor />
@@ -55,7 +55,7 @@ export default class HospitalTab extends React.Component {
         )
       },
       {
-        menuItem: "Beds",
+        menuItem: "Bed Details",
         render: () => (
           <Tab.Pane>
             <HospitalBed />
@@ -63,7 +63,7 @@ export default class HospitalTab extends React.Component {
         )
       },
       {
-        menuItem: "Ambulances",
+        menuItem: "Ambulance Details",
         render: () => (
           <Tab.Pane>
             <HospitalAmbulance />

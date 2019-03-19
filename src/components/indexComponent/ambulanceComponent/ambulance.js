@@ -88,7 +88,7 @@ export default class Ambulance extends React.Component {
       <Container style={{ width: "89em" }}>
         <div>
           <div className="ambulance-container" >
-            <h4 className="header-name">AMBULANCE</h4>
+            <h4 className="header-name">GROUND AMBULANCE</h4>
             <div className="underscore" />
           </div>
           <Slider {...settings}>

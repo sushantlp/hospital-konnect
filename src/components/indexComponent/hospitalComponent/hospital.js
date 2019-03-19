@@ -14,7 +14,7 @@ class Hospital extends React.Component {
   render() {
     return (
         <Container style={{ width: "89em" }}>
-        <h4 className="header-name">HOSPITAL</h4>
+        <h4 className="header-name">HOSPITALS</h4>
         <div className="underscore" /> 
         <div className="tile is-ancestor nursingcontainer">
           <div className="tile is-vertical is-8">

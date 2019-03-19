@@ -38,7 +38,7 @@ export default class HospitalTab extends React.Component {
   render() {
     const panes = [
       {
-        menuItem: "Overview",
+        menuItem: "Basic Details",
         render: () => (
           <Tab.Pane>
             <HospitalOverview />
@@ -46,7 +46,7 @@ export default class HospitalTab extends React.Component {
         )
       },
       {
-        menuItem: "Ambulance",
+        menuItem: "Ambulance Details",
         render: () => (
           <Tab.Pane>
             <HospitalDoctor />

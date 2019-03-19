@@ -10,10 +10,10 @@ export default class HospitalOverview extends React.Component {
     return (
       <div>
         <h2 className="hospital-overview-title">
-          <span>About People Tree Hospitals</span>
+          <span>About Ambulance</span>
         </h2>
 
-        <ShowMore lines={3} more="[more]" less="[shrink]" anchorClass="">
+        <ShowMore lines={3} more="[Read More]" less="[Read Less]" anchorClass="">
           PEOPLE TREE Hospitals, the dream initiative of this group of highly
           qualified and experienced doctors, having been trained in some of the
           hospitals across the world, today is a reality. Here we believe that

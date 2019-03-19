@@ -1,7 +1,5 @@
 import React from "react";
-
 import { Segment, Image, Grid, Icon, Button, Divider } from "semantic-ui-react";
-
 import "./static/css/hospital-detail-card.css";
 
 export default class AmbulanceCard extends React.Component {
@@ -23,7 +21,7 @@ export default class AmbulanceCard extends React.Component {
               <Grid.Column width={14}>
                 <div>
                   <h1 className="hospital-name">
-                    <span>AMBULANCE DETAILS</span>
+                    <span>AMBULANCE NAME</span>
                   </h1>
 
                   <h2 className="hospital-address">
@@ -33,17 +31,6 @@ export default class AmbulanceCard extends React.Component {
                   <h2 className="hospital-specialist">
                     <span>Vehicle Details</span>
 
-                    <span className="bed">
-                      <span className="bed-dot">.</span>
-                      <span className="bed-count">100</span>
-                      <span className="bed-text">Beds</span>
-                    </span>
-
-                    <span className="doctor">
-                      <span className="doctor-dot">.</span>
-                      <span className="doctor-count">21</span>
-                      <span className="doctor-text">Doctors</span>
-                    </span>
                   </h2>
                 </div>
 
