@@ -15,15 +15,24 @@ export default class Animation extends React.Component {
     return (
       <React.Fragment>
         <ParallaxHeader />
+        
         <Search />
+        
         <Specialization />
+        
         <Hospital/>
+        
         <Ambulance />
+        
         <Nursing />
+        
         <Equipment/>        
+        
         <AirAmbulance />
+        
         <Footer />
+        
       </React.Fragment>
-    );
+      );
   }
 }

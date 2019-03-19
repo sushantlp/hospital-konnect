@@ -27,9 +27,8 @@ export default class EquipCard extends React.Component {
                   <h2 className="hospital-address">
                     <span>West Of Chord Road, Bangalore</span>
                   </h2>
-
-
                   <h2 className="hospital-specialist">
+
 {/*                <span>EQUIPMENT Details</span>
                     <span className="bed">
                       <span className="bed-dot">.</span>

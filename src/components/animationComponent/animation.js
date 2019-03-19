@@ -20,17 +20,17 @@ export default class Animation extends React.Component {
               <div class="tile">
                 <div class="tile is-parent is-vertical">
                   <article class="tile is-child notification is-success doctors hover">
-                    <h1>Hospitals</h1>
+                    <h1>Nursing</h1>
                     <p> </p>
                   </article>
                   <article class="tile is-child notification is-warning nurse hover">                
-                    <h1>Nursing</h1>
+                    <h1>Air Ambulance</h1>
                     <p><br/><br/><br/> </p>
                   </article>
                 </div>
                 <div class="tile is-parent">
                   <article class="tile is-child notification is-danger ambulance hover">
-                    <h1>Ambulances</h1>
+                    <h1>Hospitals</h1>
                     <p>
                     <span className="adjustment"><br/><br/><br/><br/><br/>
                     <br/><br/><br/><br/><br/> <br/><br/><br/><br/> <br/><br/> 
@@ -43,11 +43,11 @@ export default class Animation extends React.Component {
             </div>
             <div class="tile is-parent is-vertical">
               <article class="tile is-child notification is-dark equipment hover">
-                <h1>Medical Equipment</h1>
+                <h1>Ground Ambulance</h1>
                  <p></p>
              </article>
               <article class="tile is-child notification is-info aambulance hover">
-                <h1>Air Ambulance</h1>
+                <h1>Medical Equipment</h1>
                  <p className="mark"><br/><br/><br/><br/><br/><br/><br/></p>
              </article>
             </div>
