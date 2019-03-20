@@ -22,15 +22,17 @@ class Hospital extends React.Component {
         <div className="tile is-parent">
           <Link to='/detail'>
             <div className="hos4 tile">    
-              <div>
+              <div className='text'>
                   <span className="hospital-header">HOSPITAL-1</span>
+                  <span className="hospital-subheader">Kalyannagar</span>
               </div>
             </div>
           </Link>            
           <Link to='/detail'>
             <div className="hos5 tile">    
-              <div>
+              <div className='text'>
                   <span className="hospital-header">HOSPITAL-2</span>
+                  <span className="hospital-subheader">Kalyannagar</span>
               </div>
             </div>
           </Link>            
@@ -38,22 +40,25 @@ class Hospital extends React.Component {
         <div className="tile is-parent">
           <Link to='/detail'>
             <div className="hos1 tile">    
-              <div>
+              <div className='text'>
                   <span className="hospital-header">HOSPITAL-3</span>
+                  <span className="hospital-subheader">Kalyannagar</span>
               </div>
             </div>
           </Link>
           <Link to='/detail'>
             <div className="hos2 tile">    
-              <div>
+              <div className='text'>
                   <span className="hospital-header">HOSPITAL-4</span>
+                  <span className="hospital-subheader">Kalyannagar</span>
               </div>
             </div>
           </Link>
           <Link to='/detail'>
             <div className="hos3 tile">    
-              <div>
+              <div className='text'>
                   <span className="hospital-header">HOSPITAL-5</span>
+                  <span className="hospital-subheader">Kalyannagar</span>
               </div>
             </div>
           </Link>

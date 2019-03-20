@@ -17,19 +17,12 @@ export default class Animation extends React.Component {
         <ParallaxHeader />
         
         <Search />
-        
         <Specialization />
-        
         <Hospital/>
-        
         <Ambulance />
-        
+        <Equipment/>                
         <Nursing />
-        
-        <Equipment/>        
-        
         <AirAmbulance />
-        
         <Footer />
         
       </React.Fragment>

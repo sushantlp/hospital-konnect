@@ -20,7 +20,7 @@ export default class Animation extends React.Component {
               <div class="tile">
                 <div class="tile is-parent is-vertical">
                   <article class="tile is-child notification is-success nurse hover">
-                    <h1>Nursing</h1>
+                    <h1>Nursing Care</h1>
                     <p> </p>
                   </article>
                   <article class="tile is-child notification is-warning aambulance hover">                
