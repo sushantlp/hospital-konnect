@@ -5,7 +5,7 @@
 .hospital-header {
   font-weight: 600;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: pink;
+  -webkit-text-stroke-color: white;
   -webkit-font-smoothing: subpixel-antialiased;
   color: black;
   text-transform: uppercase;
@@ -83,7 +83,6 @@
     background: no-repeat url('../img/5.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-
 }
 
 .hoschild{

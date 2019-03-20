@@ -1,7 +1,10 @@
 .air-ambulance-container {
+  background: url('../img/3.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
-  background-color: pink;
+  background-position: center center;
   padding: 10px;
+  height:500px;
 
 }
 

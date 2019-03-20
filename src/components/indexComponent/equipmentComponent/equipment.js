@@ -4,6 +4,13 @@ import { Card, Container, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "../../../static/css/root.css";
 
+import e1 from './static/img/1.jpg';
+import e2 from './static/img/2.jpg';
+import e3 from './static/img/3.jpg';
+import e4 from './static/img/4.jpg';
+import e5 from './static/img/5.jpg';
+
+  
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
@@ -93,10 +100,7 @@ export default class Equipment extends React.Component {
                 <Link to='/equipment'>
                   <Card className="hospital-card">
                     <div className="ui fluid image">
-                      <img
-                        src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124570/ballyhoo/BALLYHOO_WEBSITE/hospital1.jpg"
-                        alt=""
-                      />
+                      <img src={e1} alt=""/>
                       <span className="hospital-header">Medical Equipment-1</span>
                     </div>
                   </Card>
@@ -105,10 +109,7 @@ export default class Equipment extends React.Component {
                  <div>
                   <Card className="hospital-card">
                     <div className="ui fluid image">
-                      <img
-                        src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124570/ballyhoo/BALLYHOO_WEBSITE/hospital3.jpg"
-                        alt=""
-                      />
+                      <img src={e2} alt=""/>
                       <span className="hospital-header">Medical Equipment-2</span>
                     </div>
                   </Card>
@@ -116,10 +117,7 @@ export default class Equipment extends React.Component {
             <div>
               <Card className="hospital-card">
                 <div className="ui fluid image">
-                  <img
-                    src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124571/ballyhoo/BALLYHOO_WEBSITE/hospital4.jpg"
-                    alt=""
-                  />
+                  <img src={e3} alt=""/>
                   <span className="hospital-header">Medical Equipment-3</span>
                 </div>
               </Card>
@@ -127,10 +125,7 @@ export default class Equipment extends React.Component {
              <div>
               <Card className="hospital-card">
                 <div className="ui fluid image">
-                  <img
-                    src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124571/ballyhoo/BALLYHOO_WEBSITE/hospital8.jpg"
-                    alt=""
-                  />
+                  <img src={e4} alt=""/>
                   <span className="hospital-header">Medical Equipment-4</span>
                 </div>
               </Card>
@@ -138,25 +133,11 @@ export default class Equipment extends React.Component {
              <div>
               <Card className="hospital-card">
                 <div className="ui fluid image">
-                  <img
-                    src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124571/ballyhoo/BALLYHOO_WEBSITE/hospital4.jpg"
-                    alt=""
-                  />
+                  <img src={e5} alt=""/>
                   <span className="hospital-header">Medical Equipment-5</span>
                 </div>
               </Card>
              </div>
-             <div>
-              <Card className="hospital-card">
-                <div className="ui fluid image">
-                  <img
-                    src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124571/ballyhoo/BALLYHOO_WEBSITE/hospital4.jpg"
-                    alt=""
-                  />
-                  <span className="hospital-header">Medical Equipment-6</span>
-                </div>
-              </Card>
-            </div>
           </Slider>
           </div>
         </div>

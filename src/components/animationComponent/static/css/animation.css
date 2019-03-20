@@ -1,6 +1,8 @@
-body{
+.overall{
   background: #263868;
+  height: 100vh;
 }
+
 .box {
   width: 10em;
   height: 10em;

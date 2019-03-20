@@ -12,7 +12,7 @@ export default class Animation extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="overall">
         <Header />
         <div className="tileContainer" onClick={() => this.nextPath('/initial') }>
           <div class="tile is-ancestor">

@@ -6,6 +6,13 @@ import { List, Card, Container, Icon } from "semantic-ui-react";
 import "../../../static/css/root.css";
 import "./static/css/ambulance.css";
 
+import ga1 from './static/img/1.jpg';
+import ga2 from './static/img/2.jpg';
+import ga3 from './static/img/3.jpg';
+import ga4 from './static/img/4.jpg';
+import ga5 from './static/img/5.jpg';
+
+
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
@@ -97,10 +104,7 @@ export default class Ambulance extends React.Component {
                 <Link to="/ambulance">
                   <Card className="ui fluid card">
                     <div className="ui fluid image">
-                      <img
-                        src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124570/ballyhoo/BALLYHOO_WEBSITE/hospital1.jpg"
-                        alt=""
-                      />
+                      <img src={ga1} alt=""/>
                       <span className="hospital-header">Hospital-1</span>
                     </div>
                   </Card>
@@ -110,10 +114,7 @@ export default class Ambulance extends React.Component {
             <div className='SliderContainer'>
               <Card className="ui fluid card">
                 <div className="ui fluid image">
-                  <img
-                    src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124570/ballyhoo/BALLYHOO_WEBSITE/hospital3.jpg"
-                    alt=""
-                  />
+                      <img src={ga2} alt=""/>
                   <span className="hospital-header">Hospital-2</span>
                 </div>
               </Card>
@@ -121,10 +122,7 @@ export default class Ambulance extends React.Component {
             <div className='SliderContainer'>
               <Card className="ui fluid card">
                 <div className="ui fluid image">
-                  <img
-                    src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124571/ballyhoo/BALLYHOO_WEBSITE/hospital4.jpg"
-                    alt=""
-                  />
+                  <img src={ga3} alt=""/>
                   <span className="hospital-header">Hospital-3</span>
                 </div>
               </Card>
@@ -132,10 +130,7 @@ export default class Ambulance extends React.Component {
             <div className='SliderContainer'>
               <Card className="ui fluid card">
                 <div className="ui fluid image">
-                  <img
-                    src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124571/ballyhoo/BALLYHOO_WEBSITE/hospital8.jpg"
-                    alt=""
-                  />
+                  <img src={ga4} alt=""/>
                   <span className="hospital-header">Hospital-4</span>
                 </div>
               </Card>
@@ -143,22 +138,8 @@ export default class Ambulance extends React.Component {
             <div className='SliderContainer'>
               <Card className="ui fluid card">
                 <div className="ui fluid image">
-                  <img
-                    src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124571/ballyhoo/BALLYHOO_WEBSITE/hospital4.jpg"
-                    alt=""
-                  />
+                  <img src={ga5} alt=""/>
                   <span className="hospital-header">Hospital-5</span>
-                </div>
-              </Card>
-            </div>
-            <div className='SliderContainer'>
-              <Card className="ui fluid card">
-                <div className="ui fluid image">
-                  <img
-                    src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_400,w_600/v1545124571/ballyhoo/BALLYHOO_WEBSITE/hospital4.jpg"
-                    alt=""
-                  />
-                  <span className="hospital-header">Hospital-6</span>
                 </div>
               </Card>
             </div>
