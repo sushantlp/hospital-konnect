@@ -33,6 +33,9 @@
     padding: 10px;
     height: 300px;
     width: 33.33vw;
+    background: no-repeat url('../img/1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .hos2{
     height: 300px;
@@ -41,6 +44,9 @@
     font-size: 1.5em;
     background-color: blue;
     width: 33.33vw;
+    background: no-repeat url('../img/2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .hos3{
     height: 300px;
@@ -49,6 +55,9 @@
     font-size: 1.5em;
     background-color: green;
     width: 33.33vw;
+    background: no-repeat url('../img/3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .hos4{
@@ -58,6 +67,10 @@
     font-size: 1.5em;
     background-size: cover;
     background-color: yellow;
+    background: no-repeat url('../img/4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
 }
 
 .hos5{
@@ -67,6 +80,10 @@
     font-size: 1.5em;
     background-size: cover;
     background-color: black;
+    background: no-repeat url('../img/5.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
 }
 
 .hoschild{

@@ -1,3 +1,6 @@
+body{
+  background: #263868;
+}
 .box {
   width: 10em;
   height: 10em;
@@ -34,10 +37,11 @@
 .tileContainer{
   width: 100vw;
   overflow: hidden;
+  background: #263868;
 }
 
 .doctors{
-    /*background-image: url('https://cdn.pixabay.com/photo/2017/01/31/17/25/doctor-2025725_960_720.png');*/
+    background-image: url(/*'../img/amb.jpg'*/);
     background-repeat: no-repeat;
     background-position: center; 
     position: relative;
@@ -47,37 +51,34 @@
 }
 
 .nurse{
-    /*background-image: url('https://cdn.pixabay.com/photo/2012/04/15/18/56/nurse-34914_960_720.png');*/
+    background-image: url('../img/nursing.jpg');
     background-repeat: no-repeat;
     background-position: center; 
-    position: relative;
-    background-size: contain;  
-    text-decoration-color: black;
+    background-size: cover;  
   
 }
 
 .ambulance{
-    /*background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuttU4ACP9D3S17sQvFS_nsqR3e1j5VWds0LcouPOsWHZVaJgcYg');*/
-    background-repeat: no-repeat;
-    background-position: center bottom;  
+    background-image: url('../img/hospital.jpg');
     background-size: contain;  
-    text-decoration-color: black;
+}
+
+.gambulance{
+    background-image: url('../img/gambulance.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .equipment{
-    /*background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0a/201306_needle_syringe.png');*/
+    background-image: url('../img/equip.jpg');
     background-repeat: no-repeat;
-    background-position: center bottom;  
-    background-size: contain;  
-    text-decoration-color: black;
+    background-size: cover;  
 }
 
 .aambulance{
-    /*background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4e/Pilatus_Agusta_A109_Flug-draw.png');*/
+    background-image: url('../img/aamb.jpg');
     background-repeat: no-repeat;
-    background-position: center right;  
-    background-size: 50%;  
-    text-decoration-color: black;     
+    background-size: cover;
 }
 
 .adjustment{
@@ -95,7 +96,9 @@
 }
 
 .tile.is-ancestor{
-  margin:0px !important
+  margin:0px !important;
+  padding: 1px;
+
 }
 
 .tile.is-parent{
