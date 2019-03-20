@@ -14,23 +14,26 @@ class Hospital extends React.Component {
   render() {
     return (
       <div>
-      <Container style={{width: "89em"}}>
+        <br/><br/>
+        <Container style={{
+        width: "89em"
+      }}>
         <h4 className="header-name">HOSPITALS</h4>
         <div className="underscore" /> 
       </Container>
       <div className="tile is-ancestor is-vertical">
         <div className="tile is-parent">
           <Link to='/detail'>
-            <div className="hos4 tile">    
-              <div className='text'>
+            <div className="hos5 tile">    
+              <div className='hostext'>
                   <span className="hospital-header">HOSPITAL-1</span>
                   <span className="hospital-subheader">Kalyannagar</span>
               </div>
             </div>
           </Link>            
           <Link to='/detail'>
-            <div className="hos5 tile">    
-              <div className='text'>
+            <div className="hos4 tile">    
+              <div className='hostext'>
                   <span className="hospital-header">HOSPITAL-2</span>
                   <span className="hospital-subheader">Kalyannagar</span>
               </div>
@@ -40,23 +43,23 @@ class Hospital extends React.Component {
         <div className="tile is-parent">
           <Link to='/detail'>
             <div className="hos1 tile">    
-              <div className='text'>
+              <div className='hostext'>
                   <span className="hospital-header">HOSPITAL-3</span>
                   <span className="hospital-subheader">Kalyannagar</span>
               </div>
             </div>
           </Link>
           <Link to='/detail'>
-            <div className="hos2 tile">    
-              <div className='text'>
+            <div className="hos3 tile">    
+              <div className='hostext'>
                   <span className="hospital-header">HOSPITAL-4</span>
                   <span className="hospital-subheader">Kalyannagar</span>
               </div>
             </div>
           </Link>
           <Link to='/detail'>
-            <div className="hos3 tile">    
-              <div className='text'>
+            <div className="hos2 tile">    
+              <div className='hostext'>
                   <span className="hospital-header">HOSPITAL-5</span>
                   <span className="hospital-subheader">Kalyannagar</span>
               </div>
@@ -65,7 +68,7 @@ class Hospital extends React.Component {
         </div>                      
       </div>      
       </div>
-   );
+      );
   }
 }
 

@@ -1,17 +1,14 @@
 import React from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-
 import { List, Card, Container, Icon } from "semantic-ui-react";
 import "../../../static/css/root.css";
 import "./static/css/ambulance.css";
-
 import ga1 from './static/img/1.jpg';
 import ga2 from './static/img/2.jpg';
 import ga3 from './static/img/3.jpg';
 import ga4 from './static/img/4.jpg';
 import ga5 from './static/img/5.jpg';
-
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -91,8 +88,10 @@ export default class Ambulance extends React.Component {
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />
     };
+
     return (
       <Container style={{ width: "89em" }}>
+      <br/>
         <div>
           <div className="ambulance-container" >
             <h4 className="header-name">GROUND AMBULANCE</h4>

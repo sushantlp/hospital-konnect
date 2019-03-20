@@ -57,7 +57,6 @@ export default class Nursing extends React.Component {
                 </Link>
               </div>
           </div>
-          <br/><br/>
         </div>
       </Container>
     );

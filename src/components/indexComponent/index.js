@@ -15,7 +15,6 @@ export default class Animation extends React.Component {
     return (
       <React.Fragment>
         <ParallaxHeader />
-        
         <Search />
         <Specialization />
         <Hospital/>
@@ -24,7 +23,6 @@ export default class Animation extends React.Component {
         <Nursing />
         <AirAmbulance />
         <Footer />
-        
       </React.Fragment>
       );
   }
