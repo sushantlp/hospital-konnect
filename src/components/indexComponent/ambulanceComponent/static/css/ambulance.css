@@ -10,8 +10,6 @@
   font-size: 14px;
   color: white;
   text-transform: uppercase;
-  background-color: rgb(39, 37, 37);
-  box-shadow: 4px 4px 10px 0;
   padding: 2px;
 }
 
@@ -22,13 +20,6 @@
 }
 
 /* Not Use if use style tag*/
-.ambulance-card {
-  box-shadow: 4px 4px 10px 0;
-  width: 150%;
-
-  margin-left: 10px;
-}
-
 .clear{
   margin-left: 20px;
 }
@@ -48,34 +39,13 @@
   margin-bottom: -22px;
 }
 
-.ui.fluid.card{
-  padding-right: 20px;
-}
-
-.a1{
-  background: url('../img/1.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  border: 1px solid red;
-}
-
-.gambtext{
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+63,636363+100&1+0,0.5+63,0+100 */
-background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 63%, rgba(99,99,99,0) 100%); 
-/* FF3.6-15 */
-background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(255,255,255,0.5) 63%,rgba(99,99,99,0) 100%); 
-/* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0.5) 63%,rgba(99,99,99,0) 100%); 
-/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00636363',GradientType=1 ); 
-/* IE6-9 */  
-width: 100%;
-padding: 10px;
-margin-top: 250px;
-margin-left: -10px;
-}
 
 .amb-header{
+  background: transparent;
   padding: 5px;
   font-size: 1.2em;
+}
+
+.ambulance{
+  margin: 10px;
 }

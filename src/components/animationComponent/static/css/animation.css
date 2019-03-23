@@ -1,5 +1,4 @@
 .overall{
-  background: #263868;
   height: 100vh;
 }
 
@@ -40,7 +39,7 @@
 .tileContainer{
   width: 100vw;
   overflow: hidden;
-  background: #263868;
+  /*background: #263868;*/
 }
 
 .doctors{

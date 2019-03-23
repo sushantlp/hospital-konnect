@@ -25,35 +25,35 @@ export default class Nursing extends React.Component {
                 <Link to="/nursing">
                   <Card className="ui card">
                     <img src={n1} alt="" />
-                    <span className="nursing-header">
-                      Nursing Care-1
-                    </span>
                   </Card>
                 </Link>
+                <span className="nursing-header">
+                      Nursing Care-1
+                </span>
               </div>
               <div className="column is-3">
                 <Link to="/nursing">
                   <Card className="ui card">
                       <img src={n2} alt="" />
-                      <span className="nursing-header">Nursing Care-2</span>
                   </Card>
                 </Link>
+                      <span className="nursing-header">Nursing Care-2</span>
               </div>
               <div className="column is-3">
                 <Link to="/nursing">
                   <Card className="ui card">
                       <img src={n3} alt="" />
-                      <span className="nursing-header">Nursing Care-3</span>
                   </Card>
                 </Link>
+                      <span className="nursing-header">Nursing Care-3</span>
               </div>
               <div className="column is-3">
                 <Link to="/nursing">
                   <Card className="ui card">
                       <img src={n4} alt="" />
-                      <span className="nursing-header">Nursing Care-4</span>
                   </Card>
                 </Link>
+                      <span className="nursing-header">Nursing Care-4</span>
               </div>
           </div>
         </div>

@@ -32,9 +32,10 @@ export default class Animation extends React.Component {
                   <article class="tile is-child notification is-danger ambulance hover">
                     <h1>Hospitals</h1>
                     <p>
-                    <span className="adjustment"><br/><br/><br/><br/><br/>
+                    <span className="adjustment">
+                    <br/><br/><br/><br/><br/>
                     <br/><br/><br/><br/><br/> <br/><br/><br/><br/> <br/><br/> 
-                    <br/> <br/> <br/> <br/><br/> <br/><br/><br/> 
+                    <br/> <br/> <br/> <br/><br/> <br/>
                     </span>
                     </p>
                   </article>

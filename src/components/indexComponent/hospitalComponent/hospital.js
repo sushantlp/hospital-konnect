@@ -18,9 +18,11 @@ class Hospital extends React.Component {
         <Container style={{
         width: "89em"
       }}>
-        <h4 className="header-name">HOSPITALS</h4>
-        <div className="underscore" /> 
+
+      <h4 className="header-name">HOSPITALS</h4>
+      <div className="underscore" /> 
       </Container>
+
       <div className="tile is-ancestor is-vertical">
         <div className="tile is-parent">
           <Link to='/detail'>

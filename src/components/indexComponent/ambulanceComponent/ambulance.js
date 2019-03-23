@@ -102,48 +102,56 @@ export default class Ambulance extends React.Component {
             <div className='SliderContainer'>
               <List.Item className='link'>
                 <Link to="/ambulance">
-                  <Card className="ui fluid card">
-                    <div className="ui fluid image">
-                      <img src={ga1} alt=""/>
-                      <span className="amb-header">Hospital-1</span>
-                    </div>
-                  </Card>
+                  <div className="ambulance">
+                    <img src={ga1} alt=""/>    
+                  </div>
+                    <span className="amb-header">Hospital-1</span>
                 </Link>
               </List.Item>
             </div>
             <div className='SliderContainer'>
-              <Card className="ui fluid card">
-                <div className="ui fluid image">
-                      <img src={ga2} alt=""/>
-                  <span className="amb-header">Hospital-2</span>
-                </div>
-              </Card>
+              <List.Item className='link'>
+                <Link to="/ambulance">
+                  <div className="ambulance">
+                    <img src={ga2} alt=""/>    
+                  </div>
+                    <span className="amb-header">Hospital-2</span>
+                </Link>
+              </List.Item>
             </div>
             <div className='SliderContainer'>
-              <Card className="ui fluid card">
-                <div className="ui fluid image">
-                  <img src={ga3} alt=""/>
-                  <span className="amb-header">Hospital-3</span>
-                </div>
-              </Card>
+              <List.Item className='link'>
+                <Link to="/ambulance">
+                  <div className="ambulance">
+                    <img src={ga3} alt=""/>    
+                  </div>
+                    <span className="amb-header">Hospital-3</span>
+                </Link>
+              </List.Item>
             </div>
             <div className='SliderContainer'>
-              <Card className="ui fluid card">
-                <div className="ui fluid image">
-                  <img src={ga4} alt=""/>
-                  <span className="amb-header">Hospital-4</span>
-                </div>
-              </Card>
+              <List.Item className='link'>
+                <Link to="/ambulance">
+                  <div className="ambulance">
+                    <img src={ga4} alt=""/>    
+                  </div>
+                    <span className="amb-header">Hospital-4</span>
+                </Link>
+              </List.Item>
             </div>
             <div className='SliderContainer'>
-              <Card className="ui fluid card">
-                <div className="ui fluid image">
-                  <img src={ga5} alt=""/>
-                  <span className="amb-header">Hospital-5</span>
-                </div>
-              </Card>
+              <List.Item className='link'>
+                <Link to="/ambulance">
+                  <div className="ambulance">
+                    <img src={ga5} alt=""/>    
+                  </div>
+                    <span className="amb-header">Hospital-5</span>
+                </Link>
+              </List.Item>
             </div>
+
           </Slider>
+
         </div>
       </Container>
     );

@@ -103,42 +103,42 @@ export default class Equipment extends React.Component {
                   <Card className="hospital-card">
                     <div className="ui fluid image">
                       <img src={e1} alt=""/>
-                      <span className="equip-header">Medical Equipment-1</span>
                     </div>
                   </Card>
+                      <span className="equip-header">Medical Equipment-1</span>
                   </Link>
                  </div>
                  <div>
                   <Card className="hospital-card">
                     <div className="ui fluid image">
                       <img src={e2} alt=""/>
-                      <span className="equip-header">Medical Equipment-2</span>
                     </div>
                   </Card>
+                      <span className="equip-header">Medical Equipment-2</span>
                 </div>
             <div>
               <Card className="hospital-card">
                 <div className="ui fluid image">
                   <img src={e3} alt=""/>
-                  <span className="equip-header">Medical Equipment-3</span>
                 </div>
               </Card>
+                  <span className="equip-header">Medical Equipment-3</span>
              </div>
              <div>
               <Card className="hospital-card">
                 <div className="ui fluid image">
                   <img src={e4} alt=""/>
-                  <span className="equip-header">Medical Equipment-4</span>
                 </div>
               </Card>
+                  <span className="equip-header">Medical Equipment-4</span>
              </div>
              <div>
               <Card className="hospital-card">
                 <div className="ui fluid image">
                   <img src={e5} alt=""/>
-                  <span className="equip-header">Medical Equipment-5</span>
                 </div>
               </Card>
+              <span className="equip-header">Medical Equipment-5</span>
              </div>
           </Slider>
           </div>

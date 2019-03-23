@@ -6,6 +6,7 @@
 .hospital-header {
 
 }
+
 .hospital-subheader {
   font-size: 0.5em;
   -webkit-font-smoothing: subpixel-antialiased;
@@ -17,7 +18,7 @@
 .hospital-header span{
     position: absolute;
     bottom:0;
-  }
+}
 
 .hospital-card:hover {
   transform: scale(1.03);
@@ -41,7 +42,6 @@
     background-repeat: no-repeat;
     position: relative;
     border: 5px solid white;
-
 }
 
 .hos1 span{
@@ -72,7 +72,6 @@
    height: 40px;
    line-height: 1em;  
 }
-
 
 .hos3{
     height: 300px;
