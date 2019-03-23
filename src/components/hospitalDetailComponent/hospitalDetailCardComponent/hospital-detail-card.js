@@ -33,6 +33,7 @@ export default class HospitalCard extends React.Component {
                   <h2 className="hospital-specialist">
                     <span>Multi-Speciality Hospital</span>
                     <span><br/>Open 24 Hours</span>
+                    <span><br/>Reg. Charges: <Icon name="rupee" style={{color:"black"}} /> 500/-</span>
                   </h2>
                 <div className="book-button">
                   <Button
@@ -57,25 +58,16 @@ export default class HospitalCard extends React.Component {
                       backgroundColor: "#ed3237",
                       color: "white",
                       opacity: "1",
-                      fontSize: "0.8em",
+                      width: "15em",
+                      height:"4em",
+                      fontSize: "1em",
                       fontWeight: "500",
-                      marginTop: "1.9em"
+                      marginTop: "1.5em"
                     }}
                   >
                   <Icon name="phone" />
                     Call: 999-999-9999
                   </Button><br/>
-                  <Button
-                    style={{
-                      backgroundColor: "#51B94D",
-                      color: "black",
-                      opacity: "1",
-                      fontSize: "0.8em",
-                      fontWeight: "500",
-                      marginTop:"0.5em"
-                    }}
-                  > <Icon name="rupee" /> Registration Charges 500/-
-                  </Button>
                 </div>                             
                 </div>
                   </Grid.Column>
