@@ -33,9 +33,7 @@ export default class Animation extends React.Component {
                     <h1>Hospitals</h1>
                     <p>
                     <span className="adjustment">
-                    <br/><br/><br/><br/><br/>
-                    <br/><br/><br/><br/><br/> <br/><br/><br/><br/> <br/><br/> 
-                    <br/> <br/> <br/> <br/><br/> <br/>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                     </span>
                     </p>
                   </article>
