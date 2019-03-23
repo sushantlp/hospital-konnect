@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import { List, Card, Container, Icon } from "semantic-ui-react";
+
 import "../../../static/css/root.css";
 import "./static/css/ambulance.css";
 import ga1 from './static/img/1.jpg';
@@ -24,7 +25,7 @@ function SampleNextArrow(props) {
         backgroundColor: "#ffffff",
         boxShadow: "0 2px 8px 0 rgba(51, 60, 63, 0.22)",
         right: "-97%",
-        top: "-100px",
+        top: "-140px",
         zIndex: "1"
       }}
       onClick={onClick}
@@ -57,7 +58,7 @@ function SamplePrevArrow(props) {
         position: "relative",
         backgroundColor: "#ffffff",
         boxShadow: "0 2px 8px 0 rgba(51, 60, 63, 0.22)",
-        top: "140px",
+        top: "153px",
         left: "-25px",
         zIndex: "1"
       }}
@@ -104,7 +105,7 @@ export default class Ambulance extends React.Component {
                   <Card className="ui fluid card">
                     <div className="ui fluid image">
                       <img src={ga1} alt=""/>
-                      <span className="hospital-header">Hospital-1</span>
+                      <span className="amb-header">Hospital-1</span>
                     </div>
                   </Card>
                 </Link>
@@ -114,7 +115,7 @@ export default class Ambulance extends React.Component {
               <Card className="ui fluid card">
                 <div className="ui fluid image">
                       <img src={ga2} alt=""/>
-                  <span className="hospital-header">Hospital-2</span>
+                  <span className="amb-header">Hospital-2</span>
                 </div>
               </Card>
             </div>
@@ -122,7 +123,7 @@ export default class Ambulance extends React.Component {
               <Card className="ui fluid card">
                 <div className="ui fluid image">
                   <img src={ga3} alt=""/>
-                  <span className="hospital-header">Hospital-3</span>
+                  <span className="amb-header">Hospital-3</span>
                 </div>
               </Card>
             </div>
@@ -130,7 +131,7 @@ export default class Ambulance extends React.Component {
               <Card className="ui fluid card">
                 <div className="ui fluid image">
                   <img src={ga4} alt=""/>
-                  <span className="hospital-header">Hospital-4</span>
+                  <span className="amb-header">Hospital-4</span>
                 </div>
               </Card>
             </div>
@@ -138,7 +139,7 @@ export default class Ambulance extends React.Component {
               <Card className="ui fluid card">
                 <div className="ui fluid image">
                   <img src={ga5} alt=""/>
-                  <span className="hospital-header">Hospital-5</span>
+                  <span className="amb-header">Hospital-5</span>
                 </div>
               </Card>
             </div>

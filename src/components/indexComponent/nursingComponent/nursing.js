@@ -3,8 +3,7 @@ import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import { Card, Container, Icon } from "semantic-ui-react";
 import "../../../static/css/root.css";
-
-
+import "./static/css/nursing.css";
 import "./static/nursingComponent.css";
 
 import n1 from './static/img/1.jpg';
@@ -26,7 +25,7 @@ export default class Nursing extends React.Component {
                 <Link to="/nursing">
                   <Card className="ui card">
                     <img src={n1} alt="" />
-                    <span className="hospital-header">
+                    <span className="nursing-header">
                       Nursing Care-1
                     </span>
                   </Card>
@@ -36,7 +35,7 @@ export default class Nursing extends React.Component {
                 <Link to="/nursing">
                   <Card className="ui card">
                       <img src={n2} alt="" />
-                      <span className="hospital-header">Nursing Care-2</span>
+                      <span className="nursing-header">Nursing Care-2</span>
                   </Card>
                 </Link>
               </div>
@@ -44,7 +43,7 @@ export default class Nursing extends React.Component {
                 <Link to="/nursing">
                   <Card className="ui card">
                       <img src={n3} alt="" />
-                      <span className="hospital-header">Nursing Care-3</span>
+                      <span className="nursing-header">Nursing Care-3</span>
                   </Card>
                 </Link>
               </div>
@@ -52,7 +51,7 @@ export default class Nursing extends React.Component {
                 <Link to="/nursing">
                   <Card className="ui card">
                       <img src={n4} alt="" />
-                      <span className="hospital-header">Nursing Care-4</span>
+                      <span className="nursing-header">Nursing Care-4</span>
                   </Card>
                 </Link>
               </div>

@@ -40,29 +40,6 @@ export default class Footer extends React.Component {
             </List>
           </div>
           <div className='column'>
-            <List horizontal link>
-              <List.Item
-                as="a"
-                href="https://www.facebook.com/"
-                target="_blank"
-              >
-                <i class="red facebook large icon"></i>
-              </List.Item>
-              <List.Item
-                as="a"
-                href="https://www.instagram.com/"
-                target="_blank"
-              >
-                <i class="red instagram large icon"></i>
-              </List.Item>
-              <List.Item
-                as="a"
-                href="https://twitter.com/"
-                target="_blank"
-              >
-                <i class="red twitter large icon"></i>
-              </List.Item>
-            </List>
           </div>
         </div>
         <Divider />
@@ -96,3 +73,7 @@ export default class Footer extends React.Component {
     );
   }
 }
+
+
+//ABOUT US
+//CONTACT US

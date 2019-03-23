@@ -33,6 +33,7 @@
 
 .tile.is-child{
   height: 150px;
+  border: 1px solid grey;
 }
 
 
@@ -120,7 +121,7 @@
 .tile.is-ancestor{margin-left:-.75rem;margin-right:-.75rem;margin-top:-.75rem}
 .tile.is-ancestor:last-child{margin-bottom:-.75rem;    display: flex;}
 .tile.is-ancestor:not(:last-child){margin-bottom:0rem}
-.tile.is-child{margin:0!important}
+.tile.is-child{margin:0.3rem!important}
 .tile.is-parent{padding:.75rem}
 .tile.is-vertical{flex-direction:column}
 .tile.is-vertical>.tile.is-child:not(:last-child){margin-bottom:0rem!important;}

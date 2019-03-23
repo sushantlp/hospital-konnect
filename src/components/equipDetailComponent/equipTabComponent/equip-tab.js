@@ -49,7 +49,7 @@ export default class EquipTab extends React.Component {
         menuItem: "Provider Details",
         render: () => (
           <Tab.Pane>
-            <HospitalDoctor />
+            <HospitalAmbulance />
           </Tab.Pane>
         )
       }

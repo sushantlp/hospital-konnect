@@ -46,7 +46,7 @@ export default class NursingTab extends React.Component {
         menuItem: "Nursing Care Details",
         render: () => (
           <Tab.Pane>
-            <HospitalDoctor />
+            <HospitalAmbulance />
           </Tab.Pane>
         )
       }
