@@ -6,7 +6,7 @@ import "./static/css/airAmbulance.css";
 
 export default class AirAmbulance extends React.Component {
   gotoAA(){
-    window.location.hash = "/ambulance";
+    window.location.hash = "/airambulance";
   }
 
   render() {
@@ -21,7 +21,7 @@ export default class AirAmbulance extends React.Component {
                 <p>Grenade sprawl nodality pistol film decay vehicle BASE jump network-space artisanal-ware car savant table rebar receding. Bicycle skyscraper weathered neural franchise pen paranoid. Sensory decay voodoo god paranoid fetishism city nodal point tattoo spook uplink cardboard crypto. Cyber-vinyl tank-traps crypto-fetishism film futurity uplink dissident 8-bit cartel footage sunglasses corporation. Wristwatch plastic tower augmented reality knife computer media sub-orbital alcohol vehicle human shrine soul-delay industrial grade. Courier otaku ablative 8-bit DIY tattoo table. </p>
                 <Route render={(
                   {history}) => (
-                    <Button onClick={() => { history.push('/ambulance') }}>Details</Button>
+                    <Button onClick={() => { history.push('/airambulance') }}>Details</Button>
                   )} 
                 />
                 

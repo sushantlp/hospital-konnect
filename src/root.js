@@ -20,6 +20,8 @@ import NursingList from "./components/nursingListComponent";
 import AmbulanceList from "./components/ambulanceListComponent";
 import EquipList from "./components/equipListComponent";
 import AirAmbulance from "./components/indexComponent/airAmbulanceComponent/airAmbulance";
+import AirAmbulanceDetail from "./components/airAmbulanceDetailComponent";
+
 // Router root
 
 import ScrollToTop from "./ScrollToTop"
@@ -38,6 +40,7 @@ const Root = ({ store }) => (
             <Route exact path="/list/" component={HospitalList} />
             <Route exact path="/detail/" component={HospitalDetail} />
             <Route exact path="/ambulance/" component={AmbulanceDetail} />
+            <Route exact path="/airambulance/" component={AirAmbulanceDetail} />
             <Route exact path="/nursing/" component={NursingDetail} />
             <Route exact path="/equipment/" component={EquipDetail} />
             <Route exact path="/nursinglist/" component={NursingList} />

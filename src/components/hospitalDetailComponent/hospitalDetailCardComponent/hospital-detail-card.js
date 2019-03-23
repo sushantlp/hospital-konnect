@@ -49,20 +49,17 @@ export default class HospitalCard extends React.Component {
                   >
                   <Icon name="book" />
                     Book Now
-                  </Button>                
-                </div>
-                  </Grid.Column>
-                </div>
+                  </Button>     
+
                 <div className="call-button">
                   <Button
                     style={{
                       backgroundColor: "#ed3237",
                       color: "white",
                       opacity: "1",
-                      width: "15em",
-                      fontSize: "1em",
+                      fontSize: "0.8em",
                       fontWeight: "500",
-                      marginTop: "1em"
+                      marginTop: "1.9em"
                     }}
                   >
                   <Icon name="phone" />
@@ -73,14 +70,15 @@ export default class HospitalCard extends React.Component {
                       backgroundColor: "#51B94D",
                       color: "black",
                       opacity: "1",
-                      width: "18.55em",
-                      height: "3em",
-                      fontSize: "0.81em",
+                      fontSize: "0.8em",
                       fontWeight: "500",
                       marginTop:"0.5em"
                     }}
                   > <Icon name="rupee" /> Registration Charges 500/-
                   </Button>
+                </div>                             
+                </div>
+                  </Grid.Column>
                 </div>
               </Grid.Column>
             </Grid.Row>
