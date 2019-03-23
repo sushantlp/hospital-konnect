@@ -12,17 +12,18 @@ export default class HospitalCard extends React.Component {
         <Segment>
           <Grid stackable>
             <Grid.Row>
-              <Grid.Column width={2}>
+              <Grid.Column>
                 <div>
-                  <Image
-                    floated="left"
-                    size="tiny"
-                    src="https://images1-fabric.practo.com/535a0fc2301e403ceecc1626fa5fdf0a82bc5c51ef2de.png/thumbnail"
-                  />
-                </div>
-              </Grid.Column>
-              <Grid.Column width={14}>
-                <div>
+                  <Grid.Column>
+                    <div>
+                      <Image
+                        floated="left"
+                        size="tiny"
+                        src="https://images1-fabric.practo.com/535a0fc2301e403ceecc1626fa5fdf0a82bc5c51ef2de.png/thumbnail"
+                      />
+                    </div>
+                  </Grid.Column>     
+                  <Grid.Column className="hoscard-details"> 
                   <h1 className="hospital-name">
                     <span>Pristine Hospital</span>
                   </h1>
@@ -33,6 +34,24 @@ export default class HospitalCard extends React.Component {
                     <span>Multi-Speciality Hospital</span>
                     <span><br/>Open 24 Hours</span>
                   </h2>
+                <div className="book-button">
+                  <Button
+                    style={{
+                      backgroundColor: "#263868",
+                      color: "white",
+                      opacity: "1",
+                      width: "15em",
+                      height:"4em",
+                      fontSize: "1em",
+                      fontWeight: "500",
+                      marginTop: "1.5em"
+                    }}
+                  >
+                  <Icon name="book" />
+                    Book Now
+                  </Button>                
+                </div>
+                  </Grid.Column>
                 </div>
                 <div className="call-button">
                   <Button
@@ -51,7 +70,7 @@ export default class HospitalCard extends React.Component {
                   </Button><br/>
                   <Button
                     style={{
-                      backgroundColor: "#32ed00",
+                      backgroundColor: "#51B94D",
                       color: "black",
                       opacity: "1",
                       width: "18.55em",
@@ -62,23 +81,6 @@ export default class HospitalCard extends React.Component {
                     }}
                   > <Icon name="rupee" /> Registration Charges 500/-
                   </Button>
-                </div>
-                <div className="book-button">
-                  <Button
-                    style={{
-                      backgroundColor: "#263868",
-                      color: "white",
-                      opacity: "1",
-                      width: "11em",
-                      height:"5em",
-                      fontSize: "1em",
-                      fontWeight: "500",
-                      marginTop: "1em"
-                    }}
-                  >
-                  <Icon name="book" />
-                    Book Now
-                  </Button>                
                 </div>
               </Grid.Column>
             </Grid.Row>
