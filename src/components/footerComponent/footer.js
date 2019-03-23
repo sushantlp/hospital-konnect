@@ -21,7 +21,7 @@ export default class Footer extends React.Component {
         <Divider/>
           <div className='columns'>
           <div className='column'>
-            <List className='list right' horizontal link relaxed>
+            <List className='list' horizontal link relaxed>
               <List.Item >
                 <Link to="/terms">
                 <p className='flink'>Terms of Service</p>
@@ -35,6 +35,16 @@ export default class Footer extends React.Component {
               <List.Item>
                 <Link to="/faq">
                   <p className='flink'>FAQ's</p>
+                </Link>
+              </List.Item>
+              <List.Item>
+                <Link to="/faq">
+                  <p className='flink'>About Us</p>
+                </Link>
+              </List.Item>
+              <List.Item>
+                <Link to="/faq">
+                  <p className='flink'>Contact Us</p>
                 </Link>
               </List.Item>
             </List>
@@ -73,7 +83,3 @@ export default class Footer extends React.Component {
     );
   }
 }
-
-
-//ABOUT US
-//CONTACT US
