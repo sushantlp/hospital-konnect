@@ -10,9 +10,7 @@ export default class HospitalOverview extends React.Component {
         <h2 className="hospital-overview-title">
           <span>About Ambulance</span>
         </h2>
-
-        <ShowMore lines={3} more="[Read More]" less="[Read Less]" anchorClass="">
-          PEOPLE TREE Hospitals, the dream initiative of this group of highly
+        <p>          PEOPLE TREE Hospitals, the dream initiative of this group of highly
           qualified and experienced doctors, having been trained in some of the
           hospitals across the world, today is a reality. Here we believe that
           quality care should become every citizen‘s birth right. We are on a
@@ -31,7 +29,8 @@ export default class HospitalOverview extends React.Component {
           audacious vision we created PEOPLE TREE Foundation; the charitable
           wing of PEOPLE TREE hospitals. Foundation will work towards providing
           quality healthcare free of cost to poor & needy patients.
-        </ShowMore>
+</p>
+
 {/*
         <div className="hospital-overview-grid">
           <Grid stackable>

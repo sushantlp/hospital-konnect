@@ -44,7 +44,16 @@ export default class HospitalTab extends React.Component {
             <HospitalOverview />
           </Tab.Pane>
         )
+      },
+      {
+        menuItem: "Ambulance Details",
+        render: () => (
+          <Tab.Pane>
+            <HospitalAmbulance />
+          </Tab.Pane>
+        )
       }
+
     ];
 
     return (

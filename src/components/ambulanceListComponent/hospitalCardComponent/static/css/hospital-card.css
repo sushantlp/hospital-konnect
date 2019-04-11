@@ -15,7 +15,8 @@ h3 h5 h4 {
 }
 
 .hospital-card-specialist {
-  font-weight: 200;
+  float: right;
+  margin-right:96px !important;;
   padding-left: 0.2em;
   padding-top: 0.5em;
   padding-bottom: 0.1em;

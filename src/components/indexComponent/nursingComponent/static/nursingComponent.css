@@ -1,3 +1,10 @@
 .reset{
     margin: 0 auto;
 }
+
+
+.nursing-header{
+    padding: 5px;
+    font-size: 1.2em;
+    margin-top: 10px;
+}

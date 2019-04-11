@@ -9,7 +9,7 @@ export default class HospitalBed extends React.Component {
     return (
       <div>
         <h2 className="hospital-bed-header">
-          <span>Beds in People Tree Hospitals...</span>
+          <span>Beds in People Tree Hospitals</span>
         </h2>
         <Segment>
           <Grid stackable>
@@ -19,19 +19,15 @@ export default class HospitalBed extends React.Component {
                   <h3 className="hospital-bed-title">
                     <span>Curative Card Bed</span>
                   </h3>
-
                   <p className="hospital-bed-price">
                     <span>Price :</span>
                     <span className="hospital-price-icon">
                       <Icon name="rupee sign" size="small" />
                     </span>
-
                     <span>1000</span>
                   </p>
-
                   <p className="hospital-bed-available">
                     <span>Availability :</span>
-
                     <span className="hospital-bed-available-count">100</span>
                   </p>
                 </div>
@@ -48,7 +44,6 @@ export default class HospitalBed extends React.Component {
                 </Button>
               </Grid.Column>            
             </Grid.Row>
-
             <Grid.Row columns={1} style={{ paddingTop: "0px" }}>
               <Grid.Column>
                 {/* <ShowMore

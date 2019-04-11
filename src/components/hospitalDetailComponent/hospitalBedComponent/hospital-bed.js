@@ -74,7 +74,6 @@ export default class HospitalBed extends React.Component {
             </Grid.Row>
           </Grid>
         </Segment>
-
         <Segment>
           <Grid stackable>
             <Grid.Row columns={3}>
@@ -137,7 +136,6 @@ export default class HospitalBed extends React.Component {
             </Grid.Row>
           </Grid>
         </Segment>
-
         <Segment>
           <Grid stackable>
             <Grid.Row columns={3}>

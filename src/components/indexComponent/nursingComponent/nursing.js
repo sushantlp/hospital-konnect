@@ -28,7 +28,7 @@ export default class Nursing extends React.Component {
                   </Card>
                 </Link>
                 <span className="nursing-header">
-                      Nursing Care-1
+                      <br/>Nursing Care-1
                 </span>
               </div>
               <div className="column is-3">
@@ -37,7 +37,7 @@ export default class Nursing extends React.Component {
                       <img src={n2} alt="" />
                   </Card>
                 </Link>
-                      <span className="nursing-header">Nursing Care-2</span>
+                      <br/><span className="nursing-header">Nursing Care-2</span>
               </div>
               <div className="column is-3">
                 <Link to="/nursing">
@@ -45,7 +45,7 @@ export default class Nursing extends React.Component {
                       <img src={n3} alt="" />
                   </Card>
                 </Link>
-                      <span className="nursing-header">Nursing Care-3</span>
+                      <br/>`<span className="nursing-header">Nursing Care-3</span>
               </div>
               <div className="column is-3">
                 <Link to="/nursing">
@@ -53,7 +53,7 @@ export default class Nursing extends React.Component {
                       <img src={n4} alt="" />
                   </Card>
                 </Link>
-                      <span className="nursing-header">Nursing Care-4</span>
+                     <br/><span className="nursing-header">Nursing Care-4</span>
               </div>
           </div>
         </div>

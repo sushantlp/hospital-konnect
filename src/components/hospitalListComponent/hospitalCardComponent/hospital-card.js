@@ -24,9 +24,12 @@ export default class HospitalCard extends React.Component {
                       People Tree Hospitals
                     </h4>
                   </a>
-                  <span className="hospital-card-specialist">
-                    Multi-Speciality Hospital
-                  </span>
+                  <div className="hospital-card-specialist">
+                    Multi-Speciality Hospital<br/><br/>
+                    98, HAL Old Airport Rd,<br/>
+                    Kodihalli, Bengaluru,<br/>
+                    Karnataka 560017<br/>
+                  </div>
                 </div>
               </Grid.Column>
               <Grid.Column width={6}>
@@ -51,9 +54,7 @@ export default class HospitalCard extends React.Component {
                     />
                   </span>
                   <span>Yeshwanthpur</span>
-                </div>
-                <div className="call-button">
-                  <Icon name="rupee" /> Registration Charges 500/-
+                  <Icon style={{"marginLeft":"40px"}}name="rupee" /> Registration Charges 500/-
                 </div>
               </Grid.Column>
             </Grid.Row>
@@ -66,7 +67,7 @@ export default class HospitalCard extends React.Component {
               </a>
             </div>
             <div className="phone-number-text-div">
-              <span className="phone-number-text">Phone number</span>
+              <span className="phone-number-text">Emergency number</span>
             </div>
             <div className="phone-number-div">
               <p className="phone-number-p">080 7196 6843</p>
@@ -86,9 +87,12 @@ export default class HospitalCard extends React.Component {
                   <a href="" className="hospital-card-href">
                     <h4 className="hospital-card-name">Nano Hospitals</h4>
                   </a>
-                  <span className="hospital-card-specialist">
-                    Multi-Speciality Hospital
-                  </span>
+                  <div className="hospital-card-specialist">
+                    Multi-Speciality Hospital<br/><br/><br/>
+                    98, HAL Old Airport Rd,<br/>
+                    Kodihalli, Bengaluru,<br/>
+                    Karnataka 560017<br/>
+                  </div>
                 </div>
               </Grid.Column>
               <Grid.Column width={6}>
@@ -113,9 +117,7 @@ export default class HospitalCard extends React.Component {
                     />
                   </span>
                   <span>Yeshwanthpur</span>
-                </div>
-                <div className="call-button">
-                  <Icon name="rupee" /> Registration Charges 500/-
+                  <Icon style={{"marginLeft":"40px"}}name="rupee" /> Registration Charges 500/-
                 </div>
               </Grid.Column>
             </Grid.Row>
@@ -128,7 +130,7 @@ export default class HospitalCard extends React.Component {
               </a>
             </div>
             <div className="phone-number-text-div">
-              <span className="phone-number-text">Phone number</span>
+              <span className="phone-number-text">Emergency number</span>
             </div>
             <div className="phone-number-div">
               <p className="phone-number-p">080 7196 6843</p>
@@ -151,14 +153,11 @@ export default class HospitalCard extends React.Component {
                     </h4>
                   </a>
                   <span className="hospital-card-specialist">
-                    Multi-SpecialityHospital
+                    Multi-Speciality Hospital<br/><br/>
+                    98, HAL Old Airport Rd,<br/>
+                    Kodihalli, Bengaluru,<br/>
+                    Karnataka 560017<br/>
                   </span>
-                </div>
-
-                <div>
-                  <a href="" className="hospital-card-href">
-                    <span className="view-profile">View Profile</span>
-                  </a>
                 </div>
               </Grid.Column>
               <Grid.Column width={6}>
@@ -184,9 +183,7 @@ export default class HospitalCard extends React.Component {
                     />
                   </span>
                   <span>Yeshwanthpur</span>
-                </div>
-                <div className="call-button">
-                  <Icon name="rupee" /> Registration Charges 500/-
+                  <Icon style={{"marginLeft":"40px"}}name="rupee" /> Registration Charges 500/-
                 </div>
               </Grid.Column>
             </Grid.Row>
@@ -199,7 +196,7 @@ export default class HospitalCard extends React.Component {
               </a>
             </div>
             <div className="phone-number-text-div">
-              <span className="phone-number-text">Phone number</span>
+              <span className="phone-number-text">Emergency number</span>
             </div>
             <div className="phone-number-div">
               <p className="phone-number-p">080 7196 6843</p>
