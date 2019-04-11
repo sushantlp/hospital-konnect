@@ -5,6 +5,7 @@ import { List, Card, Container, Icon } from "semantic-ui-react";
 
 import "../../../static/css/root.css";
 import "./static/css/ambulance.css";
+
 import ga1 from './static/img/1.jpg';
 import ga2 from './static/img/2.jpg';
 import ga3 from './static/img/3.jpg';
@@ -24,8 +25,8 @@ function SampleNextArrow(props) {
         position: "relative",
         backgroundColor: "#ffffff",
         boxShadow: "0 2px 8px 0 rgba(51, 60, 63, 0.22)",
-        right: "-97%",
-        top: "-140px",
+        right: "-98%",
+        top: "-150px",
         zIndex: "1"
       }}
       onClick={onClick}
@@ -58,8 +59,8 @@ function SamplePrevArrow(props) {
         position: "relative",
         backgroundColor: "#ffffff",
         boxShadow: "0 2px 8px 0 rgba(51, 60, 63, 0.22)",
-        top: "153px",
-        left: "-25px",
+        top: "165px",
+        left: "-5px",
         zIndex: "1"
       }}
       onClick={onClick}
@@ -102,50 +103,50 @@ export default class Ambulance extends React.Component {
             <div className='SliderContainer'>
               <List.Item className='link'>
                 <Link to="/ambulance">
-                  <div className="ambulance">
+                  <div className='amb'>
                     <img src={ga1} alt=""/>    
                   </div>
-                    <span className="amb-header">Hospital-1</span>
+                    <span className="amb-header">Ambulance-1</span>
                 </Link>
               </List.Item>
             </div>
             <div className='SliderContainer'>
               <List.Item className='link'>
                 <Link to="/ambulance">
-                  <div className="ambulance">
+                  <div className='amb'>
                     <img src={ga2} alt=""/>    
                   </div>
-                    <span className="amb-header">Hospital-2</span>
+                    <span className="amb-header">Ambulance-2</span>
                 </Link>
               </List.Item>
             </div>
             <div className='SliderContainer'>
               <List.Item className='link'>
                 <Link to="/ambulance">
-                  <div className="ambulance">
+                  <div className='amb'>
                     <img src={ga3} alt=""/>    
                   </div>
-                    <span className="amb-header">Hospital-3</span>
+                    <span className="amb-header">Ambulance-3</span>
                 </Link>
               </List.Item>
             </div>
             <div className='SliderContainer'>
               <List.Item className='link'>
                 <Link to="/ambulance">
-                  <div className="ambulance">
+                  <div className='amb'>
                     <img src={ga4} alt=""/>    
                   </div>
-                    <span className="amb-header">Hospital-4</span>
+                    <span className="amb-header">Ambulance-4</span>
                 </Link>
               </List.Item>
             </div>
             <div className='SliderContainer'>
               <List.Item className='link'>
                 <Link to="/ambulance">
-                  <div className="ambulance">
+                  <div className='amb'>
                     <img src={ga5} alt=""/>    
                   </div>
-                    <span className="amb-header">Hospital-5</span>
+                    <span className="amb-header">Ambulance-5</span>
                 </Link>
               </List.Item>
             </div>

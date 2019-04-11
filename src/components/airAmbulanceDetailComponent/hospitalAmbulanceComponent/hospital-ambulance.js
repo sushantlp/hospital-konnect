@@ -29,17 +29,14 @@ export default class HospitalBed extends React.Component {
 
                     <span>1000</span>
                   </p>
-
                   <p className="hospital-ambulance-available">
                     <span>Availability :</span>
-
                     <span className="hospital-ambulance-available-count">
                       100
                     </span>
                   </p>
                 </div>
               </Grid.Column>
-
               <Grid.Column>
                 <Button
                   style={{
@@ -52,7 +49,6 @@ export default class HospitalBed extends React.Component {
                 </Button>
               </Grid.Column>
             </Grid.Row>
-
             <Grid.Row columns={1} style={{ paddingTop: "0px" }}>
               <Grid.Column>
                 <p className="hospital-ambulance-description">
@@ -66,7 +62,6 @@ export default class HospitalBed extends React.Component {
             </Grid.Row>
           </Grid>
         </Segment>
-
         <Segment>
           <Grid stackable>
             <Grid.Row columns={2}>
@@ -75,26 +70,21 @@ export default class HospitalBed extends React.Component {
                   <h3 className="hospital-ambulance-title">
                     <span>Mortuary</span>
                   </h3>
-
                   <p className="hospital-ambulance-price">
                     <span>Price :</span>
                     <span className="hospital-price-icon">
                       <Icon name="rupee sign" size="small" />
                     </span>
-
                     <span>1000</span>
                   </p>
-
                   <p className="hospital-ambulance-available">
                     <span>Availability :</span>
-
                     <span className="hospital-ambulance-available-count">
                       100
                     </span>
                   </p>
                 </div>
               </Grid.Column>
-
               <Grid.Column>
                 <Button
                   style={{
@@ -107,7 +97,6 @@ export default class HospitalBed extends React.Component {
                 </Button>
               </Grid.Column>
             </Grid.Row>
-
             <Grid.Row columns={1} style={{ paddingTop: "0px" }}>
               <Grid.Column>
                 <p className="hospital-ambulance-description">
@@ -121,7 +110,6 @@ export default class HospitalBed extends React.Component {
             </Grid.Row>
           </Grid>
         </Segment>
-
         <Segment>
           <Grid stackable>
             <Grid.Row columns={2}>
@@ -130,19 +118,16 @@ export default class HospitalBed extends React.Component {
                   <h3 className="hospital-ambulance-title">
                     <span>ALS</span>
                   </h3>
-
                   <p className="hospital-ambulance-price">
                     <span>Price :</span>
                     <span className="hospital-price-icon">
                       <Icon name="rupee sign" size="small" />
                     </span>
-
                     <span>1000</span>
                   </p>
 
                   <p className="hospital-ambulance-available">
                     <span>Availability :</span>
-
                     <span className="hospital-ambulance-available-count">
                       100
                     </span>

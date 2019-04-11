@@ -12,9 +12,7 @@ export default class Search extends React.Component {
         style={{
           width: "auto",
           height: "500px",
-          backgroundImage:
-            "url('https://res.cloudinary.com/dp67gawk6/image/upload/v1545048011/ballyhoo/BALLYHOO_WEBSITE/practo.svg')",
-
+          backgroundImage:"url('http://bit.ly/2X4ckkS')",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",

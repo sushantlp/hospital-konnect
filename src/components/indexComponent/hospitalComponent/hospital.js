@@ -13,17 +13,10 @@ class Hospital extends React.Component {
 
   render() {
     return (
-      <div>
-        <br/><br/>
-        <Container style={{
-        width: "89em"
-      }}>
-
-      <h4 className="header-name">HOSPITALS</h4>
-      <div className="underscore" /> 
-      </Container>
-
-      <div className="tile is-ancestor is-vertical">
+      <Container style={{ width: "89em" }}>
+          <h4 className="header-name">HOSPITALS</h4>
+          <div className="underscore" /> 
+          <div className="tile is-ancestor is-vertical">
         <div className="tile is-parent">
           <Link to='/detail'>
             <div className="hos5 tile">    
@@ -68,8 +61,8 @@ class Hospital extends React.Component {
             </div>
           </Link>
         </div>                      
-      </div>      
-      </div>
+         </div>      
+      </Container>
       );
   }
 }

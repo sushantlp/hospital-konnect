@@ -13,41 +13,33 @@ export default class Animation extends React.Component {
   render() {
     return (
       <div className="overall">
-        <Header />
         <div className="tileContainer" onClick={() => this.nextPath('/initial') }>
           <div class="tile is-ancestor">
             <div class="tile is-vertical">
               <div class="tile">
                 <div class="tile is-parent is-vertical">
                   <article class="tile is-child notification is-success nurse hover">
-                    <h1>Nursing Care</h1>
-                    <p> </p>
+                    <h1><span  className='shadow_text'>Nursing Care</span></h1>
                   </article>
-                  <article class="tile is-child notification is-warning aambulance hover">                
-                    <h1>Air Ambulance</h1>
-                    <p><br/><br/><br/> </p>
+                  <article class="tile is-child notification is-warning aambulance hover">
+                    <h1><span  className='shadow_text'>Air Ambulance</span></h1>
                   </article>
                 </div>
                 <div class="tile is-parent">
                   <article class="tile is-child notification is-danger ambulance hover">
-                    <h1>Hospitals</h1>
-                    <p>
-                    <span className="adjustment">
-                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                    </span>
-                    </p>
+                    <h1><span  className='shadow_text'>Hospitals</span></h1>
                   </article>
                 </div>
               </div>
             </div>
             <div class="tile is-parent is-vertical">
               <article class="tile is-child notification is-warning hover gambulance">
-                <h1>Ground Ambulance</h1>
+                <h1><span  className='shadow_text'>Ground Ambulance</span></h1>
                  <p></p>
              </article>
               <article class="tile is-child notification is-warning equipment hover">
-                <h1>Medical Equipment</h1>
-                 <p className="mark"><br/><br/><br/><br/><br/><br/><br/></p>
+                <h1><span  className='shadow_text'>Medical Equipment</span></h1>
+                 
              </article>
             </div>
           </div>

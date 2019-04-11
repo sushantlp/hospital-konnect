@@ -1,5 +1,5 @@
 .overall{
-  height: 100vh;
+  height: 99vh;
 }
 
 .box {
@@ -50,6 +50,7 @@
     background-size: contain;  
     color: black;
     text-decoration-color: black;
+
 }
 
 .nurse{
@@ -57,18 +58,51 @@
     background-repeat: no-repeat;
     background-position: center; 
     background-size: cover;  
-  
+}
+
+.nurse h1{
+  text-align:center; 
+  margin-top: 100px;
+  width: 100%;
+  display: block;
 }
 
 .ambulance{
     background-image: url('../img/hospital.jpg');
     background-size: cover;  
+    height:100vh !important;
 }
+
+.ambulance h1{
+  text-align:center; 
+  margin-top: 250px;
+  width: 100%;
+  display: block;
+}
+
+.shadow_text{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+38,000000+64&0+0,0.8+15,1+19,1+81,0.8+85,0+100 */
+background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 15%, rgba(0,0,0,1) 19%, rgba(0,0,0,1) 38%, rgba(0,0,0,1) 64%, rgba(0,0,0,1) 81%, rgba(0,0,0,0.8) 85%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 15%,rgba(0,0,0,1) 19%,rgba(0,0,0,1) 38%,rgba(0,0,0,1) 64%,rgba(0,0,0,1) 81%,rgba(0,0,0,0.8) 85%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 15%,rgba(0,0,0,1) 19%,rgba(0,0,0,1) 38%,rgba(0,0,0,1) 64%,rgba(0,0,0,1) 81%,rgba(0,0,0,0.8) 85%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */  
+display: inline-block;
+width: 22vw;
+}
+
 
 .gambulance{
     background-image: url('../img/gambulance.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.gambulance h1{
+  text-align:center; 
+  margin-top: 100px;
+  width: 100%;
+  display: block;
+  color: white;
 }
 
 .equipment{
@@ -77,10 +111,27 @@
     background-size: cover;  
 }
 
+.equipment h1{
+  text-align:center; 
+  margin-top: 100px;
+  width: 100%;
+  display: block;
+  color: white;  
+}
+
 .aambulance{
     background-image: url('../img/aamb.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.aambulance h1{
+  text-align:center; 
+  margin-top: 100px;
+  width: 100%;
+  display: block;
+  color: white;
+
 }
 
 .adjustment{

@@ -15,6 +15,15 @@ const rootElement = document.getElementById("root");
 
 ReactDOM.render(<Root store={store} />, rootElement);
 
+
+if(module.hot){
+    module.hot.accept('./root', ()=> {
+        const NextApp = require('./root').default
+        ReactDOM.render(<NextApp />, document.getElementById('root'))
+    })
+}
+
+
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA

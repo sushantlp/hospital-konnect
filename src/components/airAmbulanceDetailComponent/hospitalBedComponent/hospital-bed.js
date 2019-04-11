@@ -11,7 +11,6 @@ export default class HospitalBed extends React.Component {
         <h2 className="hospital-bed-header">
           <span>Beds in People Tree Hospitals</span>
         </h2>
-
         <Segment>
           <Grid stackable>
             <Grid.Row columns={2}>
@@ -37,7 +36,6 @@ export default class HospitalBed extends React.Component {
                   </p>
                 </div>
               </Grid.Column>
-
               <Grid.Column>
                 <Button
                   style={{
@@ -48,7 +46,7 @@ export default class HospitalBed extends React.Component {
                 >
                   Book
                 </Button>
-              </Grid.Column>
+              </Grid.Column>            
             </Grid.Row>
 
             <Grid.Row columns={1} style={{ paddingTop: "0px" }}>
@@ -187,12 +185,6 @@ export default class HospitalBed extends React.Component {
 
             <Grid.Row columns={1} style={{ paddingTop: "0px" }}>
               <Grid.Column>
-                {/* <ShowMore
-                  lines={3}
-                  more="[more]"
-                  less="[shrink]"
-                  anchorClass="hospital-bed-description"
-                > */}
                 <p className="hospital-bed-description">
                   This is certainly going to be one of the most iconic night of
                   the year #NYE2019 Vibrate your senses with a booming sound
@@ -207,7 +199,6 @@ export default class HospitalBed extends React.Component {
                   wouldn’t be right, if you weren’t with us when the clock
                   strikes midnight! It’s the perfect way to kick in 2019
                 </p>
-                {/* </ShowMore> */}
               </Grid.Column>
             </Grid.Row>
           </Grid>

@@ -9,10 +9,12 @@ import {
   Segment
 } from "semantic-ui-react/dist/commonjs";
 
-import "semantic-ui-css/semantic.min.css";
-import "./static/css/footer.css";
 import AppStore from "./static/img/appstore_badge_en.svg";
 import GooglePlay from "./static/img/googleplay_badge_en.svg";
+
+import "semantic-ui-css/semantic.min.css";
+import "./static/css/footer.css";
+
 
 export default class Footer extends React.Component {
   render() {
