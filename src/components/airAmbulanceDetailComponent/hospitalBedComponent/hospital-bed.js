@@ -9,7 +9,7 @@ export default class HospitalBed extends React.Component {
     return (
       <div>
         <h2 className="hospital-bed-header">
-          <span>Beds in People Tree Hospitals</span>
+          <span>Beds in People Tree Hospitals...</span>
         </h2>
         <Segment>
           <Grid stackable>
