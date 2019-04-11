@@ -140,35 +140,7 @@ export default class HospitalCard extends React.Component {
                   </span>
                   <span>Yeshwanthpur</span>
                 </div>
-                <div className="call-button">
-                  <Button
-                    basic
-                    color="red"
-                    style={{
-                      opacity: "1",
-                      width: "10em",
-                      height: "2.8em",
-                      fontSize: "1em",
-                      fontWeight: "500",
-                      float:"right"
-                    }}
-                  >Call Now
-                  </Button>
-                  <Button
-                    style={{
-                      backgroundColor: "transparent",
-                      border:"1px solid green",
-                      color: "black",
-                      opacity: "1",
-                      height: "2.8em",
-                      fontSize: "1em",
-                      fontWeight: "500",
-                      marginTop:"0.5em",
-                      float:"right"
-                    }}
-                  > <Icon name="rupee" /> Registration Charges 500/-
-                  </Button>
-                </div>
+                <Icon name="rupee" /> Registration Charges 500/-
               </Grid.Column>
             </Grid.Row>
           </Grid>

@@ -14,26 +14,21 @@ export default class HospitalBed extends React.Component {
 
         <Segment>
           <Grid stackable>
-            <Grid.Row columns={2}>
+            <Grid.Row columns={3}>
               <Grid.Column>
                 <div>
                   <h3 className="hospital-bed-title">
                     <span>Curative Card Bed</span>
                   </h3>
-
                   <p className="hospital-bed-price">
                     <span>Price :</span>
                     <span className="hospital-price-icon">
                       <Icon name="rupee sign" size="small" />
                     </span>
-
                     <span>1000</span>
                   </p>
-
                   <p className="hospital-bed-available">
-                    <span>Availability :</span>
-
-                    <span className="hospital-bed-available-count">Yes/No</span>                  </p>
+                    <span>Availability :</span></p>
                   <p className="hospital-bed-available">
                     <span>Cancellation Policy</span>
                   </p>
@@ -42,21 +37,6 @@ export default class HospitalBed extends React.Component {
                   </p>
                 </div>
               </Grid.Column>
-
-              <Grid.Column>
-                <Button
-                  style={{
-                    backgroundColor: "#ed3237",
-                    color: "white",
-                    float: "right"
-                  }}
-                >
-                  Book
-                </Button>
-              </Grid.Column>
-            </Grid.Row>
-
-            <Grid.Row columns={1} style={{ paddingTop: "0px" }}>
               <Grid.Column>
                 {/* <ShowMore
                   lines={3}
@@ -79,6 +59,17 @@ export default class HospitalBed extends React.Component {
                   strikes midnight! It’s the perfect way to kick in 2019
                 </p>
                 {/* </ShowMore> */}
+              </Grid.Column>
+              <Grid.Column>
+                <Button
+                  style={{
+                    backgroundColor: "#ed3237",
+                    color: "white",
+                    float: "right"
+                  }}
+                >
+                  Book
+                </Button>
               </Grid.Column>
             </Grid.Row>
           </Grid>
@@ -86,50 +77,29 @@ export default class HospitalBed extends React.Component {
 
         <Segment>
           <Grid stackable>
-            <Grid.Row columns={2}>
+            <Grid.Row columns={3}>
               <Grid.Column>
                 <div>
                   <h3 className="hospital-bed-title">
                     <span>Curative Card Bed</span>
                   </h3>
-
                   <p className="hospital-bed-price">
                     <span>Price :</span>
                     <span className="hospital-price-icon">
                       <Icon name="rupee sign" size="small" />
                     </span>
-
                     <span>1000</span>
                   </p>
-
                   <p className="hospital-bed-available">
-                    <span>Availability :</span>
-                    <span className="hospital-bed-available-count">Yes/No</span>                  
-                  </p>
+                    <span>Availability :</span></p>
                   <p className="hospital-bed-available">
                     <span>Cancellation Policy</span>
                   </p>
                   <p className="hospital-bed-available">
                     <span>Terms and Conditions</span>
                   </p>
-
                 </div>
               </Grid.Column>
-
-              <Grid.Column>
-                <Button
-                  style={{
-                    backgroundColor: "#ed3237",
-                    color: "white",
-                    float: "right"
-                  }}
-                >
-                  Book
-                </Button>
-              </Grid.Column>
-            </Grid.Row>
-
-            <Grid.Row columns={1} style={{ paddingTop: "0px" }}>
               <Grid.Column>
                 {/* <ShowMore
                   lines={3}
@@ -152,6 +122,17 @@ export default class HospitalBed extends React.Component {
                   strikes midnight! It’s the perfect way to kick in 2019
                 </p>
                 {/* </ShowMore> */}
+              </Grid.Column>
+              <Grid.Column>
+                <Button
+                  style={{
+                    backgroundColor: "#ed3237",
+                    color: "white",
+                    float: "right"
+                  }}
+                >
+                  Book
+                </Button>
               </Grid.Column>
             </Grid.Row>
           </Grid>
@@ -159,26 +140,21 @@ export default class HospitalBed extends React.Component {
 
         <Segment>
           <Grid stackable>
-            <Grid.Row columns={2}>
+            <Grid.Row columns={3}>
               <Grid.Column>
                 <div>
                   <h3 className="hospital-bed-title">
                     <span>Curative Card Bed</span>
                   </h3>
-
                   <p className="hospital-bed-price">
                     <span>Price :</span>
                     <span className="hospital-price-icon">
                       <Icon name="rupee sign" size="small" />
                     </span>
-
                     <span>1000</span>
                   </p>
-
                   <p className="hospital-bed-available">
-                    <span>Availability :</span>
-
-                    <span className="hospital-bed-available-count">Yes/No</span>                  </p>
+                    <span>Availability :</span></p>
                   <p className="hospital-bed-available">
                     <span>Cancellation Policy</span>
                   </p>
@@ -187,21 +163,6 @@ export default class HospitalBed extends React.Component {
                   </p>
                 </div>
               </Grid.Column>
-
-              <Grid.Column>
-                <Button
-                  style={{
-                    backgroundColor: "#ed3237",
-                    color: "white",
-                    float: "right"
-                  }}
-                >
-                  Book
-                </Button>
-              </Grid.Column>
-            </Grid.Row>
-
-            <Grid.Row columns={1} style={{ paddingTop: "0px" }}>
               <Grid.Column>
                 {/* <ShowMore
                   lines={3}
@@ -224,6 +185,17 @@ export default class HospitalBed extends React.Component {
                   strikes midnight! It’s the perfect way to kick in 2019
                 </p>
                 {/* </ShowMore> */}
+              </Grid.Column>
+              <Grid.Column>
+                <Button
+                  style={{
+                    backgroundColor: "#ed3237",
+                    color: "white",
+                    float: "right"
+                  }}
+                >
+                  Book
+                </Button>
               </Grid.Column>
             </Grid.Row>
           </Grid>
