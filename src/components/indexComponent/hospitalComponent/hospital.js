@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, withRouter } from 'react-router-dom';
 
-import { Card, Container, Button } from "semantic-ui-react";
+import { Container } from "semantic-ui-react";
 import "../../../static/css/root.css";
 import "./static/css/hospital.css";
 
@@ -14,8 +14,9 @@ class Hospital extends React.Component {
   render() {
     return (
       <Container style={{ width: "89em" }}>
+      <br/>
           <h4 className="header-name">HOSPITALS</h4>
-          <div className="underscore" /> 
+          <div className="underscore" /> <br/>
           <div className="tile is-ancestor is-vertical">
         <div className="tile is-parent">
           <Link to='/detail'>

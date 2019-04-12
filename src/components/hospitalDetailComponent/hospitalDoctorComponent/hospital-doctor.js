@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Segment, Image, Grid, Icon } from "semantic-ui-react";
+import { Segment, Image, Grid } from "semantic-ui-react";
 import "./static/css/hospital-doctor.css";
 
 export default class HospitalDoctor extends React.Component {

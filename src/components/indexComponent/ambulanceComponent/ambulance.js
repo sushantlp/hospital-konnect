@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-import { List, Card, Container, Icon } from "semantic-ui-react";
+import { List, Container, Icon } from "semantic-ui-react";
 
 import "../../../static/css/root.css";
 import "./static/css/ambulance.css";

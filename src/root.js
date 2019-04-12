@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import "./static/css/root.css";
 
-import FrontPage from "./components/frontPageComponent/front-page";
+// import FrontPage from "./components/frontPageComponent/front-page";
 import Animation from "./components/animationComponent/animation";
 import Initial from "./components/indexComponent";
 import Faq from "./components/faqComponent/faq";
@@ -19,12 +19,11 @@ import EquipDetail from "./components/equipDetailComponent";
 import NursingList from "./components/nursingListComponent";
 import AmbulanceList from "./components/ambulanceListComponent";
 import EquipList from "./components/equipListComponent";
-import AirAmbulance from "./components/indexComponent/airAmbulanceComponent/airAmbulance";
+// import AirAmbulance from "./components/indexComponent/airAmbulanceComponent/airAmbulance";
 import AirAmbulanceDetail from "./components/airAmbulanceDetailComponent";
 
 // Router root
-
-import ScrollToTop from "./ScrollToTop"
+// import ScrollToTop from "./ScrollToTop"
 
 const Root = ({ store }) => (
     <Provider store={store}>

@@ -10,7 +10,7 @@ import "./static/css/index.css";
 
 export default class Index extends React.Component {
   render() {
-    return (
+    return ( 
       <div>
         <Header />
           <div className='columns'>

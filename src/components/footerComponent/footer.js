@@ -2,11 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import {
   Divider,
-  Grid,
   Image,
-  List,
-  Icon,
-  Segment
+  List
 } from "semantic-ui-react/dist/commonjs";
 
 import AppStore from "./static/img/appstore_badge_en.svg";

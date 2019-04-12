@@ -1,7 +1,7 @@
 import React from "react";
 
 import ShowMore from "react-show-more";
-import { Grid } from "semantic-ui-react";
+// import { Grid } from "semantic-ui-react";
 
 import "./static/css/hospital-overview.css";
 

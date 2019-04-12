@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Tab, Segment } from "semantic-ui-react";
+import { Tab } from "semantic-ui-react";
 
 import HospitalOverview from "../hospitalOverviewComponent/hospital-overview";
 import HospitalSpecialist from "../hospitalSpecialistComponent/hospital-specialist";
@@ -8,7 +8,7 @@ import HospitalServices from "../hospitalServicesComponent/hospital-services";
 import HospitalDoctor from "../hospitalDoctorComponent/hospital-doctor";
 import HospitalBed from "../hospitalBedComponent/hospital-bed";
 import HospitalAmbulance from "../hospitalAmbulanceComponent/hospital-ambulance";
-import HospitalMap from "../hospitalMapComponent/hospital-map";
+// import HospitalMap from "../hospitalMapComponent/hospital-map";
 
 import "./static/css/hospital-tab.css";
 
@@ -77,7 +77,7 @@ export default class HospitalTab extends React.Component {
             <HospitalSpecialist />
           </Tab.Pane>
         )
-      },,
+      },
       {
         menuItem: "Services",
         render: () => (

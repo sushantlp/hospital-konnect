@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Segment, Image, Grid, Icon, Button, Divider } from "semantic-ui-react";
+import { Segment, Image, Grid, Icon, Button } from "semantic-ui-react";
 
 import "./static/css/hospital-detail-card.css";
 

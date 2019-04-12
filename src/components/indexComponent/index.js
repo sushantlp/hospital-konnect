@@ -1,6 +1,6 @@
 import React from "react";
 
-import ParallaxHeader from "../headerComponent/parallax-header";
+// import ParallaxHeader from "../headerComponent/parallax-header";
 import Footer from "../footerComponent/footer";
 import Search from "./searchComponent/search";
 import Specialization from "./specializationComponent/specialization";

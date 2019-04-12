@@ -1,8 +1,8 @@
 import React from "react";
 
 import { Segment, Divider, Checkbox, Radio } from "semantic-ui-react";
-import Slider, { Range } from "rc-slider";
-
+// import Slider, { Range } from "rc-slider";
+import { Range } from "rc-slider";
 import "rc-slider/assets/index.css";
 import "./static/css/hospital-filter.css";
 

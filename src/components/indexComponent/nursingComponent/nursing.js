@@ -1,7 +1,7 @@
 import React from "react";
-import Slider from "react-slick";
+// import Slider from "react-slick";
 import { Link } from "react-router-dom";
-import { Card, Container, Icon } from "semantic-ui-react";
+import { Card, Container } from "semantic-ui-react";
 import "../../../static/css/root.css";
 import "./static/css/nursing.css";
 import "./static/nursingComponent.css";
@@ -10,7 +10,7 @@ import n1 from './static/img/1.jpg';
 import n2 from './static/img/2.jpg';
 import n3 from './static/img/3.jpg';
 import n4 from './static/img/4.jpg';
-import n5 from './static/img/5.jpg';
+// import n5 from './static/img/5.jpg';
 
 export default class Nursing extends React.Component {
   render() {
