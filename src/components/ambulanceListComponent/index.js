@@ -3,7 +3,7 @@ import React from "react";
 import { Grid } from "semantic-ui-react";
 
 import HospitalFilter from "./hospitalFilterComponent/hospital-filter";
-import HospitalCard from "./hospitalCardComponent/hospital-card";
+import AmbulanceCard from "./ambulanceCardComponent/ambulance-card";
 import SeoLink from "./seoLinkComponent/seo-link";
 
 import Header from "../headerComponent/header";
@@ -21,7 +21,7 @@ export default class Index extends React.Component {
                 <HospitalFilter />
               </div>
               <Grid.Column className='column is-7'>
-                <HospitalCard />
+                <AmbulanceCard />
               </Grid.Column>
               <Grid.Column className='column is-2'>
                 <SeoLink />

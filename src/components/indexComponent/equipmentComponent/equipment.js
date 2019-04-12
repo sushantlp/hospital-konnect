@@ -60,7 +60,7 @@ function SamplePrevArrow(props) {
         backgroundColor: "#ffffff",
         boxShadow: "0 2px 8px 0 rgba(51, 60, 63, 0.22)",
         left: "-10px",
-        top:"140px",
+        top:"150px",
         zIndex: "1"
       }}
       onClick={onClick}

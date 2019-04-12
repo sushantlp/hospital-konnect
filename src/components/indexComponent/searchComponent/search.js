@@ -12,7 +12,7 @@ export default class Search extends React.Component {
         style={{
           width: "auto",
           height: "500px",
-          backgroundImage:"url('http://bit.ly/2X4ckkS')",
+          backgroundImage:"url('http://bit.ly/2GiUWD6')",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",

@@ -58,7 +58,7 @@ export default class EquipCard extends React.Component {
                     }}
                   >
                     <Icon name="phone" />
-                    Call Now
+                    9999-99-9999
                   </Button>
                 </div>
               </Grid.Column>
