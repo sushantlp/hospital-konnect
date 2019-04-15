@@ -24,7 +24,7 @@ function SampleNextArrow(props) {
         position: "relative",
         backgroundColor: "#ffffff",
         boxShadow: "0 2px 8px 0 rgba(51, 60, 63, 0.22)",
-        right: "-97%",
+        right: "-98%",
         top: "-165px",
         zIndex: "1"
       }}
@@ -58,7 +58,7 @@ function SamplePrevArrow(props) {
         backgroundColor: "#ffffff",
         boxShadow: "0 2px 8px 0 rgba(51, 60, 63, 0.22)",
         top: "153px",
-        left: "-2px",
+        left: "-16px",
         zIndex: "1"
       }}
       onClick={onClick}

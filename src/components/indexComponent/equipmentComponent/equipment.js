@@ -26,7 +26,7 @@ function SampleNextArrow(props) {
         backgroundColor: "#ffffff",
         boxShadow: "0 2px 8px 0 rgba(51, 60, 63, 0.22)",
         right: "-97%",
-        top: "-100px",
+        top: "-168px",
         zIndex: "1"
       }}
       onClick={onClick}
@@ -106,36 +106,44 @@ export default class Equipment extends React.Component {
                 </Link>
               </div>
               <div>
-                <Card className="hospital-card">
-                  <div className="ui fluid image">
-                    <img src={e2} alt="" />
-                  </div>
-                </Card>
-                <span className="equip-header">Medical Equipment-2</span>
+                <Link to="/equipment">
+                  <Card className="hospital-card">
+                    <div className="ui fluid image">
+                      <img src={e2} alt="" />
+                    </div>
+                  </Card>
+                  <span className="equip-header">Medical Equipment-2</span>
+                </Link>
               </div>
               <div>
-                <Card className="hospital-card">
-                  <div className="ui fluid image">
-                    <img src={e3} alt="" />
-                  </div>
-                </Card>
-                <span className="equip-header">Medical Equipment-3</span>
+                <Link to="/equipment">
+                  <Card className="hospital-card">
+                    <div className="ui fluid image">
+                      <img src={e3} alt="" />
+                    </div>
+                  </Card>
+                  <span className="equip-header">Medical Equipment-3</span>
+                </Link>
               </div>
               <div>
-                <Card className="hospital-card">
-                  <div className="ui fluid image">
-                    <img src={e4} alt="" />
-                  </div>
-                </Card>
-                <span className="equip-header">Medical Equipment-4</span>
+                <Link to="/equipment">
+                  <Card className="hospital-card">
+                    <div className="ui fluid image">
+                      <img src={e4} alt="" />
+                    </div>
+                  </Card>
+                  <span className="equip-header">Medical Equipment-4</span>
+                </Link>
               </div>
               <div>
-                <Card className="hospital-card">
-                  <div className="ui fluid image">
-                    <img src={e5} alt="" />
-                  </div>
-                </Card>
-                <span className="equip-header">Medical Equipment-5</span>
+                <Link to="/equipment">
+                  <Card className="hospital-card">
+                    <div className="ui fluid image">
+                      <img src={e5} alt="" />
+                    </div>
+                  </Card>
+                  <span className="equip-header">Medical Equipment-5</span>
+                </Link>
               </div>
             </Slider>
           </div>

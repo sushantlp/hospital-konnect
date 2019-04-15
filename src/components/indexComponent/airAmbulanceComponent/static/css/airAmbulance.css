@@ -1,4 +1,4 @@
-.air-ambulance-container {
+/* .air-ambulance-container {
   background: url('../img/3.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -6,8 +6,8 @@
   padding: 10px;
   height:270px;
 
-}
+} */
 
-.modal{
-    display: none
+.modal {
+  display: none;
 }

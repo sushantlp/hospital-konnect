@@ -22,7 +22,7 @@ export default class Header extends React.Component {
                   color: "#ed3237"
                 }}
               >
-                Hospital-konnect
+                Hospital Konnect
               </h1>
             </Menu.Item>
           </Link>

@@ -21,8 +21,7 @@
 
 /* Not Use if use style tag*/
 
-
-.clear{
+.clear {
   margin-left: 20px;
 }
 
@@ -41,13 +40,13 @@
   margin-bottom: -22px;
 }
 
-
-.amb-header{
+.amb-header {
   background: transparent;
   padding: 5px;
   font-size: 1.2em;
+  color: rgb(38, 56, 104);
 }
 
-.ambulance{
+.ambulance {
   margin: 10px;
 }

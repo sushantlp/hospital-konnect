@@ -1,4 +1,9 @@
-.nursing-header{
-    padding: 5px;
-    font-size: 1.2em;
+.nursing-header {
+  padding: 5px;
+  font-size: 1.2em;
+  color: rgb(38, 56, 104);
+}
+
+.nursing-container {
+  margin-top: 8vh;
 }
