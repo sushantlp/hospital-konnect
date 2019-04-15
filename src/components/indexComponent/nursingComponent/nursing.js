@@ -1,7 +1,7 @@
 import React from "react";
-// import Slider from "react-slick";
+import Slider from "react-slick";
 import { Link } from "react-router-dom";
-import { Card, Container } from "semantic-ui-react";
+import { Card, Container, Icon } from "semantic-ui-react";
 import "../../../static/css/root.css";
 import "./static/css/nursing.css";
 import "./static/nursingComponent.css";
@@ -10,7 +10,7 @@ import n1 from './static/img/1.jpg';
 import n2 from './static/img/2.jpg';
 import n3 from './static/img/3.jpg';
 import n4 from './static/img/4.jpg';
-// import n5 from './static/img/5.jpg';
+import n5 from './static/img/5.jpg';
 
 export default class Nursing extends React.Component {
   render() {
@@ -28,7 +28,7 @@ export default class Nursing extends React.Component {
                   </Card>
                 </Link>
                 <span className="nursing-header">
-                      <br/>Nursing Care-1
+                      Nursing Care-1
                 </span>
               </div>
               <div className="column is-3">
@@ -37,7 +37,7 @@ export default class Nursing extends React.Component {
                       <img src={n2} alt="" />
                   </Card>
                 </Link>
-                      <br/><span className="nursing-header">Nursing Care-2</span>
+                      <span className="nursing-header">Nursing Care-2</span>
               </div>
               <div className="column is-3">
                 <Link to="/nursing">
@@ -45,7 +45,7 @@ export default class Nursing extends React.Component {
                       <img src={n3} alt="" />
                   </Card>
                 </Link>
-                      <br/>`<span className="nursing-header">Nursing Care-3</span>
+                      <span className="nursing-header">Nursing Care-3</span>
               </div>
               <div className="column is-3">
                 <Link to="/nursing">
@@ -53,7 +53,7 @@ export default class Nursing extends React.Component {
                       <img src={n4} alt="" />
                   </Card>
                 </Link>
-                     <br/><span className="nursing-header">Nursing Care-4</span>
+                      <span className="nursing-header">Nursing Care-4</span>
               </div>
           </div>
         </div>

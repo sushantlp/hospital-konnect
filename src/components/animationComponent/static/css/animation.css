@@ -1,5 +1,5 @@
-.overall{
-  height: 99vh;
+/* .overall {
+  height: 100%;
 }
 
 .box {
@@ -21,157 +21,127 @@
 .Span {
   line-height: 10em;
   padding-left: 2.5em;
-  /* padding-right: 2.5em; */
+  /* padding-right: 2.5em; 
+} */
+
+.tile.tall {
+  height: 500px;
 }
 
-
-.tile.tall{
-  height:500px;
-}
-
-
-.tile.is-child{
+.tile.is-child {
   height: 150px;
   border: 1px solid grey;
 }
 
-
-.tileContainer{
-  width: 100vw;
-  overflow: hidden;
+.tileContainer {
+  /* width: 100vw; */
+  /* overflow: hidden; */
   /*background: #263868;*/
 }
 
-.doctors{
-    background-image: url(/*'../img/amb.jpg'*/);
-    background-repeat: no-repeat;
-    background-position: center; 
-    position: relative;
-    background-size: contain;  
-    color: black;
-    text-decoration-color: black;
-
+.doctors {
+  background-image: url(/*'../img/amb.jpg'*/);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  background-size: contain;
+  /* color: black;
+  text-decoration-color: black; */
 }
 
-.nurse{
-    background-image: url('../img/nursing.jpg');
-    background-repeat: no-repeat;
-    background-position: center; 
-    background-size: cover;  
+.nurse {
+  background-image: url("../img/nursing.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
-.nurse h1{
-  text-align:center; 
-  margin-top: 100px;
-  width: 100%;
-  display: block;
+.ambulance {
+  background-image: url("../img/hospital.jpg");
+  background-size: cover;
 }
 
-.ambulance{
-    background-image: url('../img/hospital.jpg');
-    background-size: cover;  
-    height:100vh !important;
+.gambulance {
+  background-image: url("../img/gambulance.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.ambulance h1{
-  text-align:center; 
-  margin-top: 250px;
-  width: 100%;
-  display: block;
+.equipment {
+  background-image: url("../img/equip.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.shadow_text{
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+38,000000+64&0+0,0.8+15,1+19,1+81,0.8+85,0+100 */
-background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 15%, rgba(0,0,0,1) 19%, rgba(0,0,0,1) 38%, rgba(0,0,0,1) 64%, rgba(0,0,0,1) 81%, rgba(0,0,0,0.8) 85%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 15%,rgba(0,0,0,1) 19%,rgba(0,0,0,1) 38%,rgba(0,0,0,1) 64%,rgba(0,0,0,1) 81%,rgba(0,0,0,0.8) 85%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 15%,rgba(0,0,0,1) 19%,rgba(0,0,0,1) 38%,rgba(0,0,0,1) 64%,rgba(0,0,0,1) 81%,rgba(0,0,0,0.8) 85%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */  
-display: inline-block;
-width: 22vw;
+.aambulance {
+  background-image: url("../img/aamb.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-
-.gambulance{
-    background-image: url('../img/gambulance.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.gambulance h1{
-  text-align:center; 
-  margin-top: 100px;
-  width: 100%;
-  display: block;
-  color: white;
-}
-
-.equipment{
-    background-image: url('../img/equip.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;  
-}
-
-.equipment h1{
-  text-align:center; 
-  margin-top: 100px;
-  width: 100%;
-  display: block;
-  color: white;  
-}
-
-.aambulance{
-    background-image: url('../img/aamb.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.aambulance h1{
-  text-align:center; 
-  margin-top: 100px;
-  width: 100%;
-  display: block;
-  color: white;
-
-}
-
-.adjustment{
+.adjustment {
   font-size: 1em;
   line-height: 1.5em;
 }
 
-.mark{
-  color:white;
-  font-size:1em;
+.mark {
+  color: white;
+  font-size: 1em;
   line-height: 1.25em;
 }
 
-.tile.is-parent{
-}
-
-.tile.is-ancestor{
-  margin:0px !important;
+.tile.is-ancestor {
+  margin: 0px !important;
   padding: 1px;
-
 }
 
-.tile.is-parent{
-  padding:0px !important;
+.tile.is-parent {
+  padding: 0px !important;
   margin: 0px !important;
 }
 
-.tile.is-child{
-}
-
-.tile{
+.tile {
   border-radius: 0px;
-  margin:0px;
+  margin: 0px;
 }
 
-.tile{align-items:stretch;display:block;flex-basis:0;flex-grow:1;flex-shrink:1;min-height:-webkit-min-content;min-height:-moz-min-content;min-height:min-content}
-.tile.is-ancestor{margin-left:-.75rem;margin-right:-.75rem;margin-top:-.75rem}
-.tile.is-ancestor:last-child{margin-bottom:-.75rem;    display: flex;}
-.tile.is-ancestor:not(:last-child){margin-bottom:0rem}
-.tile.is-child{margin:0.0rem!important; border: 5px solid white;}
-.tile.is-parent{padding:.75rem}
-.tile.is-vertical{flex-direction:column}
-.tile.is-vertical>.tile.is-child:not(:last-child){margin-bottom:0rem!important;}
+.tile {
+  align-items: stretch;
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
+}
+.tile.is-ancestor {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-top: -0.75rem;
+}
+.tile.is-ancestor:last-child {
+  margin-bottom: -0.75rem;
+  display: flex;
+}
+.tile.is-ancestor:not(:last-child) {
+  margin-bottom: 0rem;
+}
+.tile.is-child {
+  margin: 0rem !important;
+  border: 5px solid white;
+}
+.tile.is-parent {
+  padding: 0.75rem;
+}
+.tile.is-vertical {
+  flex-direction: column;
+}
+.tile.is-vertical > .tile.is-child:not(:last-child) {
+  margin-bottom: 0rem !important;
+}
+.title-text {
+  text-align: center;
+  color: white;
+  background-color: #2b2a2a69;
+}

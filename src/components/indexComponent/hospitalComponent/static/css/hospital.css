@@ -1,14 +1,17 @@
-.hospital-subheader {
-  font-size: 0.5em;
-  /*margin-top: 5px;*/
-  -webkit-font-smoothing: subpixel-antialiased;
-  text-transform: uppercase;
-  margin-bottom: -25px;
+.hospital-container {
+  margin-top: 8vh;
 }
 
-.hospital-header span{
-    position: absolute;
-    bottom:0;
+.hospital-subheader {
+  font-size: 0.5em;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-transform: uppercase;
+  margin-bottom: -20px;
+}
+
+.hospital-header span {
+  position: absolute;
+  bottom: 0;
 }
 
 .hospital-card:hover {
@@ -17,139 +20,147 @@
   cursor: pointer;
 }
 
-.nursingcontainer{
-    padding:10px;
-}
-
-.hos1{
-    background-size: cover;
-    font-size: 1.5em;
-    background-color: red;
-    padding: 10px;
-    height: 300px;
-    width: 33.33vw;
-    background: no-repeat url('../img/1.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    border: 5px solid white;
-}
-
-.hos1 span{
-   position: absolute;
-   bottom: 0;
-   height: 40px;
-   line-height: 1em;  
-}
-
-
-.hos2{
-    height: 300px;
-
-    padding: 10px;
-    background-size: cover;
-    font-size: 1.5em;
-    background-color: blue;
-    width: 30vw;
-    background: no-repeat url('../img/2.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-   position: relative;
-   border: 5px solid white;
-}
-
-.hos2 span{
-   position: absolute;
-   bottom: 0;
-   height: 40px;
-   line-height: 1em;  
-}
-
-.hos3{
-    height: 300px;
-    padding: 10px;
-    background-size: cover;
-    font-size: 1.5em;
-    background-color: green;
-    width: 33.33vw;
-    background: no-repeat url('../img/3.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    border: 5px solid white;
-}
-
-.hos3 span{
-   position: absolute;
-   bottom: 0;
-   height: 40px;
-   line-height: 1em;  
-}
-
-.hos4{
-    width:47vw;
-    height: 300px;
-    padding: 10px;
-    font-size: 1.5em;
-    background-size: cover;
-    background-color: yellow;
-    background: no-repeat url('../img/4.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    border: 5px solid white;
-}
-
-.hos4 span{
-   position: absolute;
-   bottom: 0;
-   height: 40px;
-   line-height: 1em;  
-}
-
-.hos5{
-  width:49.5vw;
-  height: 300px;
+.nursingcontainer {
   padding: 10px;
-  font-size: 1.5em;
+}
+
+.title-container {
+  background-color: white;
+}
+
+.hos1 {
   background-size: cover;
-  background-color: black;
-  background: no-repeat url('../img/5.jpg');
+  font-size: 1.5em;
+  background-color: red;
+  padding: 10px;
+  height: 300px;
+  width: 33.33vw;
+  background: no-repeat url("../img/1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
   border: 5px solid white;
 }
 
-.hos5 span{
-   position: absolute;
-   bottom: 0;
-   height: 40px;
-   line-height: 1em;  
+.hos1 span {
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  line-height: 0.7em;
 }
 
-.hoschild{
+.hos2 {
+  height: 300px;
+  padding: 10px;
+  background-size: cover;
+  font-size: 1.5em;
+  background-color: blue;
+  width: 33.33vw;
+  background: no-repeat url("../img/2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  border: 5px solid white;
 }
 
-.hostext{
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+63,636363+100&1+0,0.5+63,0+100 */
-background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 63%, rgba(99,99,99,0) 100%); 
-/* FF3.6-15 */
-background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(255,255,255,0.5) 63%,rgba(99,99,99,0) 100%); 
-/* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0.5) 63%,rgba(99,99,99,0) 100%); 
-/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00636363',GradientType=1 ); 
-/* IE6-9 */  
-width: 100%;
-height:50px;
-margin-left: -10px;
-bottom:0;
-color:black;
-position:absolute;
+.hos2 span {
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  line-height: 0.7em;
 }
 
-.hoscont{
-  padding:15px !important;
-  overflow:hidden;
+.hos3 {
+  height: 300px;
+  padding: 10px;
+  background-size: cover;
+  font-size: 1.5em;
+  background-color: green;
+  width: 33.33vw;
+  background: no-repeat url("../img/3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  border: 5px solid white;
+}
+
+.hos3 span {
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  line-height: 0.7em;
+}
+
+.hos4 {
+  width: 50vw;
+  height: 300px;
+  padding: 10px;
+  font-size: 1.5em;
+  background-size: cover;
+  background-color: yellow;
+  background: no-repeat url("../img/4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  border: 5px solid white;
+}
+
+.hos4 span {
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  line-height: 0.7em;
+}
+
+.hos5 {
+  width: 50vw;
+  height: 300px;
+  padding: 10px;
+  font-size: 1.5em;
+  background-size: cover;
+  background-color: black;
+  background: no-repeat url("../img/5.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  border: 5px solid white;
+}
+
+.hos5 span {
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  line-height: 0.7em;
+}
+
+.hostext {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+63,636363+100&1+0,0.5+63,0+100 */
+  background: -moz-linear-gradient(
+    left,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.5) 63%,
+    rgba(99, 99, 99, 0) 100%
+  );
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.5) 63%,
+    rgba(99, 99, 99, 0) 100%
+  );
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.5) 63%,
+    rgba(99, 99, 99, 0) 100%
+  );
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00636363',GradientType=1 );
+  /* IE6-9 */
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  margin-top: 250px;
+  margin-left: -8px;
 }

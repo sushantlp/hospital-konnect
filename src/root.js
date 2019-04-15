@@ -5,7 +5,6 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import "./static/css/root.css";
 
-// import FrontPage from "./components/frontPageComponent/front-page";
 import Animation from "./components/animationComponent/animation";
 import Initial from "./components/indexComponent";
 import Faq from "./components/faqComponent/faq";
@@ -19,37 +18,37 @@ import EquipDetail from "./components/equipDetailComponent";
 import NursingList from "./components/nursingListComponent";
 import AmbulanceList from "./components/ambulanceListComponent";
 import EquipList from "./components/equipListComponent";
-// import AirAmbulance from "./components/indexComponent/airAmbulanceComponent/airAmbulance";
+import AirAmbulance from "./components/indexComponent/airAmbulanceComponent/airAmbulance";
 import AirAmbulanceDetail from "./components/airAmbulanceDetailComponent";
 
 // Router root
-// import ScrollToTop from "./ScrollToTop"
+
+import ScrollToTop from "./ScrollToTop";
 
 const Root = ({ store }) => (
-    <Provider store={store}>
-      <BrowserRouter>
-        <div>
-          <Switch>
-            <Route exact path="/" component={Animation} />
-            <Route exact path="/terms/" component={Term} />
-            <Route exact path="/privacy/" component={Privacy} />
-            <Route exact path="/faq/" component={Faq} />
-            <Route exact path="/animation/" component={Animation} />
-            <Route exact path="/initial/" component={Initial} />
-            <Route exact path="/hospitallist/" component={HospitalList} />
-            <Route exact path="/hospitaldetail/" component={HospitalDetail} />
-            <Route exact path="/ambulancedetail/" component={AmbulanceDetail} />
-            <Route exact path="/ambulancelist/" component={AmbulanceList} />
-            <Route exact path="/airambulance/" component={AirAmbulanceDetail} />
-            <Route exact path="/nursingdetail/" component={NursingDetail} />
-            <Route exact path="/nursinglist/" component={NursingList} />
-            <Route exact path="/equipmentdetail/" component={EquipDetail} />
-            <Route exact path="/equipmentlist/" component={EquipList} />
-          </Switch>
-        </div>
-      </BrowserRouter>
-    </Provider>
-
+  <Provider store={store}>
+    <BrowserRouter>
+      <div>
+        <Switch>
+          <Route exact path="/" component={Animation} />
+          <Route exact path="/terms/" component={Term} />
+          <Route exact path="/privacy/" component={Privacy} />
+          <Route exact path="/faq/" component={Faq} />
+          <Route exact path="/animation/" component={Animation} />
+          <Route exact path="/initial/" component={Initial} />
+          <Route exact path="/hospital/list/" component={HospitalList} />
+          <Route exact path="/detail/" component={HospitalDetail} />
+          <Route exact path="/ambulance/" component={AmbulanceDetail} />
+          <Route exact path="/airambulance/" component={AirAmbulanceDetail} />
+          <Route exact path="/nursing/" component={NursingDetail} />
+          <Route exact path="/equipment/" component={EquipDetail} />
+          <Route exact path="/nursinglist/" component={NursingList} />
+          <Route exact path="/equipmentlist/" component={EquipList} />
+          <Route exact path="/ambulancelist/" component={AmbulanceList} />
+        </Switch>
+      </div>
+    </BrowserRouter>
+  </Provider>
 );
 
 Root.propTypes = {

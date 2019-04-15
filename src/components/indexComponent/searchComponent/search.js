@@ -12,10 +12,8 @@ export default class Search extends React.Component {
         style={{
           width: "auto",
           height: "500px",
-          backgroundImage:"url('http://bit.ly/2GiUWD6')",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
+          backgroundImage:
+            "url('https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,w_1300/v1555316722/ballyhoo/BALLYHOO_WEBSITE/arseny-togulev-1393380-unsplash.jpg')",
           overflow: "hidden"
         }}
       >

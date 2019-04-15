@@ -2,16 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import {
   Divider,
+  Grid,
   Image,
-  List
+  List,
+  Icon,
+  Segment
 } from "semantic-ui-react/dist/commonjs";
-
-import AppStore from "./static/img/appstore_badge_en.svg";
-import GooglePlay from "./static/img/googleplay_badge_en.svg";
 
 import "semantic-ui-css/semantic.min.css";
 import "./static/css/footer.css";
-
+import AppStore from "./static/img/appstore_badge_en.svg";
+import GooglePlay from "./static/img/googleplay_badge_en.svg";
 
 export default class Footer extends React.Component {
   render() {

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Segment, Image, Grid, Icon, Button } from "semantic-ui-react";
+import { Segment, Image, Grid, Icon, Button, Divider } from "semantic-ui-react";
 
 import "./static/css/hospital-detail-card.css";
 
@@ -63,7 +63,7 @@ export default class NursingCard extends React.Component {
                     }}
                   >
                     <Icon name="phone" />
-                    9999-99-9999
+                    Call Now
                   </Button>
                 </div>
               </Grid.Column>

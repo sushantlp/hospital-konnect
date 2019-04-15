@@ -1,13 +1,13 @@
 import React from "react";
 
-import { Tab } from "semantic-ui-react";
+import { Tab, Segment } from "semantic-ui-react";
 
-import EquipOverview from "../equipOverviewComponent/equip-overview";
-// import HospitalSpecialist from "../hospitalSpecialistComponent/hospital-specialist";
-// import HospitalDoctor from "../hospitalDoctorComponent/hospital-doctor";
-// import HospitalBed from "../hospitalBedComponent/hospital-bed";
-import EquipmentDetails from "../eqdComponent/eqd";
-// import HospitalMap from "../hospitalMapComponent/hospital-map";
+import HospitalOverview from "../hospitalOverviewComponent/hospital-overview";
+import HospitalSpecialist from "../hospitalSpecialistComponent/hospital-specialist";
+import HospitalDoctor from "../hospitalDoctorComponent/hospital-doctor";
+import HospitalBed from "../hospitalBedComponent/hospital-bed";
+import HospitalAmbulance from "../hospitalAmbulanceComponent/hospital-ambulance";
+import HospitalMap from "../hospitalMapComponent/hospital-map";
 
 import "./static/css/hospital-tab.css";
 
@@ -41,7 +41,7 @@ export default class EquipTab extends React.Component {
         menuItem: "Overview",
         render: () => (
           <Tab.Pane>
-            <EquipOverview />
+            <HospitalOverview />
           </Tab.Pane>
         )
       },
@@ -49,7 +49,7 @@ export default class EquipTab extends React.Component {
         menuItem: "Provider Details",
         render: () => (
           <Tab.Pane>
-            <EquipmentDetails />
+            <HospitalAmbulance />
           </Tab.Pane>
         )
       }

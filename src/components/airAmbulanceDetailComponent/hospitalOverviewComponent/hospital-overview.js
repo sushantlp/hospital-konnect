@@ -1,6 +1,6 @@
 import React from "react";
 import ShowMore from "react-show-more";
-// import { Grid } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 import "./static/css/hospital-overview.css";
 
 export default class HospitalOverview extends React.Component {
@@ -8,7 +8,7 @@ export default class HospitalOverview extends React.Component {
     return (
       <div>
         <h2 className="hospital-overview-title">
-          <span>About People Tree Hospitals</span>
+          <span>About Ambulance</span>
         </h2>
 
         <ShowMore lines={3} more="[Read More]" less="[Read Less]" anchorClass="">
@@ -41,6 +41,7 @@ export default class HospitalOverview extends React.Component {
                   <h5>
                     <span>Address</span>
                   </h5>
+
                   <span>
                     2, Tumkur Service Road, Goraguntepalya Landmark: Near BMTC
                     Bus Stop And Opposite Taj Vivanta Yeshwanthpur, Bangalore
@@ -142,7 +143,7 @@ export default class HospitalOverview extends React.Component {
             </Grid.Row>
           </Grid>
         </div>
-*/}        
+*/}
       </div>
     );
   }
