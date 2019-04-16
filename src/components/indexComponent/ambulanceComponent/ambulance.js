@@ -1,10 +1,10 @@
 import React from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-import { List, Card, Container, Icon } from "semantic-ui-react";
-
+import { List, Container, Icon } from "semantic-ui-react";
 import "../../../static/css/root.css";
 import "./static/css/ambulance.css";
+
 import ga1 from "./static/img/1.jpg";
 import ga2 from "./static/img/2.jpg";
 import ga3 from "./static/img/3.jpg";
@@ -25,7 +25,7 @@ function SampleNextArrow(props) {
         backgroundColor: "#ffffff",
         boxShadow: "0 2px 8px 0 rgba(51, 60, 63, 0.22)",
         right: "-98%",
-        top: "-165px",
+        top: "-143px",
         zIndex: "1"
       }}
       onClick={onClick}
@@ -57,7 +57,7 @@ function SamplePrevArrow(props) {
         position: "relative",
         backgroundColor: "#ffffff",
         boxShadow: "0 2px 8px 0 rgba(51, 60, 63, 0.22)",
-        top: "153px",
+        top: "175px",
         left: "-16px",
         zIndex: "1"
       }}

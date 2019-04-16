@@ -18,7 +18,6 @@ import EquipDetail from "./components/equipDetailComponent";
 import NursingList from "./components/nursingListComponent";
 import AmbulanceList from "./components/ambulanceListComponent";
 import EquipList from "./components/equipListComponent";
-import AirAmbulance from "./components/indexComponent/airAmbulanceComponent/airAmbulance";
 import AirAmbulanceDetail from "./components/airAmbulanceDetailComponent";
 
 // Router root

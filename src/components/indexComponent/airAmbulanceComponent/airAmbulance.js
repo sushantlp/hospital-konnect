@@ -34,7 +34,18 @@ export default class AirAmbulance extends React.Component {
                   Telangana with 3 helicopters that are currently based in
                   Bangalore, Chennai and Hyderabad.
                 </h4>
-
+                <h4 class="subtitle has-text-weight-light has-text-justified is-size-6">
+                  Aviators is well known for the past 24 years in the aviation
+                  sector in India and Internationally for our excellence in
+                  support for :
+                  <br />
+                  <br />
+                  -Flight Operations both domestic & international
+                  <br />
+                  -Aircraft & Helicopter Sales
+                  <br />
+                  -Charter and Management
+                </h4>
                 <Route
                   render={({ history }) => (
                     <div
@@ -51,7 +62,7 @@ export default class AirAmbulance extends React.Component {
             </Grid.Row>
 
             <Grid.Row columns={8}>
-              <Image src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,e_art:incognito,w_700/v1555331469/ballyhoo/BALLYHOO_WEBSITE/air-1.jpg" />
+              <Image src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,e_boomerang,w_700/v1555331469/ballyhoo/BALLYHOO_WEBSITE/air-1.jpg" />
             </Grid.Row>
           </Grid>
 

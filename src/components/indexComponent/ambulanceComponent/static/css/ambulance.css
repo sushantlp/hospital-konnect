@@ -2,7 +2,7 @@
   margin-top: 8vh;
 }
 
-.ambulance-header {
+/* .ambulance-header {
   position: absolute;
   bottom: 0;
   font-weight: 600;
@@ -17,13 +17,13 @@
   transform: scale(1.04);
   opacity: 1 !important;
   cursor: pointer;
-}
+} */
 
 /* Not Use if use style tag*/
 
-.clear {
+/* .clear {
   margin-left: 20px;
-}
+} */
 
 .slick-prev,
 .slick-next {
@@ -35,10 +35,10 @@
   content: "" !important;
 }
 
-.ambulance-container {
+/* .ambulance-container {
   margin-top: 20px;
   margin-bottom: -22px;
-}
+} */
 
 .amb-header {
   background: transparent;
