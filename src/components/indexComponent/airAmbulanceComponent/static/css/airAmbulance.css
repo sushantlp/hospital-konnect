@@ -1,12 +1,12 @@
-/* .air-ambulance-container {
-  background: url('../img/3.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  padding: 10px;
-  height:270px;
-
-} */
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "GT Eesti Display", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
 
 .modal {
   display: none;

@@ -35,15 +35,15 @@ const Root = ({ store }) => (
           <Route exact path="/faq/" component={Faq} />
           <Route exact path="/animation/" component={Animation} />
           <Route exact path="/initial/" component={Initial} />
-          <Route exact path="/hospital/list/" component={HospitalList} />
-          <Route exact path="/detail/" component={HospitalDetail} />
+          <Route exact path="/hospital-list/" component={HospitalList} />
+          <Route exact path="/hospital/" component={HospitalDetail} />
           <Route exact path="/ambulance/" component={AmbulanceDetail} />
           <Route exact path="/airambulance/" component={AirAmbulanceDetail} />
           <Route exact path="/nursing/" component={NursingDetail} />
           <Route exact path="/equipment/" component={EquipDetail} />
-          <Route exact path="/nursinglist/" component={NursingList} />
-          <Route exact path="/equipmentlist/" component={EquipList} />
-          <Route exact path="/ambulancelist/" component={AmbulanceList} />
+          <Route exact path="/nursing-list/" component={NursingList} />
+          <Route exact path="/equipment-list/" component={EquipList} />
+          <Route exact path="/ambulance-list/" component={AmbulanceList} />
         </Switch>
       </div>
     </BrowserRouter>

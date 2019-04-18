@@ -10,7 +10,8 @@ export default class AirAmbulance extends React.Component {
   }
 
   render() {
-    return (
+    return (     
+
       <Container style={{ width: "89em" }}>
         <br />
         <h4 className="header-name">AIR AMBULANCE</h4>
@@ -65,36 +66,6 @@ export default class AirAmbulance extends React.Component {
               <Image src="https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,e_boomerang,w_700/v1555331469/ballyhoo/BALLYHOO_WEBSITE/air-1.jpg" />
             </Grid.Row>
           </Grid>
-
-          {/* <Grid fluid stackable columns="2">
-            <Grid.Row>
-              <Grid.Column>
-                <p>
-                  Grenade sprawl nodality pistol film decay vehicle BASE jump
-                  network-space artisanal-ware car savant table rebar receding.
-                  Bicycle skyscraper weathered neural franchise pen paranoid.
-                  Sensory decay voodoo god paranoid fetishism city nodal point
-                  tattoo spook uplink cardboard crypto. Cyber-vinyl tank-traps
-                  crypto-fetishism film futurity uplink dissident 8-bit cartel
-                  footage sunglasses corporation. Wristwatch plastic tower
-                  augmented reality knife computer media sub-orbital alcohol
-                  vehicle human shrine soul-delay industrial grade. Courier
-                  otaku ablative 8-bit DIY tattoo table.
-                </p>
-                <Route
-                  render={({ history }) => (
-                    <Button
-                      onClick={() => {
-                        history.push("/airambulance");
-                      }}
-                    >
-                      Details
-                    </Button>
-                  )}
-                />
-              </Grid.Column>
-            </Grid.Row>
-          </Grid> */}
         </div>
       </Container>
     );

@@ -1,15 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import {
-//   Divider,
-//   Grid,
-//   Image,
-//   List,
-//   Icon,
-//   Segment
-// } from "semantic-ui-react/dist/commonjs";
 
-// import "semantic-ui-css/semantic.min.css";
 import "./static/css/footer.css";
 // import Ios from "./static/img/app.jpeg";
 // import Android from "./static/img/play.jpeg";
@@ -72,7 +63,7 @@ export default class Footer extends React.Component {
               <div class="columns">
                 <div class="column">
                   <div class="menu">
-                    <p class="menu-label"> For hospitals </p>
+                    <p class="menu-label"> For partners </p>
                     <ul class="menu-list">
                       <li>
                         <a href="/">Search for doctors</a>
@@ -115,7 +106,6 @@ export default class Footer extends React.Component {
                           href="https://facebook.com/getbedtimestories"
                           target="_blank"
                         >
-                          {" "}
                           <img
                             role="presentation"
                             src="https://getbedtimestories.com/assets/images/icons/social/facebook-f18752b0.svg?1553506572"
@@ -128,7 +118,6 @@ export default class Footer extends React.Component {
                           href="https://facebook.com/getbedtimestories"
                           target="_blank"
                         >
-                          {" "}
                           <img
                             role="presentation"
                             src="https://getbedtimestories.com/assets/images/icons/social/instagram-89cb51bf.svg?1553506572"
@@ -141,7 +130,6 @@ export default class Footer extends React.Component {
                           href="https://facebook.com/getbedtimestories"
                           target="_blank"
                         >
-                          {" "}
                           <img
                             role="presentation"
                             src="https://getbedtimestories.com/assets/images/icons/social/twitter-42c2f562.svg?1553506572"
@@ -154,7 +142,6 @@ export default class Footer extends React.Component {
                           href="https://facebook.com/getbedtimestories"
                           target="_blank"
                         >
-                          {" "}
                           <img
                             role="presentation"
                             src="https://getbedtimestories.com/assets/images/icons/social/messenger-d2bb944d.svg?1553506572"
@@ -168,10 +155,11 @@ export default class Footer extends React.Component {
               </div>
             </div>
           </div>
+
           <div class="content has-text-centered">
             <p>
-              <strong>Bulma</strong> by{" "}
-              Copyright © 2017, Practo. All rights reserved.
+              Copyright © 2019, <strong>Hospital konnect</strong> All rights
+              reserved.
             </p>
           </div>
         </div>
