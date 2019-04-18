@@ -5,8 +5,14 @@
   line-height: 1.5;
 } */
 
-.hero p {
+.panel-block label {
   max-width: 360px;
   font-size: 1.125rem;
   line-height: 1.66667;
+}
+
+.field {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 0.5em;
 }

@@ -22,26 +22,28 @@ export default class Index extends React.Component {
           </div>
         </section>
 
+        {/* <section class="section"> */}
+        <div class="container">
+          {/* <div class="is-divider" /> */}
+          <Filter />
+        </div>
+        {/* </section> */}
+
         <section class="section">
           <div class="container is-fullhd">
-            {/* <div class="is-divider" /> */}
-            <Filter />
+            <div class="columns">
+              <div class="column is-3">
+                <HospitalFilter />
+              </div>
+              <div class="column is-6">
+                <HospitalCard />
+              </div>
+              <div class="column is-3">
+                <SeoLink />
+              </div>
+            </div>
           </div>
         </section>
-
-        <div class="container is-fullhd">
-          <div class="columns">
-            <div class="column is-3">
-              <HospitalFilter />
-            </div>
-            <div class="column is-6">
-              <HospitalCard />
-            </div>
-            <div class="column is-3">
-              <SeoLink />
-            </div>
-          </div>
-        </div>
         <Footer />
       </React.Fragment>
     );
