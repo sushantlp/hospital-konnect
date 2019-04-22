@@ -2,14 +2,15 @@ import React from "react";
 
 import HospitalCard from "./hospitalCardComponent/hospital-card";
 
-import SeoLink from "./seoLinkComponent/seo-link";
+// import SeoLink from "./seoLinkComponent/seo-link";
 import Same from "../sameComponent";
 import Filter from "../filterComponent";
 import Banner from "../bannerComponent";
-
+import Seo from "../seoComponent";
 import Header from "../headerComponent/header";
 import Footer from "../footerComponent/footer";
 import "./static/css/index.css";
+
 // import "../../../node_modules/bulma-divider";
 
 export default class Index extends React.Component {
@@ -39,7 +40,7 @@ export default class Index extends React.Component {
               <HospitalCard />
             </div>
             <div class="column is-3">
-              <SeoLink />
+              <Seo />
             </div>
           </div>
         </section>

@@ -2,7 +2,7 @@ import React from "react";
 
 import "./same.css";
 
-export default class Filter extends React.Component {
+export default class Same extends React.Component {
   render() {
     return (
       <div class="panel-block">

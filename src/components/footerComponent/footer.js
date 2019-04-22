@@ -1,9 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-import "./static/css/footer.css";
-// import Ios from "./static/img/app.jpeg";
-// import Android from "./static/img/play.jpeg";
+import "./footer.css";
 
 export default class Footer extends React.Component {
   render() {
@@ -31,7 +28,7 @@ export default class Footer extends React.Component {
                 <hr className="spacer is-1" />
                 <p>
                   The storytelling app for families - read diverse &amp;
-                  empowering stories or tell them in your own words.{" "}
+                  empowering stories or tell them in your own words.
                 </p>
                 <hr className="spacer is-1" />
 
