@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./static/css/banner.css";
+import "./banner.css";
 
 export default class Banner extends React.Component {
   render() {

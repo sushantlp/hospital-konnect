@@ -1,0 +1,9 @@
+.spacer.is-1 {
+  height: 1rem;
+}
+
+.card-content {
+  max-width: 360px;
+  font-size: 1.125rem;
+  line-height: 1.66667;
+}

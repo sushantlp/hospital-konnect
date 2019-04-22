@@ -5,14 +5,23 @@
   line-height: 1.5;
 } */
 
-.panel-block label {
+.navbar {
   max-width: 360px;
   font-size: 1.125rem;
   line-height: 1.66667;
 }
 
-.field {
+.navbar-dropdown {
+  max-width: 360px;
+  font-size: 1.125rem;
+  line-height: 1.66667;
+}
+/* .field {
   display: inline-flex;
   align-items: center;
   padding-left: 0.5em;
-}
+} */
+
+/* .navbar-link:not(.is-arrowless)::after {
+  margin-top: -0.5em;
+} */
