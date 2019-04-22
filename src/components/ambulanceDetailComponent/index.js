@@ -1,5 +1,5 @@
 import React from "react";
-import SeoLink from "../hospitalListComponent/seoLinkComponent/seo-link";
+// import SeoLink from "../hospitalListComponent/seoLinkComponent/seo-link";
 import AmbulanceDetailCard from "./ambulanceDetailCardComponent/ambulance-detail-card";
 import AmbulanceTab from "./ambulanceTabComponent/hospital-tab";
 
@@ -13,17 +13,15 @@ export default class Index extends React.Component {
     return (
       <div>
         <Header />
-          <div className='columns'>
-            <div className='column'>
-              <AmbulanceDetailCard />
-              <AmbulanceTab />
-            </div>
-            <div className='column is-one-third'>
-              <SeoLink />
-            </div>
+        <div className="columns">
+          <div className="column">
+            <AmbulanceDetailCard />
+            <AmbulanceTab />
           </div>
+          <div className="column is-one-third">{/* <SeoLink /> */}</div>
+        </div>
         <Footer />
       </div>
-   );
+    );
   }
 }

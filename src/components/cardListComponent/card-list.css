@@ -2,6 +2,10 @@
   height: 1rem;
 }
 
+.spacer is-3 {
+  height: 3rem;
+}
+
 .card-list .card-content {
   max-width: max-content;
 }
@@ -10,6 +14,10 @@
   color: #363642;
 }
 
-span p {
-  margin-bottom: 0.4em;
+.content .fees {
+  margin-left: 0.4em;
+}
+
+.content .fees del {
+  font-size: 1em;
 }

@@ -6,7 +6,6 @@ export default class CardList extends React.Component {
   render() {
     return (
       <div>
-        {/* <Segment> */}
         <div class="panel-block">
           <div class="container">
             <div class="card">
@@ -24,10 +23,25 @@ export default class CardList extends React.Component {
                     <div class="content">
                       <p class="title is-4"> People Tree Hospitals</p>
                       <p class="subtitle is-6">Multi-Speciality Hospital</p>
-                      <span className="card-locality-fee">
-                        <p class="subtitle is-5">Jp Nagar</p>
-                        <p class="subtitle is-6">Open 24 hours</p>
-                      </span>
+                      <p
+                        class="subtitle is-6"
+                        style={{ marginBottom: "0.5em" }}
+                      >
+                        Jp Nagar
+                      </p>
+                      <p
+                        class="subtitle is-6"
+                        style={{ marginBottom: "0.5em" }}
+                      >
+                        Open 24 hours
+                      </p>
+
+                      <p class="subtitle is-6">
+                        Registration Charges
+                        <span className="fees">
+                          <del>&#x20b9;</del>500
+                        </span>
+                      </p>
                     </div>
                   </div>
 
@@ -66,10 +80,25 @@ export default class CardList extends React.Component {
                     <div class="content">
                       <p class="title is-4"> People Tree Hospitals</p>
                       <p class="subtitle is-6">Multi-Speciality Hospital</p>
-                      <span className="card-locality-fee">
-                        <p class="subtitle is-5">Jp Nagar</p>
-                        <p class="subtitle is-6">Open 24 hours</p>
-                      </span>
+                      <p
+                        class="subtitle is-6"
+                        style={{ marginBottom: "0.5em" }}
+                      >
+                        Jp Nagar
+                      </p>
+                      <p
+                        class="subtitle is-6"
+                        style={{ marginBottom: "0.5em" }}
+                      >
+                        Open 24 hours
+                      </p>
+
+                      <p class="subtitle is-6">
+                        Registration Charges
+                        <span className="fees">
+                          <del>&#x20b9;</del>500
+                        </span>
+                      </p>
                     </div>
                   </div>
 
@@ -92,7 +121,10 @@ export default class CardList extends React.Component {
             </div>
           </div>
         </div>
-        {/* </Segment> */}
+        <hr className="spacer is-3" />
+        <div class="has-text-centered">
+          <a class="button is-danger is-loading is-large ">Loading</a>
+        </div>
       </div>
     );
   }
