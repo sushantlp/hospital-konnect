@@ -40,7 +40,7 @@ export default class Seo extends React.Component {
           </li>
         </ul>
 
-        <hr className="spacer is-1" />
+        <hr className="spacer is-4" />
 
         <p class="seo-label"> Popular Doctors In Bangalore </p>
         <ul class="seo-list">

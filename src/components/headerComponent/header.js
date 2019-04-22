@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { Menu } from "semantic-ui-react/dist/commonjs";
 
-import "./static/css/header.css";
+import "./header.css";
 import "../../static/css/root.css";
 
 export default class Header extends React.Component {

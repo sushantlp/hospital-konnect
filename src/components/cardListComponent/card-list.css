@@ -1,0 +1,15 @@
+.spacer.is-1 {
+  height: 1rem;
+}
+
+.card-list .card-content {
+  max-width: max-content;
+}
+
+.card-footer a {
+  color: #363642;
+}
+
+span p {
+  margin-bottom: 0.4em;
+}

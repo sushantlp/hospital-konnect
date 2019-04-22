@@ -2,7 +2,7 @@ import React from "react";
 
 import { Responsive } from "semantic-ui-react";
 
-import "./static/css/front-page.css";
+import "./front-page.css";
 
 export default class FrontPage extends React.Component {
   animationRoute = () => {

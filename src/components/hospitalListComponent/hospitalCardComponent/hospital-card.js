@@ -54,31 +54,19 @@ export default class HospitalCard extends React.Component {
                 </div>
                 <div className="call-button">
                   <Button
-                    basic
-                    color="red"
-                    style={{
-                      opacity: "1",
-                      width: "10em",
-                      height: "2.8em",
-                      fontSize: "1em",
-                      fontWeight: "500",
-                      float:"right"
-                    }}
-                  >Call Now
-                  </Button>
-                  <Button
                     style={{
                       backgroundColor: "transparent",
-                      border:"1px solid green",
+                      border: "1px solid green",
                       color: "black",
                       opacity: "1",
                       height: "2.8em",
                       fontSize: "1em",
                       fontWeight: "500",
-                      marginTop:"0.5em",
-                      float:"right"
+                      marginTop: "0.5em",
+                      float: "right"
                     }}
-                  > <Icon name="rupee" /> Registration Charges 500/-
+                  >
+                    <Icon name="rupee" /> Registration Charges 500/-
                   </Button>
                 </div>
               </Grid.Column>
@@ -97,7 +85,7 @@ export default class HospitalCard extends React.Component {
             <div className="phone-number-div">
               <p className="phone-number-p">080 7196 6843</p>
             </div>
-          </div>          
+          </div>
         </Segment>
         <Segment>
           <Grid stackable>
@@ -150,23 +138,26 @@ export default class HospitalCard extends React.Component {
                       height: "2.8em",
                       fontSize: "1em",
                       fontWeight: "500",
-                      float:"right"
+                      float: "right"
                     }}
-                  >Call Now
+                  >
+                    Call Now
                   </Button>
                   <Button
                     style={{
                       backgroundColor: "transparent",
-                      border:"1px solid green",
+                      border: "1px solid green",
                       color: "black",
                       opacity: "1",
                       height: "2.8em",
                       fontSize: "1em",
                       fontWeight: "500",
-                      marginTop:"0.5em",
-                      float:"right"
+                      marginTop: "0.5em",
+                      float: "right"
                     }}
-                  > <Icon name="rupee" /> Registration Charges 500/-
+                  >
+                    {" "}
+                    <Icon name="rupee" /> Registration Charges 500/-
                   </Button>
                 </div>
               </Grid.Column>
@@ -185,7 +176,7 @@ export default class HospitalCard extends React.Component {
             <div className="phone-number-div">
               <p className="phone-number-p">080 7196 6843</p>
             </div>
-          </div>          
+          </div>
         </Segment>
         <Segment>
           <Grid stackable>
@@ -247,23 +238,26 @@ export default class HospitalCard extends React.Component {
                       height: "2.8em",
                       fontSize: "1em",
                       fontWeight: "500",
-                      float:"right"
+                      float: "right"
                     }}
-                  >Call Now
+                  >
+                    Call Now
                   </Button>
                   <Button
                     style={{
                       backgroundColor: "transparent",
-                      border:"1px solid green",
+                      border: "1px solid green",
                       color: "black",
                       opacity: "1",
                       height: "2.8em",
                       fontSize: "1em",
                       fontWeight: "500",
-                      marginTop:"0.5em",
-                      float:"right"
+                      marginTop: "0.5em",
+                      float: "right"
                     }}
-                  > <Icon name="rupee" /> Registration Charges 500/-
+                  >
+                    {" "}
+                    <Icon name="rupee" /> Registration Charges 500/-
                   </Button>
                 </div>
               </Grid.Column>
@@ -282,7 +276,7 @@ export default class HospitalCard extends React.Component {
             <div className="phone-number-div">
               <p className="phone-number-p">080 7196 6843</p>
             </div>
-          </div>          
+          </div>
         </Segment>
         <Button
           size="large"
