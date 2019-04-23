@@ -1,29 +1,3 @@
-/* .overall {
-  height: 100%;
-}
-
-.box {
-  width: 10em;
-  height: 10em;
-  transform-origin: 50% 50%;
-  margin-bottom: 1em;
-  border-radius: 3%;
-}
-
-.circle {
-  width: 10em;
-  height: 10em;
-  transform-origin: 50% 50%;
-  margin-bottom: 1em;
-  border-radius: 50%;
-}
-
-.Span {
-  line-height: 10em;
-  padding-left: 2.5em;
-  /* padding-right: 2.5em; 
-} */
-
 .tile.tall {
   height: 500px;
 }
@@ -33,48 +7,40 @@
   border: 1px solid grey;
 }
 
-.tileContainer {
-  /* width: 100vw; */
-  /* overflow: hidden; */
-  /*background: #263868;*/
-}
-
 .doctors {
-  background-image: url(/*'../img/amb.jpg'*/);
+  background-image: url(/*'./amb.jpg'*/);
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
   background-size: contain;
-  /* color: black;
-  text-decoration-color: black; */
 }
 
-.nurse {
-  background-image: url("../img/nursing.jpg");
+/* .nurse {
+  background-image: url("./nursing.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-}
+} */
 
 .ambulance {
-  background-image: url("../img/hospital.jpg");
+  background-image: url("./hospital.jpg");
   background-size: cover;
 }
 
 .gambulance {
-  background-image: url("../img/gambulance.jpg");
+  background-image: url("./gambulance.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .equipment {
-  background-image: url("../img/equip.jpg");
+  background-image: url("./equip.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .aambulance {
-  background-image: url("../img/aamb.jpg");
+  background-image: url("./aamb.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }

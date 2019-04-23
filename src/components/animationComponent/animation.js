@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../headerComponent/header";
-import "./static/css/animation.css";
+import "./animation.css";
 // import "bulma/css/bulma.css";
 
 export default class Animation extends React.Component {
@@ -20,7 +20,16 @@ export default class Animation extends React.Component {
             <div class="tile is-vertical">
               <div class="tile">
                 <div class="tile is-parent is-vertical">
-                  <article class="tile is-child notification is-success nurse hover">
+                  <article
+                    class="tile is-child notification is-success nurse hover"
+                    style={{
+                      backgroundImage:
+                        "url(https://res.cloudinary.com/dp67gawk6/image/upload/v1556007005/ballyhoo/BALLYHOO_WEBSITE/nursing.jpg)",
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "center",
+                      backgroundSize: "cover"
+                    }}
+                  >
                     <h1 className="title-text"> Nursing Care </h1>
                   </article>
                   <article class="tile is-child notification is-warning aambulance hover">

@@ -1,8 +1,5 @@
 import React from "react";
 
-import HospitalCard from "./hospitalCardComponent/hospital-card";
-
-// import SeoLink from "./seoLinkComponent/seo-link";
 import Same from "../sameComponent";
 import Filter from "../filterComponent";
 import Banner from "../bannerComponent";
@@ -10,7 +7,7 @@ import Seo from "../seoComponent";
 import CardList from "../cardListComponent";
 import Header from "../headerComponent/header";
 import Footer from "../footerComponent/footer";
-import "./static/css/index.css";
+import "./hospital-list.css";
 
 // import "../../../node_modules/bulma-divider";
 

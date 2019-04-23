@@ -7,8 +7,8 @@ export default class Filter extends React.Component {
   render() {
     return (
       <div class="panel-block">
-        <div class="container">
-          <nav class="navbar" role="navigation" aria-label="main navigation">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+          <div class="container">
             <div class="navbar-brand">
               <a class="navbar-item" href="https://bulma.io">
                 <img
@@ -18,9 +18,15 @@ export default class Filter extends React.Component {
                   alt="Hello"
                 />
               </a>
+
+              <div id="navbar-burger-id" class="navbar-burger">
+                <span />
+                <span />
+                <span />
+              </div>
             </div>
 
-            <div id="navbarBasicExample" class="navbar-menu">
+            <div id="navbar-menu-id" class="navbar-menu">
               <div class="navbar-start">
                 <div class="navbar-item has-dropdown is-hoverable">
                   <a class="navbar-link">Price</a>
@@ -74,6 +80,11 @@ export default class Filter extends React.Component {
                         <label for="exampleRadioDefault4">500 +</label>
                       </div>
                     </a>
+
+                    <hr class="navbar-divider" />
+                    <div class="has-text-centered">
+                      <span class="subtitle is-5">Apply</span>
+                    </div>
                   </div>
                 </div>
 
@@ -149,15 +160,15 @@ export default class Filter extends React.Component {
                     </a>
 
                     <hr class="navbar-divider" />
-                    <div>
-                      <span>Apply</span>
+                    <div class="has-text-centered">
+                      <span class="subtitle is-5">Apply</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
       </div>
     );
   }

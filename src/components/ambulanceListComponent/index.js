@@ -1,33 +1,43 @@
 import React from "react";
 
-import { Grid } from "semantic-ui-react";
-
-import HospitalFilter from "./hospitalFilterComponent/hospital-filter";
-import HospitalCard from "./hospitalCardComponent/hospital-card";
-// import SeoLink from "./seoLinkComponent/seo-link";
-
+import Same from "../sameComponent";
+import Filter from "../filterComponent";
+import Banner from "../bannerComponent";
+import Seo from "../seoComponent";
+import CardList from "../cardListComponent";
 import Header from "../headerComponent/header";
 import Footer from "../footerComponent/footer";
-import "./static/css/index.css";
+
+import "./ambulance-list.css";
 
 export default class Index extends React.Component {
   render() {
     return (
       <React.Fragment>
         <Header />
-        <div className="hospital-div">
-          <div className="columns">
-            <div className="column is-3">
-              <HospitalFilter />
-            </div>
-            <Grid.Column className="column is-7">
-              <HospitalCard />
-            </Grid.Column>
-            <Grid.Column className="column is-2">
-              {/* <SeoLink /> */}
-            </Grid.Column>
+        <section class="section">
+          <div class="container is-fullhd">
+            <Banner />
           </div>
+        </section>
+
+        <div class="container">
+          <Filter />
         </div>
+
+        <section class="section">
+          <div class="columns">
+            <div class="column is-3">
+              <Same />
+            </div>
+            <div class="column is-6">
+              <CardList />
+            </div>
+            <div class="column is-3">
+              <Seo />
+            </div>
+          </div>
+        </section>
         <Footer />
       </React.Fragment>
     );
