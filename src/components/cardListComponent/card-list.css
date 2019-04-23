@@ -1,8 +1,17 @@
+.spacer {
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 0;
+  background: none;
+  border: none;
+}
+
 .spacer.is-1 {
   height: 1rem;
 }
 
-.spacer is-3 {
+.spacer.is-3 {
   height: 3rem;
 }
 

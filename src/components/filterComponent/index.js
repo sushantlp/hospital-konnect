@@ -1,7 +1,5 @@
 import React from "react";
 
-// import { Dropdown } from "semantic-ui-react";
-
 import "../../../node_modules/bulma-checkradio";
 import "./filter.css";
 
@@ -14,9 +12,9 @@ export default class Filter extends React.Component {
             <div class="navbar-brand">
               <a class="navbar-item" href="https://bulma.io">
                 <img
-                  src="https://bulma.io/images/bulma-logo.png"
-                  width="112"
-                  height="28"
+                  src="https://getbedtimestories.com/assets/images/app-icon-df78e144.png?1553506572"
+                  // width="112"
+                  // height="28"
                   alt="Hello"
                 />
               </a>
