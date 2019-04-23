@@ -1,13 +1,12 @@
 import React from "react";
-
 import "./seo.css";
 
 export default class Seo extends React.Component {
   render() {
     return (
       <div class="container">
-        <p class="seo-label"> Most Searched Localities In Bangalore </p>
-        <ul class="seo-list">
+        <p className="menu-label"> Most Searched Localities In Bangalore </p>
+        <ul className="menu-list">
           <li>
             <a href="/">Hospital in Yelahanka</a>
           </li>
@@ -42,8 +41,8 @@ export default class Seo extends React.Component {
 
         <hr className="spacer is-4" />
 
-        <p class="seo-label"> Popular Doctors In Bangalore </p>
-        <ul class="seo-list">
+        <p className="menu-label"> Popular Doctors In Bangalore </p>
+        <ul className="menu-list">
           <li>
             <a href="/">Pain Management Specialist in Bangalore</a>
           </li>

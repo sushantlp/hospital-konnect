@@ -6,7 +6,10 @@ import "./filter.css";
 export default class Filter extends React.Component {
   render() {
     return (
-      <div class="panel-block">
+      <div
+        class="panel-block"
+        style={{ cursor: "not-allowed", pointerEvents: "none" }}
+      >
         <nav class="navbar" role="navigation" aria-label="main navigation">
           <div class="container">
             <div class="navbar-brand">
@@ -19,11 +22,11 @@ export default class Filter extends React.Component {
                 />
               </a>
 
-              <div id="navbar-burger-id" class="navbar-burger">
-                <span />
-                <span />
-                <span />
-              </div>
+              {/* <div id="navbar-burger-id" class="navbar-burger">
+                 <span />
+                 <span />
+                 <span />
+               </div> */}
             </div>
 
             <div id="navbar-menu-id" class="navbar-menu">

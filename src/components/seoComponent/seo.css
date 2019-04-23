@@ -1,20 +1,29 @@
+.spacer {
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 0;
+  background: none;
+  border: none;
+}
+
 .spacer.is-4 {
   height: 4rem;
 }
 
-.seo-label {
+.menu-label {
   font-size: 1.1rem;
-  font-weight: 500;
   text-transform: none;
   letter-spacing: 0;
+  font-weight: 700;
 }
 
-.seo-list {
+.menu-list {
   margin-left: -0.75rem;
   font-size: 1rem;
 }
 
-.seo-list a {
+.menu-list a {
   border-radius: 10px;
   color: #998da0;
   display: block;

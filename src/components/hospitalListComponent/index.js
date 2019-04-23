@@ -12,6 +12,10 @@ import "./hospital-list.css";
 // import "../../../node_modules/bulma-divider";
 
 export default class Index extends React.Component {
+  componentWillMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
       <React.Fragment>

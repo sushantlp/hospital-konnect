@@ -22,8 +22,6 @@ import NursingList from "./components/nursingListComponent";
 import AmbulanceList from "./components/ambulanceListComponent";
 import EquipList from "./components/equipListComponent";
 
-import ScrollToTop from "./ScrollToTop";
-
 const Root = ({ store }) => (
   <Provider store={store}>
     <BrowserRouter>
@@ -35,16 +33,16 @@ const Root = ({ store }) => (
           <Route exact path="/faq/" component={Faq} />
           <Route exact path="/initial/" component={Initial} />
 
-          <Route exact path="/hospital-list/" component={HospitalList} />
-          <Route exact path="/nursing-list/" component={NursingList} />
-          <Route exact path="/equipment-list/" component={EquipList} />
-          <Route exact path="/ambulance-list/" component={AmbulanceList} />
+          <Route exact path="/hospital/" component={HospitalList} />
+          <Route exact path="/nursing/" component={NursingList} />
+          <Route exact path="/equipment/" component={EquipList} />
+          <Route exact path="/ambulance/" component={AmbulanceList} />
 
-          <Route exact path="/hospital/" component={HospitalDetail} />
-          <Route exact path="/ambulance/" component={AmbulanceDetail} />
+          <Route exact path="/hospital/package" component={HospitalDetail} />
+          <Route exact path="/ambulance/package" component={AmbulanceDetail} />
+          <Route exact path="/nursing/package" component={NursingDetail} />
+          <Route exact path="/equipment/package" component={EquipDetail} />
           <Route exact path="/airambulance/" component={AirAmbulanceDetail} />
-          <Route exact path="/nursing/" component={NursingDetail} />
-          <Route exact path="/equipment/" component={EquipDetail} />
         </Switch>
       </div>
     </BrowserRouter>
