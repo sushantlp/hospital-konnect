@@ -1,5 +1,6 @@
 import React from "react";
 import Overview from "../overviewTabComponent";
+import Doctor from "../doctorTabComponent";
 import "./tab.css";
 
 export default class Tab extends React.Component {
@@ -67,7 +68,10 @@ export default class Tab extends React.Component {
           </ul>
         </div>
 
-        <Overview />
+        {this.state.navigation === "Overview" ? <Overview /> : null}
+        {this.state.navigation === "Beds" ? null : null}
+        {this.state.navigation === "Doctors" ? <Doctor /> : null}
+        {this.state.navigation === "Ambulances" ? null : null}
       </div>
     );
   }
