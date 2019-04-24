@@ -1,8 +1,5 @@
 import React from "react";
 
-// import HospitalDetailCard from "./hospitalDetailCardComponent/hospital-detail-card";
-// import HospitalTab from "./hospitalTabComponent/hospital-tab";
-
 import Header from "../headerComponent/header";
 import Footer from "../footerComponent/footer";
 import Card from "../cardDetailComponent";

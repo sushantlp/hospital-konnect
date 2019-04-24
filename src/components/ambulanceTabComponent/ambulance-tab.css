@@ -1,0 +1,15 @@
+.content .price {
+  font-size: 1em;
+  margin-left: 0.5em;
+}
+
+.content .available {
+  font-size: 1em;
+  margin-left: 0.5em;
+  color: green;
+}
+
+.content .price:hover {
+  color: #118fe4;
+  text-decoration: underline;
+}
