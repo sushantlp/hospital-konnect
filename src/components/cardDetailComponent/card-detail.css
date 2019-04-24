@@ -1,0 +1,9 @@
+.content .tag {
+  margin-left: 0.4em;
+  font-weight: 700;
+}
+
+.content .tag del {
+  font-size: 1em;
+  font-weight: 700;
+}

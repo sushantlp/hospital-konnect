@@ -1,6 +1,5 @@
 import React from "react";
 
-// import ParallaxHeader from "../headerComponent/parallax-header";
 import Footer from "../footerComponent/footer";
 import Search from "./searchComponent/search";
 import Specialization from "./specializationComponent/specialization";
@@ -14,7 +13,6 @@ export default class Animation extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {/* <ParallaxHeader /> */}
         <Search />
         <Specialization />
         <Hospital />

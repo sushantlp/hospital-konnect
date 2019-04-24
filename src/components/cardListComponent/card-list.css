@@ -22,11 +22,3 @@
 .card-footer a {
   color: rgb(38, 56, 104);
 }
-
-.content .fees {
-  margin-left: 0.4em;
-}
-
-.content .fees del {
-  font-size: 1em;
-}

@@ -19,7 +19,7 @@ export default class Header extends React.Component {
             <Menu.Item>
               <h1
                 style={{
-                  color: "#ed3237"
+                  color: "white"
                 }}
               >
                 Hospital Konnect

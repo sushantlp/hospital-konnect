@@ -1,4 +1,4 @@
 import { combineReducers } from "redux";
-import { fnbWallet } from "./demo";
+import { cityLocality } from "./city-locality-reducer";
 
-export default combineReducers({ fnbWallet });
+export default combineReducers({ cityLocality });
