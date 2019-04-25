@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 
-import { Card, Container, Button } from "semantic-ui-react";
+import { Container } from "semantic-ui-react";
 import "../../../static/css/root.css";
 import "./static/css/hospital.css";
 

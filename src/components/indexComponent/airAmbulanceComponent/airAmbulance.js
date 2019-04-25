@@ -10,9 +10,8 @@ export default class AirAmbulance extends React.Component {
   }
 
   render() {
-    return (     
-
-      <Container style={{ width: "89em" }}>
+    return (
+      <Container style={{ width: "89em", lineHeight: "1.66667" }}>
         <br />
         <h4 className="header-name">AIR AMBULANCE</h4>
         <div className="underscore" />
@@ -21,10 +20,13 @@ export default class AirAmbulance extends React.Component {
           <Grid>
             <Grid.Row columns={4}>
               <Grid.Column>
-                <h3 class="title is-spaced">
+                <p class="title is-4" style={{ lineHeight: "1.66667" }}>
                   We Can Help You Anytime Anywhere....
-                </h3>
-                <h4 class="subtitle has-text-weight-light has-text-justified is-size-6">
+                </p>
+                <p
+                  class="subtitle is-6 has-text-justified"
+                  style={{ lineHeight: "1.66667" }}
+                >
                   Aviators Air Rescue Pvt.Ltd., is a pioneer in Helicopter
                   Emergency Medical Services (HEMS) in India and has acquired
                   three Airbus helicopters H-130 medically equipped to transport
@@ -34,8 +36,11 @@ export default class AirAmbulance extends React.Component {
                   Karnataka, Tamil Nadu, Kerala, Pondicherry, Andhra Pradesh and
                   Telangana with 3 helicopters that are currently based in
                   Bangalore, Chennai and Hyderabad.
-                </h4>
-                <h4 class="subtitle has-text-weight-light has-text-justified is-size-6">
+                </p>
+                <p
+                  class="subtitle is-6 has-text-justified"
+                  style={{ lineHeight: "1.66667" }}
+                >
                   Aviators is well known for the past 24 years in the aviation
                   sector in India and Internationally for our excellence in
                   support for :
@@ -46,7 +51,7 @@ export default class AirAmbulance extends React.Component {
                   -Aircraft & Helicopter Sales
                   <br />
                   -Charter and Management
-                </h4>
+                </p>
                 <Route
                   render={({ history }) => (
                     <div
@@ -55,7 +60,7 @@ export default class AirAmbulance extends React.Component {
                         history.push("/airambulance");
                       }}
                     >
-                      <span class="button is-success">View Detail</span>
+                      <span class="button is-info">View Detail</span>
                     </div>
                   )}
                 />

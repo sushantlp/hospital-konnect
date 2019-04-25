@@ -11,3 +11,7 @@ textarea {
 .modal {
   display: none;
 }
+
+.Container {
+  line-height: 1.66667;
+}

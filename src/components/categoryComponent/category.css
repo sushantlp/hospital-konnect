@@ -7,44 +7,6 @@
   border: 1px solid grey;
 }
 
-.doctors {
-  background-image: url(/*'./amb.jpg'*/);
-  background-repeat: no-repeat;
-  background-position: center;
-  position: relative;
-  background-size: contain;
-}
-
-/* .nurse {
-  background-image: url("./nursing.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-} */
-
-.ambulance {
-  background-image: url("./hospital.jpg");
-  background-size: cover;
-}
-
-.gambulance {
-  background-image: url("./gambulance.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.equipment {
-  background-image: url("./equip.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.aambulance {
-  background-image: url("./aamb.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .adjustment {
   font-size: 1em;
   line-height: 1.5em;

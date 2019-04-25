@@ -9,5 +9,12 @@ export default {
         response.json().then(cityLocality => resolve(cityLocality));
       });
     });
+  },
+  categoryDetailApi: () => {
+    return new Promise((resolve, reject) => {
+      fetch(host + "api/v1/web/index").then(response => {
+        response.json().then(categoryDetail => resolve(categoryDetail));
+      });
+    });
   }
 };

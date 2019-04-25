@@ -2,3 +2,9 @@
   font-size: 1em;
   margin-left: 0.5em;
 }
+
+.content .available {
+  font-size: 1em;
+  margin-left: 0.5em;
+  color: green;
+}

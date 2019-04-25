@@ -20,7 +20,7 @@ const bedTab = props => {
                 </span>
 
                 <span class="subtitle is-5" style={{ marginLeft: "1em" }}>
-                  Availability :<span className="price">Yes</span>
+                  Availability :<span className="available">Yes</span>
                 </span>
               </p>
 

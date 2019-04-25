@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container, Button, Grid } from "semantic-ui-react";
+import { Container, Grid } from "semantic-ui-react";
 import "../../../static/css/root.css";
 import "./static/css/specialization.css";
 
@@ -28,7 +28,6 @@ export default class Specialization extends React.Component {
               </div>
             </Grid.Column>
             <Grid.Column style={{ cursor: "pointer" }}>
-
               <div className="single_department">
                 <div className="dpmt-thumb">
                   <img
@@ -90,20 +89,6 @@ export default class Specialization extends React.Component {
             </Grid.Column>
           </Grid.Row>
         </Grid>
-        {/*
-        <Button
-          size="large"
-          basic
-          color="black"
-          style={{
-            marginTop: "2em",
-            marginBottom: "2em",
-            marginLeft: "45%"
-          }}
-        >
-          View More
-        </Button>
-        */}
       </Container>
     );
   }
