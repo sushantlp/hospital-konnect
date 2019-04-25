@@ -8,12 +8,21 @@ import Ambulance from "./ambulanceComponent/ambulance";
 import AirAmbulance from "./airAmbulanceComponent/airAmbulance";
 import Nursing from "./nursingComponent/nursing";
 import Equipment from "./equipmentComponent/equipment";
+import Spinner from "../spinnerComponent";
 
 export default class Animation extends React.Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+    this.props.getCityLocality();
+  }
+
   render() {
+    // if (this.props.cityLocality.status === "START") return <Spinner />;
+    // else if (this.props.cityLocality.status === "FAIL") return <Spinner />;
+
     return (
       <React.Fragment>
-        <Search />
+        <Search cityLocality={this.props.cityLocality} />
         <Specialization />
         <Hospital />
         <Ambulance />

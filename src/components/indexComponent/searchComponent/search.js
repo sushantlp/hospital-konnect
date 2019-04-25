@@ -3,10 +3,87 @@ import React from "react";
 import { Dropdown, Grid, Icon, Container } from "semantic-ui-react";
 
 import "semantic-ui-css/semantic.min.css";
-import "./static/css/search.css";
+import "./search.css";
 
 export default class Search extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cityList: [],
+      localityList: [],
+      cityName: "Bengaluru",
+      localityName: "Jp Nagar"
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.cityLocality !== nextProps.cityLocality)
+      this.createCityList(nextProps.cityLocality.cityLocality, "Bengaluru");
+  }
+
+  // Create City List
+  createCityList = (props, cityName) => {
+    let cityArray = props.map(obj => {
+      const city = {};
+      city.key = obj.c_id;
+      city.value = obj.c_name;
+      city.text = obj.c_name;
+      if (obj.c_name === cityName) this.createLocalityList(obj.localities);
+      return city;
+    });
+
+    this.setCityName(cityName);
+    this.setState({
+      cityList: cityArray
+    });
+  };
+
+  // Create Locality List
+  createLocalityList = props => {
+    let localityArray = props.map(obj => {
+      const locality = {};
+      locality.key = obj.l_id;
+      locality.value = obj.l_name;
+      locality.text = obj.l_name;
+      return locality;
+    });
+
+    this.setLocalityName(localityArray[0].value);
+    this.setState({
+      localityList: localityArray
+    });
+  };
+
+  // Set Locality Name
+  setLocalityName = name => {
+    this.setState({
+      localityName: name
+    });
+  };
+
+  // Set City Name
+  setCityName = name => {
+    this.setState({
+      cityName: name
+    });
+  };
+
+  // On Locality Change
+  onChangeLocality = (e, data) => {
+    console.log(e);
+    console.log(data);
+  };
+
+  // On City Change
+  onChangeCity = (e, data) => {
+    console.log(e);
+    console.log(data);
+
+    this.setCityName();
+  };
+
   render() {
+    console.log(this.state);
     return (
       <div
         style={{
@@ -33,6 +110,10 @@ export default class Search extends React.Component {
                   fluid
                   selection
                   style={{ height: "50px" }}
+                  options={this.state.cityList}
+                  value={this.state.cityName}
+                  // text={this.state.cityValue}
+                  onChange={(event, data) => this.onChangeCity(event, data)}
                   icon={
                     <Icon
                       name="map marker alternate"
@@ -52,6 +133,10 @@ export default class Search extends React.Component {
                   search
                   selection
                   style={{ height: "50px" }}
+                  options={this.state.localityList}
+                  value={this.state.localityName}
+                  // text={this.state.localityValue}
+                  onChange={(event, data) => this.onChangeLocality(event, data)}
                   icon={
                     <Icon
                       name="map marker alternate"
@@ -71,6 +156,7 @@ export default class Search extends React.Component {
                   fluid
                   search
                   selection
+                  options={this.state.localityList}
                   style={{ height: "50px" }}
                   icon={
                     <Icon
