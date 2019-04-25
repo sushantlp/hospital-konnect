@@ -39,7 +39,7 @@ export default class Front extends React.Component {
                       backgroundSize: "cover",
                       cursor: "pointer"
                     }}
-                    onClick={() => this.nextPath("/initial")}
+                    onClick={() => this.nextPath("/index")}
                   >
                     <h1 className="title-text"> {object.NURS.c_name}</h1>
                   </article>
@@ -52,7 +52,7 @@ export default class Front extends React.Component {
                       backgroundSize: "cover",
                       cursor: "pointer"
                     }}
-                    onClick={() => this.nextPath("/initial")}
+                    onClick={() => this.nextPath("/index")}
                   >
                     <h1 className="title-text">{object.AAMB.c_name} </h1>
                     <p>
@@ -70,7 +70,7 @@ export default class Front extends React.Component {
                       backgroundSize: "cover",
                       cursor: "pointer"
                     }}
-                    onClick={() => this.nextPath("/initial")}
+                    onClick={() => this.nextPath("/index")}
                   >
                     <h1 className="title-text"> {object.HOSP.c_name} </h1>
                     <p>
@@ -94,7 +94,7 @@ export default class Front extends React.Component {
                   backgroundSize: "cover",
                   cursor: "pointer"
                 }}
-                onClick={() => this.nextPath("/initial")}
+                onClick={() => this.nextPath("/index")}
               >
                 <h1 className="title-text"> {object.GAMB.c_name} </h1>
               </article>
@@ -107,7 +107,7 @@ export default class Front extends React.Component {
                   backgroundSize: "cover",
                   cursor: "pointer"
                 }}
-                onClick={() => this.nextPath("/initial")}
+                onClick={() => this.nextPath("/index")}
               >
                 <h1 className="title-text"> {object.MEDI.c_name} </h1>
                 <p className="mark">

@@ -9,6 +9,7 @@ export default class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      cityLocalityList: [],
       cityList: [],
       localityList: [],
       cityName: "Bengaluru",
@@ -17,8 +18,10 @@ export default class Search extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.cityLocality !== nextProps.cityLocality)
+    if (this.props.cityLocality !== nextProps.cityLocality) {
+      this.setState({ cityLocalityList: nextProps.cityLocality.cityLocality });
       this.createCityList(nextProps.cityLocality.cityLocality, "Bengaluru");
+    }
   }
 
   // Create City List
@@ -28,7 +31,8 @@ export default class Search extends React.Component {
       city.key = obj.c_id;
       city.value = obj.c_name;
       city.text = obj.c_name;
-      if (obj.c_name === cityName) this.createLocalityList(obj.localities);
+      if (obj.c_name.toLowerCase() === cityName.toLowerCase())
+        this.createLocalityList(obj.localities);
       return city;
     });
 
@@ -70,20 +74,19 @@ export default class Search extends React.Component {
 
   // On Locality Change
   onChangeLocality = (e, data) => {
-    console.log(e);
-    console.log(data);
+    this.setLocalityName(data.value);
   };
 
   // On City Change
   onChangeCity = (e, data) => {
-    console.log(e);
-    console.log(data);
-
-    this.setCityName();
+    this.setCityName(data.value);
+    const bunch = this.state.cityLocalityList.filter(obj => {
+      if (obj.c_name.toLowerCase() === data.value.toLowerCase()) return obj;
+    });
+    this.createLocalityList(bunch[0].localities);
   };
 
   render() {
-    console.log(this.state);
     return (
       <div
         style={{
