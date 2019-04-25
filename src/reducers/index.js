@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import { cityLocality } from "./city-locality-reducer";
 import { categoryDetail } from "./category-reducer";
+import { homeDetail } from "./home-reducer";
 
-export default combineReducers({ cityLocality, categoryDetail });
+export default combineReducers({ cityLocality, categoryDetail, homeDetail });

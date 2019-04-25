@@ -16,5 +16,13 @@ export default {
         response.json().then(categoryDetail => resolve(categoryDetail));
       });
     });
+  },
+
+  homeDetailApi: cityId => {
+    return new Promise((resolve, reject) => {
+      fetch(host + `api/v1/web/city/${cityId}/home`).then(response => {
+        response.json().then(homeDetail => resolve(homeDetail));
+      });
+    });
   }
 };

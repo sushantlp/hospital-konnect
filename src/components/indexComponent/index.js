@@ -14,6 +14,7 @@ export default class Animation extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.getCityLocality();
+    this.props.getHomeDetail(1);
   }
 
   render() {
@@ -23,12 +24,12 @@ export default class Animation extends React.Component {
     return (
       <React.Fragment>
         <Search cityLocality={this.props.cityLocality} />
-        <Specialization />
-        <Hospital />
-        <Ambulance />
-        <Equipment />
-        <Nursing />
-        <AirAmbulance />
+        <Specialization homeDetail={this.props.homeDetail} />
+        <Hospital homeDetail={this.props.homeDetail} />
+        <Ambulance homeDetail={this.props.homeDetail} />
+        <Equipment homeDetail={this.props.homeDetail} />
+        <Nursing homeDetail={this.props.homeDetail} />
+        <AirAmbulance homeDetail={this.props.homeDetail} />
         <Footer />
       </React.Fragment>
     );

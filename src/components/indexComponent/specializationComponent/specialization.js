@@ -5,7 +5,30 @@ import "../../../static/css/root.css";
 import "./static/css/specialization.css";
 
 export default class Specialization extends React.Component {
+  drawSpecialization = (key, header, image) => {
+    return (
+      <Grid.Column style={{ cursor: "pointer" }} key={key}>
+        <div className="single_department">
+          <div className="dpmt-thumb">
+            <img src={image} alt={header} />
+          </div>
+
+          <h4>{header}</h4>
+        </div>
+      </Grid.Column>
+    );
+  };
+
+  loopSpecialization = collection => {
+    return collection.map((obj, key) => {
+      return this.drawSpecialization(obj.spl_id, obj.spl_name, obj.img);
+    });
+  };
+
   render() {
+    if (this.props.homeDetail.status === "START") return <div />;
+    else if (this.props.homeDetail.status === "FAIL") return <div />;
+
     return (
       <Container className="specialization-container" style={{ width: "89em" }}>
         <div className="header-container">
@@ -15,78 +38,9 @@ export default class Specialization extends React.Component {
 
         <Grid stackable columns="6">
           <Grid.Row>
-            <Grid.Column style={{ cursor: "pointer" }}>
-              <div className="single_department">
-                <div className="dpmt-thumb">
-                  <img
-                    src="https://colorlib.com/preview/theme/medicare2/img/department/d-icon1.png"
-                    alt=""
-                  />
-                </div>
-
-                <h4>Cardiology</h4>
-              </div>
-            </Grid.Column>
-            <Grid.Column style={{ cursor: "pointer" }}>
-              <div className="single_department">
-                <div className="dpmt-thumb">
-                  <img
-                    src="https://colorlib.com/preview/theme/medicare2/img/department/d-icon2.png"
-                    alt=""
-                  />
-                </div>
-
-                <h4>Urology</h4>
-              </div>
-            </Grid.Column>
-            <Grid.Column style={{ cursor: "pointer" }}>
-              <div className="single_department">
-                <div className="dpmt-thumb">
-                  <img
-                    src="https://colorlib.com/preview/theme/medicare2/img/department/d-icon3.png"
-                    alt=""
-                  />
-                </div>
-
-                <h4>Dental Care</h4>
-              </div>
-            </Grid.Column>
-            <Grid.Column style={{ cursor: "pointer" }}>
-              <div className="single_department">
-                <div className="dpmt-thumb">
-                  <img
-                    src="https://colorlib.com/preview/theme/medicare2/img/department/d-icon4.png"
-                    alt=""
-                  />
-                </div>
-
-                <h4>Eye Care</h4>
-              </div>
-            </Grid.Column>
-            <Grid.Column style={{ cursor: "pointer" }}>
-              <div className="single_department">
-                <div className="dpmt-thumb">
-                  <img
-                    src="https://colorlib.com/preview/theme/medicare2/img/department/d-icon5.png"
-                    alt=""
-                  />
-                </div>
-
-                <h4>Neurology</h4>
-              </div>
-            </Grid.Column>
-            <Grid.Column style={{ cursor: "pointer" }}>
-              <div className="single_department">
-                <div className="dpmt-thumb">
-                  <img
-                    src="https://colorlib.com/preview/theme/medicare2/img/department/d-icon6.png"
-                    alt=""
-                  />
-                </div>
-
-                <h4>Dermatology</h4>
-              </div>
-            </Grid.Column>
+            {this.loopSpecialization(
+              this.props.homeDetail.homeDetail.specializations
+            )}
           </Grid.Row>
         </Grid>
       </Container>
