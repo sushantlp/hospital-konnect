@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Dropdown, Grid, Icon, Container } from "semantic-ui-react";
-
+import Spinner from "../../spinnerComponent";
 import "semantic-ui-css/semantic.min.css";
 import "./search.css";
 
@@ -87,13 +87,22 @@ export default class Search extends React.Component {
   };
 
   render() {
+    if (
+      this.props.cityLocality.status === "START" ||
+      this.props.cityLocality.status === "FAIL"
+    )
+      return <Spinner />;
+    else if (
+      this.props.wallImage.status === "START" ||
+      this.props.wallImage.status === "FAIL"
+    )
+      return <Spinner />;
     return (
       <div
         style={{
           width: "auto",
           height: "500px",
-          backgroundImage:
-            "url('https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,w_1300/v1555316722/ballyhoo/BALLYHOO_WEBSITE/arseny-togulev-1393380-unsplash.jpg')",
+          backgroundImage: `url(${this.props.wallImage.wallImage.bg_img})`,
           overflow: "hidden"
         }}
       >

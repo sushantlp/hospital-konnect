@@ -24,5 +24,13 @@ export default {
         response.json().then(homeDetail => resolve(homeDetail));
       });
     });
+  },
+
+  wallImageApi: () => {
+    return new Promise((resolve, reject) => {
+      fetch(host + "api/v1/web/static").then(response => {
+        response.json().then(wallImage => resolve(wallImage));
+      });
+    });
   }
 };

@@ -8,7 +8,7 @@ export default class Filter extends React.Component {
     return (
       <div
         class="panel-block"
-        style={{ cursor: "not-allowed", pointerEvents: "none" }}
+        // style={{ cursor: "not-allowed", pointerEvents: "none" }}
       >
         <nav class="navbar" role="navigation" aria-label="main navigation">
           <div class="container">
