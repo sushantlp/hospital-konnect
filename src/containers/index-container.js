@@ -5,12 +5,14 @@ import IndexComponent from "../components/indexComponent";
 import { getCityLocality } from "../actions/city-locality-action";
 import { getHomeDetail } from "../actions/home-action";
 import { getWallImage } from "../actions/wall-action";
+import { getKeywordSearch } from "../actions/keyword-action";
 
 function mapStateToProps(state) {
   return {
     cityLocality: state.cityLocality,
     homeDetail: state.homeDetail,
-    wallImage: state.wallImage
+    wallImage: state.wallImage,
+    keywordSearch: state.keywordSearch
   };
 }
 
@@ -20,7 +22,8 @@ export default withRouter(
     {
       getCityLocality: getCityLocality,
       getHomeDetail: getHomeDetail,
-      getWallImage: getWallImage
+      getWallImage: getWallImage,
+      getKeywordSearch: getKeywordSearch
     }
   )(IndexComponent)
 );

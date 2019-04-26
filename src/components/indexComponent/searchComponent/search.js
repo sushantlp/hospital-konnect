@@ -10,6 +10,8 @@ export default class Search extends React.Component {
     super(props);
     this.state = {
       cityLocalityList: [],
+      keywordSearchList: [],
+      keywordList: [],
       cityList: [],
       localityList: [],
       cityName: "Bengaluru",
@@ -18,11 +20,43 @@ export default class Search extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    console.log(this.props.cityLocality);
+    console.log(nextProps.cityLocality);
+    console.log(this.props.keywordSearch);
+    console.log(nextProps.keywordSearch);
+
     if (this.props.cityLocality !== nextProps.cityLocality) {
-      this.setState({ cityLocalityList: nextProps.cityLocality.cityLocality });
+      this.setState({
+        cityLocalityList: nextProps.cityLocality.cityLocality
+      });
       this.createCityList(nextProps.cityLocality.cityLocality, "Bengaluru");
     }
+
+    if (this.props.keywordSearch !== nextProps.keywordSearch) {
+      this.setState({
+        keywordSearchList: nextProps.keywordSearch.keywordSearch
+      });
+      this.createKeywordList(nextProps.keywordSearch.keywordSearch);
+    }
   }
+
+  // Create Keyword Search List
+  createKeywordList = props => {
+    let keywordArray = props.map((obj, index) => {
+      const keyword = {};
+      keyword.key = index;
+      keyword.key_id = obj.key_id;
+      keyword.type = obj.type;
+      keyword.value = obj.key;
+      keyword.text = obj.key;
+
+      return keyword;
+    });
+
+    this.setState({
+      keywordList: keywordArray
+    });
+  };
 
   // Create City List
   createCityList = (props, cityName) => {
@@ -84,6 +118,7 @@ export default class Search extends React.Component {
       if (obj.c_name.toLowerCase() === data.value.toLowerCase()) return obj;
     });
     this.createLocalityList(bunch[0].localities);
+    this.props.changeCityApiCall(bunch[0].c_id);
   };
 
   render() {
@@ -95,6 +130,11 @@ export default class Search extends React.Component {
     else if (
       this.props.wallImage.status === "START" ||
       this.props.wallImage.status === "FAIL"
+    )
+      return <Spinner />;
+    else if (
+      this.props.keywordSearch.status === "START" ||
+      this.props.keywordSearch.status === "FAIL"
     )
       return <Spinner />;
     return (
@@ -168,7 +208,7 @@ export default class Search extends React.Component {
                   fluid
                   search
                   selection
-                  options={this.state.localityList}
+                  options={this.state.keywordList}
                   style={{ height: "50px" }}
                   icon={
                     <Icon

@@ -32,5 +32,13 @@ export default {
         response.json().then(wallImage => resolve(wallImage));
       });
     });
+  },
+
+  keywordSearchApi: () => {
+    return new Promise((resolve, reject) => {
+      fetch(host + "api/v1/web/search-keys").then(response => {
+        response.json().then(keywordSearch => resolve(keywordSearch));
+      });
+    });
   }
 };
