@@ -3,7 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import { Container } from "semantic-ui-react";
 import _ from "lodash";
 
-import "../../../static/css/root.css";
+// import "../../../static/css/root.css";
 import "./hospital.css";
 
 class Hospital extends React.Component {

@@ -1,7 +1,8 @@
 import React from "react";
 
 import { Container, Grid } from "semantic-ui-react";
-import "../../../static/css/root.css";
+import _ from "lodash";
+// import "../../../static/css/root.css";
 import "./specialization.css";
 
 export default class Specialization extends React.Component {
@@ -29,6 +30,8 @@ export default class Specialization extends React.Component {
     if (this.props.homeDetail.status === "START") return <div />;
     else if (this.props.homeDetail.status === "FAIL") return <div />;
 
+    if (_.isEmpty(this.props.homeDetail.homeDetail.specializations))
+      return <div />;
     return (
       <Container className="specialization-container" style={{ width: "89em" }}>
         <div className="header-container">

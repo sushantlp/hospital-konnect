@@ -4,7 +4,7 @@ import _ from "lodash";
 import { Link } from "react-router-dom";
 import { Card, Container, Icon } from "semantic-ui-react";
 
-import "../../../static/css/root.css";
+// import "../../../static/css/root.css";
 import "./nursing.css";
 
 function SampleNextArrow(props) {

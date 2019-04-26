@@ -3,7 +3,7 @@ import React from "react";
 import Header from "../headerComponent/header";
 import Footer from "../footerComponent/footer";
 
-import "./static/css/nursing-detail.css";
+import "./nursing-detail.css";
 
 export default class NursingDetail extends React.Component {
   render() {
