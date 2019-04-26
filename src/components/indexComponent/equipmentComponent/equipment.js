@@ -1,16 +1,11 @@
 import React from "react";
 import Slider from "react-slick";
+import _ from "lodash";
 import { Card, Container, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+
 import "../../../static/css/root.css";
-
-import "./static/css/equipment.css";
-
-import e1 from "./static/img/1.jpg";
-import e2 from "./static/img/2.jpg";
-import e3 from "./static/img/3.jpg";
-import e4 from "./static/img/4.jpg";
-import e5 from "./static/img/5.jpg";
+import "./equipment.css";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -64,7 +59,6 @@ function SamplePrevArrow(props) {
       }}
       onClick={onClick}
     >
-      {" "}
       <Icon
         name="angle left"
         style={{
@@ -79,7 +73,35 @@ function SamplePrevArrow(props) {
 }
 
 export default class Equipment extends React.Component {
+  drawEquipment = (key, header, image) => {
+    return (
+      <div key={key}>
+        <Link to="/equipment">
+          <Card className="hospital-card">
+            <div className="ui fluid image">
+              <img src={image} alt={header} />
+            </div>
+          </Card>
+          <span className="equip-header">{header}</span>
+        </Link>
+      </div>
+    );
+  };
+
+  loopEquipment = collection => {
+    return collection.map((obj, key) => {
+      return this.drawEquipment(obj.col_id, obj.partner, obj.img);
+    });
+  };
+
   render() {
+    if (this.props.homeDetail.status === "START") return <div />;
+    else if (this.props.homeDetail.status === "FAIL") return <div />;
+
+    const object = this.props.homeDetail.homeDetail.MEDI;
+
+    if (_.isEmpty(object.col_list)) return <div />;
+
     const settings = {
       dots: false,
       infinite: false,
@@ -94,58 +116,7 @@ export default class Equipment extends React.Component {
           <div className="ambulance-container">
             <h4 className="header-name">MEDICAL EQUIPMENT</h4>
             <div className="underscore" />
-            <Slider {...settings}>
-              <div>
-                <Link to="/equipment">
-                  <Card className="hospital-card">
-                    <div className="ui fluid image">
-                      <img src={e1} alt="" />
-                    </div>
-                  </Card>
-                  <span className="equip-header">Medical Equipment-1</span>
-                </Link>
-              </div>
-              <div>
-                <Link to="/equipment">
-                  <Card className="hospital-card">
-                    <div className="ui fluid image">
-                      <img src={e2} alt="" />
-                    </div>
-                  </Card>
-                  <span className="equip-header">Medical Equipment-2</span>
-                </Link>
-              </div>
-              <div>
-                <Link to="/equipment">
-                  <Card className="hospital-card">
-                    <div className="ui fluid image">
-                      <img src={e3} alt="" />
-                    </div>
-                  </Card>
-                  <span className="equip-header">Medical Equipment-3</span>
-                </Link>
-              </div>
-              <div>
-                <Link to="/equipment">
-                  <Card className="hospital-card">
-                    <div className="ui fluid image">
-                      <img src={e4} alt="" />
-                    </div>
-                  </Card>
-                  <span className="equip-header">Medical Equipment-4</span>
-                </Link>
-              </div>
-              <div>
-                <Link to="/equipment">
-                  <Card className="hospital-card">
-                    <div className="ui fluid image">
-                      <img src={e5} alt="" />
-                    </div>
-                  </Card>
-                  <span className="equip-header">Medical Equipment-5</span>
-                </Link>
-              </div>
-            </Slider>
+            <Slider {...settings}>{this.loopAmbulance(object.col_list)}</Slider>
           </div>
         </div>
       </Container>

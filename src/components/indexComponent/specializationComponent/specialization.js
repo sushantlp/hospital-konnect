@@ -2,7 +2,7 @@ import React from "react";
 
 import { Container, Grid } from "semantic-ui-react";
 import "../../../static/css/root.css";
-import "./static/css/specialization.css";
+import "./specialization.css";
 
 export default class Specialization extends React.Component {
   drawSpecialization = (key, header, image) => {

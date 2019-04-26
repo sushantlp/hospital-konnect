@@ -1,16 +1,11 @@
 import React from "react";
 import Slider from "react-slick";
+import _ from "lodash";
 import { Link } from "react-router-dom";
 import { Card, Container, Icon } from "semantic-ui-react";
+
 import "../../../static/css/root.css";
-
-import "./static/css/nursing.css";
-
-import n1 from "./static/img/1.jpg";
-import n2 from "./static/img/2.jpg";
-import n3 from "./static/img/3.jpg";
-import n4 from "./static/img/4.jpg";
-import n5 from "./static/img/5.jpg";
+import "./nursing.css";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -79,7 +74,35 @@ function SamplePrevArrow(props) {
 }
 
 export default class Nursing extends React.Component {
+  drawNursing = (key, header, image) => {
+    return (
+      <div key={key}>
+        <Link to="/equipment">
+          <Card>
+            <div className="ui fluid image">
+              <img src={image} alt={header} />
+            </div>
+          </Card>
+          <span className="nursing-header">{header}</span>
+        </Link>
+      </div>
+    );
+  };
+
+  loopNursing = collection => {
+    return collection.map((obj, key) => {
+      return this.drawNursing(obj.col_id, obj.partner, obj.img);
+    });
+  };
+
   render() {
+    if (this.props.homeDetail.status === "START") return <div />;
+    else if (this.props.homeDetail.status === "FAIL") return <div />;
+
+    const object = this.props.homeDetail.homeDetail.NURS;
+
+    if (_.isEmpty(object.col_list)) return <div />;
+
     const settings = {
       dots: false,
       infinite: true,
@@ -95,58 +118,7 @@ export default class Nursing extends React.Component {
           <div className="nursing-container">
             <h4 className="header-name">NURSING CARE</h4>
             <div className="underscore" />
-            <Slider {...settings}>
-              <div>
-                <Link to="/equipment">
-                  <Card>
-                    <div className="ui fluid image">
-                      <img src={n1} alt="" />
-                    </div>
-                  </Card>
-                  <span className="nursing-header">Medical Equipment-1</span>
-                </Link>
-              </div>
-              <div>
-                <Link to="/equipment">
-                  <Card>
-                    <div className="ui fluid image">
-                      <img src={n2} alt="" />
-                    </div>
-                  </Card>
-                  <span className="nursing-header">Medical Equipment-2</span>
-                </Link>
-              </div>
-              <div>
-                <Link to="/equipment">
-                  <Card>
-                    <div className="ui fluid image">
-                      <img src={n3} alt="" />
-                    </div>
-                  </Card>
-                  <span className="nursing-header">Medical Equipment-3</span>
-                </Link>
-              </div>
-              <div>
-                <Link to="/equipment">
-                  <Card>
-                    <div className="ui fluid image">
-                      <img src={n4} alt="" />
-                    </div>
-                  </Card>
-                  <span className="nursing-header">Medical Equipment-4</span>
-                </Link>
-              </div>
-              <div>
-                <Link to="/equipment">
-                  <Card>
-                    <div className="ui fluid image">
-                      <img src={n5} alt="" />
-                    </div>
-                  </Card>
-                  <span className="nursing-header">Medical Equipment-5</span>
-                </Link>
-              </div>
-            </Slider>
+            <Slider {...settings}>{this.loopAmbulance(object.col_list)}</Slider>
           </div>
         </div>
       </Container>

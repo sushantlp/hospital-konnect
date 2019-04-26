@@ -1,17 +1,24 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-
 import { Container } from "semantic-ui-react";
+import _ from "lodash";
+
 import "../../../static/css/root.css";
-import "./static/css/hospital.css";
+import "./hospital.css";
 
 class Hospital extends React.Component {
   nextPath = path => {
-    console.log(path);
     this.props.history.push(path);
   };
 
   render() {
+    if (this.props.homeDetail.status === "START") return <div />;
+    else if (this.props.homeDetail.status === "FAIL") return <div />;
+
+    const object = this.props.homeDetail.homeDetail.HOSP;
+
+    if (_.isEmpty(object.col_list)) return <div />;
+
     return (
       <Container
         style={{
@@ -25,44 +32,93 @@ class Hospital extends React.Component {
           <div className="tile is-ancestor is-vertical">
             <div className="tile is-parent">
               <Link to="/detail">
-                <div className="hos5 tile">
+                <div
+                  className="hos5 tile"
+                  style={{
+                    backgroundImage: `url(${object.col_list[4].img})`
+                  }}
+                >
                   <div className="hostext">
-                    <span className="hospital-header">HOSPITAL-1</span>
-                    <span className="hospital-subheader">Kalyannagar</span>
+                    <span className="hospital-header">
+                      {object.col_list[4].partner}
+                    </span>
+                    <span className="hospital-subheader">
+                      {object.col_list[4].locality}
+                    </span>
                   </div>
                 </div>
               </Link>
               <Link to="/detail">
-                <div className="hos4 tile">
+                <div
+                  className="hos4 tile"
+                  style={{
+                    backgroundImage: `url(${object.col_list[3].img})`
+                  }}
+                >
                   <div className="hostext">
-                    <span className="hospital-header">HOSPITAL-2</span>
-                    <span className="hospital-subheader">Kalyannagar</span>
+                    <span className="hospital-header">
+                      {object.col_list[3].partner}
+                    </span>
+                    <span className="hospital-subheader">
+                      {object.col_list[3].locality}
+                    </span>
                   </div>
                 </div>
               </Link>
             </div>
             <div className="tile is-parent">
               <Link to="/detail">
-                <div className="hos1 tile">
+                <div
+                  className="hos1 tile"
+                  style={{
+                    backgroundImage: `url(${object.col_list[0].img})`
+                  }}
+                >
                   <div className="hostext">
-                    <span className="hospital-header">HOSPITAL-3</span>
-                    <span className="hospital-subheader">Kalyannagar</span>
+                    <span className="hospital-header">
+                      {object.col_list[0].partner}
+                    </span>
+                    <span className="hospital-subheader">
+                      {object.col_list[0].locality}
+                    </span>
                   </div>
                 </div>
               </Link>
               <Link to="/detail">
-                <div className="hos3 tile">
+                <div
+                  className="hos3 tile"
+                  style={{
+                    backgroundImage: `url(${object.col_list[2].img})`
+                  }}
+                >
                   <div className="hostext">
-                    <span className="hospital-header">HOSPITAL-4</span>
-                    <span className="hospital-subheader">Kalyannagar</span>
+                    <span className="hospital-header">
+                      {" "}
+                      {object.col_list[2].partner}
+                    </span>
+                    <span className="hospital-subheader">
+                      {" "}
+                      {object.col_list[2].locality}
+                    </span>
                   </div>
                 </div>
               </Link>
               <Link to="/detail">
-                <div className="hos2 tile">
+                <div
+                  className="hos2 tile"
+                  style={{
+                    backgroundImage: `url(${object.col_list[1].img})`
+                  }}
+                >
                   <div className="hostext">
-                    <span className="hospital-header">HOSPITAL-5</span>
-                    <span className="hospital-subheader">Kalyannagar</span>
+                    <span className="hospital-header">
+                      {" "}
+                      {object.col_list[1].partner}
+                    </span>
+                    <span className="hospital-subheader">
+                      {" "}
+                      {object.col_list[1].locality}
+                    </span>
                   </div>
                 </div>
               </Link>

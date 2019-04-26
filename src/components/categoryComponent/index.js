@@ -21,7 +21,7 @@ export default class Front extends React.Component {
     else if (this.props.categoryDetail.status === "FAIL") return <Spinner />;
 
     const object = this.props.categoryDetail.categoryDetail;
-    console.log(object);
+
     return (
       <div class="overall">
         <Header />
