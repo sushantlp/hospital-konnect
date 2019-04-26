@@ -1,22 +1,19 @@
 import React from "react";
-// import SeoLink from "../hospitalListComponent/seoLinkComponent/seo-link";
-import AmbulanceDetailCard from "./ambulanceDetailCardComponent/ambulance-detail-card";
-import AmbulanceTab from "./ambulanceTabComponent/hospital-tab";
 
 import Header from "../headerComponent/header";
 import Footer from "../footerComponent/footer";
 
-import "./static/css/index.css";
+import "./ambulance-detail.css";
 
-export default class Index extends React.Component {
+export default class AmbulanceDetail extends React.Component {
   render() {
     return (
       <div>
         <Header />
         <div className="columns">
           <div className="column">
-            <AmbulanceDetailCard />
-            <AmbulanceTab />
+            {/* <AmbulanceDetailCard />
+            <AmbulanceTab /> */}
           </div>
           <div className="column is-one-third">{/* <SeoLink /> */}</div>
         </div>

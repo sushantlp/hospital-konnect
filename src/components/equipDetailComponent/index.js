@@ -4,9 +4,9 @@ import EquipCard from "./equipDetailCardComponent/equip-detail-card";
 import EquipTab from "./equipTabComponent/equip-tab";
 import Header from "../headerComponent/header";
 import Footer from "../footerComponent/footer";
-import "./static/css/index.css";
+import "./medical-equipment.css";
 
-export default class Index extends React.Component {
+export default class MedicalEquipment extends React.Component {
   render() {
     return (
       <div>

@@ -9,33 +9,30 @@ export default class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cityLocalityList: [],
-      keywordSearchList: [],
+      // cityLocalityApiList: [],
+      // keywordSearchApiList: [],
       keywordList: [],
       cityList: [],
       localityList: [],
       cityName: "Bengaluru",
-      localityName: "Jp Nagar"
+      localityName: "Jp Nagar",
+      cityId: 0,
+      localityId: 0
     };
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(this.props.cityLocality);
-    console.log(nextProps.cityLocality);
-    console.log(this.props.keywordSearch);
-    console.log(nextProps.keywordSearch);
-
     if (this.props.cityLocality !== nextProps.cityLocality) {
-      this.setState({
-        cityLocalityList: nextProps.cityLocality.cityLocality
-      });
+      // this.setState({
+      //   cityLocalityApiList: nextProps.cityLocality.cityLocality
+      // });
       this.createCityList(nextProps.cityLocality.cityLocality, "Bengaluru");
     }
 
     if (this.props.keywordSearch !== nextProps.keywordSearch) {
-      this.setState({
-        keywordSearchList: nextProps.keywordSearch.keywordSearch
-      });
+      // this.setState({
+      //   keywordSearchApiList: nextProps.keywordSearch.keywordSearch
+      // });
       this.createKeywordList(nextProps.keywordSearch.keywordSearch);
     }
   }
@@ -65,12 +62,13 @@ export default class Search extends React.Component {
       city.key = obj.c_id;
       city.value = obj.c_name;
       city.text = obj.c_name;
+      city.locality = obj.localities;
       if (obj.c_name.toLowerCase() === cityName.toLowerCase())
         this.createLocalityList(obj.localities);
       return city;
     });
 
-    this.setCityName(cityName);
+    this.setCityName(cityName, 1);
     this.setState({
       cityList: cityArray
     });
@@ -86,39 +84,63 @@ export default class Search extends React.Component {
       return locality;
     });
 
-    this.setLocalityName(localityArray[0].value);
+    this.setLocalityName(localityArray[0].value, localityArray[0].key);
     this.setState({
       localityList: localityArray
     });
   };
 
   // Set Locality Name
-  setLocalityName = name => {
+  setLocalityName = (name, id) => {
     this.setState({
-      localityName: name
+      localityName: name,
+      localityId: id
     });
   };
 
   // Set City Name
-  setCityName = name => {
+  setCityName = (name, id) => {
     this.setState({
-      cityName: name
+      cityName: name,
+      cityId: id
     });
   };
 
   // On Locality Change
   onChangeLocality = (e, data) => {
-    this.setLocalityName(data.value);
+    const bunch = data.options.filter(obj => {
+      if (obj.value.toLowerCase() === data.value.toLowerCase()) return obj;
+    });
+
+    this.setLocalityName(data.value, bunch[0].key);
   };
 
   // On City Change
   onChangeCity = (e, data) => {
-    this.setCityName(data.value);
-    const bunch = this.state.cityLocalityList.filter(obj => {
-      if (obj.c_name.toLowerCase() === data.value.toLowerCase()) return obj;
+    // const bunch = this.state.cityLocalityApiList.filter(obj => {
+    //   if (obj.c_name.toLowerCase() === data.value.toLowerCase()) return obj;
+    // });
+
+    const bunch = data.options.filter(obj => {
+      if (obj.value.toLowerCase() === data.value.toLowerCase()) return obj;
     });
-    this.createLocalityList(bunch[0].localities);
-    this.props.changeCityApiCall(bunch[0].c_id);
+
+    if (bunch[0].key !== this.state.cityId) {
+      this.setCityName(data.value, bunch[0].key);
+      this.createLocalityList(bunch[0].locality);
+      this.props.changeCityApiCall(bunch[0].key);
+    }
+  };
+
+  // On Search Keyword Change
+  onChangeKeyword = (e, data) => {
+    console.log(data);
+    console.log(this.state.cityId);
+    console.log(this.state.localityId);
+
+    // this.props.history.push(locality1.l_text + "/collection/" + url, {
+    //   offerData: offerIndex
+    // });
   };
 
   render() {
@@ -209,6 +231,7 @@ export default class Search extends React.Component {
                   search
                   selection
                   options={this.state.keywordList}
+                  onChange={(event, data) => this.onChangeKeyword(event, data)}
                   style={{ height: "50px" }}
                   icon={
                     <Icon

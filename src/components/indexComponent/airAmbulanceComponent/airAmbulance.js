@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { Container, Grid, Image } from "semantic-ui-react";
 import "../../../static/css/root.css";
-import "./static/css/airAmbulance.css";
+import "./airAmbulance.css";
 
 export default class AirAmbulance extends React.Component {
   gotoAA() {

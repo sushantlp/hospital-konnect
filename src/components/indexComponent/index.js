@@ -9,7 +9,7 @@ import AirAmbulance from "./airAmbulanceComponent/airAmbulance";
 import Nursing from "./nursingComponent/nursing";
 import Equipment from "./equipmentComponent/equipment";
 
-export default class Animation extends React.Component {
+export default class Index extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.getCityLocality();

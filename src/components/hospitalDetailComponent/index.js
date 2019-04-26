@@ -5,9 +5,9 @@ import Footer from "../footerComponent/footer";
 import Card from "../cardDetailComponent";
 import Seo from "../seoComponent";
 import Tab from "../tabComponent";
-import "./static/css/index.css";
+import "./hospital-detail.css";
 
-export default class Index extends React.Component {
+export default class HospitalDetail extends React.Component {
   render() {
     return (
       <React.Fragment>
