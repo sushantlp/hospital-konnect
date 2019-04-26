@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./static/css/root.css";
 
 import Category from "./containers/category-container";
-import Index from "./containers/index-container";
+import Landing from "./containers/index-container";
 import Faq from "./components/faqComponent/faq";
 import Privacy from "./components/privacyComponent/privacy";
 import Term from "./components/termComponent/term";
@@ -31,7 +31,9 @@ const Root = ({ store }) => (
           <Route exact path="/terms/" component={Term} />
           <Route exact path="/privacy/" component={Privacy} />
           <Route exact path="/faq/" component={Faq} />
-          <Route exact path="/index/" component={Index} />
+
+          <Route exact path="/web/" component={Landing} />
+          <Route exact path="/:city/:locality" component={Landing} />
 
           <Route exact path="/hospital/" component={HospitalList} />
           <Route exact path="/nursing/" component={NursingList} />
@@ -43,6 +45,8 @@ const Root = ({ store }) => (
           <Route exact path="/nursing/package" component={NursingDetail} />
           <Route exact path="/equipment/package" component={EquipDetail} />
           <Route exact path="/airambulance/" component={AirAmbulanceDetail} />
+
+          <Route component={Category} />
         </Switch>
       </div>
     </BrowserRouter>

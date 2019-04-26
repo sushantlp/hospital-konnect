@@ -30,6 +30,7 @@ export default class Index extends React.Component {
           wallImage={this.props.wallImage}
           keywordSearch={this.props.keywordSearch}
           changeCityApiCall={this.changeCityApiCall}
+          parentProps={this.props}
         />
         <Specialization homeDetail={this.props.homeDetail} />
         <Hospital homeDetail={this.props.homeDetail} />

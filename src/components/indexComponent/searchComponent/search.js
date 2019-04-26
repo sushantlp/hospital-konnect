@@ -64,7 +64,8 @@ export default class Search extends React.Component {
       city.text = obj.c_name;
       city.locality = obj.localities;
       if (obj.c_name.toLowerCase() === cityName.toLowerCase())
-        this.createLocalityList(obj.localities);
+        this.createLocalityList(obj.localities, cityName);
+
       return city;
     });
 
@@ -75,7 +76,7 @@ export default class Search extends React.Component {
   };
 
   // Create Locality List
-  createLocalityList = props => {
+  createLocalityList = (props, cityName) => {
     let localityArray = props.map(obj => {
       const locality = {};
       locality.key = obj.l_id;
@@ -83,6 +84,12 @@ export default class Search extends React.Component {
       locality.text = obj.l_name;
       return locality;
     });
+
+    const cityUrl = cityName.replace(/ /g, "-").toLowerCase();
+    const localityUrl = localityArray[0].value.replace(/ /g, "-").toLowerCase();
+
+    // Url Change
+    this.props.parentProps.history.push("/" + cityUrl + "/" + localityUrl);
 
     this.setLocalityName(localityArray[0].value, localityArray[0].key);
     this.setState({
@@ -111,6 +118,14 @@ export default class Search extends React.Component {
     const bunch = data.options.filter(obj => {
       if (obj.value.toLowerCase() === data.value.toLowerCase()) return obj;
     });
+    console.log(this.props.parentProps);
+
+    const localityUrl = data.value.replace(/ /g, "-").toLowerCase();
+
+    // Url Change
+    this.props.parentProps.history.push(
+      "/" + this.props.parentProps.match.params.city + "/" + localityUrl
+    );
 
     this.setLocalityName(data.value, bunch[0].key);
   };
@@ -127,7 +142,7 @@ export default class Search extends React.Component {
 
     if (bunch[0].key !== this.state.cityId) {
       this.setCityName(data.value, bunch[0].key);
-      this.createLocalityList(bunch[0].locality);
+      this.createLocalityList(bunch[0].locality, data.value);
       this.props.changeCityApiCall(bunch[0].key);
     }
   };
