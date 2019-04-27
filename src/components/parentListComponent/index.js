@@ -28,29 +28,46 @@ export default class ParentList extends React.Component {
   }
 
   componentWillMount() {
-    console.log(this.state.city);
-    console.log(this.state.locality);
-    console.log(this.state.type);
-    console.log(this.state.category);
     window.scrollTo(0, 0);
-
     this.props.getCategoryList(
       this.state.city,
       this.state.locality,
       this.state.category,
       this.state.type,
-      this.state.page
+      this.state.page,
+      true
     );
   }
 
   render() {
+    console.log(this.props.categoryList);
     return (
       <React.Fragment>
         <Header />
-        <HospitalList />
-        <NursingList />
-        <EquipmentList />
-        <AmbulanceList />
+        {this.state.category === 1 ? (
+          <HospitalList
+            hospitalList={this.props.categoryList}
+            parent={this.props}
+          />
+        ) : null}
+        {this.state.category === 2 ? (
+          <AmbulanceList
+            ambulanceList={this.props.categoryList}
+            parent={this.props}
+          />
+        ) : null}
+        {this.state.category === 3 ? (
+          <EquipmentList
+            equipmentList={this.props.categoryList}
+            parent={this.props}
+          />
+        ) : null}
+        {this.state.category === 4 ? (
+          <NursingList
+            nursingList={this.props.categoryList}
+            parent={this.props}
+          />
+        ) : null}
         <Footer />
       </React.Fragment>
     );

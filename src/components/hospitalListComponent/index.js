@@ -8,8 +8,6 @@ import CardList from "../cardListComponent";
 
 import "./hospital-list.css";
 
-// import "../../../node_modules/bulma-divider";
-
 export default class Index extends React.Component {
   componentWillMount() {
     window.scrollTo(0, 0);
@@ -34,7 +32,7 @@ export default class Index extends React.Component {
               <Same />
             </div>
             <div class="column is-6">
-              <CardList />
+              <CardList hospitalList={this.props.hospitalList} category={1} />
             </div>
             <div class="column is-3">
               <Seo />
