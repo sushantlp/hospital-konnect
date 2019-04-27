@@ -7,10 +7,17 @@ export default class CardList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoading: false,
-      firstTime: true
+      isLoading: true,
+      apiList: []
     };
   }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.categoryList !== nextProps.categoryList) {
+      this.updateisLoadingState();
+    }
+  }
+
   componentWillMount() {
     window.scrollTo(0, 0);
   }
@@ -25,6 +32,7 @@ export default class CardList extends React.Component {
     emergency,
     registration,
     address,
+    category,
     obj
   ) => {
     return (
@@ -93,32 +101,63 @@ export default class CardList extends React.Component {
         obj.p_emergency_contact,
         obj.p_reg_charge,
         obj.p_address,
+        this.props.category,
         obj
       );
     });
   };
 
-  render() {
-    if (this.props.hospitalList.status === "START") return <Spinner />;
-    else if (this.props.hospitalList.status === "FAIL") return <Spinner />;
+  onLoadMoreList = nextPage => {
+    this.updateisLoadingState();
+    this.props.loadMoreDataApiCall(nextPage);
+  };
 
-    if (this.state.firstTime)
-      if (_.isEmpty(this.props.hospitalList.categoryList))
-        return window.history.goBack();
+  updateisLoadingState = () => {
+    this.setState({
+      isLoading: !this.state.isLoading
+    });
+  };
+  render() {
+    if (this.props.categoryList.status === "START") return <Spinner />;
+    else if (this.props.categoryList.status === "FAIL") return <Spinner />;
+
+    if (this.props.parentState.page === 1)
+      if (_.isEmpty(this.props.categoryList.categoryList)) {
+        // Url Change
+        this.props.parentProps.history.push("/web");
+        return <div />;
+      }
 
     return (
       <div>
         <div class="panel-block">
           <div class="container">
-            {this.loopCardList(this.props.hospitalList.categoryList)}
+            {this.loopCardList(this.props.categoryList.categoryList)}
           </div>
         </div>
         <hr className="spacer is-3" />
         <div class="has-text-centered">
-          {this.state.isLoading ? (
-            <a class="button is-danger is-loading is-large">Load More</a>
+          {this.props.categoryList.next_page !== null ? (
+            this.state.isLoading ? (
+              <a class="button is-danger is-loading is-large">Load More</a>
+            ) : (
+              <a
+                class="button is-danger is-large"
+                onClick={() =>
+                  this.onLoadMoreList(this.props.categoryList.next_page)
+                }
+              >
+                Load More
+              </a>
+            )
           ) : (
-            <a class="button is-danger is-large">Load More</a>
+            <a
+              class="button is-danger is-large"
+              title="Disabled button"
+              disabled
+            >
+              Load More
+            </a>
           )}
         </div>
       </div>

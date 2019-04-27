@@ -69,7 +69,6 @@ export default {
   },
 
   categoryListApi: (cityId, localityId, categoryId, type, page) => {
-    console.log(cityId);
     return new Promise((resolve, reject) => {
       fetch(
         host +

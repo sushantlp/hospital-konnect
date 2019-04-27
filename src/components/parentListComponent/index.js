@@ -39,33 +39,46 @@ export default class ParentList extends React.Component {
     );
   }
 
+  // Load More Category List Data
+  loadMoreDataApiCall = page => {
+    this.props.getCategoryList(
+      this.state.city,
+      this.state.locality,
+      this.state.category,
+      this.state.type,
+      page,
+      false
+    );
+  };
+
   render() {
-    console.log(this.props.categoryList);
     return (
       <React.Fragment>
         <Header />
         {this.state.category === 1 ? (
           <HospitalList
-            hospitalList={this.props.categoryList}
-            parent={this.props}
+            categoryList={this.props.categoryList}
+            parentProps={this.props}
+            parentState={this.state}
+            loadMoreDataApiCall={this.loadMoreDataApiCall}
           />
         ) : null}
         {this.state.category === 2 ? (
           <AmbulanceList
-            ambulanceList={this.props.categoryList}
-            parent={this.props}
+            categoryList={this.props.categoryList}
+            parentProps={this.props}
           />
         ) : null}
         {this.state.category === 3 ? (
           <EquipmentList
-            equipmentList={this.props.categoryList}
-            parent={this.props}
+            categoryList={this.props.categoryList}
+            parentProps={this.props}
           />
         ) : null}
         {this.state.category === 4 ? (
           <NursingList
-            nursingList={this.props.categoryList}
-            parent={this.props}
+            categoryList={this.props.categoryList}
+            parentProps={this.props}
           />
         ) : null}
         <Footer />
