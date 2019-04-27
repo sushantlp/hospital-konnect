@@ -5,15 +5,13 @@ import Filter from "../filterComponent";
 import Banner from "../bannerComponent";
 import Seo from "../seoComponent";
 import CardList from "../cardListComponent";
-import Header from "../headerComponent/header";
-import Footer from "../footerComponent/footer";
+
 import "./nursing-list.css";
 
 export default class Index extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Header />
         <section class="section">
           <div class="container is-fullhd">
             <Banner />
@@ -37,7 +35,6 @@ export default class Index extends React.Component {
             </div>
           </div>
         </section>
-        <Footer />
       </React.Fragment>
     );
   }

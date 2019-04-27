@@ -6,9 +6,9 @@ import _ from "lodash";
 import "./specialization.css";
 
 export default class Specialization extends React.Component {
-  drawSpecialization = (key, header, image) => {
+  drawSpecialization = (key, header, image, obj) => {
     return (
-      <Grid.Column style={{ cursor: "pointer" }} key={key}>
+      <Grid.Column style={{ cursor: "pointer" }} key={key} obj={obj}>
         <div className="single_department">
           <div className="dpmt-thumb">
             <img src={image} alt={header} />
@@ -22,7 +22,7 @@ export default class Specialization extends React.Component {
 
   loopSpecialization = collection => {
     return collection.map((obj, key) => {
-      return this.drawSpecialization(obj.spl_id, obj.spl_name, obj.img);
+      return this.drawSpecialization(obj.spl_id, obj.spl_name, obj.img, obj);
     });
   };
 

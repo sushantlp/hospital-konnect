@@ -43,6 +43,7 @@ export default class Search extends React.Component {
       const keyword = {};
       keyword.key = index;
       keyword.key_id = obj.key_id;
+      keyword.cat_id = obj.cat_id;
       keyword.type = obj.type;
       keyword.value = obj.key;
       keyword.text = obj.key;
@@ -89,7 +90,7 @@ export default class Search extends React.Component {
     const localityUrl = localityArray[0].value.replace(/ /g, "-").toLowerCase();
 
     // Url Change
-    this.props.parentProps.history.push("/" + cityUrl + "/" + localityUrl);
+    this.props.parentProps.history.replace("/" + cityUrl + "/" + localityUrl);
 
     this.setLocalityName(localityArray[0].value, localityArray[0].key);
     this.setState({
@@ -118,7 +119,6 @@ export default class Search extends React.Component {
     const bunch = data.options.filter(obj => {
       if (obj.value.toLowerCase() === data.value.toLowerCase()) return obj;
     });
-    console.log(this.props.parentProps);
 
     const localityUrl = data.value.replace(/ /g, "-").toLowerCase();
 
@@ -132,10 +132,6 @@ export default class Search extends React.Component {
 
   // On City Change
   onChangeCity = (e, data) => {
-    // const bunch = this.state.cityLocalityApiList.filter(obj => {
-    //   if (obj.c_name.toLowerCase() === data.value.toLowerCase()) return obj;
-    // });
-
     const bunch = data.options.filter(obj => {
       if (obj.value.toLowerCase() === data.value.toLowerCase()) return obj;
     });
@@ -149,13 +145,25 @@ export default class Search extends React.Component {
 
   // On Search Keyword Change
   onChangeKeyword = (e, data) => {
-    console.log(data);
-    console.log(this.state.cityId);
-    console.log(this.state.localityId);
+    const bunch = data.options.filter(obj => {
+      if (obj.value.toLowerCase() === data.value.toLowerCase()) return obj;
+    });
 
-    // this.props.history.push(locality1.l_text + "/collection/" + url, {
-    //   offerData: offerIndex
-    // });
+    const categoryUrl = data.value.replace(/ /g, "-").toLowerCase();
+
+    if (bunch[0].type !== 3) {
+      // Url Change
+      this.props.parentProps.history.push({
+        pathname: `${
+          this.props.parentProps.match.params.locality
+        }/${categoryUrl}`,
+        search: `?city=${this.state.cityId}&locality=${
+          this.state.localityId
+        }&type=${bunch[0].type}&category=${bunch[0].cat_id}`,
+        state: { data: bunch }
+      });
+    } else {
+    }
   };
 
   render() {
