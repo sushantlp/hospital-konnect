@@ -18,7 +18,7 @@ export default class Index extends React.Component {
         </section>
 
         <div class="container">
-          <Filter />
+          <Filter transistor={true} />
         </div>
 
         <section class="section">
@@ -27,7 +27,13 @@ export default class Index extends React.Component {
               <Same />
             </div>
             <div class="column is-6">
-              <CardList />
+              <CardList
+                categoryList={this.props.categoryList}
+                category={1}
+                parentProps={this.props.parentProps}
+                parentState={this.props.parentState}
+                loadMoreDataApiCall={this.props.loadMoreDataApiCall}
+              />
             </div>
             <div class="column is-3">
               <Seo />

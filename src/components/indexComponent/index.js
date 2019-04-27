@@ -10,6 +10,14 @@ import Nursing from "./nursingComponent/nursing";
 import Equipment from "./equipmentComponent/equipment";
 
 export default class Index extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cityId: 0,
+      localityId: 0
+    };
+  }
+
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.getCityLocality();
@@ -22,6 +30,18 @@ export default class Index extends React.Component {
     this.props.getHomeDetail(cityId);
   };
 
+  updateCityState = cityId => {
+    this.setState({
+      cityId: cityId
+    });
+  };
+
+  updateLocalityState = localityId => {
+    this.setState({
+      localityId: localityId
+    });
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -31,8 +51,15 @@ export default class Index extends React.Component {
           keywordSearch={this.props.keywordSearch}
           changeCityApiCall={this.changeCityApiCall}
           parentProps={this.props}
+          parentState={this.state}
+          updateCityState={this.updateCityState}
+          updateLocalityState={this.updateLocalityState}
         />
-        <Specialization homeDetail={this.props.homeDetail} />
+        <Specialization
+          homeDetail={this.props.homeDetail}
+          parentProps={this.props}
+          parentState={this.state}
+        />
         <Hospital homeDetail={this.props.homeDetail} />
         <Ambulance homeDetail={this.props.homeDetail} />
         <Equipment homeDetail={this.props.homeDetail} />

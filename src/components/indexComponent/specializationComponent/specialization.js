@@ -1,14 +1,17 @@
 import React from "react";
-
 import { Container, Grid } from "semantic-ui-react";
 import _ from "lodash";
-// import "../../../static/css/root.css";
 import "./specialization.css";
 
 export default class Specialization extends React.Component {
   drawSpecialization = (key, header, image, obj) => {
     return (
-      <Grid.Column style={{ cursor: "pointer" }} key={key} obj={obj}>
+      <Grid.Column
+        style={{ cursor: "pointer" }}
+        key={key}
+        obj={obj}
+        onClick={() => this.onClickSpecialization(obj)}
+      >
         <div className="single_department">
           <div className="dpmt-thumb">
             <img src={image} alt={header} />
@@ -26,6 +29,23 @@ export default class Specialization extends React.Component {
     });
   };
 
+  onClickSpecialization = obj => {
+    const categoryUrl = obj.spl_name.replace(/ /g, "-").toLowerCase();
+
+    if (obj.type !== 3) {
+      // Url Change
+      this.props.parentProps.history.push({
+        pathname: `${
+          this.props.parentProps.match.params.locality
+        }/${categoryUrl}`,
+        search: `?city=${this.props.parentState.cityId}&locality=${
+          this.props.parentState.localityId
+        }&type=${obj.type}&category=${obj.cat_id}`,
+        state: { data: obj }
+      });
+    } else {
+    }
+  };
   render() {
     if (this.props.homeDetail.status === "START") return <div />;
     else if (this.props.homeDetail.status === "FAIL") return <div />;

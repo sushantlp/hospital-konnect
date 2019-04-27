@@ -9,30 +9,22 @@ export default class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // cityLocalityApiList: [],
-      // keywordSearchApiList: [],
       keywordList: [],
       cityList: [],
       localityList: [],
       cityName: "Bengaluru",
-      localityName: "Jp Nagar",
-      cityId: 0,
-      localityId: 0
+      localityName: "Jp Nagar"
+      // cityId: 0,
+      // localityId: 0
     };
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.cityLocality !== nextProps.cityLocality) {
-      // this.setState({
-      //   cityLocalityApiList: nextProps.cityLocality.cityLocality
-      // });
       this.createCityList(nextProps.cityLocality.cityLocality, "Bengaluru");
     }
 
     if (this.props.keywordSearch !== nextProps.keywordSearch) {
-      // this.setState({
-      //   keywordSearchApiList: nextProps.keywordSearch.keywordSearch
-      // });
       this.createKeywordList(nextProps.keywordSearch.keywordSearch);
     }
   }
@@ -100,17 +92,19 @@ export default class Search extends React.Component {
 
   // Set Locality Name
   setLocalityName = (name, id) => {
+    this.props.updateLocalityState(id);
+
     this.setState({
-      localityName: name,
-      localityId: id
+      localityName: name
     });
   };
 
   // Set City Name
   setCityName = (name, id) => {
+    this.props.updateCityState(id);
+
     this.setState({
-      cityName: name,
-      cityId: id
+      cityName: name
     });
   };
 
@@ -136,7 +130,7 @@ export default class Search extends React.Component {
       if (obj.value.toLowerCase() === data.value.toLowerCase()) return obj;
     });
 
-    if (bunch[0].key !== this.state.cityId) {
+    if (bunch[0].key !== this.props.parentState.cityId) {
       this.setCityName(data.value, bunch[0].key);
       this.createLocalityList(bunch[0].locality, data.value);
       this.props.changeCityApiCall(bunch[0].key);
@@ -157,8 +151,8 @@ export default class Search extends React.Component {
         pathname: `${
           this.props.parentProps.match.params.locality
         }/${categoryUrl}`,
-        search: `?city=${this.state.cityId}&locality=${
-          this.state.localityId
+        search: `?city=${this.props.parentState.cityId}&locality=${
+          this.props.parentState.localityId
         }&type=${bunch[0].type}&category=${bunch[0].cat_id}`,
         state: { data: bunch }
       });

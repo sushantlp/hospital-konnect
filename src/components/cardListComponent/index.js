@@ -7,8 +7,7 @@ export default class CardList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoading: true,
-      apiList: []
+      isLoading: true
     };
   }
 
@@ -52,17 +51,21 @@ export default class CardList extends React.Component {
                   <p class="subtitle is-6" style={{ marginBottom: "0.5em" }}>
                     {locality}
                   </p>
-                  <p class="subtitle is-6" style={{ marginBottom: "0.5em" }}>
-                    {working}
-                  </p>
+                  {category !== 1 ? (
+                    <p class="subtitle is-6" style={{ marginBottom: "0.5em" }}>
+                      {working}
+                    </p>
+                  ) : null}
 
-                  <p class="subtitle is-6">
-                    Registration Charges
-                    <span className="fees">
-                      <del>&#x20b9;</del>
-                      {registration}
-                    </span>
-                  </p>
+                  {category !== 1 ? (
+                    <p class="subtitle is-6">
+                      Registration Charges
+                      <span className="fees">
+                        <del>&#x20b9;</del>
+                        {registration}
+                      </span>
+                    </p>
+                  ) : null}
                 </div>
               </div>
 
@@ -74,7 +77,7 @@ export default class CardList extends React.Component {
                 </a>
 
                 <a href="#" class="card-footer-item">
-                  View profile
+                  View Profile
                 </a>
               </footer>
             </div>

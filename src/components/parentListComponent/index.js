@@ -67,18 +67,24 @@ export default class ParentList extends React.Component {
           <AmbulanceList
             categoryList={this.props.categoryList}
             parentProps={this.props}
+            parentState={this.state}
+            loadMoreDataApiCall={this.loadMoreDataApiCall}
           />
         ) : null}
         {this.state.category === 3 ? (
           <EquipmentList
             categoryList={this.props.categoryList}
             parentProps={this.props}
+            parentState={this.state}
+            loadMoreDataApiCall={this.loadMoreDataApiCall}
           />
         ) : null}
         {this.state.category === 4 ? (
           <NursingList
             categoryList={this.props.categoryList}
             parentProps={this.props}
+            parentState={this.state}
+            loadMoreDataApiCall={this.loadMoreDataApiCall}
           />
         ) : null}
         <Footer />

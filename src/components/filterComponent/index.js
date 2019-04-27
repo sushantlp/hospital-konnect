@@ -8,7 +8,10 @@ export default class Filter extends React.Component {
     return (
       <div
         class="panel-block"
-        // style={{ cursor: "not-allowed", pointerEvents: "none" }}
+        style={{
+          cursor: this.props.transistor ? "not-allowed" : "auto",
+          pointerEvents: this.props.transistor ? "none" : "auto"
+        }}
       >
         <nav class="navbar" role="navigation" aria-label="main navigation">
           <div class="container">
@@ -21,12 +24,6 @@ export default class Filter extends React.Component {
                   alt="Hello"
                 />
               </a>
-
-              {/* <div id="navbar-burger-id" class="navbar-burger">
-                 <span />
-                 <span />
-                 <span />
-               </div> */}
             </div>
 
             <div id="navbar-menu-id" class="navbar-menu">

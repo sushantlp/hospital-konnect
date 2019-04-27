@@ -24,7 +24,7 @@ export default class Index extends React.Component {
         </section>
 
         <div class="container">
-          <Filter />
+          <Filter transistor={false} />
         </div>
 
         <section class="section">
