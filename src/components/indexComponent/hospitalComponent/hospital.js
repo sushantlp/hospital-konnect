@@ -5,11 +5,7 @@ import _ from "lodash";
 import { Container } from "semantic-ui-react";
 import "./hospital.css";
 
-class Hospital extends React.Component {
-  nextPath = path => {
-    this.props.history.push(path);
-  };
-
+export default class Hospital extends React.Component {
   render() {
     if (this.props.homeDetail.status === "START") return <div />;
     else if (this.props.homeDetail.status === "FAIL") return <div />;
@@ -30,97 +26,113 @@ class Hospital extends React.Component {
           <br />
           <div className="tile is-ancestor is-vertical">
             <div className="tile is-parent">
-              <Link to="/detail">
-                <div
-                  className="hos5 tile"
-                  style={{
-                    backgroundImage: `url(${object.col_list[4].img})`
-                  }}
-                >
-                  <div className="hostext">
-                    <span className="hospital-header">
-                      {object.col_list[4].partner}
-                    </span>
-                    <span className="hospital-subheader">
-                      {object.col_list[4].locality}
-                    </span>
-                  </div>
+              {/* <Link to="/detail"> */}
+              <div
+                className="hos5 tile"
+                style={{
+                  backgroundImage: `url(${object.col_list[4].img})`,
+                  cursor: "pointer"
+                }}
+                onClick={() =>
+                  this.props.tripToDetailView(object.col_list[4], "hospital")
+                }
+              >
+                <div className="hostext">
+                  <span className="hospital-header">
+                    {object.col_list[4].partner}
+                  </span>
+                  <span className="hospital-subheader">
+                    {object.col_list[4].locality}
+                  </span>
                 </div>
-              </Link>
-              <Link to="/detail">
-                <div
-                  className="hos4 tile"
-                  style={{
-                    backgroundImage: `url(${object.col_list[3].img})`
-                  }}
-                >
-                  <div className="hostext">
-                    <span className="hospital-header">
-                      {object.col_list[3].partner}
-                    </span>
-                    <span className="hospital-subheader">
-                      {object.col_list[3].locality}
-                    </span>
-                  </div>
+              </div>
+              {/* </Link> */}
+              {/* <Link to="/detail"> */}
+              <div
+                className="hos4 tile"
+                style={{
+                  backgroundImage: `url(${object.col_list[3].img})`,
+                  cursor: "pointer"
+                }}
+                onClick={() =>
+                  this.props.tripToDetailView(object.col_list[3], "hospital")
+                }
+              >
+                <div className="hostext">
+                  <span className="hospital-header">
+                    {object.col_list[3].partner}
+                  </span>
+                  <span className="hospital-subheader">
+                    {object.col_list[3].locality}
+                  </span>
                 </div>
-              </Link>
+              </div>
+              {/* </Link> */}
             </div>
             <div className="tile is-parent">
-              <Link to="/detail">
-                <div
-                  className="hos1 tile"
-                  style={{
-                    backgroundImage: `url(${object.col_list[0].img})`
-                  }}
-                >
-                  <div className="hostext">
-                    <span className="hospital-header">
-                      {object.col_list[0].partner}
-                    </span>
-                    <span className="hospital-subheader">
-                      {object.col_list[0].locality}
-                    </span>
-                  </div>
+              {/* <Link to="/detail"> */}
+              <div
+                className="hos1 tile"
+                style={{
+                  backgroundImage: `url(${object.col_list[0].img})`,
+                  cursor: "pointer"
+                }}
+                onClick={() =>
+                  this.props.tripToDetailView(object.col_list[0], "hospital")
+                }
+              >
+                <div className="hostext">
+                  <span className="hospital-header">
+                    {object.col_list[0].partner}
+                  </span>
+                  <span className="hospital-subheader">
+                    {object.col_list[0].locality}
+                  </span>
                 </div>
-              </Link>
-              <Link to="/detail">
-                <div
-                  className="hos3 tile"
-                  style={{
-                    backgroundImage: `url(${object.col_list[2].img})`
-                  }}
-                >
-                  <div className="hostext">
-                    <span className="hospital-header">
-                      {" "}
-                      {object.col_list[2].partner}
-                    </span>
-                    <span className="hospital-subheader">
-                      {" "}
-                      {object.col_list[2].locality}
-                    </span>
-                  </div>
+              </div>
+              {/* </Link>
+              <Link to="/detail"> */}
+              <div
+                className="hos3 tile"
+                style={{
+                  backgroundImage: `url(${object.col_list[2].img})`,
+                  cursor: "pointer"
+                }}
+                onClick={() =>
+                  this.props.tripToDetailView(object.col_list[2], "hospital")
+                }
+              >
+                <div className="hostext">
+                  <span className="hospital-header">
+                    {object.col_list[2].partner}
+                  </span>
+                  <span className="hospital-subheader">
+                    {object.col_list[2].locality}
+                  </span>
                 </div>
-              </Link>
-              <Link to="/detail">
-                <div
-                  className="hos2 tile"
-                  style={{
-                    backgroundImage: `url(${object.col_list[1].img})`
-                  }}
-                >
-                  <div className="hostext">
-                    <span className="hospital-header">
-                      {" "}
-                      {object.col_list[1].partner}
-                    </span>
-                    <span className="hospital-subheader">
-                      {" "}
-                      {object.col_list[1].locality}
-                    </span>
-                  </div>
+              </div>
+              {/* </Link>
+              <Link to="/detail"> */}
+              <div
+                className="hos2 tile"
+                style={{
+                  backgroundImage: `url(${object.col_list[1].img})`,
+                  cursor: "pointer"
+                }}
+                onClick={() =>
+                  this.props.tripToDetailView(object.col_list[1], "hospital")
+                }
+              >
+                <div className="hostext">
+                  <span className="hospital-header">
+                    {object.col_list[1].partner}
+                  </span>
+                  <span className="hospital-subheader">
+                    {object.col_list[1].locality}
+                  </span>
                 </div>
-              </Link>
+              </div>
+              {/* </Link> */}
             </div>
           </div>
         </div>
@@ -129,4 +141,4 @@ class Hospital extends React.Component {
   }
 }
 
-export default withRouter(Hospital);
+// export default withRouter(Hospital);

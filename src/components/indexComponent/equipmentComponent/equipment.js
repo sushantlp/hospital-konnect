@@ -73,24 +73,27 @@ function SamplePrevArrow(props) {
 }
 
 export default class Equipment extends React.Component {
-  drawEquipment = (key, header, image) => {
+  drawEquipment = (key, header, image, obj) => {
     return (
-      <div key={key}>
-        <Link to="/equipment">
-          <Card className="hospital-card">
-            <div className="ui fluid image">
-              <img src={image} alt={header} />
-            </div>
-          </Card>
-          <span className="equip-header">{header}</span>
-        </Link>
+      <div
+        key={key}
+        onClick={() => this.props.tripToDetailView(obj, "equipment")}
+      >
+        {/* <Link to="/equipment"> */}
+        <Card className="hospital-card">
+          <div className="ui fluid image">
+            <img src={image} alt={header} />
+          </div>
+        </Card>
+        <span className="equip-header">{header}</span>
+        {/* </Link> */}
       </div>
     );
   };
 
   loopEquipment = collection => {
     return collection.map((obj, key) => {
-      return this.drawEquipment(obj.col_id, obj.partner, obj.img);
+      return this.drawEquipment(obj.col_id, obj.partner, obj.img, obj);
     });
   };
 

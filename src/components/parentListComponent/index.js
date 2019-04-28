@@ -13,18 +13,29 @@ export default class ParentList extends React.Component {
   constructor(props) {
     super(props);
     const splitArray = this.props.location.search.split("&");
-    const cityArray = splitArray[0].split("=");
-    const localityArray = splitArray[1].split("=");
-    const typeArray = splitArray[2].split("=");
-    const categoryArray = splitArray[3].split("=");
 
-    this.state = {
-      city: parseInt(cityArray[1], 10),
-      locality: parseInt(localityArray[1], 10),
-      type: parseInt(typeArray[1], 10),
-      category: parseInt(categoryArray[1], 10),
-      page: 1
-    };
+    if (splitArray.length < 4) {
+      this.state = {
+        city: 0,
+        locality: 0,
+        type: 0,
+        category: 0,
+        page: 1
+      };
+    } else {
+      const cityArray = splitArray[0].split("=");
+      const localityArray = splitArray[1].split("=");
+      const typeArray = splitArray[2].split("=");
+      const categoryArray = splitArray[3].split("=");
+
+      this.state = {
+        city: parseInt(cityArray[1], 10),
+        locality: parseInt(localityArray[1], 10),
+        type: parseInt(typeArray[1], 10),
+        category: parseInt(categoryArray[1], 10),
+        page: 1
+      };
+    }
   }
 
   componentWillMount() {

@@ -4,7 +4,6 @@ import _ from "lodash";
 import { Link } from "react-router-dom";
 import { List, Container, Icon } from "semantic-ui-react";
 
-// import "../../../static/css/root.css";
 import "./ambulance.css";
 
 function SampleNextArrow(props) {
@@ -73,24 +72,28 @@ function SamplePrevArrow(props) {
 }
 
 export default class Ambulance extends React.Component {
-  drawAmbulance = (key, header, image) => {
+  drawAmbulance = (key, header, image, obj) => {
     return (
-      <div className="SliderContainer" key={key}>
-        <List.Item className="link">
-          <Link to="/ambulance">
-            <div className="ambulance">
-              <img src={image} alt={header} />
-            </div>
-            <span className="amb-header">{header}</span>
-          </Link>
-        </List.Item>
+      <div
+        className="SliderContainer"
+        key={key}
+        onClick={() => this.props.tripToDetailView(obj, "ambulance")}
+      >
+        {/* <List.Item className="link"> */}
+        <Link to="/ambulance">
+          <div className="ambulance">
+            <img src={image} alt={header} />
+          </div>
+          <span className="amb-header">{header}</span>
+        </Link>
+        {/* </List.Item> */}
       </div>
     );
   };
 
   loopAmbulance = collection => {
     return collection.map((obj, key) => {
-      return this.drawAmbulance(obj.col_id, obj.partner, obj.img);
+      return this.drawAmbulance(obj.col_id, obj.partner, obj.img, obj);
     });
   };
 

@@ -42,8 +42,17 @@ export default class Index extends React.Component {
     });
   };
 
+  tripToDetailView = (object, name) => {
+    const partnerUrl = object.partner.replace(/ /g, "-").toLowerCase();
+    // Url Change
+    this.props.history.push({
+      pathname: `${this.props.match.params.locality}/${name}/${partnerUrl}`,
+      search: `?partner=${object.partner_id}`,
+      state: { data: object }
+    });
+  };
+
   render() {
-    console.log(this.props.homeDetail);
     return (
       <React.Fragment>
         <Search
@@ -61,11 +70,26 @@ export default class Index extends React.Component {
           parentProps={this.props}
           parentState={this.state}
         />
-        <Hospital homeDetail={this.props.homeDetail} />
-        <Ambulance homeDetail={this.props.homeDetail} />
-        <Equipment homeDetail={this.props.homeDetail} />
-        <Nursing homeDetail={this.props.homeDetail} />
-        <AirAmbulance homeDetail={this.props.homeDetail} />
+        <Hospital
+          homeDetail={this.props.homeDetail}
+          tripToDetailView={this.tripToDetailView}
+        />
+        <Ambulance
+          homeDetail={this.props.homeDetail}
+          tripToDetailView={this.tripToDetailView}
+        />
+        <Equipment
+          homeDetail={this.props.homeDetail}
+          tripToDetailView={this.tripToDetailView}
+        />
+        <Nursing
+          homeDetail={this.props.homeDetail}
+          tripToDetailView={this.tripToDetailView}
+        />
+        <AirAmbulance
+          homeDetail={this.props.homeDetail}
+          tripToDetailView={this.tripToDetailView}
+        />
         <Footer />
       </React.Fragment>
     );
