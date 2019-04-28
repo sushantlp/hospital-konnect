@@ -78,7 +78,7 @@ export default class Nursing extends React.Component {
     return (
       <div
         key={key}
-        onClick={() => this.props.tripToDetailView(obj, "nursing")}
+        onClick={() => this.props.tripToDetailView(obj, "nursing", 4)}
       >
         {/* <Link to="/equipment"> */}
         <Card>

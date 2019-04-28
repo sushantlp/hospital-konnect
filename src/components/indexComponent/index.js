@@ -42,12 +42,17 @@ export default class Index extends React.Component {
     });
   };
 
-  tripToDetailView = (object, name) => {
+  tripToDetailView = (object, name, category) => {
     const partnerUrl = object.partner.replace(/ /g, "-").toLowerCase();
+
+    this.props.history.push("/");
+
     // Url Change
     this.props.history.push({
-      pathname: `${this.props.match.params.locality}/${name}/${partnerUrl}`,
-      search: `?partner=${object.partner_id}`,
+      pathname: `${this.props.match.params.city}/${
+        this.props.match.params.locality
+      }/${name}/${partnerUrl}`,
+      search: `?partner=${object.partner_id}&category=${category}`,
       state: { data: object }
     });
   };

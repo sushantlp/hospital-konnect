@@ -77,7 +77,7 @@ export default class Equipment extends React.Component {
     return (
       <div
         key={key}
-        onClick={() => this.props.tripToDetailView(obj, "equipment")}
+        onClick={() => this.props.tripToDetailView(obj, "equipment", 3)}
       >
         {/* <Link to="/equipment"> */}
         <Card className="hospital-card">

@@ -34,7 +34,7 @@ export default class Hospital extends React.Component {
                   cursor: "pointer"
                 }}
                 onClick={() =>
-                  this.props.tripToDetailView(object.col_list[4], "hospital")
+                  this.props.tripToDetailView(object.col_list[4], "hospital", 1)
                 }
               >
                 <div className="hostext">
@@ -55,7 +55,7 @@ export default class Hospital extends React.Component {
                   cursor: "pointer"
                 }}
                 onClick={() =>
-                  this.props.tripToDetailView(object.col_list[3], "hospital")
+                  this.props.tripToDetailView(object.col_list[3], "hospital", 1)
                 }
               >
                 <div className="hostext">
@@ -78,7 +78,7 @@ export default class Hospital extends React.Component {
                   cursor: "pointer"
                 }}
                 onClick={() =>
-                  this.props.tripToDetailView(object.col_list[0], "hospital")
+                  this.props.tripToDetailView(object.col_list[0], "hospital", 1)
                 }
               >
                 <div className="hostext">
@@ -99,7 +99,7 @@ export default class Hospital extends React.Component {
                   cursor: "pointer"
                 }}
                 onClick={() =>
-                  this.props.tripToDetailView(object.col_list[2], "hospital")
+                  this.props.tripToDetailView(object.col_list[2], "hospital", 1)
                 }
               >
                 <div className="hostext">
@@ -120,7 +120,7 @@ export default class Hospital extends React.Component {
                   cursor: "pointer"
                 }}
                 onClick={() =>
-                  this.props.tripToDetailView(object.col_list[1], "hospital")
+                  this.props.tripToDetailView(object.col_list[1], "hospital", 1)
                 }
               >
                 <div className="hostext">

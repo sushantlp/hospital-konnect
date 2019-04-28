@@ -77,7 +77,7 @@ export default class Ambulance extends React.Component {
       <div
         className="SliderContainer"
         key={key}
-        onClick={() => this.props.tripToDetailView(obj, "ambulance")}
+        onClick={() => this.props.tripToDetailView(obj, "ambulance", 2)}
       >
         {/* <List.Item className="link"> */}
         <Link to="/ambulance">
