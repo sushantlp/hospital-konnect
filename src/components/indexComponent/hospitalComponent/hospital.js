@@ -1,9 +1,8 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import { Container } from "semantic-ui-react";
 import _ from "lodash";
 
-// import "../../../static/css/root.css";
+import { Container } from "semantic-ui-react";
 import "./hospital.css";
 
 class Hospital extends React.Component {

@@ -43,6 +43,7 @@ export default class Index extends React.Component {
   };
 
   render() {
+    console.log(this.props.homeDetail);
     return (
       <React.Fragment>
         <Search
@@ -64,7 +65,7 @@ export default class Index extends React.Component {
         <Ambulance homeDetail={this.props.homeDetail} />
         <Equipment homeDetail={this.props.homeDetail} />
         <Nursing homeDetail={this.props.homeDetail} />
-        <AirAmbulance />
+        <AirAmbulance homeDetail={this.props.homeDetail} />
         <Footer />
       </React.Fragment>
     );

@@ -89,5 +89,18 @@ export default {
         })
         .catch(error => console.log(error));
     });
+  },
+
+  categoryFeatureApi: partnerId => {
+    return new Promise((resolve, reject) => {
+      fetch(host + `api/v1/web/partners/${partnerId}`)
+        .then(response => {
+          response
+            .json()
+            .then(categoryFeature => resolve(categoryFeature))
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    });
   }
 };

@@ -5,6 +5,7 @@ import { homeDetail } from "./home-reducer";
 import { wallImage } from "./wall-reducer";
 import { keywordSearch } from "./keyword-reducer";
 import { categoryList } from "./category-list-reducer";
+import { categoryFeature } from "./category-feature-reducer";
 
 export default combineReducers({
   cityLocality,
@@ -12,5 +13,6 @@ export default combineReducers({
   homeDetail,
   wallImage,
   keywordSearch,
-  categoryList
+  categoryList,
+  categoryFeature
 });
