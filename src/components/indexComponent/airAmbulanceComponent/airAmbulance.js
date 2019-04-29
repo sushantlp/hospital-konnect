@@ -6,8 +6,6 @@ import { Container, Grid, Image } from "semantic-ui-react";
 import "./airAmbulance.css";
 
 export default class AirAmbulance extends React.Component {
-  onViewDetail = () => {};
-
   render() {
     if (this.props.homeDetail.status === "START") return <div />;
     else if (this.props.homeDetail.status === "FAIL") return <div />;
@@ -35,7 +33,9 @@ export default class AirAmbulance extends React.Component {
                 </p>
                 <div
                   class="buttons are-medium"
-                  onClick={() => this.onViewDetail()}
+                  onClick={() =>
+                    this.props.tripToDetailView(object, "air-ambulance", 7)
+                  }
                 >
                   <span class="button is-info">View Detail</span>
                 </div>

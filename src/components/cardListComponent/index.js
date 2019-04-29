@@ -74,11 +74,15 @@ export default class CardList extends React.Component {
               <div class="content">{address}</div>
 
               <footer class="card-footer">
-                <a href="#" class="card-footer-item">
+                <a href="" class="card-footer-item">
                   {emergency}
                 </a>
 
-                <a href="#" class="card-footer-item">
+                <a
+                  href=""
+                  class="card-footer-item"
+                  onClick={() => this.onClickCardList(obj)}
+                >
                   View Profile
                 </a>
               </footer>
@@ -122,6 +126,28 @@ export default class CardList extends React.Component {
       isLoading: !this.state.isLoading
     });
   };
+
+  onClickCardList = object => {
+    let categoryName = "";
+
+    if (object.cat_id === 1) categoryName = "hospital";
+    else if (object.cat_id === 2) categoryName = "ambulance";
+    else if (object.cat_id === 3) categoryName = "equipment";
+    else categoryName = "nursing";
+
+    const partnerUrl = object.p_name.replace(/ /g, "-").toLowerCase();
+    this.props.parentProps.history.push("/");
+
+    // Url Change
+    this.props.parentProps.history.push({
+      pathname: `${this.props.parentProps.match.params.city}/${
+        this.props.parentProps.match.params.locality
+      }/${categoryName}/${partnerUrl}`,
+      search: `?partner=${object.p_id}&category=${object.p_cat}`,
+      state: { data: object }
+    });
+  };
+
   render() {
     if (this.props.categoryList.status === "START") return <Spinner />;
     else if (this.props.categoryList.status === "FAIL") return <Spinner />;
@@ -133,7 +159,15 @@ export default class CardList extends React.Component {
 
     return (
       <div>
-        <div class="panel-block">
+        <div
+          class="panel-block"
+          style={{
+            borderTop: "0px",
+            borderBottom: "0px",
+            borderRight: "0px",
+            borderLeft: "0px"
+          }}
+        >
           <div class="container">
             {this.loopCardList(this.props.categoryList.categoryList)}
           </div>

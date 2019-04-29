@@ -77,17 +77,16 @@ export default class Nursing extends React.Component {
   drawNursing = (key, header, image, obj) => {
     return (
       <div
+        className="nursing-header"
         key={key}
         onClick={() => this.props.tripToDetailView(obj, "nursing", 4)}
       >
-        {/* <Link to="/equipment"> */}
         <Card>
           <div className="ui fluid image">
             <img src={image} alt={header} />
           </div>
         </Card>
         <span className="nursing-header">{header}</span>
-        {/* </Link> */}
       </div>
     );
   };
@@ -121,8 +120,10 @@ export default class Nursing extends React.Component {
           <div className="nursing-container">
             <h4 className="header-name">NURSING CARE</h4>
             <div className="underscore" />
-            <Slider {...settings}>{this.loopAmbulance(object.col_list)}</Slider>
           </div>
+          <br />
+          <br />
+          <Slider {...settings}>{this.loopNursing(object.col_list)}</Slider>
         </div>
       </Container>
     );

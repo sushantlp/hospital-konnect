@@ -46,7 +46,6 @@ export default class Index extends React.Component {
     let partnerId = 0;
     let partnerName = "";
     if (flag) {
-      console.log(object);
       partnerName = object.value;
       partnerId = object.key_id;
     } else {

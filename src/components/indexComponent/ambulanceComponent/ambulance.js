@@ -75,17 +75,16 @@ export default class Ambulance extends React.Component {
   drawAmbulance = (key, header, image, obj) => {
     return (
       <div
-        className="SliderContainer"
         key={key}
         onClick={() => this.props.tripToDetailView(obj, "ambulance", 2)}
       >
         {/* <List.Item className="link"> */}
-        <Link to="/ambulance">
-          <div className="ambulance">
-            <img src={image} alt={header} />
-          </div>
-          <span className="amb-header">{header}</span>
-        </Link>
+        {/* <Link to="/ambulance"> */}
+        <div className="ambulance">
+          <img src={image} alt={header} />
+        </div>
+        <span className="amb-header">{header}</span>
+        {/* </Link> */}
         {/* </List.Item> */}
       </div>
     );
@@ -104,7 +103,7 @@ export default class Ambulance extends React.Component {
     const object = this.props.homeDetail.homeDetail.GAMB;
 
     if (_.isEmpty(object.col_list)) return <div />;
-    
+
     const settings = {
       dots: false,
       infinite: true,
@@ -122,7 +121,6 @@ export default class Ambulance extends React.Component {
             <h4 className="header-name">GROUND AMBULANCE</h4>
             <div className="underscore" />
           </div>
-
           <Slider {...settings}>{this.loopAmbulance(object.col_list)}</Slider>
         </div>
       </Container>

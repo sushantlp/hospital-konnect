@@ -4,11 +4,17 @@
   color: rgb(38, 56, 104);
 }
 
-.nursing-container {
+/* .nursing-container {
   margin-top: 8vh;
+} */
+
+.nursing-header:hover {
+  transform: scale(1.03);
+  /* opacity: 1 !important;
+  cursor: pointer; */
 }
 
-/* .slick-prev,
+.slick-prev,
 .slick-next {
   font-size: 15px !important;
 }
@@ -16,10 +22,4 @@
 .slick-prev:before,
 .slick-next:before {
   content: "" !important;
-} */
-
-.nursing-header {
-  padding: 5px;
-  font-size: 1.2em;
-  color: rgb(38, 56, 104);
 }

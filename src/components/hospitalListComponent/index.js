@@ -14,7 +14,6 @@ export default class Index extends React.Component {
   }
 
   render() {
-    console.log(this.props.parentProps);
     return (
       <React.Fragment>
         <section class="section">

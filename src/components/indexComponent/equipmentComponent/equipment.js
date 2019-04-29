@@ -26,7 +26,6 @@ function SampleNextArrow(props) {
       }}
       onClick={onClick}
     >
-      {" "}
       <Icon
         name="angle right"
         style={{
@@ -76,11 +75,12 @@ export default class Equipment extends React.Component {
   drawEquipment = (key, header, image, obj) => {
     return (
       <div
+        className="equipment-card"
         key={key}
         onClick={() => this.props.tripToDetailView(obj, "equipment", 3)}
       >
         {/* <Link to="/equipment"> */}
-        <Card className="hospital-card">
+        <Card>
           <div className="ui fluid image">
             <img src={image} alt={header} />
           </div>
@@ -107,7 +107,7 @@ export default class Equipment extends React.Component {
 
     const settings = {
       dots: false,
-      infinite: false,
+      infinite: true,
       slidesToShow: 4,
       slidesToScroll: 1,
       nextArrow: <SampleNextArrow />,
@@ -119,8 +119,10 @@ export default class Equipment extends React.Component {
           <div className="ambulance-container">
             <h4 className="header-name">MEDICAL EQUIPMENT</h4>
             <div className="underscore" />
-            <Slider {...settings}>{this.loopAmbulance(object.col_list)}</Slider>
           </div>
+          <br />
+          <br />
+          <Slider {...settings}>{this.loopEquipment(object.col_list)}</Slider>
         </div>
       </Container>
     );

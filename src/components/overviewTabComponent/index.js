@@ -59,23 +59,27 @@ const overviewTab = props => {
         </div>
       )}
 
-      {object.p_online_pay_opt.length === 0 ? null : (
-        <p class="subtitle is-4" style={{ marginBottom: "0.5em" }}>
-          Modes of Payment
-        </p>
-      )}
+      {object.p_cat !== 7 ? (
+        object.p_online_pay_opt.length === 0 ? null : (
+          <p class="subtitle is-4" style={{ marginBottom: "0.5em" }}>
+            Modes of Payment
+          </p>
+        )
+      ) : null}
 
-      {object.p_online_pay_opt.length === 0 ? null : (
-        <div class="tags are-medium">
-          {object.p_online_pay_opt.map((obj, key) => {
-            return (
-              <span class="tag is-info" key={key}>
-                {obj}
-              </span>
-            );
-          })}
-        </div>
-      )}
+      {object.p_cat !== 7 ? (
+        object.p_online_pay_opt.length === 0 ? null : (
+          <div class="tags are-medium">
+            {object.p_online_pay_opt.map((obj, key) => {
+              return (
+                <span class="tag is-info" key={key}>
+                  {obj}
+                </span>
+              );
+            })}
+          </div>
+        )
+      ) : null}
 
       {object.p_cat === 1 || object.p_cat === 4 ? (
         object.p_services.length === 0 ? null : (
