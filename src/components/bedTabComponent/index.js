@@ -57,15 +57,48 @@ const drawBed = (
 };
 
 const loopBed = (object, category) => {
+  console.log(category);
   return object.map((obj, key) => {
+    let id = 0;
+    let title = "";
+    let desc = "";
+    let price = "";
+    let cancelPolicy = "";
+    let terms = "";
+    let availability = 0;
+    if (category === 1) {
+      id = obj.b_id;
+      title = obj.b_title;
+      desc = obj.b_desc;
+      price = obj.b_price;
+      cancelPolicy = obj.b_cancel_policy;
+      terms = obj.b_tnc;
+      availability = obj.b_availability;
+    } else if (category === 3) {
+      id = obj.e_id;
+      title = obj.e_title;
+      desc = obj.e_desc;
+      price = obj.e_price;
+      cancelPolicy = obj.e_cancel_policy;
+      terms = obj.e_tnc;
+      availability = obj.e_availability;
+    } else if (category === 4) {
+      id = obj.pac_id;
+      title = obj.pac_title;
+      desc = obj.pac_desc;
+      price = obj.pac_price;
+      cancelPolicy = obj.pac_cancel_policy;
+      terms = obj.pac_tnc;
+      availability = obj.pac_availability;
+    } else return true;
     return drawBed(
-      obj.b_id,
-      obj.b_title,
-      obj.b_desc,
-      obj.b_price,
-      obj.b_cancel_policy,
-      obj.b_tnc,
-      obj.b_availability,
+      id,
+      title,
+      desc,
+      price,
+      cancelPolicy,
+      terms,
+      availability,
       obj
     );
   });
@@ -76,9 +109,9 @@ const bedTab = props => {
   if (props.categoryFeature.categoryFeature.p_cat === 1)
     json = props.categoryFeature.categoryFeature.p_beds;
   else if (props.categoryFeature.categoryFeature.p_cat === 3)
-    json = props.categoryFeature.categoryFeature.p_beds;
+    json = props.categoryFeature.categoryFeature.p_equipments;
   else if (props.categoryFeature.categoryFeature.p_cat === 4)
-    json = props.categoryFeature.categoryFeature.p_beds;
+    json = props.categoryFeature.categoryFeature.p_packages;
 
   if (_.isEmpty(json)) return <div />;
 

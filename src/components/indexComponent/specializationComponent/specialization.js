@@ -32,19 +32,16 @@ export default class Specialization extends React.Component {
   onClickSpecialization = obj => {
     const categoryUrl = obj.spl_name.replace(/ /g, "-").toLowerCase();
 
-    if (obj.type !== 3) {
-      // Url Change
-      this.props.parentProps.history.push({
-        pathname: `${
-          this.props.parentProps.match.params.locality
-        }/${categoryUrl}`,
-        search: `?city=${this.props.parentState.cityId}&locality=${
-          this.props.parentState.localityId
-        }&type=${obj.type}&category=${obj.cat_id}`,
-        state: { data: obj }
-      });
-    } else {
-    }
+    // Url Change
+    this.props.parentProps.history.push({
+      pathname: `${
+        this.props.parentProps.match.params.locality
+      }/${categoryUrl}`,
+      search: `?city=${this.props.parentState.cityId}&locality=${
+        this.props.parentState.localityId
+      }&type=${obj.type}&category=${obj.cat_id}&q=${obj.key_id}`,
+      state: { data: obj }
+    });
   };
   render() {
     if (this.props.homeDetail.status === "START") return <div />;

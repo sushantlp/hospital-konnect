@@ -42,9 +42,18 @@ export default class Index extends React.Component {
     });
   };
 
-  tripToDetailView = (object, name, category) => {
-    const partnerUrl = object.partner.replace(/ /g, "-").toLowerCase();
-
+  tripToDetailView = (object, name, category, flag) => {
+    let partnerId = 0;
+    let partnerName = "";
+    if (flag) {
+      console.log(object);
+      partnerName = object.value;
+      partnerId = object.key_id;
+    } else {
+      partnerName = object.partner;
+      partnerId = object.partner_id;
+    }
+    const partnerUrl = partnerName.replace(/ /g, "-").toLowerCase();
     this.props.history.push("/");
 
     // Url Change
@@ -52,7 +61,7 @@ export default class Index extends React.Component {
       pathname: `${this.props.match.params.city}/${
         this.props.match.params.locality
       }/${name}/${partnerUrl}`,
-      search: `?partner=${object.partner_id}&category=${category}`,
+      search: `?partner=${partnerId}&category=${category}`,
       state: { data: object }
     });
   };
@@ -69,6 +78,7 @@ export default class Index extends React.Component {
           parentState={this.state}
           updateCityState={this.updateCityState}
           updateLocalityState={this.updateLocalityState}
+          tripToDetailView={this.tripToDetailView}
         />
         <Specialization
           homeDetail={this.props.homeDetail}

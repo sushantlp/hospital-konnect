@@ -144,7 +144,7 @@ export default class Search extends React.Component {
     });
 
     const categoryUrl = data.value.replace(/ /g, "-").toLowerCase();
-
+    console.log(bunch);
     if (bunch[0].type !== 3) {
       // Url Change
       this.props.parentProps.history.push({
@@ -153,10 +153,20 @@ export default class Search extends React.Component {
         }/${categoryUrl}`,
         search: `?city=${this.props.parentState.cityId}&locality=${
           this.props.parentState.localityId
-        }&type=${bunch[0].type}&category=${bunch[0].cat_id}`,
+        }&type=${bunch[0].type}&category=${bunch[0].cat_id}&q=${
+          bunch[0].key_id
+        }`,
         state: { data: bunch }
       });
     } else {
+      let category = "";
+
+      if (bunch[0].cat_id === 1) category = "hospital";
+      else if (bunch[0].cat_id === 2) category = "ambulance";
+      else if (bunch[0].cat_id === 3) category = "equipment";
+      else category = "nursing";
+
+      this.props.tripToDetailView(bunch[0], category, bunch[0].cat_id, true);
     }
   };
 

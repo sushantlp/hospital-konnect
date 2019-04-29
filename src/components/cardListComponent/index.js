@@ -1,6 +1,8 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 import _ from "lodash";
 import Spinner from "../spinnerComponent";
+
 import "./card-list.css";
 
 export default class CardList extends React.Component {
@@ -126,9 +128,7 @@ export default class CardList extends React.Component {
 
     if (this.props.parentState.page === 1)
       if (_.isEmpty(this.props.categoryList.categoryList)) {
-        // Url Change
-        this.props.parentProps.history.push("/web");
-        return <div />;
+        return <Redirect to="/web" />;
       }
 
     return (

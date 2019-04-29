@@ -70,17 +70,22 @@ export default class Tab extends React.Component {
               </li>
             ) : null}
 
-            <li
-              class={this.state.navigation === "Ambulances" ? "is-active" : ""}
-              onClick={() => this.changeTab("Ambulances")}
-            >
-              <a>
-                <span class="icon is-small">
-                  <i class="fas fa-ambulance" aria-hidden="true" />
-                </span>
-                <span>Ambulances</span>
-              </a>
-            </li>
+            {this.props.categoryFeature.categoryFeature.p_cat === 1 ||
+            this.props.categoryFeature.categoryFeature.p_cat === 2 ? (
+              <li
+                class={
+                  this.state.navigation === "Ambulances" ? "is-active" : ""
+                }
+                onClick={() => this.changeTab("Ambulances")}
+              >
+                <a>
+                  <span class="icon is-small">
+                    <i class="fas fa-ambulance" aria-hidden="true" />
+                  </span>
+                  <span>Ambulances</span>
+                </a>
+              </li>
+            ) : null}
 
             {this.props.categoryFeature.categoryFeature.p_cat === 3 ? (
               <li

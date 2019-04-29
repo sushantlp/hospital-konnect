@@ -14,12 +14,13 @@ export default class ParentList extends React.Component {
     super(props);
     const splitArray = this.props.location.search.split("&");
 
-    if (splitArray.length < 4) {
+    if (splitArray.length < 5) {
       this.state = {
         city: 0,
         locality: 0,
         type: 0,
         category: 0,
+        q: 0,
         page: 1
       };
     } else {
@@ -27,12 +28,14 @@ export default class ParentList extends React.Component {
       const localityArray = splitArray[1].split("=");
       const typeArray = splitArray[2].split("=");
       const categoryArray = splitArray[3].split("=");
+      const qArray = splitArray[4].split("=");
 
       this.state = {
         city: parseInt(cityArray[1], 10),
         locality: parseInt(localityArray[1], 10),
         type: parseInt(typeArray[1], 10),
         category: parseInt(categoryArray[1], 10),
+        q: parseInt(qArray[1], 10),
         page: 1
       };
     }
@@ -43,7 +46,7 @@ export default class ParentList extends React.Component {
     this.props.getCategoryList(
       this.state.city,
       this.state.locality,
-      this.state.category,
+      this.state.q,
       this.state.type,
       this.state.page,
       true
@@ -55,7 +58,7 @@ export default class ParentList extends React.Component {
     this.props.getCategoryList(
       this.state.city,
       this.state.locality,
-      this.state.category,
+      this.state.q,
       this.state.type,
       page,
       false
