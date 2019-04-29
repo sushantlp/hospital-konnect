@@ -121,6 +121,7 @@ export default class Tab extends React.Component {
             categoryFeature={this.props.categoryFeature}
           />
         ) : null}
+
         {this.props.parentState.category === 1 ? (
           this.state.navigation === "Beds" ? (
             <Bed
@@ -130,6 +131,7 @@ export default class Tab extends React.Component {
             />
           ) : null
         ) : null}
+
         {this.props.parentState.category === 1 ? (
           this.state.navigation === "Doctors" ? (
             <Doctor
@@ -139,13 +141,18 @@ export default class Tab extends React.Component {
             />
           ) : null
         ) : null}
-        {this.state.navigation === "Ambulances" ? (
-          <Ambulance
-            parentState={this.props.parentState}
-            parentProps={this.props.parentProps}
-            categoryFeature={this.props.categoryFeature}
-          />
+
+        {this.props.parentState.category === 1 ||
+        this.props.parentState.category === 2 ? (
+          this.state.navigation === "Ambulances" ? (
+            <Ambulance
+              parentState={this.props.parentState}
+              parentProps={this.props.parentProps}
+              categoryFeature={this.props.categoryFeature}
+            />
+          ) : null
         ) : null}
+
         {this.props.parentState.category === 3 ? (
           this.state.navigation === "Equipments" ? (
             <Bed
@@ -155,6 +162,7 @@ export default class Tab extends React.Component {
             />
           ) : null
         ) : null}
+
         {this.props.parentState.category === 4 ? (
           this.state.navigation === "Nursings" ? (
             <Bed

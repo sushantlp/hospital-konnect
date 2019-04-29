@@ -70,8 +70,8 @@ const loopBed = (object, category) => {
     );
   });
 };
+
 const bedTab = props => {
-  console.log(props);
   let json = [];
   if (props.parentState.category === 1)
     json = props.categoryFeature.categoryFeature.p_beds;
