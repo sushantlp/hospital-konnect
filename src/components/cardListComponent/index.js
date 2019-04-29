@@ -110,7 +110,7 @@ export default class CardList extends React.Component {
         obj.p_emergency_contact,
         obj.p_reg_charge,
         obj.p_address,
-        this.props.category,
+        obj.cat_id,
         obj
       );
     });

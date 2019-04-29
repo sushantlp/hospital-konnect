@@ -117,6 +117,8 @@ export default class Nursing extends React.Component {
     return (
       <Container style={{ width: "89em" }}>
         <div>
+          <br />
+          <br />
           <div className="nursing-container">
             <h4 className="header-name">NURSING CARE</h4>
             <div className="underscore" />
