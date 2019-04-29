@@ -148,7 +148,7 @@ export default class Tab extends React.Component {
         ) : null}
         {this.props.parentState.category === 3 ? (
           this.state.navigation === "Equipments" ? (
-            <Ambulance
+            <Bed
               parentState={this.props.parentState}
               parentProps={this.props.parentProps}
               categoryFeature={this.props.categoryFeature}
@@ -157,7 +157,7 @@ export default class Tab extends React.Component {
         ) : null}
         {this.props.parentState.category === 4 ? (
           this.state.navigation === "Nursings" ? (
-            <Ambulance
+            <Bed
               parentState={this.props.parentState}
               parentProps={this.props.parentProps}
               categoryFeature={this.props.categoryFeature}

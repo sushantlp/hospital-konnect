@@ -25,13 +25,13 @@ export default class AirAmbulance extends React.Component {
             <Grid.Row columns={4}>
               <Grid.Column>
                 <p class="title is-4" style={{ lineHeight: "1.66667" }}>
-                  We Can Help You Anytime Anywhere....
+                  {object.detail.head}
                 </p>
                 <p
                   class="subtitle is-6 has-text-justified"
                   style={{ lineHeight: "1.66667" }}
                 >
-                  {object.detail}
+                  {object.detail.body}
                 </p>
                 <div
                   class="buttons are-medium"

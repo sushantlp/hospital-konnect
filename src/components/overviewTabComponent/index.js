@@ -4,13 +4,13 @@ import "./overview-tab.css";
 
 const overviewTab = props => {
   const object = props.categoryFeature.categoryFeature;
-  console.log(props.categoryFeature.categoryFeature);
+
   return (
     <div className="overview-container">
       <p class="subtitle is-4" style={{ marginBottom: "0.2em" }}>
         About
       </p>
-      <p class="subtitle is-6 has-text-justified">{object.p_short_desc}</p> */}
+      <p class="subtitle is-6 has-text-justified">{object.p_short_desc}</p>
       <p class="subtitle is-4" style={{ marginBottom: "0.2em" }}>
         Address
       </p>
@@ -21,74 +21,107 @@ const overviewTab = props => {
           " " +
           object.p_address.address_line_3}
       </p>
-      {object.p_hours.length === 0 ? null : (
-        <p class="subtitle is-4" style={{ marginBottom: "0.2em" }}>
-          Working Hours
-        </p>
-      )}
-      {object.p_hours.map((obj, key) => {
-        return (
-          <p class="subtitle is-6 has-text-justified" key={key}>
-            {obj.day + " " + obj.from_time + " " + obj.to_time}
+
+      {props.parentState.category === 1 ? (
+        object.p_hours.length === 0 ? null : (
+          <p class="subtitle is-4" style={{ marginBottom: "0.2em" }}>
+            Working Hours
           </p>
-        );
-      })}
+        )
+      ) : null}
+
+      {props.parentState.category === 1 ? (
+        <div class="tags are-medium">
+          {object.p_hours.map((obj, key) => {
+            return (
+              <span class="tag is-info" key={key}>
+                {obj.day + " " + obj.from_time + " " + obj.to_time}
+              </span>
+            );
+          })}
+        </div>
+      ) : null}
+
       {object.p_other_contacts.length === 0 ? null : (
         <p class="subtitle is-4" style={{ marginBottom: "0.5em" }}>
           Contact Number
         </p>
       )}
-      <div class="tags are-medium">
-        {object.p_other_contacts.map((obj, key) => {
-          return (
-            <span class="tag is-info" key={key}>
-              {obj}
-            </span>
-          );
-        })}
-      </div>
+
+      {object.p_other_contacts.length === 0 ? null : (
+        <div class="tags are-medium">
+          {object.p_other_contacts.map((obj, key) => {
+            return (
+              <span class="tag is-info" key={key}>
+                {obj}
+              </span>
+            );
+          })}
+        </div>
+      )}
+
       {object.p_online_pay_opt.length === 0 ? null : (
         <p class="subtitle is-4" style={{ marginBottom: "0.5em" }}>
           Modes of Payment
         </p>
       )}
-      <div class="tags are-medium">
-        {object.p_online_pay_opt.map((obj, key) => {
-          return (
-            <span class="tag is-info" key={key}>
-              {obj}
-            </span>
-          );
-        })}
-      </div>
-      {object.p_services.length === 0 ? null : (
-        <p class="subtitle is-4" style={{ marginBottom: "0.5em" }}>
-          Services
-        </p>
+
+      {object.p_online_pay_opt.length === 0 ? null : (
+        <div class="tags are-medium">
+          {object.p_online_pay_opt.map((obj, key) => {
+            return (
+              <span class="tag is-info" key={key}>
+                {obj}
+              </span>
+            );
+          })}
+        </div>
       )}
-      <div class="tags are-medium">
-        {object.p_services.map((obj, key) => {
-          return (
-            <span class="tag is-info" key={key}>
-              {obj.service}
-            </span>
-          );
-        })}
-      </div>
-      {object.p_specialities.length === 0 ? null : (
-        <p class="subtitle is-4" style={{ marginBottom: "0.5em" }}>
-          Specialists
-        </p>
-      )}
-      <div class="tags are-medium">
-        {object.p_specialities.map((obj, key) => {
-          return (
-            <span class="tag is-info" key={key}>
-              {obj.speciality}
-            </span>
-          );
-        })}
-      </div>
+
+      {props.parentState.category === 1 || props.parentState.category === 4 ? (
+        object.p_services.length === 0 ? null : (
+          <p class="subtitle is-4" style={{ marginBottom: "0.5em" }}>
+            Services
+          </p>
+        )
+      ) : null}
+
+      {props.parentState.category === 1 || props.parentState.category === 4 ? (
+        object.p_services.length === 0 ? null : (
+          <div class="tags are-medium">
+            {object.p_services.map((obj, key) => {
+              return (
+                <span class="tag is-info" key={key}>
+                  {obj.service}
+                </span>
+              );
+            })}
+          </div>
+        )
+      ) : null}
+
+      {props.parentState.category === 1 ? (
+        object.p_specialities.length === 0 ? null : (
+          <p class="subtitle is-4" style={{ marginBottom: "0.5em" }}>
+            Specialists
+          </p>
+        )
+      ) : null}
+
+      {props.parentState.category === 1 ? (
+        object.p_specialities.length === 0 ? null : (
+          <div class="tags are-medium">
+            {object.p_specialities.map((obj, key) => {
+              return (
+                <span class="tag is-info" key={key}>
+                  {obj.speciality}
+                </span>
+              );
+            })}
+          </div>
+        )
+      ) : null}
+
       <p class="subtitle is-4" style={{ marginBottom: "0.2em" }}>
         Detail
       </p>

@@ -3,8 +3,14 @@
   margin-left: 0.5em;
 }
 
-.content .available {
+.content .available-yes {
   font-size: 1em;
   margin-left: 0.5em;
   color: green;
+}
+
+.content .available-no {
+  font-size: 1em;
+  margin-left: 0.5em;
+  color: red;
 }
