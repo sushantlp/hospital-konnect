@@ -4,7 +4,6 @@ import "./overview-tab.css";
 
 const overviewTab = props => {
   const object = props.categoryFeature.categoryFeature;
-
   return (
     <div className="overview-container">
       <p class="subtitle is-4" style={{ marginBottom: "0.2em" }}>
@@ -22,7 +21,7 @@ const overviewTab = props => {
           object.p_address.address_line_3}
       </p>
 
-      {props.parentState.category === 1 ? (
+      {object.p_cat === 1 ? (
         object.p_hours.length === 0 ? null : (
           <p class="subtitle is-4" style={{ marginBottom: "0.2em" }}>
             Working Hours
@@ -30,7 +29,7 @@ const overviewTab = props => {
         )
       ) : null}
 
-      {props.parentState.category === 1 ? (
+      {object.p_cat === 1 ? (
         <div class="tags are-medium">
           {object.p_hours.map((obj, key) => {
             return (
@@ -78,7 +77,7 @@ const overviewTab = props => {
         </div>
       )}
 
-      {props.parentState.category === 1 || props.parentState.category === 4 ? (
+      {object.p_cat === 1 || object.p_cat === 4 ? (
         object.p_services.length === 0 ? null : (
           <p class="subtitle is-4" style={{ marginBottom: "0.5em" }}>
             Services
@@ -86,7 +85,7 @@ const overviewTab = props => {
         )
       ) : null}
 
-      {props.parentState.category === 1 || props.parentState.category === 4 ? (
+      {object.p_cat === 1 || object.p_cat === 4 ? (
         object.p_services.length === 0 ? null : (
           <div class="tags are-medium">
             {object.p_services.map((obj, key) => {
@@ -100,7 +99,7 @@ const overviewTab = props => {
         )
       ) : null}
 
-      {props.parentState.category === 1 ? (
+      {object.p_cat === 1 ? (
         object.p_specialities.length === 0 ? null : (
           <p class="subtitle is-4" style={{ marginBottom: "0.5em" }}>
             Specialists
@@ -108,7 +107,7 @@ const overviewTab = props => {
         )
       ) : null}
 
-      {props.parentState.category === 1 ? (
+      {object.p_cat === 1 ? (
         object.p_specialities.length === 0 ? null : (
           <div class="tags are-medium">
             {object.p_specialities.map((obj, key) => {

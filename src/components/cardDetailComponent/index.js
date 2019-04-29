@@ -41,7 +41,7 @@ const CardDetail = props => {
                 {object.p_address.locality + " " + object.p_address.city}
               </span>
             </p>
-            {props.parentState.category === 1 ? (
+            {object.p_cat === 1 ? (
               <p style={{ marginBottom: "0.4em" }}>
                 <span class="icon">
                   <i class="far fa-clock" />
@@ -51,7 +51,7 @@ const CardDetail = props => {
               </p>
             ) : null}
 
-            {props.parentState.category === 1 ? (
+            {object.p_cat === 1 ? (
               <p style={{ marginBottom: "0.4em" }}>
                 <span class="icon">
                   <i class="fas fa-wallet" />
@@ -86,7 +86,7 @@ const CardDetail = props => {
               <span>Book Now</span>
             </a>
 
-            {props.parentState.category === 1 ? (
+            {object.p_cat === 1 ? (
               <a class="button is-info is-medium">
                 <span class="icon">
                   <i class="fas fa-phone-square" />

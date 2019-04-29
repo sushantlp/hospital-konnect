@@ -42,7 +42,7 @@ export default class Tab extends React.Component {
               </a>
             </li>
 
-            {this.props.parentState.category === 1 ? (
+            {this.props.categoryFeature.categoryFeature.p_cat === 1 ? (
               <li
                 class={this.state.navigation === "Beds" ? "is-active" : ""}
                 onClick={() => this.changeTab("Beds")}
@@ -56,7 +56,7 @@ export default class Tab extends React.Component {
               </li>
             ) : null}
 
-            {this.props.parentState.category === 1 ? (
+            {this.props.categoryFeature.categoryFeature.p_cat === 1 ? (
               <li
                 class={this.state.navigation === "Doctors" ? "is-active" : ""}
                 onClick={() => this.changeTab("Doctors")}
@@ -82,7 +82,7 @@ export default class Tab extends React.Component {
               </a>
             </li>
 
-            {this.props.parentState.category === 3 ? (
+            {this.props.categoryFeature.categoryFeature.p_cat === 3 ? (
               <li
                 class={
                   this.state.navigation === "Equipments" ? "is-active" : ""
@@ -98,7 +98,7 @@ export default class Tab extends React.Component {
               </li>
             ) : null}
 
-            {this.props.parentState.category === 4 ? (
+            {this.props.categoryFeature.categoryFeature.p_cat === 4 ? (
               <li
                 class={this.state.navigation === "Nursings" ? "is-active" : ""}
                 onClick={() => this.changeTab("Nursings")}
@@ -115,61 +115,37 @@ export default class Tab extends React.Component {
         </div>
 
         {this.state.navigation === "Overview" ? (
-          <Overview
-            parentState={this.props.parentState}
-            parentProps={this.props.parentProps}
-            categoryFeature={this.props.categoryFeature}
-          />
+          <Overview categoryFeature={this.props.categoryFeature} />
         ) : null}
 
-        {this.props.parentState.category === 1 ? (
+        {this.props.categoryFeature.categoryFeature.p_cat === 1 ? (
           this.state.navigation === "Beds" ? (
-            <Bed
-              parentState={this.props.parentState}
-              parentProps={this.props.parentProps}
-              categoryFeature={this.props.categoryFeature}
-            />
+            <Bed categoryFeature={this.props.categoryFeature} />
           ) : null
         ) : null}
 
-        {this.props.parentState.category === 1 ? (
+        {this.props.categoryFeature.categoryFeature.p_cat === 1 ? (
           this.state.navigation === "Doctors" ? (
-            <Doctor
-              parentState={this.props.parentState}
-              parentProps={this.props.parentProps}
-              categoryFeature={this.props.categoryFeature}
-            />
+            <Doctor categoryFeature={this.props.categoryFeature} />
           ) : null
         ) : null}
 
-        {this.props.parentState.category === 1 ||
-        this.props.parentState.category === 2 ? (
+        {this.props.categoryFeature.categoryFeature.p_cat === 1 ||
+        this.props.categoryFeature.categoryFeature.p_cat === 2 ? (
           this.state.navigation === "Ambulances" ? (
-            <Ambulance
-              parentState={this.props.parentState}
-              parentProps={this.props.parentProps}
-              categoryFeature={this.props.categoryFeature}
-            />
+            <Ambulance categoryFeature={this.props.categoryFeature} />
           ) : null
         ) : null}
 
-        {this.props.parentState.category === 3 ? (
+        {this.props.categoryFeature.categoryFeature.p_cat === 3 ? (
           this.state.navigation === "Equipments" ? (
-            <Bed
-              parentState={this.props.parentState}
-              parentProps={this.props.parentProps}
-              categoryFeature={this.props.categoryFeature}
-            />
+            <Bed categoryFeature={this.props.categoryFeature} />
           ) : null
         ) : null}
 
-        {this.props.parentState.category === 4 ? (
+        {this.props.categoryFeature.categoryFeature.p_cat === 4 ? (
           this.state.navigation === "Nursings" ? (
-            <Bed
-              parentState={this.props.parentState}
-              parentProps={this.props.parentProps}
-              categoryFeature={this.props.categoryFeature}
-            />
+            <Bed categoryFeature={this.props.categoryFeature} />
           ) : null
         ) : null}
       </div>

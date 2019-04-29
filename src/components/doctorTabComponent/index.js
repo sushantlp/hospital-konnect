@@ -49,18 +49,11 @@ const loopDoctor = (object, category) => {
 };
 
 const doctorTab = props => {
-  console.log(props);
-
-  let json = [];
-  if (props.parentState.category === 1)
-    json = props.categoryFeature.categoryFeature.p_doctors;
-
+  const json = props.categoryFeature.categoryFeature;
   if (_.isEmpty(json)) return <div />;
 
   return (
-    <React.Fragment>
-      {loopDoctor(json, props.parentState.category)}
-    </React.Fragment>
+    <React.Fragment>{loopDoctor(json.p_doctors, json.p_cat)}</React.Fragment>
   );
 };
 

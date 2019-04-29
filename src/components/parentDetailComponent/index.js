@@ -43,13 +43,13 @@ export default class ParentDetail extends React.Component {
             <div class="column is-9">
               <Card
                 categoryFeature={this.props.categoryFeature}
-                parentState={this.state}
+                // parentState={this.state}
               />
               <div class="section">
                 <Tab
                   categoryFeature={this.props.categoryFeature}
-                  parentState={this.state}
-                  parentProps={this.props}
+                  // parentState={this.state}
+                  // parentProps={this.props}
                 />
               </div>
             </div>

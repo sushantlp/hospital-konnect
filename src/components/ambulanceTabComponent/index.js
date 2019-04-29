@@ -78,15 +78,11 @@ const loopAmbulance = (object, category) => {
 };
 
 const ambulanceTab = props => {
-  let json = [];
-  if (props.parentState.category === 1)
-    json = props.categoryFeature.categoryFeature.p_ambulances;
-
+  const json = props.categoryFeature.categoryFeature;
   if (_.isEmpty(json)) return <div />;
-
   return (
     <React.Fragment>
-      {loopAmbulance(json, props.parentState.category)}
+      {loopAmbulance(json.p_ambulances, json.p_cat)}
     </React.Fragment>
   );
 };

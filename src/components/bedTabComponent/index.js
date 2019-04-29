@@ -73,13 +73,19 @@ const loopBed = (object, category) => {
 
 const bedTab = props => {
   let json = [];
-  if (props.parentState.category === 1)
+  if (props.categoryFeature.categoryFeature.p_cat === 1)
+    json = props.categoryFeature.categoryFeature.p_beds;
+  else if (props.categoryFeature.categoryFeature.p_cat === 3)
+    json = props.categoryFeature.categoryFeature.p_beds;
+  else if (props.categoryFeature.categoryFeature.p_cat === 4)
     json = props.categoryFeature.categoryFeature.p_beds;
 
   if (_.isEmpty(json)) return <div />;
 
   return (
-    <React.Fragment>{loopBed(json, props.parentState.category)}</React.Fragment>
+    <React.Fragment>
+      {loopBed(json, props.categoryFeature.categoryFeature.p_cat)}
+    </React.Fragment>
   );
 };
 

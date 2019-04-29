@@ -104,8 +104,7 @@ export default class Ambulance extends React.Component {
     const object = this.props.homeDetail.homeDetail.GAMB;
 
     if (_.isEmpty(object.col_list)) return <div />;
-
-    console.log("HEllo");
+    
     const settings = {
       dots: false,
       infinite: true,
