@@ -53,13 +53,13 @@ export default class CardList extends React.Component {
                   <p class="subtitle is-6" style={{ marginBottom: "0.5em" }}>
                     {locality}
                   </p>
-                  {category !== 1 ? (
+                  {category === 1 ? (
                     <p class="subtitle is-6" style={{ marginBottom: "0.5em" }}>
                       {working}
                     </p>
                   ) : null}
 
-                  {category !== 1 ? (
+                  {category === 1 ? (
                     <p class="subtitle is-6">
                       Registration Charges
                       <span className="fees">
@@ -74,12 +74,9 @@ export default class CardList extends React.Component {
               <div class="content">{address}</div>
 
               <footer class="card-footer">
-                <a href="" class="card-footer-item">
-                  {emergency}
-                </a>
+                <a class="card-footer-item">{emergency}</a>
 
                 <a
-                  href=""
                   class="card-footer-item"
                   onClick={() => this.onClickCardList(obj)}
                 >
@@ -110,7 +107,7 @@ export default class CardList extends React.Component {
         obj.p_emergency_contact,
         obj.p_reg_charge,
         obj.p_address,
-        obj.cat_id,
+        obj.p_cat,
         obj
       );
     });
@@ -130,9 +127,9 @@ export default class CardList extends React.Component {
   onClickCardList = object => {
     let categoryName = "";
 
-    if (object.cat_id === 1) categoryName = "hospital";
-    else if (object.cat_id === 2) categoryName = "ambulance";
-    else if (object.cat_id === 3) categoryName = "equipment";
+    if (object.p_cat === 1) categoryName = "hospital";
+    else if (object.p_cat === 2) categoryName = "ambulance";
+    else if (object.p_cat === 3) categoryName = "equipment";
     else categoryName = "nursing";
 
     const partnerUrl = object.p_name.replace(/ /g, "-").toLowerCase();

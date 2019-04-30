@@ -1,4 +1,4 @@
-.content .price {
+.content .ambulance-price {
   font-size: 1em;
   margin-left: 0.5em;
 }
@@ -15,7 +15,7 @@
   color: #ff3860;
 }
 
-.content .price:hover {
+.content .ambulance-price:hover {
   color: #118fe4;
   text-decoration: underline;
 }

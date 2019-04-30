@@ -72,8 +72,8 @@ export default class Tab extends React.Component {
     });
   };
 
-  // handleClick = e => {
-  //   console.log(e);
+  // handleClick = () => {
+  //   console.log("Hello");
   // };
   render() {
     if (this.props.categoryFeature.status === "START") return <div />;

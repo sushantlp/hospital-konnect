@@ -1,7 +1,6 @@
 import React from "react";
 import _ from "lodash";
 
-import "bulma-tooltip";
 import "./bed-tab.css";
 
 const drawBed = (
