@@ -51,6 +51,8 @@ export default class ParentList extends React.Component {
       this.state.page,
       true
     );
+
+    if (this.state.category === 1) this.props.getFilterList();
   }
 
   // Load More Category List Data
@@ -72,6 +74,7 @@ export default class ParentList extends React.Component {
         {this.state.category === 1 ? (
           <HospitalList
             categoryList={this.props.categoryList}
+            filterList={this.props.filterList}
             parentProps={this.props}
             parentState={this.state}
             loadMoreDataApiCall={this.loadMoreDataApiCall}

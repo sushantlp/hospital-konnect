@@ -41,7 +41,12 @@ const drawBed = (
               )}
             </p>
 
-            <p class="subtitle is-6 has-text-justified">{description}</p>
+            <p
+              class="subtitle is-6 has-text-justified"
+              style={{ lineHeight: "1.66667" }}
+            >
+              {description}
+            </p>
 
             <div
               class={
@@ -62,7 +67,7 @@ const drawBed = (
               <div class="dropdown-menu" id="dropdown-menu1" role="menu">
                 <div class="dropdown-content">
                   <div class="dropdown-item">
-                    <p>{cancelPolicy}</p>
+                    <p style={{ lineHeight: "1.66667" }}>{cancelPolicy}</p>
                   </div>
                 </div>
               </div>
@@ -88,7 +93,7 @@ const drawBed = (
               <div class="dropdown-menu" id="dropdown-menu2" role="menu">
                 <div class="dropdown-content">
                   <div class="dropdown-item">
-                    <p>{terms}</p>
+                    <p style={{ lineHeight: "1.66667" }}>{terms}</p>
                   </div>
                 </div>
               </div>

@@ -102,5 +102,18 @@ export default {
         })
         .catch(error => console.log(error));
     });
+  },
+
+  filterListApi: () => {
+    return new Promise((resolve, reject) => {
+      fetch(host + `api/v1/web/filters`)
+        .then(response => {
+          response
+            .json()
+            .then(filterList => resolve(filterList))
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    });
   }
 };

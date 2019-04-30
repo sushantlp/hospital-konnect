@@ -18,15 +18,15 @@ const drawDoctor = (key, title, name, image, experience, about, obj) => {
         </div>
         <div class="media-content">
           <div class="content">
-            <p class="subtitle is-4" style={{ marginBottom: "0.2em" }}>
-              {name}
-            </p>
-            <p class="subtitle is-6" style={{ marginBottom: "0.2em" }}>
-              {title}
-            </p>
+            <p class="subtitle is-4">{name}</p>
+            <p class="subtitle is-6">{title}</p>
             <p class="subtitle is-6">{experience}</p>
-
-            <p class="subtitle is-6 has-text-justified">{about}</p>
+            <p
+              class="subtitle is-6 has-text-justified"
+              style={{ lineHeight: "1.66667" }}
+            >
+              {about}
+            </p>
           </div>
         </div>
       </article>

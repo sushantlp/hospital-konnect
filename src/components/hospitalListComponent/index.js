@@ -23,7 +23,7 @@ export default class Index extends React.Component {
         </section>
 
         <div class="container">
-          <Filter transistor={false} />
+          <Filter transistor={false} filterList={this.props.filterList} />
         </div>
 
         <section class="section">
