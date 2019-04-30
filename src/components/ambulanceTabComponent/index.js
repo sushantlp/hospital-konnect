@@ -47,16 +47,20 @@ const drawAmbulance = (
 
             <div
               class={
-                props.parentState.bedCancel
+                props.parentState.ambulanceCancel
                   ? "dropdown is-left is-active"
                   : "dropdown is-left"
               }
             >
-              <div class="dropdown-trigger">
+              <div
+                class="dropdown-trigger"
+                // ref={node => (props.this.node = node)}
+                onClick={() => props.handleClick()}
+              >
                 <a
                   aria-haspopup="true"
                   aria-controls="dropdown-menu1"
-                  onClick={() => props.changeBedCancel()}
+                  onClick={() => props.changeAmbulanceCancel()}
                 >
                   Cancellation policy
                 </a>
@@ -72,7 +76,7 @@ const drawAmbulance = (
 
             <div
               class={
-                props.parentState.bedTerm
+                props.parentState.ambulanceTerm
                   ? "dropdown is-left is-active"
                   : "dropdown is-left"
               }
@@ -81,7 +85,7 @@ const drawAmbulance = (
                 <a
                   aria-haspopup="true"
                   aria-controls="dropdown-menu2"
-                  onClick={() => props.changeBedTerm()}
+                  onClick={() => props.changeAmbulanceTerm()}
                   style={{ marginLeft: "2em" }}
                 >
                   Terms and Condition

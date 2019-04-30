@@ -13,7 +13,9 @@ export default class Tab extends React.Component {
     this.state = {
       navigation: "Overview",
       bedCancel: false,
-      bedTerm: false
+      bedTerm: false,
+      ambulanceCancel: false,
+      ambulanceTerm: false
     };
   }
   changeTab = text => {
@@ -46,6 +48,33 @@ export default class Tab extends React.Component {
     });
   };
 
+  changeAmbulanceCancel = () => {
+    if (this.state.ambulanceTerm) {
+      this.setState({
+        ambulanceTerm: false
+      });
+    }
+
+    this.setState({
+      ambulanceCancel: !this.state.ambulanceCancel
+    });
+  };
+
+  changeAmbulanceTerm = () => {
+    if (this.state.ambulanceCancel) {
+      this.setState({
+        ambulanceCancel: false
+      });
+    }
+
+    this.setState({
+      ambulanceTerm: !this.state.ambulanceTerm
+    });
+  };
+
+  // handleClick = e => {
+  //   console.log(e);
+  // };
   render() {
     if (this.props.categoryFeature.status === "START") return <div />;
     else if (this.props.categoryFeature.status === "FAIL") return <div />;
@@ -171,9 +200,11 @@ export default class Tab extends React.Component {
           this.state.navigation === "Ambulances" ? (
             <Ambulance
               categoryFeature={this.props.categoryFeature}
-              changeBedCancel={this.changeBedCancel}
-              changeBedTerm={this.changeBedTerm}
+              changeAmbulanceTerm={this.changeAmbulanceTerm}
+              changeAmbulanceCancel={this.changeAmbulanceCancel}
               parentState={this.state}
+              // handleClick={this.handleClick}
+              // this={this}
             />
           ) : null
         ) : null}
