@@ -6,11 +6,15 @@
 .content .available-yes {
   font-size: 1em;
   margin-left: 0.5em;
-  color: green;
+  color: #23d160;
 }
 
 .content .available-no {
   font-size: 1em;
   margin-left: 0.5em;
-  color: red;
+  color: #ff3860;
+}
+
+.dropdown-menu {
+  min-width: 30rem;
 }

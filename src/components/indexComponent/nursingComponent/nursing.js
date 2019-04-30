@@ -4,7 +4,6 @@ import _ from "lodash";
 import { Link } from "react-router-dom";
 import { Card, Container, Icon } from "semantic-ui-react";
 
-// import "../../../static/css/root.css";
 import "./nursing.css";
 
 function SampleNextArrow(props) {
@@ -26,7 +25,6 @@ function SampleNextArrow(props) {
       }}
       onClick={onClick}
     >
-      {" "}
       <Icon
         name="angle right"
         style={{
@@ -117,14 +115,10 @@ export default class Nursing extends React.Component {
     return (
       <Container style={{ width: "89em" }}>
         <div>
-          <br />
-          <br />
           <div className="nursing-container">
             <h4 className="header-name">NURSING CARE</h4>
             <div className="underscore" />
           </div>
-          <br />
-          <br />
           <Slider {...settings}>{this.loopNursing(object.col_list)}</Slider>
         </div>
       </Container>

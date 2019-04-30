@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import _ from "lodash";
 import { Link } from "react-router-dom";
-import { List, Container, Icon } from "semantic-ui-react";
+import { Container, Icon } from "semantic-ui-react";
 
 import "./ambulance.css";
 

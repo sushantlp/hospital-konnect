@@ -1,6 +1,7 @@
 import React from "react";
 import _ from "lodash";
 
+import "bulma-tooltip";
 import "./bed-tab.css";
 
 const drawBed = (
@@ -11,7 +12,8 @@ const drawBed = (
   cancelPolicy,
   terms,
   availability,
-  obj
+  obj,
+  props
 ) => {
   return (
     <div class="box" key={key}>
@@ -41,6 +43,57 @@ const drawBed = (
             </p>
 
             <p class="subtitle is-6 has-text-justified">{description}</p>
+
+            <div
+              class={
+                props.parentState.bedCancel
+                  ? "dropdown is-left is-active"
+                  : "dropdown is-left"
+              }
+            >
+              <div class="dropdown-trigger">
+                <a
+                  aria-haspopup="true"
+                  aria-controls="dropdown-menu1"
+                  onClick={() => props.changeBedCancel()}
+                >
+                  Cancellation policy
+                </a>
+              </div>
+              <div class="dropdown-menu" id="dropdown-menu1" role="menu">
+                <div class="dropdown-content">
+                  <div class="dropdown-item">
+                    <p>{cancelPolicy}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class={
+                props.parentState.bedTerm
+                  ? "dropdown is-left is-active"
+                  : "dropdown is-left"
+              }
+            >
+              <div class="dropdown-trigger">
+                <a
+                  aria-haspopup="true"
+                  aria-controls="dropdown-menu2"
+                  onClick={() => props.changeBedTerm()}
+                  style={{ marginLeft: "2em" }}
+                >
+                  Terms and Condition
+                </a>
+              </div>
+              <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+                <div class="dropdown-content">
+                  <div class="dropdown-item">
+                    <p>{terms}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -56,8 +109,7 @@ const drawBed = (
   );
 };
 
-const loopBed = (object, category) => {
-  console.log(category);
+const loopBed = (object, category, props) => {
   return object.map((obj, key) => {
     let id = 0;
     let title = "";
@@ -99,7 +151,8 @@ const loopBed = (object, category) => {
       cancelPolicy,
       terms,
       availability,
-      obj
+      obj,
+      props
     );
   });
 };
@@ -117,7 +170,7 @@ const bedTab = props => {
 
   return (
     <React.Fragment>
-      {loopBed(json, props.categoryFeature.categoryFeature.p_cat)}
+      {loopBed(json, props.categoryFeature.categoryFeature.p_cat, props)}
     </React.Fragment>
   );
 };

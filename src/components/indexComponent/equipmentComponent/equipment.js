@@ -120,8 +120,6 @@ export default class Equipment extends React.Component {
             <h4 className="header-name">MEDICAL EQUIPMENT</h4>
             <div className="underscore" />
           </div>
-          <br />
-          <br />
           <Slider {...settings}>{this.loopEquipment(object.col_list)}</Slider>
         </div>
       </Container>

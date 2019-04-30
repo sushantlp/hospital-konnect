@@ -11,12 +11,38 @@ export default class Tab extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      navigation: "Overview"
+      navigation: "Overview",
+      bedCancel: false,
+      bedTerm: false
     };
   }
   changeTab = text => {
     this.setState({
       navigation: text
+    });
+  };
+
+  changeBedCancel = () => {
+    if (this.state.bedTerm) {
+      this.setState({
+        bedTerm: false
+      });
+    }
+
+    this.setState({
+      bedCancel: !this.state.bedCancel
+    });
+  };
+
+  changeBedTerm = () => {
+    if (this.state.bedCancel) {
+      this.setState({
+        bedCancel: false
+      });
+    }
+
+    this.setState({
+      bedTerm: !this.state.bedTerm
     });
   };
 
@@ -125,7 +151,12 @@ export default class Tab extends React.Component {
 
         {this.props.categoryFeature.categoryFeature.p_cat === 1 ? (
           this.state.navigation === "Beds" ? (
-            <Bed categoryFeature={this.props.categoryFeature} />
+            <Bed
+              categoryFeature={this.props.categoryFeature}
+              changeBedCancel={this.changeBedCancel}
+              changeBedTerm={this.changeBedTerm}
+              parentState={this.state}
+            />
           ) : null
         ) : null}
 
@@ -138,19 +169,34 @@ export default class Tab extends React.Component {
         {this.props.categoryFeature.categoryFeature.p_cat === 1 ||
         this.props.categoryFeature.categoryFeature.p_cat === 2 ? (
           this.state.navigation === "Ambulances" ? (
-            <Ambulance categoryFeature={this.props.categoryFeature} />
+            <Ambulance
+              categoryFeature={this.props.categoryFeature}
+              changeBedCancel={this.changeBedCancel}
+              changeBedTerm={this.changeBedTerm}
+              parentState={this.state}
+            />
           ) : null
         ) : null}
 
         {this.props.categoryFeature.categoryFeature.p_cat === 3 ? (
           this.state.navigation === "Equipments" ? (
-            <Bed categoryFeature={this.props.categoryFeature} />
+            <Bed
+              categoryFeature={this.props.categoryFeature}
+              changeBedCancel={this.changeBedCancel}
+              changeBedTerm={this.changeBedTerm}
+              parentState={this.state}
+            />
           ) : null
         ) : null}
 
         {this.props.categoryFeature.categoryFeature.p_cat === 4 ? (
           this.state.navigation === "Nursings" ? (
-            <Bed categoryFeature={this.props.categoryFeature} />
+            <Bed
+              categoryFeature={this.props.categoryFeature}
+              changeBedCancel={this.changeBedCancel}
+              changeBedTerm={this.changeBedTerm}
+              parentState={this.state}
+            />
           ) : null
         ) : null}
       </div>

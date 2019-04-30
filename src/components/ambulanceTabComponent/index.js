@@ -7,13 +7,14 @@ const drawAmbulance = (
   key,
   title,
   availability,
-  cancel_policy,
+  cancelPolicy,
   desc,
   price,
   priceList,
   thirdParty,
   terms,
-  obj
+  obj,
+  props
 ) => {
   return (
     <div class="box" key={key}>
@@ -43,6 +44,57 @@ const drawAmbulance = (
             </p>
 
             <p class="subtitle is-6 has-text-justified">{desc}</p>
+
+            <div
+              class={
+                props.parentState.bedCancel
+                  ? "dropdown is-left is-active"
+                  : "dropdown is-left"
+              }
+            >
+              <div class="dropdown-trigger">
+                <a
+                  aria-haspopup="true"
+                  aria-controls="dropdown-menu1"
+                  onClick={() => props.changeBedCancel()}
+                >
+                  Cancellation policy
+                </a>
+              </div>
+              <div class="dropdown-menu" id="dropdown-menu1" role="menu">
+                <div class="dropdown-content">
+                  <div class="dropdown-item">
+                    <p>{cancelPolicy}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class={
+                props.parentState.bedTerm
+                  ? "dropdown is-left is-active"
+                  : "dropdown is-left"
+              }
+            >
+              <div class="dropdown-trigger">
+                <a
+                  aria-haspopup="true"
+                  aria-controls="dropdown-menu2"
+                  onClick={() => props.changeBedTerm()}
+                  style={{ marginLeft: "2em" }}
+                >
+                  Terms and Condition
+                </a>
+              </div>
+              <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+                <div class="dropdown-content">
+                  <div class="dropdown-item">
+                    <p>{terms}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -58,7 +110,7 @@ const drawAmbulance = (
   );
 };
 
-const loopAmbulance = (object, category) => {
+const loopAmbulance = (object, category, props) => {
   return object.map((obj, key) => {
     let thirdParty = undefined;
     if (category === 1) thirdParty = obj.a_third_party_service;
@@ -72,7 +124,8 @@ const loopAmbulance = (object, category) => {
       obj.a_price_list,
       thirdParty,
       obj.a_tnc,
-      obj
+      obj,
+      props
     );
   });
 };
@@ -82,7 +135,7 @@ const ambulanceTab = props => {
   if (_.isEmpty(json)) return <div />;
   return (
     <React.Fragment>
-      {loopAmbulance(json.p_ambulances, json.p_cat)}
+      {loopAmbulance(json.p_ambulances, json.p_cat, props)}
     </React.Fragment>
   );
 };
