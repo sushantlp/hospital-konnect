@@ -1,4 +1,6 @@
 import React from "react";
+import { Icon } from "semantic-ui-react";
+import "./demo.css";
 
 const demoList = props => {
   return (
@@ -65,27 +67,139 @@ const demoList = props => {
                 <span class="tag" style={{ fontWeight: "400" }}>
                   Dermatology
                 </span>
+                <span class="tag" style={{ fontWeight: "400" }}>
+                  Cardiology
+                </span>
+                <span class="tag" style={{ fontWeight: "400" }}>
+                  Urology
+                </span>
+                <span class="tag" style={{ fontWeight: "400" }}>
+                  Dermatology
+                </span>
               </div>
+              {/* <div style={{ marginTop: "1em" }}>
+                <p class="subtitle is-6">
+                  5th Cross Street, #1220 24th Main Road, 1st Phase, JP Nagar
+                  Bengaluru, Karnataka 560078
+                </p>
+              </div> */}
             </div>
           </div>
           <div>
-            <p class="buttons ">
-              <a class="button is-info is-medium">
-                <span class="icon">
-                  <i class="fas fa-bolt" />
-                </span>
-                <span>Book Now</span>
-              </a>
+            <div
+              className="list-rating"
+              style={{
+                backgroundColor: "#f0f0f5",
+                padding: "3px 0 3px 3px",
+                marginRight: "3px",
+                borderRadius: "3px"
+              }}
+            >
+              <span
+                style={{
+                  color: "#23d160",
+                  fontWeight: "700",
+                  fontSize: "14px",
+                  marginLeft: "3px",
+                  marginRight: "3px"
+                }}
+              >
+                3.5
+              </span>
+              <span>
+                <i
+                  class="fas fa-star"
+                  style={{
+                    color: "#23d160",
 
-              <a class="button is-info is-medium">
-                <span class="icon">
-                  <i class="fas fa-phone-square" />
+                    fontSize: "14px",
+                    marginLeft: "3px",
+                    marginRight: "3px"
+                  }}
+                />
+                <i
+                  class="fas fa-star"
+                  style={{
+                    color: "#23d160",
+
+                    fontSize: "14px",
+                    marginLeft: "3px",
+                    marginRight: "3px"
+                  }}
+                />
+                <i
+                  class="fas fa-star"
+                  style={{
+                    color: "#23d160",
+
+                    fontSize: "14px",
+                    marginLeft: "3px",
+                    marginRight: "3px"
+                  }}
+                />
+                <i
+                  class="fas fa-star-half-alt"
+                  style={{
+                    color: "#23d160",
+
+                    fontSize: "14px",
+                    marginLeft: "3px",
+                    marginRight: "3px"
+                  }}
+                />
+
+                <i
+                  class="far fa-star"
+                  style={{
+                    color: "#23d160",
+
+                    fontSize: "14px",
+                    marginLeft: "3px",
+                    marginRight: "3px"
+                  }}
+                />
+              </span>
+            </div>
+
+            <div style={{ marginTop: "1em" }}>
+              <p style={{ fontWeight: "300" }}>
+                <i class="far fa-clock" />
+                <span style={{ paddingLeft: "0.5em" }}>Open 24 x 7</span>
+              </p>
+
+              <p style={{ fontWeight: "300" }}>
+                <i class="fas fa-map-marker-alt" />
+                <span style={{ paddingLeft: "0.5em" }}>
+                  Marathahalli, Bangalore
                 </span>
-                <span />
-              </a>
-            </p>
+              </p>
+
+              <p style={{ fontWeight: "300" }}>
+                <i class="far fa-credit-card" />
+                <span style={{ paddingLeft: "0.5em" }}>
+                  <del>&#x20b9;</del>
+                  500
+                </span>
+              </p>
+            </div>
           </div>
         </article>
+        <footer class="card-footer">
+          <a href="#" class="card-footer-item">
+            Save
+          </a>
+          <a href="#" class="card-footer-item">
+            Edit
+          </a>
+          <div class="card-footer-item">
+            <a class="button is-info is-medium">
+              <span class="icon">
+                <i class="fas fa-bolt" />
+              </span>
+              <span>Book Appointment</span>
+            </a>
+          </div>
+        </footer>
       </div>
     </React.Fragment>
   );
