@@ -3,8 +3,8 @@ import React from "react";
 import Same from "../sameComponent";
 import Filter from "../filterComponent";
 import Banner from "../bannerComponent";
-import Seo from "../seoComponent";
 import CardList from "../cardListComponent";
+import Demo from "../demoHospitalList";
 
 import "./hospital-list.css";
 
@@ -23,7 +23,7 @@ export default class Index extends React.Component {
         </section>
 
         <div class="container">
-          <Filter transistor={false} filterList={this.props.filterList} />
+          {/* <Filter transistor={false} filterList={this.props.filterList} /> */}
         </div>
 
         <section class="section">
@@ -31,17 +31,15 @@ export default class Index extends React.Component {
             <div class="column is-3">
               <Same />
             </div>
-            <div class="column is-6">
-              <CardList
+            <div class="column is-9">
+              <Demo />
+              {/* <CardList
                 categoryList={this.props.categoryList}
                 category={1}
                 parentProps={this.props.parentProps}
                 parentState={this.props.parentState}
                 loadMoreDataApiCall={this.props.loadMoreDataApiCall}
-              />
-            </div>
-            <div class="column is-3">
-              <Seo />
+              /> */}
             </div>
           </div>
         </section>

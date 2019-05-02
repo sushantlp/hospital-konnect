@@ -11,7 +11,7 @@ const drawDoctor = (key, title, name, image, experience, about, obj) => {
           <figure class="image is-128x128">
             <img
               class="is-rounded"
-              src="https://d3wnzga3fpd9a.cloudfront.net/photos/Dr-Keith-Khuu-DDS-6768-circle_medium.png"
+              src={image}
               alt={title + " " + name + " " + about}
             />
           </figure>

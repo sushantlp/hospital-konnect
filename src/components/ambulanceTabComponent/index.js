@@ -1,6 +1,6 @@
 import React from "react";
 import _ from "lodash";
-
+import { Popup } from "semantic-ui-react";
 import "./ambulance-tab.css";
 
 const drawAmbulance = (
@@ -40,6 +40,10 @@ const drawAmbulance = (
                   <del>&#x20b9;</del>
                   {price}
                 </span>
+                <Popup
+                  trigger={<i class="far fa-question-circle" />}
+                  content="Add users to your feed"
+                />
               </span>
             </p>
 
