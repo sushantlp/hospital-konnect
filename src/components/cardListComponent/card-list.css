@@ -15,15 +15,27 @@
   height: 3rem;
 }
 
-.card-list .card-content {
+/* .card-list .card-content {
   max-width: max-content;
 }
 
 .card-footer a {
   color: rgb(38, 56, 104);
-}
+} */
 
-.fees {
+/* .fees {
   margin-left: 0.5em;
   color: #363636;
+} */
+
+.card-footer {
+  margin-top: 2em;
+}
+
+.card-footer .button {
+  border-color: white;
+}
+
+.card-footer .button:hover {
+  border-color: #dbdbdb;
 }

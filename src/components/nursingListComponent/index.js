@@ -3,7 +3,6 @@ import React from "react";
 import Same from "../sameComponent";
 import Filter from "../filterComponent";
 import Banner from "../bannerComponent";
-import Seo from "../seoComponent";
 import CardList from "../cardListComponent";
 
 import "./nursing-list.css";
@@ -19,15 +18,12 @@ export default class Index extends React.Component {
         </section>
 
         <div class="container">
-          <Filter transistor={true} />
+          <Filter transistor={true} filterList={this.props.filterList} />
         </div>
 
         <section class="section">
           <div class="columns">
-            <div class="column is-3">
-              <Same />
-            </div>
-            <div class="column is-6">
+            <div class="column is-9">
               <CardList
                 categoryList={this.props.categoryList}
                 category={1}
@@ -37,7 +33,7 @@ export default class Index extends React.Component {
               />
             </div>
             <div class="column is-3">
-              <Seo />
+              <Same />
             </div>
           </div>
         </section>

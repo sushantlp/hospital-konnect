@@ -7,6 +7,7 @@ import "./filter.css";
 
 export default class Filter extends React.Component {
   render() {
+    console.log(this.props);
     if (this.props.filterList.status === "START") return <div />;
     else if (this.props.filterList.status === "FAIL") return <div />;
 

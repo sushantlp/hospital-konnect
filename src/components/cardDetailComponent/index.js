@@ -33,70 +33,121 @@ const CardDetail = props => {
               {object.p_name}
             </p>
             <p class="subtitle is-6">{object.p_type}</p>
-            <p style={{ marginBottom: "0.4em" }}>
-              <span class="icon">
-                <i class="fas fa-map-marker-alt" />
-              </span>
-              <span class="subtitle is-6">
-                {object.p_address.locality + " " + object.p_address.city}
+            <p style={{ marginBottom: "0.4em", fontWeight: "300" }}>
+              <img src="https://img.icons8.com/ultraviolet/15/000000/marker.png" />
+              <span style={{ paddingLeft: "0.5em" }}>
+                {object.p_address.locality + "," + " " + object.p_address.city}
               </span>
             </p>
             {object.p_cat === 1 ? (
-              <p style={{ marginBottom: "0.4em" }}>
-                <span class="icon">
-                  <i class="far fa-clock" />
-                </span>
-
-                <span class="subtitle is-6">Open 24 hours</span>
+              <p style={{ marginBottom: "0.4em", fontWeight: "300" }}>
+                <img src="https://img.icons8.com/ultraviolet/15/000000/timer.png" />
+                <span style={{ paddingLeft: "0.5em" }}>Open 24 hours</span>
               </p>
             ) : null}
 
             {object.p_cat === 1 ? (
-              <p style={{ marginBottom: "0.4em" }}>
-                <span class="icon">
-                  <i class="fas fa-wallet" />
-                </span>
-                <span class="subtitle is-6">
-                  Registration Charges :
-                  <span class="tag is-info is-medium">
-                    <del>&#x20b9;</del>
-                    {object.p_reg_charge}
-                  </span>
+              <p style={{ marginBottom: "0.4em", fontWeight: "300" }}>
+                <img src="https://img.icons8.com/ultraviolet/15/000000/cash-in-hand.png" />
+                <span style={{ paddingLeft: "0.5em" }}>
+                  <del>&#x20b9;</del>
+                  {object.p_reg_charge}
                 </span>
               </p>
             ) : null}
-
-            {/* <p>
-              <span class="icon">
-                <i class="fas fa-ambulance" />
-              </span>
-
-              <span class="subtitle is-6">
-                Ambulance :<span class="tag is-danger is-medium">No</span>
-              </span>
-            </p> */}
           </div>
         </div>
-        <div>
-          <p class="buttons ">
-            <a class="button is-info is-medium">
-              <span class="icon">
-                <i class="fas fa-bolt" />
-              </span>
-              <span>Book Now</span>
-            </a>
 
-            {object.p_cat === 1 ? (
-              <a class="button is-info is-medium">
-                <span class="icon">
-                  <i class="fas fa-phone-square" />
-                </span>
-                <span>{object.p_emergency_contact}</span>
-              </a>
-            ) : null}
-          </p>
+        <div
+          style={{
+            backgroundColor: "#f0f0f5",
+            padding: "3px 0 3px 3px",
+            marginRight: "3px",
+            borderRadius: "3px"
+          }}
+        >
+          <span
+            style={{
+              color: "#23d160",
+              fontWeight: "700",
+              fontSize: "14px",
+              marginLeft: "3px",
+              marginRight: "3px"
+            }}
+          >
+            3.5
+          </span>
+          <span>
+            <i
+              class="fas fa-star"
+              style={{
+                color: "#23d160",
+                fontSize: "14px",
+                marginLeft: "3px",
+                marginRight: "3px"
+              }}
+            />
+            <i
+              class="fas fa-star"
+              style={{
+                color: "#23d160",
+                fontSize: "14px",
+                marginLeft: "3px",
+                marginRight: "3px"
+              }}
+            />
+            <i
+              class="fas fa-star"
+              style={{
+                color: "#23d160",
+                fontSize: "14px",
+                marginLeft: "3px",
+                marginRight: "3px"
+              }}
+            />
+            <i
+              class="fas fa-star-half-alt"
+              style={{
+                color: "#23d160",
+                fontSize: "14px",
+                marginLeft: "3px",
+                marginRight: "3px"
+              }}
+            />
+
+            <i
+              class="far fa-star"
+              style={{
+                color: "#23d160",
+                fontSize: "14px",
+                marginLeft: "3px",
+                marginRight: "3px"
+              }}
+            />
+          </span>
         </div>
+        <div />
       </article>
+
+      <footer class="card-footer">
+        <div class="card-footer-item">
+          <a class="button is-medium">
+            <span class="icon">
+              <img src="https://img.icons8.com/office/23/000000/hospital.png" />
+            </span>
+            <span>7898130226</span>
+          </a>
+        </div>
+
+        <div class="card-footer-item">
+          <a class="button is-info is-medium">
+            <span class="icon">
+              <img src="https://img.icons8.com/cotton/25/000000/calendar.png" />
+            </span>
+            <span>Book Appointment</span>
+          </a>
+        </div>
+      </footer>
     </div>
   );
 };

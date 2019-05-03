@@ -33,7 +33,7 @@ const overviewTab = props => {
         <div class="tags are-medium">
           {object.p_hours.map((obj, key) => {
             return (
-              <span class="tag is-info" key={key}>
+              <span class="tag is-light" key={key}>
                 {obj.day + " " + obj.from_time + " " + obj.to_time}
               </span>
             );
@@ -95,7 +95,7 @@ const overviewTab = props => {
             {object.p_services.map((obj, key) => {
               return (
                 <span class="tag is-info" key={key}>
-                  {obj.service}
+                  {obj.serv_name}
                 </span>
               );
             })}
@@ -117,7 +117,7 @@ const overviewTab = props => {
             {object.p_specialities.map((obj, key) => {
               return (
                 <span class="tag is-info" key={key}>
-                  {obj.speciality}
+                  {obj.spl_name}
                 </span>
               );
             })}
