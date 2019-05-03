@@ -59,7 +59,8 @@ export default class CardList extends React.Component {
                   {name}
                 </p>
                 <p class="subtitle is-6">{type}</p>
-                <p>{doc} Doctors</p>
+
+                {doc === 0 ? null : <p className="doctor">{doc} Doctors</p>}
 
                 <div className="hospital-image">
                   <span>
@@ -92,52 +93,23 @@ export default class CardList extends React.Component {
                   </span>
                 </div>
 
-                <div style={{ marginTop: "0.5em" }}>
-                  <span class="tag" style={{ fontWeight: "400" }}>
-                    Cardiology
-                  </span>
-                  <span class="tag" style={{ fontWeight: "400" }}>
-                    Urology
-                  </span>
-                  <span class="tag" style={{ fontWeight: "400" }}>
-                    Dermatology
-                  </span>
-                  <span class="tag" style={{ fontWeight: "400" }}>
-                    Cardiology
-                  </span>
-                  <span class="tag" style={{ fontWeight: "400" }}>
-                    Urology
-                  </span>
-                  <span class="tag" style={{ fontWeight: "400" }}>
-                    Dermatology
-                  </span>
-                  <span class="tag" style={{ fontWeight: "400" }}>
-                    Dermatology
-                  </span>
-                </div>
+                {category === 1 ? (
+                  <div style={{ marginTop: "0.5em" }}>
+                    {speciality.map((obj, key) => {
+                      return (
+                        <span class="tag" style={{ fontWeight: "400" }}>
+                          {obj.spl_name}
+                        </span>
+                      );
+                    })}
+                  </div>
+                ) : null}
               </div>
             </div>
 
-            <div>
-              <div
-                style={{
-                  backgroundColor: "#f0f0f5",
-                  padding: "3px 0 3px 3px",
-                  marginRight: "3px",
-                  borderRadius: "3px"
-                }}
-              >
-                <span
-                  style={{
-                    color: "#23d160",
-                    fontWeight: "700",
-                    fontSize: "14px",
-                    marginLeft: "3px",
-                    marginRight: "3px"
-                  }}
-                >
-                  {rating}
-                </span>
+            <div className="right-box">
+              <div className="rating-container">
+                <span className="rating-number">{rating}</span>
                 <span>
                   {full}
                   {half}
@@ -145,38 +117,42 @@ export default class CardList extends React.Component {
                 </span>
               </div>
 
-              <div style={{ marginTop: "1em" }}>
-                <p style={{ fontWeight: "300" }}>
-                  <img src="https://img.icons8.com/ultraviolet/15/000000/timer.png" />
-                  <span style={{ paddingLeft: "0.5em" }}>Open 24 x 7</span>
-                </p>
+              <div className="location-price-open">
+                {category === 1 ? (
+                  <p>
+                    <img src="https://img.icons8.com/ultraviolet/15/000000/timer.png" />
+                    <span>{working}</span>
+                  </p>
+                ) : null}
 
-                <p style={{ fontWeight: "300" }}>
+                <p>
                   <img src="https://img.icons8.com/ultraviolet/15/000000/marker.png" />
-                  <span style={{ paddingLeft: "0.5em" }}>
-                    Marathahalli, Bangalore
-                  </span>
+                  <span>{locality}</span>
                 </p>
 
-                <p style={{ fontWeight: "300" }}>
-                  <img src="https://img.icons8.com/ultraviolet/15/000000/cash-in-hand.png" />
-                  <span style={{ paddingLeft: "0.5em" }}>
-                    <del>&#x20b9;</del>
-                    500
-                  </span>
-                </p>
+                {category === 1 ? (
+                  <p>
+                    <img src="https://img.icons8.com/ultraviolet/15/000000/cash-in-hand.png" />
+                    <span>
+                      <del>&#x20b9;</del>
+                      {registration}
+                    </span>
+                  </p>
+                ) : null}
               </div>
             </div>
           </article>
           <footer class="card-footer">
-            <div class="card-footer-item">
-              <a class="button is-medium">
-                <span class="icon">
-                  <img src="https://img.icons8.com/office/23/000000/hospital.png" />
-                </span>
-                <span>7898130226</span>
-              </a>
-            </div>
+            {category === 1 ? (
+              <div class="card-footer-item">
+                <a class="button is-medium">
+                  <span class="icon">
+                    <img src="https://img.icons8.com/office/23/000000/hospital.png" />
+                  </span>
+                  <span>7898130226</span>
+                </a>
+              </div>
+            ) : null}
 
             <div class="card-footer-item">
               <a class="button is-medium">
@@ -192,63 +168,17 @@ export default class CardList extends React.Component {
                 <span class="icon">
                   <img src="https://img.icons8.com/cotton/25/000000/calendar.png" />
                 </span>
-                <span>Book Appointment</span>
+
+                {category === 1 ? (
+                  <span>Book Appointment</span>
+                ) : (
+                  <span>Book</span>
+                )}
               </a>
             </div>
           </footer>
         </div>
       </div>
-      // <div key={key}>
-      //   <div class="card">
-      //     <div className="card-list">
-      //       <div class="card-content">
-      //         <div class="media">
-      //           <div class="media-left">
-      //             <figure class="image is-128x128">
-      //               <img src={logo} alt={name + type + address} />
-      //             </figure>
-      //           </div>
-      //           <div class="content">
-      //             <p class="title is-4">{name}</p>
-      //             <p class="subtitle is-6">{type}</p>
-      //             <p class="subtitle is-6" style={{ marginBottom: "0.5em" }}>
-      //               {locality}
-      //             </p>
-      //             {category === 1 ? (
-      //               <p class="subtitle is-6" style={{ marginBottom: "0.5em" }}>
-      //                 {working}
-      //               </p>
-      //             ) : null}
-
-      //             {category === 1 ? (
-      //               <p class="subtitle is-6">
-      //                 Registration Charges
-      //                 <span className="fees">
-      //                   <del>&#x20b9;</del>
-      //                   {registration}
-      //                 </span>
-      //               </p>
-      //             ) : null}
-      //           </div>
-      //         </div>
-
-      //         <div class="content">{address}</div>
-
-      //         <footer class="card-footer">
-      //           <a class="card-footer-item">{emergency}</a>
-
-      //           <a
-      //             class="card-footer-item"
-      //             onClick={() => this.onClickCardList(obj)}
-      //           >
-      //             View Profile
-      //           </a>
-      //         </footer>
-      //       </div>
-      //     </div>
-      //   </div>
-      //   <hr className="spacer is-1" />
-      // </div>
     );
   };
 

@@ -52,3 +52,34 @@
 .hospital-image span img {
   border-radius: 5px;
 }
+
+.rating-container {
+  background-color: #f0f0f5;
+  padding: 3px 0 3px 3px;
+  margin-right: 3px;
+  border-radius: 3px;
+}
+
+.rating-container .rating-number {
+  color: #23d160;
+  font-weight: 700;
+  font-size: 14px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.right-box .location-price-open {
+  margin-top: 1em;
+}
+
+.right-box .location-price-open p {
+  font-weight: 300;
+}
+
+.right-box .location-price-open p span {
+  padding-left: 0.5em;
+}
+
+.doctor {
+  font-weight: 300;
+}
