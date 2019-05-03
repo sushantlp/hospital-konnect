@@ -41,7 +41,9 @@ const drawAmbulance = (
                   {price}
                 </span>
                 <Popup
-                  trigger={<i class="far fa-question-circle" />}
+                  trigger={
+                    <img src="https://img.icons8.com/plasticine/20/000000/info-squared.png" />
+                  }
                   content="Add users to your feed"
                 />
               </span>

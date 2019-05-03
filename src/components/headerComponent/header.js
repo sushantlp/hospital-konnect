@@ -2,9 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { Menu } from "semantic-ui-react/dist/commonjs";
-
 import "./header.css";
-import "../../static/css/root.css";
+// import "../../static/css/root.css";
 
 export default class Header extends React.Component {
   render() {
@@ -22,7 +21,8 @@ export default class Header extends React.Component {
                   color: "white"
                 }}
               >
-                JUST KONNECT
+                Hospital Konnect
+                <span style={{ fontStyle: "italic" }}> - Just Konnect</span>
               </h1>
             </Menu.Item>
           </Link>

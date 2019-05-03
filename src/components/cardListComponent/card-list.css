@@ -28,14 +28,27 @@
   color: #363636;
 } */
 
-.card-footer {
-  margin-top: 2em;
-}
-
 .card-footer .button {
   border-color: white;
 }
 
 .card-footer .button:hover {
   border-color: #dbdbdb;
+}
+
+.box-card-list {
+  line-height: 1.66667;
+  margin-bottom: 2em;
+}
+
+.hospital-image span {
+  padding-left: 0.5em;
+}
+
+.hospital-image span:hover {
+  cursor: pointer;
+}
+
+.hospital-image span img {
+  border-radius: 5px;
 }
