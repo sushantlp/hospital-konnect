@@ -41,6 +41,7 @@ export default class CardList extends React.Component {
     rating,
     obj
   ) => {
+    console.log(half);
     return (
       <div className="box-card-list" key={key}>
         <div class="box">
@@ -97,7 +98,11 @@ export default class CardList extends React.Component {
                   <div style={{ marginTop: "0.5em" }}>
                     {speciality.map((obj, key) => {
                       return (
-                        <span class="tag" style={{ fontWeight: "400" }}>
+                        <span
+                          class="tag"
+                          style={{ fontWeight: "400" }}
+                          key={obj.spl_id}
+                        >
                           {obj.spl_name}
                         </span>
                       );
@@ -110,11 +115,35 @@ export default class CardList extends React.Component {
             <div className="right-box">
               <div className="rating-container">
                 <span className="rating-number">{rating}</span>
-                <span>
-                  {full}
-                  {half}
-                  {empty}
-                </span>
+                {full.map(function(i) {
+                  return (
+                    <i
+                      key={i}
+                      class="fas fa-star"
+                      style={{
+                        color: "#23d160",
+                        fontSize: "14px",
+                        marginLeft: "3px",
+                        marginRight: "3px"
+                      }}
+                    />
+                  );
+                })}
+                <span>{half}</span>
+                {empty.map(function(i) {
+                  return (
+                    <i
+                      key={i}
+                      class="far fa-star"
+                      style={{
+                        color: "#23d160",
+                        fontSize: "14px",
+                        marginLeft: "3px",
+                        marginRight: "3px"
+                      }}
+                    />
+                  );
+                })}
               </div>
 
               <div className="location-price-open">
@@ -210,6 +239,7 @@ export default class CardList extends React.Component {
 
           half = (
             <i
+              key={1}
               class="fas fa-star-half-alt"
               style={{
                 color: "#23d160",
@@ -227,40 +257,10 @@ export default class CardList extends React.Component {
         fullRating.push(i);
       }
 
-      // Full Star
-      let full = fullRating.map(function(i) {
-        return (
-          <i
-            class="fas fa-star"
-            style={{
-              color: "#23d160",
-              fontSize: "14px",
-              marginLeft: "3px",
-              marginRight: "3px"
-            }}
-          />
-        );
-      });
-
-      // // Empty Star
+      // Empty Star
       for (let i = 0; i < topRating; i++) {
         emptyRating.push(i);
       }
-
-      // Empty Star
-      let empty = emptyRating.map(function(i) {
-        return (
-          <i
-            class="far fa-star"
-            style={{
-              color: "#23d160",
-              fontSize: "14px",
-              marginLeft: "3px",
-              marginRight: "3px"
-            }}
-          />
-        );
-      });
 
       return this.drawCardList(
         key,
@@ -274,9 +274,9 @@ export default class CardList extends React.Component {
         obj.p_doc_count,
         obj.p_cat,
         speciality,
-        full,
+        fullRating,
         half,
-        empty,
+        emptyRating,
         obj.p_rating,
         obj
       );
