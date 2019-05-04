@@ -1,6 +1,8 @@
 import React from "react";
 import _ from "lodash";
 import Spinner from "../spinnerComponent";
+
+import { Icon } from "semantic-ui-react/dist/commonjs";
 import "./card-detail.css";
 
 const CardDetail = props => {
@@ -9,6 +11,46 @@ const CardDetail = props => {
 
   if (_.isEmpty(props.categoryFeature.categoryFeature)) return <div />;
   const object = props.categoryFeature.categoryFeature;
+
+  let fullRating = [];
+  let emptyRating = [];
+  let topRating = 5;
+  let halfRating = undefined;
+
+  const ratingSplit = object.p_rating.split(".");
+
+  // Half Star
+  if (ratingSplit[1] !== undefined) {
+    if (parseInt(ratingSplit[1], 10) === 0)
+      topRating = topRating - Number(ratingSplit[0]);
+    else {
+      topRating = topRating - Number(ratingSplit[0]);
+      topRating = topRating - 1;
+
+      halfRating = (
+        <Icon
+          key={1}
+          name="star half"
+          style={{
+            color: "#23d160",
+            fontSize: "14px",
+            marginLeft: "3px",
+            marginRight: "3px"
+          }}
+        />
+      );
+    }
+  } else topRating = topRating - Number(ratingSplit[0]);
+
+  // Full Star
+  for (let i = 0; i < Number(ratingSplit[0]); i++) {
+    fullRating.push(i);
+  }
+
+  // Empty Star
+  for (let i = 0; i < topRating; i++) {
+    emptyRating.push(i);
+  }
 
   let logo = object.p_logo;
   if (logo === null)
@@ -33,121 +75,94 @@ const CardDetail = props => {
               {object.p_name}
             </p>
             <p class="subtitle is-6">{object.p_type}</p>
-            <p style={{ marginBottom: "0.4em", fontWeight: "300" }}>
-              <img src="https://img.icons8.com/ultraviolet/15/000000/marker.png" />
-              <span style={{ paddingLeft: "0.5em" }}>
-                {object.p_address.locality + "," + " " + object.p_address.city}
-              </span>
-            </p>
-            {object.p_cat === 1 ? (
-              <p style={{ marginBottom: "0.4em", fontWeight: "300" }}>
-                <img src="https://img.icons8.com/ultraviolet/15/000000/timer.png" />
-                <span style={{ paddingLeft: "0.5em" }}>Open 24 hours</span>
-              </p>
-            ) : null}
 
-            {object.p_cat === 1 ? (
-              <p style={{ marginBottom: "0.4em", fontWeight: "300" }}>
-                <img src="https://img.icons8.com/ultraviolet/15/000000/cash-in-hand.png" />
-                <span style={{ paddingLeft: "0.5em" }}>
-                  <del>&#x20b9;</del>
-                  {object.p_reg_charge}
+            <div className="location-price-open">
+              <p>
+                <img src="https://img.icons8.com/ultraviolet/15/000000/marker.png" />
+                <span>
+                  {object.p_address.locality +
+                    "," +
+                    " " +
+                    object.p_address.city}
                 </span>
               </p>
-            ) : null}
+              {object.p_cat === 1 ? (
+                <p>
+                  <img src="https://img.icons8.com/ultraviolet/15/000000/timer.png" />
+                  <span>{object.p_working_status}</span>
+                </p>
+              ) : null}
+
+              {object.p_cat === 1 ? (
+                <p>
+                  <img src="https://img.icons8.com/ultraviolet/15/000000/cash-in-hand.png" />
+                  <span>
+                    <del>&#x20b9;</del>
+                    {object.p_reg_charge}
+                  </span>
+                </p>
+              ) : null}
+            </div>
           </div>
         </div>
 
-        <div
-          style={{
-            backgroundColor: "#f0f0f5",
-            padding: "3px 0 3px 3px",
-            marginRight: "3px",
-            borderRadius: "3px"
-          }}
-        >
-          <span
-            style={{
-              color: "#23d160",
-              fontWeight: "700",
-              fontSize: "14px",
-              marginLeft: "3px",
-              marginRight: "3px"
-            }}
-          >
-            3.5
-          </span>
+        <div className="rating-container">
+          <span className="rating-number">{object.p_rating}</span>
+          {fullRating.map(function(i) {
+            return (
+              <Icon
+                key={i}
+                name="star"
+                style={{
+                  color: "#23d160",
+                  fontSize: "14px",
+                  marginLeft: "3px",
+                  marginRight: "3px"
+                }}
+              />
+            );
+          })}
+          <span>{halfRating}</span>
           <span>
-            <i
-              class="fas fa-star"
-              style={{
-                color: "#23d160",
-                fontSize: "14px",
-                marginLeft: "3px",
-                marginRight: "3px"
-              }}
-            />
-            <i
-              class="fas fa-star"
-              style={{
-                color: "#23d160",
-                fontSize: "14px",
-                marginLeft: "3px",
-                marginRight: "3px"
-              }}
-            />
-            <i
-              class="fas fa-star"
-              style={{
-                color: "#23d160",
-                fontSize: "14px",
-                marginLeft: "3px",
-                marginRight: "3px"
-              }}
-            />
-            <i
-              class="fas fa-star-half-alt"
-              style={{
-                color: "#23d160",
-                fontSize: "14px",
-                marginLeft: "3px",
-                marginRight: "3px"
-              }}
-            />
-
-            <i
-              class="far fa-star"
-              style={{
-                color: "#23d160",
-                fontSize: "14px",
-                marginLeft: "3px",
-                marginRight: "3px"
-              }}
-            />
+            {emptyRating.map(function(i) {
+              return (
+                <Icon
+                  key={i}
+                  name="star outline"
+                  style={{
+                    color: "#23d160",
+                    fontSize: "14px",
+                    marginLeft: "3px",
+                    marginRight: "3px"
+                  }}
+                />
+              );
+            })}
           </span>
         </div>
         <div />
       </article>
+      {object.p_cat === 1 ? (
+        <footer class="card-footer">
+          <div class="card-footer-item">
+            <a class="button is-medium">
+              <span class="icon">
+                <img src="https://img.icons8.com/office/23/000000/hospital.png" />
+              </span>
+              <span>{object.p_emergency_contact}</span>
+            </a>
+          </div>
 
-      <footer class="card-footer">
-        <div class="card-footer-item">
-          <a class="button is-medium">
-            <span class="icon">
-              <img src="https://img.icons8.com/office/23/000000/hospital.png" />
-            </span>
-            <span>7898130226</span>
-          </a>
-        </div>
-
-        <div class="card-footer-item">
-          <a class="button is-info is-medium">
-            <span class="icon">
-              <img src="https://img.icons8.com/cotton/25/000000/calendar.png" />
-            </span>
-            <span>Book Appointment</span>
-          </a>
-        </div>
-      </footer>
+          <div class="card-footer-item">
+            <a class="button is-info is-medium">
+              <span class="icon">
+                <img src="https://img.icons8.com/cotton/25/000000/calendar.png" />
+              </span>
+              <span>Book Appointment</span>
+            </a>
+          </div>
+        </footer>
+      ) : null}
     </div>
   );
 };

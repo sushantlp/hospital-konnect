@@ -107,7 +107,6 @@ export default class CardList extends React.Component {
             <div className="right-box">
               <div className="rating-container">
                 <span className="rating-number">{rating}</span>
-
                 {full.map(function(i) {
                   return (
                     <Icon
@@ -181,7 +180,10 @@ export default class CardList extends React.Component {
             ) : null}
 
             <div class="card-footer-item">
-              <a class="button is-medium">
+              <a
+                class="button is-medium"
+                onClick={() => this.onClickCardList(obj, false)}
+              >
                 <span class="icon">
                   <img src="https://img.icons8.com/plasticine/30/000000/visible.png" />
                 </span>
@@ -190,7 +192,10 @@ export default class CardList extends React.Component {
             </div>
 
             <div class="card-footer-item">
-              <a class="button is-info is-medium">
+              <a
+                class="button is-info is-medium"
+                onClick={() => this.onClickCardList(obj, true)}
+              >
                 <span class="icon">
                   <img src="https://img.icons8.com/cotton/25/000000/calendar.png" />
                 </span>
@@ -223,8 +228,7 @@ export default class CardList extends React.Component {
 
       if (obj.p_cat === 1) speciality = obj.p_specialities;
 
-      const rating = obj.p_rating + "";
-      const ratingSplit = rating.split(".");
+      const ratingSplit = obj.p_rating.split(".");
 
       // Half Star
       if (ratingSplit[1] !== undefined) {
@@ -245,16 +249,6 @@ export default class CardList extends React.Component {
                 marginRight: "3px"
               }}
             />
-            // <i
-            //   key={1}
-            //   class="fas fa-star-half-alt"
-            //   style={{
-            //     color: "#23d160",
-            //     fontSize: "14px",
-            //     marginLeft: "3px",
-            //     marginRight: "3px"
-            //   }}
-            // />
           );
         }
       } else topRating = topRating - Number(ratingSplit[0]);
@@ -303,7 +297,7 @@ export default class CardList extends React.Component {
     });
   };
 
-  onClickCardList = object => {
+  onClickCardList = (object, flag) => {
     let categoryName = "";
 
     if (object.p_cat === 1) categoryName = "hospital";
@@ -319,7 +313,7 @@ export default class CardList extends React.Component {
       pathname: `${this.props.parentProps.match.params.city}/${
         this.props.parentProps.match.params.locality
       }/${categoryName}/${partnerUrl}`,
-      search: `?partner=${object.p_id}&category=${object.p_cat}`,
+      search: `?partner=${object.p_id}&category=${object.p_cat}&flag=${flag}`,
       state: { data: object }
     });
   };

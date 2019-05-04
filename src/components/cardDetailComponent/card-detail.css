@@ -19,3 +19,27 @@
 .card-footer .button:hover {
   border-color: #dbdbdb;
 }
+
+.rating-container {
+  background-color: #f0f0f5;
+  padding: 3px 0 3px 3px;
+  margin-right: 3px;
+  border-radius: 3px;
+}
+
+.rating-container .rating-number {
+  color: #23d160;
+  font-weight: 700;
+  font-size: 14px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.location-price-open p {
+  margin-bottom: 0.4em;
+  font-weight: 300;
+}
+
+.location-price-open p span {
+  padding-left: 0.5em;
+}
