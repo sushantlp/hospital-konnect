@@ -144,20 +144,20 @@ export default class CardList extends React.Component {
                 {category === 1 ? (
                   working === null ? null : (
                     <p>
-                      <img src="https://img.icons8.com/ultraviolet/15/000000/timer.png" />
+                      <img src="https://img.icons8.com/ultraviolet/12/000000/timer.png" />
                       <span>{working}</span>
                     </p>
                   )
                 ) : null}
 
                 <p>
-                  <img src="https://img.icons8.com/ultraviolet/15/000000/marker.png" />
+                  <img src="https://img.icons8.com/ultraviolet/12/000000/marker.png" />
                   <span>{locality}</span>
                 </p>
 
                 {category === 1 ? (
                   <p>
-                    <img src="https://img.icons8.com/ultraviolet/15/000000/cash-in-hand.png" />
+                    <img src="https://img.icons8.com/ultraviolet/12/000000/cash-in-hand.png" />
                     <span>
                       <del>&#x20b9;</del>
                       {registration}

@@ -55,9 +55,15 @@ export default {
     });
   },
 
-  keywordSearchApi: () => {
+  keywordSearchApi: cityId => {
     return new Promise((resolve, reject) => {
-      fetch(host + "api/v1/web/search-keys")
+      fetch(
+        host +
+          "api/v1/web/search-keys?" +
+          getQueryString({
+            city: cityId
+          })
+      )
         .then(response => {
           response
             .json()

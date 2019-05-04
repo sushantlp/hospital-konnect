@@ -10,12 +10,13 @@ const CardDetail = props => {
   else if (props.categoryFeature.status === "FAIL") return <Spinner />;
 
   if (_.isEmpty(props.categoryFeature.categoryFeature)) return <div />;
-  const object = props.categoryFeature.categoryFeature;
 
+  const object = props.categoryFeature.categoryFeature;
   let fullRating = [];
   let emptyRating = [];
   let topRating = 5;
   let halfRating = undefined;
+  let logo = object.p_logo;
 
   const ratingSplit = object.p_rating.split(".");
 
@@ -52,7 +53,6 @@ const CardDetail = props => {
     emptyRating.push(i);
   }
 
-  let logo = object.p_logo;
   if (logo === null)
     logo =
       "https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,h_128,w_128/v1555933889/ballyhoo/BALLYHOO_WEBSITE/profile-1.jpg";
@@ -77,30 +77,30 @@ const CardDetail = props => {
             <p class="subtitle is-6">{object.p_type}</p>
 
             <div className="location-price-open">
-              <p>
-                <img src="https://img.icons8.com/ultraviolet/15/000000/marker.png" />
+              <div>
+                <img src="https://img.icons8.com/ultraviolet/12/000000/marker.png" />
                 <span>
                   {object.p_address.locality +
                     "," +
                     " " +
                     object.p_address.city}
                 </span>
-              </p>
+              </div>
               {object.p_cat === 1 ? (
-                <p>
-                  <img src="https://img.icons8.com/ultraviolet/15/000000/timer.png" />
+                <div>
+                  <img src="https://img.icons8.com/ultraviolet/12/000000/timer.png" />
                   <span>{object.p_working_status}</span>
-                </p>
+                </div>
               ) : null}
 
               {object.p_cat === 1 ? (
-                <p>
-                  <img src="https://img.icons8.com/ultraviolet/15/000000/cash-in-hand.png" />
+                <div>
+                  <img src="https://img.icons8.com/ultraviolet/12/000000/cash-in-hand.png" />
                   <span>
                     <del>&#x20b9;</del>
                     {object.p_reg_charge}
                   </span>
-                </p>
+                </div>
               ) : null}
             </div>
           </div>

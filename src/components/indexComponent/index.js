@@ -23,11 +23,12 @@ export default class Index extends React.Component {
     this.props.getCityLocality();
     this.props.getHomeDetail(1);
     this.props.getWallImage();
-    this.props.getKeywordSearch();
+    this.props.getKeywordSearch(1);
   }
 
   changeCityApiCall = cityId => {
     this.props.getHomeDetail(cityId);
+    this.props.getKeywordSearch(cityId);
   };
 
   updateCityState = cityId => {

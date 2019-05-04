@@ -35,11 +35,11 @@
   margin-right: 3px;
 }
 
-.location-price-open p {
+.location-price-open div {
   margin-bottom: 0.4em;
   font-weight: 300;
 }
 
-.location-price-open p span {
+.location-price-open div span {
   padding-left: 0.5em;
 }

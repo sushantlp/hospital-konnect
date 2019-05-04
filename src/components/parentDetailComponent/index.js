@@ -13,18 +13,21 @@ export default class ParentDetail extends React.Component {
     super(props);
     const splitArray = this.props.location.search.split("&");
 
-    if (splitArray.length < 2) {
+    if (splitArray.length < 3) {
       this.state = {
         partner: 0,
-        category: 0
+        category: 0,
+        flag: "true"
       };
     } else {
       const partnerArray = splitArray[0].split("=");
       const categoryArray = splitArray[1].split("=");
+      const flagArray = splitArray[2].split("=");
 
       this.state = {
         partner: parseInt(partnerArray[1], 10),
-        category: parseInt(categoryArray[1], 10)
+        category: parseInt(categoryArray[1], 10),
+        flag: flagArray[1]
       };
     }
   }
@@ -41,15 +44,12 @@ export default class ParentDetail extends React.Component {
         <section class="section">
           <div class="columns">
             <div class="column is-9">
-              <Card
-                categoryFeature={this.props.categoryFeature}
-                // parentState={this.state}
-              />
+              <Card categoryFeature={this.props.categoryFeature} />
               <div class="section">
                 <Tab
                   categoryFeature={this.props.categoryFeature}
-                  // parentState={this.state}
-                  // parentProps={this.props}
+                  flag={this.state.flag}
+                  category={this.state.category}
                 />
               </div>
             </div>

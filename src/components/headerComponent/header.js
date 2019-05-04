@@ -16,14 +16,14 @@ export default class Header extends React.Component {
         >
           <Link to={"/"}>
             <Menu.Item>
-              <h1
+              <h2
                 style={{
                   color: "white"
                 }}
               >
                 Hospital Konnect
                 <span style={{ fontStyle: "italic" }}> - Just Konnect</span>
-              </h1>
+              </h2>
             </Menu.Item>
           </Link>
         </Menu>

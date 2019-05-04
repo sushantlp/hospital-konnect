@@ -4,10 +4,10 @@ export const actionType = {
   keywordSearch: "KEYWORD_SEARCH"
 };
 
-export function getKeywordSearch() {
+export function getKeywordSearch(cityId) {
   return dispatch => {
     api
-      .keywordSearchApi()
+      .keywordSearchApi(cityId)
       .then(keywordSearch =>
         dispatch({ type: actionType.keywordSearch, keywordSearch })
       );

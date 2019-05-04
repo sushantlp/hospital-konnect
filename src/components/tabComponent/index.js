@@ -10,8 +10,18 @@ import "./tab.css";
 export default class Tab extends React.Component {
   constructor(props) {
     super(props);
+    let navigation = "Overview";
+
+    if (this.props.flag === "true") {
+      console.log("Inside");
+      if (this.props.category === 1) navigation = "Beds";
+      else if (this.props.category === 2) navigation = "Ambulances";
+      else if (this.props.category === 3) navigation = "Equipments";
+      else if (this.props.category === 4) navigation = "Nursings";
+    }
+
     this.state = {
-      navigation: "Overview",
+      navigation: navigation,
       bedCancel: false,
       bedTerm: false,
       ambulanceCancel: false,
