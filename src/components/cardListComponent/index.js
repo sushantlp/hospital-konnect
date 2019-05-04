@@ -2,6 +2,7 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import _ from "lodash";
 import Spinner from "../spinnerComponent";
+import { Icon } from "semantic-ui-react/dist/commonjs";
 
 import "./card-list.css";
 
@@ -39,9 +40,10 @@ export default class CardList extends React.Component {
     half,
     empty,
     rating,
+    image,
+    buttonText,
     obj
   ) => {
-    console.log(half);
     return (
       <div className="box-card-list" key={key}>
         <div class="box">
@@ -61,38 +63,28 @@ export default class CardList extends React.Component {
                 </p>
                 <p class="subtitle is-6">{type}</p>
 
-                {doc === 0 ? null : <p className="doctor">{doc} Doctors</p>}
+                {category === 1 ? (
+                  doc === 0 ? null : (
+                    <p className="doctor">{doc} Doctors</p>
+                  )
+                ) : null}
 
-                <div className="hospital-image">
-                  <span>
-                    <img
-                      src="https://images1-fabric.practo.com/manipal-hospital-bangalore-1481708155-5851127b1ff31.jpg/36x36"
-                      alt=""
-                    />
-                  </span>
-
-                  <span>
-                    <img
-                      src="https://images1-fabric.practo.com/practices/630200/manipal-hospital-bangalore-5b90c08f86548.jpg/36x36"
-                      alt=""
-                    />
-                  </span>
-
-                  <span>
-                    <img
-                      src="https://images1-fabric.practo.com/practices/630200/manipal-hospital-bangalore-5b90c0871affc.jpg/36x36"
-                      alt=""
-                    />
-                  </span>
-
-                  <span>
-                    <img
-                      style={{ borderRadius: "5px" }}
-                      src="https://images1-fabric.practo.com/practices/630200/manipal-hospital-bangalore-5b90c08f86548.jpg/36x36"
-                      alt=""
-                    />
-                  </span>
-                </div>
+                {image.length === 0 ? null : (
+                  <div className="hospital-image">
+                    {image.map((obj, key) => {
+                      return (
+                        <span key={key}>
+                          <img
+                            src={obj.thumb}
+                            alt={
+                              name + " " + type + " " + working + " " + locality
+                            }
+                          />
+                        </span>
+                      );
+                    })}
+                  </div>
+                )}
 
                 {category === 1 ? (
                   <div style={{ marginTop: "0.5em" }}>
@@ -115,11 +107,12 @@ export default class CardList extends React.Component {
             <div className="right-box">
               <div className="rating-container">
                 <span className="rating-number">{rating}</span>
+
                 {full.map(function(i) {
                   return (
-                    <i
+                    <Icon
                       key={i}
-                      class="fas fa-star"
+                      name="star"
                       style={{
                         color: "#23d160",
                         fontSize: "14px",
@@ -130,28 +123,32 @@ export default class CardList extends React.Component {
                   );
                 })}
                 <span>{half}</span>
-                {empty.map(function(i) {
-                  return (
-                    <i
-                      key={i}
-                      class="far fa-star"
-                      style={{
-                        color: "#23d160",
-                        fontSize: "14px",
-                        marginLeft: "3px",
-                        marginRight: "3px"
-                      }}
-                    />
-                  );
-                })}
+                <span>
+                  {empty.map(function(i) {
+                    return (
+                      <Icon
+                        key={i}
+                        name="star outline"
+                        style={{
+                          color: "#23d160",
+                          fontSize: "14px",
+                          marginLeft: "3px",
+                          marginRight: "3px"
+                        }}
+                      />
+                    );
+                  })}
+                </span>
               </div>
 
               <div className="location-price-open">
                 {category === 1 ? (
-                  <p>
-                    <img src="https://img.icons8.com/ultraviolet/15/000000/timer.png" />
-                    <span>{working}</span>
-                  </p>
+                  working === null ? null : (
+                    <p>
+                      <img src="https://img.icons8.com/ultraviolet/15/000000/timer.png" />
+                      <span>{working}</span>
+                    </p>
+                  )
                 ) : null}
 
                 <p>
@@ -197,12 +194,7 @@ export default class CardList extends React.Component {
                 <span class="icon">
                   <img src="https://img.icons8.com/cotton/25/000000/calendar.png" />
                 </span>
-
-                {category === 1 ? (
-                  <span>Book Appointment</span>
-                ) : (
-                  <span>Book</span>
-                )}
+                <span>{buttonText}</span>
               </a>
             </div>
           </footer>
@@ -219,6 +211,11 @@ export default class CardList extends React.Component {
       let emptyRating = [];
       let topRating = 5;
       let half = undefined;
+      let buttonText = "Book Appointment";
+
+      if (obj.p_cat === 2) buttonText = "Book Ambulance";
+      else if (obj.p_cat === 3) buttonText = "Book Equipment";
+      else if (obj.p_cat === 3) buttonText = "Book Nursing";
 
       if (logo === null)
         logo =
@@ -238,9 +235,9 @@ export default class CardList extends React.Component {
           topRating = topRating - 1;
 
           half = (
-            <i
+            <Icon
               key={1}
-              class="fas fa-star-half-alt"
+              name="star half"
               style={{
                 color: "#23d160",
                 fontSize: "14px",
@@ -248,6 +245,16 @@ export default class CardList extends React.Component {
                 marginRight: "3px"
               }}
             />
+            // <i
+            //   key={1}
+            //   class="fas fa-star-half-alt"
+            //   style={{
+            //     color: "#23d160",
+            //     fontSize: "14px",
+            //     marginLeft: "3px",
+            //     marginRight: "3px"
+            //   }}
+            // />
           );
         }
       } else topRating = topRating - Number(ratingSplit[0]);
@@ -278,6 +285,8 @@ export default class CardList extends React.Component {
         half,
         emptyRating,
         obj.p_rating,
+        obj.p_images,
+        buttonText,
         obj
       );
     });
