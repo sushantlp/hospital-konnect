@@ -176,6 +176,14 @@ const CardDetail = props => {
                     object.p_address.city}
                 </span>
               </div>
+
+              {object.p_cat === 1 ? (
+                <div>
+                  <img src="https://img.icons8.com/nolan/12/000000/waypoint-map.png" />
+                  <span>{object.p_distance} km</span>
+                </div>
+              ) : null}
+
               {object.p_cat === 1 && object.p_working_status !== null ? (
                 <div>
                   <img src="https://img.icons8.com/ultraviolet/12/000000/timer.png" />

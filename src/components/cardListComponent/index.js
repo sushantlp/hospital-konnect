@@ -164,6 +164,13 @@ export default class CardList extends React.Component {
                     </span>
                   </p>
                 ) : null}
+
+                {category === 1 ? (
+                  <div>
+                    <img src="https://img.icons8.com/nolan/12/000000/waypoint-map.png" />
+                    <span>{obj.p_distance} km</span>
+                  </div>
+                ) : null}
               </div>
             </div>
           </article>
