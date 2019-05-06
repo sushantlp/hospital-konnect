@@ -1,5 +1,6 @@
 import React from "react";
 import _ from "lodash";
+import { Popup } from "semantic-ui-react";
 
 import "./bed-tab.css";
 
@@ -48,55 +49,22 @@ const drawBed = (
               {description}
             </p>
 
-            <div
-              class={
-                props.parentState.bedCancel
-                  ? "dropdown is-left is-active"
-                  : "dropdown is-left"
-              }
-            >
-              <div class="dropdown-trigger">
-                <a
-                  aria-haspopup="true"
-                  aria-controls="dropdown-menu1"
-                  onClick={() => props.changeBedCancel()}
-                >
-                  Cancellation policy
-                </a>
-              </div>
-              <div class="dropdown-menu" id="dropdown-menu1" role="menu">
-                <div class="dropdown-content">
-                  <div class="dropdown-item">
-                    <p style={{ lineHeight: "1.66667" }}>{cancelPolicy}</p>
-                  </div>
-                </div>
-              </div>
+            <div style={{ display: "inline-block" }}>
+              <Popup
+                style={{ height: "1.66667" }}
+                trigger={<a>Cancellation policy</a>}
+                header="Cancel Policy"
+                content={cancelPolicy}
+              />
             </div>
 
-            <div
-              class={
-                props.parentState.bedTerm
-                  ? "dropdown is-left is-active"
-                  : "dropdown is-left"
-              }
-            >
-              <div class="dropdown-trigger">
-                <a
-                  aria-haspopup="true"
-                  aria-controls="dropdown-menu2"
-                  onClick={() => props.changeBedTerm()}
-                  style={{ marginLeft: "2em" }}
-                >
-                  Terms and Condition
-                </a>
-              </div>
-              <div class="dropdown-menu" id="dropdown-menu2" role="menu">
-                <div class="dropdown-content">
-                  <div class="dropdown-item">
-                    <p style={{ lineHeight: "1.66667" }}>{terms}</p>
-                  </div>
-                </div>
-              </div>
+            <div style={{ display: "inline-block", marginLeft: "2em" }}>
+              <Popup
+                style={{ height: "1.66667" }}
+                trigger={<a>Terms and Condition</a>}
+                header="Terms and Condition"
+                content={terms}
+              />
             </div>
           </div>
         </div>

@@ -31,7 +31,13 @@ export default {
 
   homeDetailApi: cityId => {
     return new Promise((resolve, reject) => {
-      fetch(host + `api/v1/web/city/${cityId}/home`)
+      fetch(
+        host +
+          "api/v1/web/home?" +
+          getQueryString({
+            city_id: cityId
+          })
+      )
         .then(response => {
           response
             .json()

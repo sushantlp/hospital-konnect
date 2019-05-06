@@ -21,64 +21,12 @@ export default class Tab extends React.Component {
     }
 
     this.state = {
-      navigation: navigation,
-      bedCancel: false,
-      bedTerm: false,
-      ambulanceCancel: false,
-      ambulanceTerm: false
+      navigation: navigation
     };
   }
   changeTab = text => {
     this.setState({
       navigation: text
-    });
-  };
-
-  changeBedCancel = () => {
-    if (this.state.bedTerm) {
-      this.setState({
-        bedTerm: false
-      });
-    }
-
-    this.setState({
-      bedCancel: !this.state.bedCancel
-    });
-  };
-
-  changeBedTerm = () => {
-    if (this.state.bedCancel) {
-      this.setState({
-        bedCancel: false
-      });
-    }
-
-    this.setState({
-      bedTerm: !this.state.bedTerm
-    });
-  };
-
-  changeAmbulanceCancel = () => {
-    if (this.state.ambulanceTerm) {
-      this.setState({
-        ambulanceTerm: false
-      });
-    }
-
-    this.setState({
-      ambulanceCancel: !this.state.ambulanceCancel
-    });
-  };
-
-  changeAmbulanceTerm = () => {
-    if (this.state.ambulanceCancel) {
-      this.setState({
-        ambulanceCancel: false
-      });
-    }
-
-    this.setState({
-      ambulanceTerm: !this.state.ambulanceTerm
     });
   };
 
@@ -192,8 +140,6 @@ export default class Tab extends React.Component {
           this.state.navigation === "Beds" ? (
             <Bed
               categoryFeature={this.props.categoryFeature}
-              changeBedCancel={this.changeBedCancel}
-              changeBedTerm={this.changeBedTerm}
               parentState={this.state}
             />
           ) : null
@@ -210,8 +156,6 @@ export default class Tab extends React.Component {
           this.state.navigation === "Ambulances" ? (
             <Ambulance
               categoryFeature={this.props.categoryFeature}
-              changeAmbulanceTerm={this.changeAmbulanceTerm}
-              changeAmbulanceCancel={this.changeAmbulanceCancel}
               parentState={this.state}
               // handleClick={this.handleClick}
               // this={this}
@@ -223,8 +167,6 @@ export default class Tab extends React.Component {
           this.state.navigation === "Equipments" ? (
             <Bed
               categoryFeature={this.props.categoryFeature}
-              changeBedCancel={this.changeBedCancel}
-              changeBedTerm={this.changeBedTerm}
               parentState={this.state}
             />
           ) : null
@@ -234,8 +176,6 @@ export default class Tab extends React.Component {
           this.state.navigation === "Nursings" ? (
             <Bed
               categoryFeature={this.props.categoryFeature}
-              changeBedCancel={this.changeBedCancel}
-              changeBedTerm={this.changeBedTerm}
               parentState={this.state}
             />
           ) : null

@@ -5,6 +5,8 @@ import "./overview-tab.css";
 
 const overviewTab = props => {
   const object = props.categoryFeature.categoryFeature;
+  const image =
+    "https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,w_800/v1474443469/ballyhoo/BREAKFAST/22.jpg";
   return (
     <div className="overview-container">
       <p class="subtitle is-4" style={{ marginBottom: "0.2em" }}>
@@ -131,22 +133,41 @@ const overviewTab = props => {
       </p>
       <p class="subtitle is-6 has-text-justified">{object.p_full_desc}</p>
 
-      <p class="subtitle is-4" style={{ marginBottom: "0.2em" }}>
-        Where?
-      </p>
+      {object.p_cat === 1 ? (
+        <div style={{ marginBottom: "1em" }}>
+          <p class="subtitle is-4" style={{ marginBottom: "0.2em" }}>
+            Where?
+          </p>
 
-      <p class="subtitle is-6">
-        {object.p_address.address_line_1 +
-          object.p_address.address_line_2 +
-          object.p_address.address_line_3}
-      </p>
+          <p class="subtitle is-6">
+            {object.p_address.address_line_1 +
+              object.p_address.address_line_2 +
+              object.p_address.address_line_3}
+          </p>
 
-      <div class="box">
-        <Map
-          latitude={parseFloat(object.p_address.latitude)}
-          longitude={parseFloat(object.p_address.longitude)}
+          <div class="box">
+            <Map
+              latitude={parseFloat(object.p_address.latitude)}
+              longitude={parseFloat(object.p_address.longitude)}
+            />
+          </div>
+        </div>
+      ) : null}
+
+      {/* <div>
+        <p class="subtitle is-4" style={{ marginBottom: "0.2em" }}>
+          Images
+        </p>
+        <div
+          class="card"
+          style={{
+            backgroundImage: `url(${image})`,
+            cursor: "pointer",
+            width: "10.917em",
+            height: "7.25em"
+          }}
         />
-      </div>
+      </div> */}
     </div>
   );
 };
