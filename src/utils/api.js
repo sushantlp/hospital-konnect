@@ -61,7 +61,7 @@ export default {
         host +
           "api/v1/web/search-keys?" +
           getQueryString({
-            city: cityId
+            city_id: cityId
           })
       )
         .then(response => {

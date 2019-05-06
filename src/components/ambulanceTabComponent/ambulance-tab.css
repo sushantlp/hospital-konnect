@@ -19,3 +19,9 @@
   color: #118fe4;
   text-decoration: underline;
 }
+
+.ui top left popup transition visible {
+  text-align: center;
+  line-height: 1.66667;
+  word-break: break-word;
+}

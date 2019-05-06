@@ -18,11 +18,24 @@ const drawAmbulance = (
 ) => {
   const priceSplit = `Inside city (First 25 km) : ${
     priceList.in_city_base
-  } Inside city (After 25 km) : ${
-    priceList.in_city_after_base
-  } /Km Outside city (First 25 km) : ${
-    priceList.out_city_base
-  } Outside city (After 25 km) : ${priceList.out_city_after_base} /Km`;
+  }  Inside city (After 25 km) : ${priceList.in_city_after_base}
+   Outside city (First 25 km) : ${priceList.out_city_base}
+   Outside city (After 25 km) : ${priceList.out_city_after_base} `;
+
+  // const priceSplit =
+  //   "Inside city (First 25 km) :" +
+  //   <br /> +
+  //   priceList.in_city_base +
+  //   <br /> +
+  //   "Inside city (After 25 km) :" +
+  //   <br /> +
+  //   priceList.in_city_after_base +
+  //   "Outside city (First 25 km) :" +
+  //   <br /> +
+  //   priceList.out_city_base +
+  //   "Outside city (After 25 km) :" +
+  //   <br /> +
+  //   priceList.out_city_after_base;
 
   return (
     <div class="box" key={key}>
@@ -49,9 +62,11 @@ const drawAmbulance = (
                   {price}
                 </span>
                 <Popup
+                  style={{ height: "1.66667" }}
                   trigger={
                     <img src="https://img.icons8.com/plasticine/20/000000/info-squared.png" />
                   }
+                  header="Charge"
                   content={priceSplit}
                 />
               </span>

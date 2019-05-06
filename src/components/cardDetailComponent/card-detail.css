@@ -20,6 +20,11 @@
   border-color: #dbdbdb;
 }
 
+.box-card-detail {
+  line-height: 1.66667;
+  margin-bottom: 2em;
+}
+
 .rating-container {
   background-color: #f0f0f5;
   padding: 3px 0 3px 3px;
