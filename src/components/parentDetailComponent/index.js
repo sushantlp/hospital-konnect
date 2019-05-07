@@ -17,7 +17,8 @@ export default class ParentDetail extends React.Component {
       this.state = {
         partner: 0,
         category: 0,
-        flag: "true"
+        flag: "true",
+        open: false
       };
     } else {
       const partnerArray = splitArray[0].split("=");
@@ -27,7 +28,8 @@ export default class ParentDetail extends React.Component {
       this.state = {
         partner: parseInt(partnerArray[1], 10),
         category: parseInt(categoryArray[1], 10),
-        flag: flagArray[1]
+        flag: flagArray[1],
+        open: false
       };
     }
   }
@@ -37,6 +39,12 @@ export default class ParentDetail extends React.Component {
     this.props.getCategoryFeature(this.state.partner);
   }
 
+  updateOpenState = () => {
+    this.setState({
+      open: !this.state.open
+    });
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -44,12 +52,18 @@ export default class ParentDetail extends React.Component {
         <section class="section">
           <div class="columns">
             <div class="column is-9">
-              <Card categoryFeature={this.props.categoryFeature} />
+              <Card
+                categoryFeature={this.props.categoryFeature}
+                open={this.state.open}
+                updateOpenState={this.updateOpenState}
+              />
               <div class="section">
                 <Tab
                   categoryFeature={this.props.categoryFeature}
                   flag={this.state.flag}
                   category={this.state.category}
+                  open={this.state.open}
+                  updateOpenState={this.updateOpenState}
                 />
               </div>
             </div>

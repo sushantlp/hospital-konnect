@@ -1,5 +1,6 @@
 import React from "react";
 import _ from "lodash";
+import Modal from "../modalComponent";
 import { Popup } from "semantic-ui-react";
 import "./ambulance-tab.css";
 
@@ -21,21 +22,6 @@ const drawAmbulance = (
   }  Inside city (After 25 km) : ${priceList.in_city_after_base}
    Outside city (First 25 km) : ${priceList.out_city_base}
    Outside city (After 25 km) : ${priceList.out_city_after_base} `;
-
-  // const priceSplit =
-  //   "Inside city (First 25 km) :" +
-  //   <br /> +
-  //   priceList.in_city_base +
-  //   <br /> +
-  //   "Inside city (After 25 km) :" +
-  //   <br /> +
-  //   priceList.in_city_after_base +
-  //   "Outside city (First 25 km) :" +
-  //   <br /> +
-  //   priceList.out_city_base +
-  //   "Outside city (After 25 km) :" +
-  //   <br /> +
-  //   priceList.out_city_after_base;
 
   return (
     <div class="box" key={key}>
@@ -105,7 +91,12 @@ const drawAmbulance = (
             Book
           </a>
         ) : (
-          <a class="button is-info is-medium">Book </a>
+          <a
+            class="button is-info is-medium"
+            onClick={() => props.updateOpenState()}
+          >
+            Book
+          </a>
         )}
       </article>
     </div>
@@ -138,6 +129,9 @@ const ambulanceTab = props => {
   return (
     <React.Fragment>
       {loopAmbulance(json.p_ambulances, json.p_cat, props)}
+      {props.open ? (
+        <Modal open={props.open} updateOpenState={props.updateOpenState} />
+      ) : null}
     </React.Fragment>
   );
 };

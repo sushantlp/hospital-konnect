@@ -1,7 +1,7 @@
 import React from "react";
 import _ from "lodash";
+import Modal from "../modalComponent";
 import Spinner from "../spinnerComponent";
-
 import { Icon } from "semantic-ui-react/dist/commonjs";
 import "./card-detail.css";
 
@@ -215,7 +215,10 @@ const CardDetail = props => {
             </div>
 
             <div class="card-footer-item">
-              <a class="button is-info is-medium">
+              <a
+                class="button is-info is-medium"
+                onClick={() => props.updateOpenState()}
+              >
                 <span class="icon">
                   <img src="https://img.icons8.com/cotton/25/000000/calendar.png" />
                 </span>
@@ -225,6 +228,10 @@ const CardDetail = props => {
           </footer>
         ) : null}
       </div>
+
+      {props.open ? (
+        <Modal open={props.open} updateOpenState={props.updateOpenState} />
+      ) : null}
     </div>
   );
 };

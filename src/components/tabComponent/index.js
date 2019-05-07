@@ -13,7 +13,6 @@ export default class Tab extends React.Component {
     let navigation = "Overview";
 
     if (this.props.flag === "true") {
-      console.log("Inside");
       if (this.props.category === 1) navigation = "Beds";
       else if (this.props.category === 2) navigation = "Ambulances";
       else if (this.props.category === 3) navigation = "Equipments";
@@ -141,6 +140,8 @@ export default class Tab extends React.Component {
             <Bed
               categoryFeature={this.props.categoryFeature}
               parentState={this.state}
+              open={this.props.open}
+              updateOpenState={this.props.updateOpenState}
             />
           ) : null
         ) : null}
@@ -157,6 +158,8 @@ export default class Tab extends React.Component {
             <Ambulance
               categoryFeature={this.props.categoryFeature}
               parentState={this.state}
+              open={this.props.open}
+              updateOpenState={this.props.updateOpenState}
               // handleClick={this.handleClick}
               // this={this}
             />
@@ -168,6 +171,8 @@ export default class Tab extends React.Component {
             <Bed
               categoryFeature={this.props.categoryFeature}
               parentState={this.state}
+              open={this.props.open}
+              updateOpenState={this.props.updateOpenState}
             />
           ) : null
         ) : null}
@@ -177,6 +182,8 @@ export default class Tab extends React.Component {
             <Bed
               categoryFeature={this.props.categoryFeature}
               parentState={this.state}
+              open={this.props.open}
+              updateOpenState={this.props.updateOpenState}
             />
           ) : null
         ) : null}
