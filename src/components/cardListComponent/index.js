@@ -8,15 +8,13 @@ import { Icon } from "semantic-ui-react/dist/commonjs";
 import "lightbox-react/style.css";
 import "./card-list.css";
 
-let globalImageArray = [];
-
 export default class CardList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isLoading: true,
-      photoIndex: 0,
       open: false,
+      photoIndex: 0,
       lightBox: false,
       bundleImage: []
     };

@@ -2,7 +2,9 @@ import React from "react";
 import _ from "lodash";
 import Modal from "../modalComponent";
 import Spinner from "../spinnerComponent";
+import Lightbox from "lightbox-react";
 import { Icon } from "semantic-ui-react/dist/commonjs";
+import "lightbox-react/style.css";
 import "./card-detail.css";
 
 const CardDetail = props => {
@@ -19,6 +21,10 @@ const CardDetail = props => {
   let logo = object.p_logo;
 
   const ratingSplit = object.p_rating.split(".");
+
+  let imageArray = object.p_images.map(image => {
+    return image.original;
+  });
 
   // Half Star
   if (ratingSplit[1] !== undefined) {
@@ -91,7 +97,12 @@ const CardDetail = props => {
                 <div className="hospital-image">
                   {object.p_images.map((obj, key) => {
                     return (
-                      <span key={key}>
+                      <span
+                        key={key}
+                        onClick={() =>
+                          props.intializeImageArray(imageArray, true)
+                        }
+                      >
                         <img
                           src={obj.thumb}
                           alt={
@@ -232,6 +243,28 @@ const CardDetail = props => {
       {props.open ? (
         <Modal open={props.open} updateOpenState={props.updateOpenState} />
       ) : null}
+
+      {props.lightBox && (
+        <Lightbox
+          mainSrc={props.bundleImage[props.photoIndex]}
+          nextSrc={
+            props.bundleImage[(props.photoIndex + 1) % props.bundleImage.length]
+          }
+          prevSrc={
+            props.bundleImage[
+              (props.photoIndex + props.bundleImage.length - 1) %
+                props.bundleImage.length
+            ]
+          }
+          onCloseRequest={() => props.intializeImageArray(imageArray, false)}
+          onMovePrevRequest={() =>
+            props.movePrevRequest(props.photoIndex, props.bundleImage.length)
+          }
+          onMoveNextRequest={() =>
+            props.moveNextRequest(props.photoIndex, props.bundleImage.length)
+          }
+        />
+      )}
     </div>
   );
 };

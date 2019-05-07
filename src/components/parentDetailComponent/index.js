@@ -18,7 +18,10 @@ export default class ParentDetail extends React.Component {
         partner: 0,
         category: 0,
         flag: "true",
-        open: false
+        open: false,
+        photoIndex: 0,
+        lightBox: false,
+        bundleImage: []
       };
     } else {
       const partnerArray = splitArray[0].split("=");
@@ -29,7 +32,10 @@ export default class ParentDetail extends React.Component {
         partner: parseInt(partnerArray[1], 10),
         category: parseInt(categoryArray[1], 10),
         flag: flagArray[1],
-        open: false
+        open: false,
+        photoIndex: 0,
+        lightBox: false,
+        bundleImage: []
       };
     }
   }
@@ -45,6 +51,22 @@ export default class ParentDetail extends React.Component {
     });
   };
 
+  intializeImageArray = (imageArray, bool) => {
+    this.setState({ lightBox: bool, bundleImage: imageArray });
+  };
+
+  movePrevRequest = (photoIndex, bundleImage) => {
+    this.setState({
+      photoIndex: (photoIndex + bundleImage - 1) % bundleImage
+    });
+  };
+
+  moveNextRequest = (photoIndex, bundleImage) => {
+    this.setState({
+      photoIndex: (photoIndex + 1) % bundleImage
+    });
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -55,7 +77,13 @@ export default class ParentDetail extends React.Component {
               <Card
                 categoryFeature={this.props.categoryFeature}
                 open={this.state.open}
+                photoIndex={this.state.photoIndex}
+                lightBox={this.state.lightBox}
+                bundleImage={this.state.bundleImage}
                 updateOpenState={this.updateOpenState}
+                intializeImageArray={this.intializeImageArray}
+                movePrevRequest={this.movePrevRequest}
+                moveNextRequest={this.moveNextRequest}
               />
               <div class="section">
                 <Tab
