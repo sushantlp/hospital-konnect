@@ -1,8 +1,9 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import _ from "lodash";
+import Modal from "../modalComponent";
 import Spinner from "../spinnerComponent";
-import { Icon, Modal } from "semantic-ui-react/dist/commonjs";
+import { Icon } from "semantic-ui-react/dist/commonjs";
 
 import "./card-list.css";
 
@@ -305,25 +306,35 @@ export default class CardList extends React.Component {
     });
   };
 
+  updateOpenState = () => {
+    this.setState({
+      open: !this.state.open
+    });
+  };
+
   onClickCardList = (object, flag) => {
     let categoryName = "";
 
-    if (object.p_cat === 1) categoryName = "hospital";
-    else if (object.p_cat === 2) categoryName = "ambulance";
-    else if (object.p_cat === 3) categoryName = "equipment";
-    else categoryName = "nursing";
+    if (object.p_cat === 1 && flag) {
+      this.updateOpenState();
+    } else {
+      if (object.p_cat === 1) categoryName = "hospital";
+      else if (object.p_cat === 2) categoryName = "ambulance";
+      else if (object.p_cat === 3) categoryName = "equipment";
+      else categoryName = "nursing";
 
-    const partnerUrl = object.p_name.replace(/ /g, "-").toLowerCase();
-    this.props.parentProps.history.push("/");
+      const partnerUrl = object.p_name.replace(/ /g, "-").toLowerCase();
+      this.props.parentProps.history.push("/");
 
-    // Url Change
-    this.props.parentProps.history.push({
-      pathname: `${this.props.parentProps.match.params.city}/${
-        this.props.parentProps.match.params.locality
-      }/${categoryName}/${partnerUrl}`,
-      search: `?partner=${object.p_id}&category=${object.p_cat}&flag=${flag}`,
-      state: { data: object }
-    });
+      // Url Change
+      this.props.parentProps.history.push({
+        pathname: `${this.props.parentProps.match.params.city}/${
+          this.props.parentProps.match.params.locality
+        }/${categoryName}/${partnerUrl}`,
+        search: `?partner=${object.p_id}&category=${object.p_cat}&flag=${flag}`,
+        state: { data: object }
+      });
+    }
   };
 
   render() {
@@ -348,7 +359,6 @@ export default class CardList extends React.Component {
         >
           <div class="container">
             {this.loopCardList(this.props.categoryList.categoryList)}
-            {/* {this.state.open ? :null} */}
           </div>
         </div>
         <hr className="spacer is-3" />
@@ -376,6 +386,13 @@ export default class CardList extends React.Component {
             </a>
           )}
         </div>
+
+        {this.state.open ? (
+          <Modal
+            open={this.state.open}
+            updateOpenState={this.updateOpenState}
+          />
+        ) : null}
       </div>
     );
   }

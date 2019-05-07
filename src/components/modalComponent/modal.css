@@ -1,0 +1,16 @@
+.modal-card-head p {
+  margin-bottom: 0em;
+}
+
+.modal-card-body p {
+  color: black;
+}
+
+.modal-card-foot button {
+  width: 21.875em;
+  height: 2.5em;
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 7em;
+  margin-right: 7em;
+}
