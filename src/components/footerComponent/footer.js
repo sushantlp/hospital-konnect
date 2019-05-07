@@ -15,7 +15,7 @@ export default class Footer extends React.Component {
                     <img
                       alt="Bedtime Stories"
                       role="presentation"
-                      src="https://getbedtimestories.com/assets/images/app-icon-df78e144.png?1553506572"
+                      src="https://res.cloudinary.com/dp67gawk6/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1557220475/HK/hk-logo.jpg"
                     />
                   </div>
                   <div className="brand-content">
@@ -60,7 +60,7 @@ export default class Footer extends React.Component {
               <div class="columns">
                 <div class="column">
                   <div class="menu">
-                    <p class="menu-label"> For partners </p>
+                    {/* <p class="menu-label"> For partners </p>
                     <ul class="menu-list">
                       <li>
                         <a href="/">Search for doctors</a>
@@ -71,7 +71,7 @@ export default class Footer extends React.Component {
                       <li>
                         <a href="/">Search for hospitals</a>
                       </li>
-                    </ul>
+                    </ul> */}
                   </div>
                 </div>
                 <div class="column">

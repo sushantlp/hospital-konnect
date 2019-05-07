@@ -61,7 +61,7 @@ export default class Index extends React.Component {
       pathname: `${this.props.match.params.city}/${
         this.props.match.params.locality
       }/${name}/${partnerUrl}`,
-      search: `?partner=${partnerId}&category=${category}`,
+      search: `?partner=${partnerId}&category=${category}&flag=false`,
       state: { data: object }
     });
   };

@@ -2,7 +2,7 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import _ from "lodash";
 import Spinner from "../spinnerComponent";
-import { Icon } from "semantic-ui-react/dist/commonjs";
+import { Icon, Modal } from "semantic-ui-react/dist/commonjs";
 
 import "./card-list.css";
 
@@ -10,7 +10,8 @@ export default class CardList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoading: true
+      isLoading: true,
+      open: false
     };
   }
 
@@ -347,6 +348,7 @@ export default class CardList extends React.Component {
         >
           <div class="container">
             {this.loopCardList(this.props.categoryList.categoryList)}
+            {/* {this.state.open ? :null} */}
           </div>
         </div>
         <hr className="spacer is-3" />
