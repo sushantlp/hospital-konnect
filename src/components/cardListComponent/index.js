@@ -2,17 +2,23 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import _ from "lodash";
 import Modal from "../modalComponent";
+import Lightbox from "lightbox-react";
 import Spinner from "../spinnerComponent";
 import { Icon } from "semantic-ui-react/dist/commonjs";
-
+import "lightbox-react/style.css";
 import "./card-list.css";
+
+let globalImageArray = [];
 
 export default class CardList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isLoading: true,
-      open: false
+      photoIndex: 0,
+      open: false,
+      lightBox: false,
+      bundleImage: []
     };
   }
 
@@ -25,6 +31,10 @@ export default class CardList extends React.Component {
   componentWillMount() {
     window.scrollTo(0, 0);
   }
+
+  intializeImageArray = imageArray => {
+    this.setState({ lightBox: true, bundleImage: imageArray });
+  };
 
   drawCardList = (
     key,
@@ -44,6 +54,7 @@ export default class CardList extends React.Component {
     rating,
     image,
     buttonText,
+    imageArray,
     obj
   ) => {
     return (
@@ -75,7 +86,10 @@ export default class CardList extends React.Component {
                   <div className="hospital-image">
                     {image.map((obj, key) => {
                       return (
-                        <span key={key}>
+                        <span
+                          key={key}
+                          onClick={() => this.intializeImageArray(imageArray)}
+                        >
                           <img
                             src={obj.thumb}
                             alt={
@@ -220,12 +234,17 @@ export default class CardList extends React.Component {
   loopCardList = collection => {
     return collection.map((obj, key) => {
       let logo = obj.p_logo;
+
       let speciality = [];
       let fullRating = [];
       let emptyRating = [];
       let topRating = 5;
       let half = undefined;
       let buttonText = "Book Appointment";
+
+      let imageArray = obj.p_images.map(image => {
+        return image.original;
+      });
 
       if (obj.p_cat === 2) buttonText = "Book Ambulance";
       else if (obj.p_cat === 3) buttonText = "Book Equipment";
@@ -290,6 +309,7 @@ export default class CardList extends React.Component {
         obj.p_rating,
         obj.p_images,
         buttonText,
+        imageArray,
         obj
       );
     });
@@ -393,6 +413,37 @@ export default class CardList extends React.Component {
             updateOpenState={this.updateOpenState}
           />
         ) : null}
+
+        {this.state.lightBox && (
+          <Lightbox
+            mainSrc={this.state.bundleImage[this.state.photoIndex]}
+            nextSrc={
+              this.state.bundleImage[
+                (this.state.photoIndex + 1) % this.state.bundleImage.length
+              ]
+            }
+            prevSrc={
+              this.state.bundleImage[
+                (this.state.photoIndex + this.state.bundleImage.length - 1) %
+                  this.state.bundleImage.length
+              ]
+            }
+            onCloseRequest={() => this.setState({ lightBox: false })}
+            onMovePrevRequest={() =>
+              this.setState({
+                photoIndex:
+                  (this.state.photoIndex + this.state.bundleImage.length - 1) %
+                  this.state.bundleImage.length
+              })
+            }
+            onMoveNextRequest={() =>
+              this.setState({
+                photoIndex:
+                  (this.state.photoIndex + 1) % this.state.bundleImage.length
+              })
+            }
+          />
+        )}
       </div>
     );
   }
