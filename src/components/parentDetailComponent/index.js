@@ -43,6 +43,7 @@ export default class ParentDetail extends React.Component {
   componentWillMount() {
     window.scrollTo(0, 0);
     this.props.getCategoryFeature(this.state.partner);
+    this.props.getSeoUrl(this.state.partner);
   }
 
   updateOpenState = () => {
@@ -96,7 +97,7 @@ export default class ParentDetail extends React.Component {
               </div>
             </div>
             <div class="column is-3">
-              <Seo />
+              <Seo seoUrlList={this.props.seoUrlList} />
             </div>
           </div>
         </section>

@@ -8,7 +8,7 @@ const nextTabUrl = (obj, props) => {
   const parseUrl = obj.name.replace(/ /g, "-").toLowerCase();
 
   if (obj.type !== 3) {
-    const url = `${constant.baseUrl}/${props.parentProps.match.params.city}/${
+    const url = `${constant.baseUrl}${props.parentProps.match.params.city}/${
       props.parentProps.match.params.locality
     }/${parseUrl}?city=${props.parentState.city}&locality=${
       props.parentState.locality
@@ -16,7 +16,7 @@ const nextTabUrl = (obj, props) => {
 
     window.open(url);
   } else {
-    const url = `${constant.baseUrl}/${props.parentProps.match.params.city}/${
+    const url = `${constant.baseUrl}${props.parentProps.match.params.city}/${
       props.parentProps.match.params.locality
     }/air-ambulance/${parseUrl}?partner=${obj.key_id}&category=${
       obj.cat_id

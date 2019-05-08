@@ -8,6 +8,7 @@ import { filterList } from "./filter-reducer";
 import { categoryList } from "./category-list-reducer";
 import { categoryFeature } from "./category-feature-reducer";
 import { sideBarList } from "./side-bar-reducer";
+import { seoUrlList } from "./seo-url-reducer";
 
 export default combineReducers({
   cityLocality,
@@ -18,5 +19,6 @@ export default combineReducers({
   categoryList,
   categoryFeature,
   filterList,
-  sideBarList
+  sideBarList,
+  seoUrlList
 });

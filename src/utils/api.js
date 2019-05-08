@@ -146,5 +146,24 @@ export default {
         })
         .catch(error => console.log(error));
     });
+  },
+
+  seoUrlApi: partnerId => {
+    return new Promise((resolve, reject) => {
+      fetch(
+        host +
+          "api/v1/web/seo-links?" +
+          getQueryString({
+            p_id: partnerId
+          })
+      )
+        .then(response => {
+          response
+            .json()
+            .then(seoUrlList => resolve(seoUrlList))
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    });
   }
 };

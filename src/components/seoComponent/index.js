@@ -1,80 +1,39 @@
 import React from "react";
+import _ from "lodash";
+import constant from "../../utils/constant";
 import "./seo.css";
 
-export default class Seo extends React.Component {
-  render() {
-    return (
-      <div class="container">
-        <p className="menu-label"> Most Searched Localities In Bangalore </p>
-        <ul className="menu-list">
-          <li>
-            <a href="/">Hospital in Yelahanka</a>
-          </li>
-          <li>
-            <a href="/">Hospital in Banashankari</a>
-          </li>
-          <li>
-            <a href="/">Hospital in BTM Layout Stage 1</a>
-          </li>
-          <li>
-            <a href="/">Hospital in BTM Layout Stage 2</a>
-          </li>
-          <li>
-            <a href="/">Hospital in Electronic City</a>
-          </li>
-          <li>
-            <a href="/">Hospital in JP Nagar</a>
-          </li>
-          <li>
-            <a href="/">Hospital in HSR Layout</a>
-          </li>
-          <li>
-            <a href="/">Hospital in Marathahalli</a>
-          </li>
-          <li>
-            <a href="/">Hospital in RT Nagar</a>
-          </li>
-          <li>
-            <a href="/">Hospital in Jaya Nagar</a>
-          </li>
-        </ul>
+const Seo = props => {
+  if (props.seoUrlList.status === "START") return <div />;
+  else if (props.seoUrlList.status === "FAIL") return <div />;
 
-        <hr className="spacer is-4" />
+  if (_.isEmpty(props.seoUrlList.seoUrlList)) return <div />;
 
-        <p className="menu-label"> Popular Doctors In Bangalore </p>
-        <ul className="menu-list">
-          <li>
-            <a href="/">Pain Management Specialist in Bangalore</a>
-          </li>
-          <li>
-            <a href="/">Homoeopath in Bangalore</a>
-          </li>
-          <li>
-            <a href="/">Neuropsychiatrist in Bangalore</a>
-          </li>
-          <li>
-            <a href="/">Joint Replacement Surgeon in Bangalore</a>
-          </li>
-          <li>
-            <a href="/">Dentist in Bangalore</a>
-          </li>
-          <li>
-            <a href="/">Oral Medicine and Radiology in Bangalore</a>
-          </li>
-          <li>
-            <a href="/">Sports Medicine Physician in Bangalore</a>
-          </li>
-          <li>
-            <a href="/">ENT/ Otorhinolaryngologist in Bangalore</a>
-          </li>
-          <li>
-            <a href="/">Neonatologist in Bangalore</a>
-          </li>
-          <li>
-            <a href="/">Clinical Embryologist in Bangalore</a>
-          </li>
-        </ul>
-      </div>
-    );
-  }
-}
+  const object = props.seoUrlList.seoUrlList;
+
+  return (
+    <div class="container">
+      {object.map((obj, key) => {
+        return (
+          <React.Fragment key={key}>
+            <p className="menu-label">{obj.head}</p>
+            <ul className="menu-list">
+              {obj.list.map((obj, key) => {
+                return (
+                  <li>
+                    <a href={`${constant.baseUrl}${obj.url}`} target="_blank">
+                      {obj.label}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+            <hr className="spacer is-4" />
+          </React.Fragment>
+        );
+      })}
+    </div>
+  );
+};
+
+export default Seo;
