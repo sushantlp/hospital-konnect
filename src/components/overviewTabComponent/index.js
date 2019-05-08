@@ -5,6 +5,18 @@ import "./overview-tab.css";
 
 const overviewTab = props => {
   const object = props.categoryFeature.categoryFeature;
+  const addressOne =
+    object.p_address.address_line_1 === null
+      ? ""
+      : object.p_address.address_line_1;
+  const addressTwo =
+    object.p_address.address_line_2 === null
+      ? ""
+      : object.p_address.address_line_2;
+  const addressThird =
+    object.p_address.address_line_3 === null
+      ? ""
+      : object.p_address.address_line_3;
   const image =
     "https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,w_800/v1474443469/ballyhoo/BREAKFAST/22.jpg";
   return (
@@ -140,9 +152,7 @@ const overviewTab = props => {
           </p>
 
           <p class="subtitle is-6">
-            {object.p_address.address_line_1 +
-              object.p_address.address_line_2 +
-              object.p_address.address_line_3}
+            {addressOne + " " + addressTwo + " " + addressThird}
           </p>
 
           <div class="box">
@@ -153,21 +163,6 @@ const overviewTab = props => {
           </div>
         </div>
       ) : null}
-
-      {/* <div>
-        <p class="subtitle is-4" style={{ marginBottom: "0.2em" }}>
-          Images
-        </p>
-        <div
-          class="card"
-          style={{
-            backgroundImage: `url(${image})`,
-            cursor: "pointer",
-            width: "10.917em",
-            height: "7.25em"
-          }}
-        />
-      </div> */}
     </div>
   );
 };
