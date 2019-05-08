@@ -1,3 +1,7 @@
 .overview-container p {
   line-height: 1.66667;
 }
+
+.readMoreText {
+  margin-left: 0.5em;
+}

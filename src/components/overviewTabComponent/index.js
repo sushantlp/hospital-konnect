@@ -1,5 +1,5 @@
 import React from "react";
-
+import MoreAndLess from "react-read-more-less";
 import Map from "../mapComponent";
 import "./overview-tab.css";
 
@@ -152,7 +152,15 @@ const overviewTab = props => {
         class="subtitle is-6 has-text-justified"
         style={{ whiteSpace: "pre-line" }}
       >
-        {object.p_full_desc}
+        <MoreAndLess
+          // ref={this.ReadMore}
+          className="read-more-content"
+          charLimit={500}
+          readMoreText="Read more"
+          readLessText="Read less"
+        >
+          {object.p_full_desc}
+        </MoreAndLess>
       </p>
 
       {object.p_cat === 1 ? (

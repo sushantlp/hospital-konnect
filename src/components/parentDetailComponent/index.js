@@ -5,6 +5,7 @@ import Footer from "../footerComponent/footer";
 import Card from "../cardDetailComponent";
 import Seo from "../seoComponent";
 import Tab from "../tabComponent";
+import Banner from "../bannerComponent";
 
 import "./parent-detail.css";
 
@@ -72,6 +73,13 @@ export default class ParentDetail extends React.Component {
     return (
       <React.Fragment>
         <Header />
+
+        {/* <section class="section">
+          <div class="container is-fullhd">
+            <Banner />
+          </div>
+        </section> */}
+
         <section class="section">
           <div class="columns">
             <div class="column is-9">
