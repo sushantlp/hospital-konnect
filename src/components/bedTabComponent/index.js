@@ -45,21 +45,27 @@ const drawBed = (
 
             <p
               class="subtitle is-6 has-text-justified"
-              style={{ lineHeight: "1.66667" }}
+              style={{ lineHeight: "1.66667", whiteSpace: "pre-line" }}
             >
               {description}
             </p>
 
             <div style={{ display: "inline-block" }}>
               <Popup
-                style={{ height: "1.66667" }}
+                style={{ height: "1.66667", whiteSpace: "pre-line" }}
                 trigger={<a>Cancellation policy</a>}
                 header="Cancel Policy"
                 content={cancelPolicy}
               />
             </div>
 
-            <div style={{ display: "inline-block", marginLeft: "2em" }}>
+            <div
+              style={{
+                display: "inline-block",
+                marginLeft: "2em",
+                whiteSpace: "pre-line"
+              }}
+            >
               <Popup
                 style={{ height: "1.66667" }}
                 trigger={<a>Terms and Condition</a>}

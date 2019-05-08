@@ -32,7 +32,11 @@ export default class Index extends React.Component {
               />
             </div>
             <div class="column is-3">
-              <Same />
+              <Same
+                sideBarList={this.props.sideBarList}
+                parentState={this.props.parentState}
+                parentProps={this.props.parentProps}
+              />
             </div>
           </div>
         </section>

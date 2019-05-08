@@ -24,7 +24,12 @@ const overviewTab = props => {
       <p class="subtitle is-4" style={{ marginBottom: "0.2em" }}>
         About
       </p>
-      <p class="subtitle is-6 has-text-justified">{object.p_short_desc}</p>
+      <p
+        class="subtitle is-6 has-text-justified"
+        style={{ whiteSpace: "pre-line" }}
+      >
+        {object.p_short_desc}
+      </p>
       <p class="subtitle is-4" style={{ marginBottom: "0.2em" }}>
         Address
       </p>
@@ -143,7 +148,12 @@ const overviewTab = props => {
       <p class="subtitle is-4" style={{ marginBottom: "0.2em" }}>
         Detail
       </p>
-      <p class="subtitle is-6 has-text-justified">{object.p_full_desc}</p>
+      <p
+        class="subtitle is-6 has-text-justified"
+        style={{ whiteSpace: "pre-line" }}
+      >
+        {object.p_full_desc}
+      </p>
 
       {object.p_cat === 1 ? (
         <div style={{ marginBottom: "1em" }}>

@@ -27,7 +27,7 @@ export default class AirAmbulance extends React.Component {
                 </p>
                 <p
                   class="subtitle is-6 has-text-justified"
-                  style={{ lineHeight: "1.66667" }}
+                  style={{ lineHeight: "1.66667", whiteSpace: "pre-line" }}
                 >
                   {object.detail.body}
                 </p>

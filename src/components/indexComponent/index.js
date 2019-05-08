@@ -54,11 +54,10 @@ export default class Index extends React.Component {
       partnerId = object.partner_id;
     }
     const partnerUrl = partnerName.replace(/ /g, "-").toLowerCase();
-    this.props.history.push("/");
 
     // Url Change
     this.props.history.push({
-      pathname: `${this.props.match.params.city}/${
+      pathname: `/${this.props.match.params.city}/${
         this.props.match.params.locality
       }/${name}/${partnerUrl}`,
       search: `?partner=${partnerId}&category=${category}&flag=false`,

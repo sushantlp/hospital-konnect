@@ -202,7 +202,7 @@ export default class CardList extends React.Component {
 
             <div class="card-footer-item">
               <a
-                class="button is-info is-medium"
+                class="button is-medium"
                 onClick={() => this.onClickCardList(obj, true)}
               >
                 <span class="icon">
@@ -254,7 +254,8 @@ export default class CardList extends React.Component {
 
       if (obj.p_cat === 1) speciality = obj.p_specialities;
 
-      const ratingSplit = obj.p_rating.split(".");
+      const rating = obj.p_rating + "";
+      const ratingSplit = rating.split(".");
 
       // Half Star
       if (ratingSplit[1] !== undefined) {

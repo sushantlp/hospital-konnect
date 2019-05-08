@@ -80,7 +80,7 @@ export default class Footer extends React.Component {
                         <a href="/">About Hospital Konnect</a>
                       </li>
                       <li>
-                        <a href="/">Terms and Condition</a>
+                        <a href="/">Terms &amp; Conditions</a>
                       </li>
                       <li>
                         <a href="/">Privacy Policy</a>
@@ -89,7 +89,7 @@ export default class Footer extends React.Component {
                         <a href="/">Contact Us</a>
                       </li>
                       <li>
-                        <a href="/">Faq</a>
+                        <a href="/">FAQ's</a>
                       </li>
                     </ul>
                   </div>

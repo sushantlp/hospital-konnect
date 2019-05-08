@@ -50,7 +50,7 @@ export default class ParentList extends React.Component {
       this.state.page,
       true
     );
-    // this.props.getSideBar(this.state.category);
+    this.props.getSideBar(this.state.category);
     if (this.state.category === 1) this.props.getFilterList();
   }
 

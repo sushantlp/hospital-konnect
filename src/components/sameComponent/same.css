@@ -7,3 +7,14 @@
   font-size: 1.125rem;
   line-height: 1.66667;
 }
+
+.same-container .panel-block {
+  border-top: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+  border-left: 0px;
+}
+
+.same-container .card {
+  cursor: pointer;
+}

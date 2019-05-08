@@ -144,7 +144,7 @@ export default class Search extends React.Component {
     });
 
     const categoryUrl = data.value.replace(/ /g, "-").toLowerCase();
-    console.log(bunch);
+
     if (bunch[0].type !== 3) {
       // Url Change
       this.props.parentProps.history.push({

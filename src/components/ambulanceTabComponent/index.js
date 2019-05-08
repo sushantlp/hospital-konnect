@@ -60,14 +60,14 @@ const drawAmbulance = (
 
             <p
               class="subtitle is-6 has-text-justified"
-              style={{ lineHeight: "1.66667" }}
+              style={{ lineHeight: "1.66667", whiteSpace: "pre-line" }}
             >
               {desc}
             </p>
             <div>
               <div style={{ display: "inline-block" }}>
                 <Popup
-                  style={{ height: "1.66667" }}
+                  style={{ height: "1.66667", whiteSpace: "pre-line" }}
                   trigger={<a>Cancellation policy</a>}
                   header="Cancel Policy"
                   content={cancelPolicy}
@@ -76,7 +76,7 @@ const drawAmbulance = (
 
               <div style={{ display: "inline-block", marginLeft: "2em" }}>
                 <Popup
-                  style={{ height: "1.66667" }}
+                  style={{ height: "1.66667", whiteSpace: "pre-line" }}
                   trigger={<a>Terms and Condition</a>}
                   header="Terms and Condition"
                   content={terms}

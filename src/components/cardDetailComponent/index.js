@@ -20,7 +20,8 @@ const CardDetail = props => {
   let halfRating = undefined;
   let logo = object.p_logo;
 
-  const ratingSplit = object.p_rating.split(".");
+  const rating = object.p_rating + "";
+  const ratingSplit = rating.split(".");
 
   let imageArray = object.p_images.map(image => {
     return image.original;
@@ -227,7 +228,7 @@ const CardDetail = props => {
 
             <div class="card-footer-item">
               <a
-                class="button is-info is-medium"
+                class="button is-medium"
                 onClick={() => props.updateOpenState()}
               >
                 <span class="icon">
