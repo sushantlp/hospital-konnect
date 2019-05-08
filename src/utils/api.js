@@ -127,5 +127,24 @@ export default {
         })
         .catch(error => console.log(error));
     });
+  },
+
+  sideBarApi: categoryId => {
+    return new Promise((resolve, reject) => {
+      fetch(
+        host +
+          "api/v1/web/list/side-bar?" +
+          getQueryString({
+            cat_id: categoryId
+          })
+      )
+        .then(response => {
+          response
+            .json()
+            .then(sideBarList => resolve(sideBarList))
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    });
   }
 };

@@ -13,16 +13,14 @@ export default class Footer extends React.Component {
                 <a className="brand" href="/">
                   <div className="brand-icon">
                     <img
-                      alt="Bedtime Stories"
+                      alt="Hospital Konnect - Just Konnect"
                       role="presentation"
-                      src="https://res.cloudinary.com/dp67gawk6/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1557220475/HK/hk-logo.jpg"
+                      src="https://res.cloudinary.com/dp67gawk6/image/upload/v1557299534/HK/hk-logo.jpg"
                     />
                   </div>
                   <div className="brand-content">
                     <div className="brand-title"> Hospital Konnect </div>
-                    <div className="brand-subtitle">
-                      Exciting tales for young &amp; old
-                    </div>
+                    <div className="brand-subtitle">Just Konnect</div>
                   </div>
                 </a>
                 <hr className="spacer is-1" />
@@ -58,9 +56,9 @@ export default class Footer extends React.Component {
             </div>
             <div class="column is-7 is-6-widescreen is-offset-2-widescreen">
               <div class="columns">
-                <div class="column">
+                {/* <div class="column">
                   <div class="menu">
-                    {/* <p class="menu-label"> For partners </p>
+                     <p class="menu-label"> For partners </p>
                     <ul class="menu-list">
                       <li>
                         <a href="/">Search for doctors</a>
@@ -71,21 +69,24 @@ export default class Footer extends React.Component {
                       <li>
                         <a href="/">Search for hospitals</a>
                       </li>
-                    </ul> */}
+                    </ul> 
                   </div>
-                </div>
+                </div> */}
                 <div class="column">
                   <div class="menu">
                     <p class="menu-label"> Company </p>
                     <ul class="menu-list">
                       <li>
-                        <a href="/">About Us</a>
+                        <a href="/">About Hospital Konnect</a>
                       </li>
                       <li>
-                        <a href="/">Privacy</a>
+                        <a href="/">Terms and Condition</a>
                       </li>
                       <li>
-                        <a href="/">Terms</a>
+                        <a href="/">Privacy Policy</a>
+                      </li>
+                      <li>
+                        <a href="/">Contact Us</a>
                       </li>
                       <li>
                         <a href="/">Faq</a>
@@ -134,7 +135,7 @@ export default class Footer extends React.Component {
                           Twitter
                         </a>
                       </li>
-                      <li>
+                      {/* <li>
                         <a
                           href="https://facebook.com/getbedtimestories"
                           target="_blank"
@@ -145,7 +146,7 @@ export default class Footer extends React.Component {
                           />
                           Messenger
                         </a>
-                      </li>
+                      </li> */}
                     </ul>
                   </div>
                 </div>

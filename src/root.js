@@ -38,7 +38,7 @@ const Root = ({ store }) => (
             component={Feature}
           />
 
-          <Route component={Category} />
+          <Route component={Landing} />
         </Switch>
       </div>
     </BrowserRouter>

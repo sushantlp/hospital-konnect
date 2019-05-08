@@ -7,6 +7,7 @@ import { keywordSearch } from "./keyword-reducer";
 import { filterList } from "./filter-reducer";
 import { categoryList } from "./category-list-reducer";
 import { categoryFeature } from "./category-feature-reducer";
+import { sideBarList } from "./side-bar-reducer";
 
 export default combineReducers({
   cityLocality,
@@ -16,5 +17,6 @@ export default combineReducers({
   keywordSearch,
   categoryList,
   categoryFeature,
-  filterList
+  filterList,
+  sideBarList
 });

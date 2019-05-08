@@ -202,18 +202,6 @@ export default class CardList extends React.Component {
 
             <div class="card-footer-item">
               <a
-                class="button is-medium"
-                onClick={() => this.onClickCardList(obj, false)}
-              >
-                <span class="icon">
-                  <img src="https://img.icons8.com/plasticine/30/000000/visible.png" />
-                </span>
-                <span>View Detail</span>
-              </a>
-            </div>
-
-            <div class="card-footer-item">
-              <a
                 class="button is-info is-medium"
                 onClick={() => this.onClickCardList(obj, true)}
               >
@@ -221,6 +209,18 @@ export default class CardList extends React.Component {
                   <img src="https://img.icons8.com/cotton/25/000000/calendar.png" />
                 </span>
                 <span>{buttonText}</span>
+              </a>
+            </div>
+
+            <div class="card-footer-item">
+              <a
+                class="button is-medium"
+                onClick={() => this.onClickCardList(obj, false)}
+              >
+                <span class="icon">
+                  <img src="https://img.icons8.com/plasticine/30/000000/visible.png" />
+                </span>
+                <span>View Detail</span>
               </a>
             </div>
           </footer>
@@ -342,11 +342,10 @@ export default class CardList extends React.Component {
       else categoryName = "nursing";
 
       const partnerUrl = object.p_name.replace(/ /g, "-").toLowerCase();
-      this.props.parentProps.history.push("/");
 
       // Url Change
       this.props.parentProps.history.push({
-        pathname: `${this.props.parentProps.match.params.city}/${
+        pathname: `/${this.props.parentProps.match.params.city}/${
           this.props.parentProps.match.params.locality
         }/${categoryName}/${partnerUrl}`,
         search: `?partner=${object.p_id}&category=${object.p_cat}&flag=${flag}`,

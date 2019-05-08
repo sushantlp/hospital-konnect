@@ -50,7 +50,7 @@ export default class ParentList extends React.Component {
       this.state.page,
       true
     );
-
+    // this.props.getSideBar(this.state.category);
     if (this.state.category === 1) this.props.getFilterList();
   }
 
@@ -74,6 +74,7 @@ export default class ParentList extends React.Component {
           <HospitalList
             categoryList={this.props.categoryList}
             filterList={this.props.filterList}
+            sideBarList={this.props.sideBarList}
             parentProps={this.props}
             parentState={this.state}
             loadMoreDataApiCall={this.loadMoreDataApiCall}
@@ -83,6 +84,7 @@ export default class ParentList extends React.Component {
           <AmbulanceList
             categoryList={this.props.categoryList}
             filterList={this.props.filterList}
+            sideBarList={this.props.sideBarList}
             parentProps={this.props}
             parentState={this.state}
             loadMoreDataApiCall={this.loadMoreDataApiCall}
@@ -92,6 +94,7 @@ export default class ParentList extends React.Component {
           <EquipmentList
             categoryList={this.props.categoryList}
             filterList={this.props.filterList}
+            sideBarList={this.props.sideBarList}
             parentProps={this.props}
             parentState={this.state}
             loadMoreDataApiCall={this.loadMoreDataApiCall}
@@ -101,6 +104,7 @@ export default class ParentList extends React.Component {
           <NursingList
             categoryList={this.props.categoryList}
             filterList={this.props.filterList}
+            sideBarList={this.props.sideBarList}
             parentProps={this.props}
             parentState={this.state}
             loadMoreDataApiCall={this.loadMoreDataApiCall}
