@@ -78,7 +78,7 @@ const ProfileFill = props => {
                 <div class="control has-icons-left has-icons-right">
                   <input
                     class="input is-large"
-                    type="number"
+                    type="text"
                     placeholder="Mobile"
                   />
                   <span class="icon is-small is-left">
@@ -93,7 +93,7 @@ const ProfileFill = props => {
 
           <div class="columns">
             <div class="column is-6 is-offset-3">
-              <button class="button is-large is-fullwidth">REGISTER</button>
+              <button class="button is-large is-fullwidth">NEXT</button>
             </div>
           </div>
         </section>
