@@ -15,3 +15,8 @@ textarea {
 .Container {
   line-height: 1.66667;
 }
+
+.air-ambulance-container .button {
+  background-color: #6e7498;
+  color: white;
+}

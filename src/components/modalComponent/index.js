@@ -30,7 +30,7 @@ const modal = props => {
           </div>
         </section>
         <footer class="modal-card-foot">
-          <button class="button is-danger is-medium">Sumbit</button>
+          <button class="button is-medium">Sumbit</button>
         </footer>
       </div>
     </div>

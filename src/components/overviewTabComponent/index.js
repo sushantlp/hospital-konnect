@@ -17,8 +17,7 @@ const overviewTab = props => {
     object.p_address.address_line_3 === null
       ? ""
       : object.p_address.address_line_3;
-  const image =
-    "https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,w_800/v1474443469/ballyhoo/BREAKFAST/22.jpg";
+
   return (
     <div className="overview-container">
       <p class="subtitle is-4" style={{ marginBottom: "0.2em" }}>
@@ -71,7 +70,7 @@ const overviewTab = props => {
         <div class="tags are-medium">
           {object.p_other_contacts.map((obj, key) => {
             return (
-              <span class="tag is-info" key={key}>
+              <span class="tag" key={key}>
                 {obj}
               </span>
             );
@@ -92,7 +91,7 @@ const overviewTab = props => {
           <div class="tags are-medium">
             {object.p_online_pay_opt.map((obj, key) => {
               return (
-                <span class="tag is-info" key={key}>
+                <span class="tag" key={key}>
                   {obj}
                 </span>
               );
@@ -114,7 +113,7 @@ const overviewTab = props => {
           <div class="tags are-medium">
             {object.p_services.map((obj, key) => {
               return (
-                <span class="tag is-info" key={key}>
+                <span class="tag" key={key}>
                   {obj.serv_name}
                 </span>
               );
@@ -136,7 +135,7 @@ const overviewTab = props => {
           <div class="tags are-medium">
             {object.p_specialities.map((obj, key) => {
               return (
-                <span class="tag is-info" key={key}>
+                <span class="tag" key={key}>
                   {obj.spl_name}
                 </span>
               );

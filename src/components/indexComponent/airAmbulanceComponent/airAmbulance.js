@@ -37,7 +37,7 @@ export default class AirAmbulance extends React.Component {
                     this.props.tripToDetailView(object, "air-ambulance", 7)
                   }
                 >
-                  <span class="button is-info">View Detail</span>
+                  <span class="button">View Detail</span>
                 </div>
               </Grid.Column>
             </Grid.Row>

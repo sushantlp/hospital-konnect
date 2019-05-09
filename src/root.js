@@ -5,13 +5,14 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import "./static/css/root.css";
 
-import Category from "./containers/category-container";
+// import Category from "./containers/category-container";
 import Landing from "./containers/index-container";
 import CategoryList from "./containers/category-list-container";
 import Feature from "./containers/feature-container";
 import Faq from "./components/faqComponent/faq";
 import Privacy from "./components/privacyComponent/privacy";
 import Term from "./components/termComponent/term";
+import Profile from "./components/profileFillComponent";
 
 const Root = ({ store }) => (
   <Provider store={store}>
@@ -22,6 +23,7 @@ const Root = ({ store }) => (
           <Route exact path="/terms/" component={Term} />
           <Route exact path="/privacy/" component={Privacy} />
           <Route exact path="/faq/" component={Faq} />
+          <Route exact path="/profile/" component={Profile} />
 
           <Route exact path="/web/" component={Landing} />
           <Route exact path="/:city/:locality" component={Landing} />

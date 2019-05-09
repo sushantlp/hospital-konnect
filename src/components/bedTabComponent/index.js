@@ -77,15 +77,21 @@ const drawBed = (
         </div>
 
         {availability === 0 ? (
-          <a class="button is-info is-medium" title="Disabled button" disabled>
+          <a
+            class="button is-medium"
+            title="Disabled button"
+            disabled
+            style={{ backgroundColor: "#6e7498", color: "white" }}
+          >
             Book
           </a>
         ) : (
           <a
-            class="button is-info is-medium"
+            class="button is-medium"
+            style={{ backgroundColor: "#6e7498", color: "white" }}
             onClick={() => props.updateOpenState()}
           >
-            Book{" "}
+            Book
           </a>
         )}
       </article>

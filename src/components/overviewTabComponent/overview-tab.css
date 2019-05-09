@@ -5,3 +5,8 @@
 .readMoreText {
   margin-left: 0.5em;
 }
+
+.overview-container .tag {
+  background-color: #6e7498;
+  color: white;
+}
