@@ -7,35 +7,80 @@ export default class Modal extends React.Component {
     this.state = {
       open: true,
       mobile: true,
-      otp: false
+      otp: false,
+      mobileData: 0,
+      otpData: 0,
+      loading: false
     };
   }
 
-  onKeyPress = e => {
+  componentWillReceiveProps(nextProps) {
+    if (this.props.mobileRegister !== nextProps.mobileRegister) {
+      this.updateLoadingState();
+      this.updatemobileState();
+      this.updateotpState();
+    } else if (this.props.otpVerify !== nextProps.otpVerify) {
+    }
+  }
+
+  onKeyPressOtp = e => {
     let keyPressed = e.key;
     let value = e.target.value;
     console.log(value.length);
     if (!/[0-9]/.test(keyPressed) || value.length !== 0) e.preventDefault();
-
-    // console.log("onKeyPress", e.target.value);
+    else {
+      this.setState({
+        otpData: `${this.state.otpData}${e.target.value}`
+      });
+    }
   };
+
   updateOpenState = () => {
     this.setState({
       open: !this.state.open
     });
   };
 
+  updatemobileState = () => {
+    this.setState({
+      mobile: !this.state.mobile
+    });
+  };
+
+  updateotpState = () => {
+    this.setState({
+      otp: !this.state.otp
+    });
+  };
+
+  updateLoadingState = () => {
+    this.setState({
+      loading: !this.state.loading
+    });
+  };
+
   onKeyPressMobile = e => {
     let keyPressed = e.key;
-    let value = e.target.value;
     if (!/[0-9]/.test(keyPressed)) e.preventDefault();
     else {
-      console.log(value.length);
-      console.log(keyPressed);
+      this.setState({
+        mobileData: e.target.value
+      });
+    }
+  };
+
+  onClickApi = () => {
+    if (this.state.mobile) {
+      this.updateLoadingState();
+      const mobile = `91${this.state.mobileData}`;
+      this.props.postMobileRegister(mobile);
+    } else {
     }
   };
 
   render() {
+    console.log("Render");
+    console.log(this.props);
     return (
       <div class={this.state.open ? "modal is-active" : "modal"}>
         <div class="modal-background" />
@@ -49,7 +94,9 @@ export default class Modal extends React.Component {
             />
           </header>
           <section class="modal-card-body">
-            <p>{this.props.text}</p>
+            <p>
+              {this.state.mobile ? this.props.mobileText : this.props.otpText}
+            </p>
             {this.state.mobile ? (
               <div class="field">
                 <div class="field">
@@ -78,8 +125,7 @@ export default class Modal extends React.Component {
                           class="input is-large"
                           type="text"
                           placeholder="0"
-                          onChange={this.onChange}
-                          onKeyPress={this.onKeyPress}
+                          onKeyPress={this.onKeyPressOtp}
                         />
                       </div>
                     </div>
@@ -92,8 +138,7 @@ export default class Modal extends React.Component {
                           class="input is-large"
                           type="text"
                           placeholder="0"
-                          onChange={this.onChange}
-                          onKeyPress={this.onKeyPress}
+                          onKeyPress={this.onKeyPressOtp}
                         />
                       </div>
                     </div>
@@ -106,8 +151,7 @@ export default class Modal extends React.Component {
                           class="input is-large"
                           type="text"
                           placeholder="0"
-                          onChange={this.onChange}
-                          onKeyPress={this.onKeyPress}
+                          onKeyPress={this.onKeyPressOtp}
                         />
                       </div>
                     </div>
@@ -120,8 +164,7 @@ export default class Modal extends React.Component {
                           class="input is-large"
                           type="text"
                           placeholder="0"
-                          onChange={this.onChange}
-                          onKeyPress={this.onKeyPress}
+                          onKeyPress={this.onKeyPressOtp}
                         />
                       </div>
                     </div>
@@ -131,7 +174,17 @@ export default class Modal extends React.Component {
             ) : null}
           </section>
           <footer class="modal-card-foot">
-            <button class="button is-medium">Sumbit</button>
+            <button
+              class={
+                this.state.loading
+                  ? "button is-medium is-loading"
+                  : "button is-medium"
+              }
+              // disabled={this.state.loading ? true : false}
+              onClick={() => this.onClickApi()}
+            >
+              Sumbit
+            </button>
           </footer>
         </div>
       </div>

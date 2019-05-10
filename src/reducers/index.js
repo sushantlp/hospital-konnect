@@ -10,6 +10,7 @@ import { categoryFeature } from "./category-feature-reducer";
 import { sideBarList } from "./side-bar-reducer";
 import { seoUrlList } from "./seo-url-reducer";
 import { mobileRegister } from "./mobile-register-reducer";
+import { otpVerify } from "./otp-verify-reducer";
 
 export default combineReducers({
   cityLocality,
@@ -22,5 +23,6 @@ export default combineReducers({
   filterList,
   sideBarList,
   seoUrlList,
-  mobileRegister
+  mobileRegister,
+  otpVerify
 });

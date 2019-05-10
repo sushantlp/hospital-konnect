@@ -406,7 +406,14 @@ export default class CardList extends React.Component {
         </div>
 
         {this.state.open ? (
-          <Modal text="Enter your phone number (required)" />
+          <Modal
+            mobileText="Enter your phone number (required)"
+            otpText="Enter your otp (required)"
+            postMobileRegister={this.props.postMobileRegister}
+            mobileRegister={this.props.mobileRegister}
+            postOtpVerify={this.props.postOtpVerify}
+            otpVerify={this.props.otpVerify}
+          />
         ) : null}
 
         {this.state.lightBox && (

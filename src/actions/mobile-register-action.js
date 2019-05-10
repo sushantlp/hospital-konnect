@@ -4,7 +4,7 @@ export const actionType = {
   mobileRegister: "MOBILE_REGISTER"
 };
 
-export function getMobileRegister(mobile) {
+export function postMobileRegister(mobile) {
   return dispatch => {
     api
       .mobileRegisterApi(mobile)

@@ -78,6 +78,10 @@ export default class ParentList extends React.Component {
             parentProps={this.props}
             parentState={this.state}
             loadMoreDataApiCall={this.loadMoreDataApiCall}
+            postMobileRegister={this.props.postMobileRegister}
+            mobileRegister={this.props.mobileRegister}
+            postOtpVerify={this.props.postOtpVerify}
+            otpVerify={this.props.otpVerify}
           />
         ) : null}
         {this.state.category === 2 ? (

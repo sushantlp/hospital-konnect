@@ -18,7 +18,7 @@ const CardDetail = props => {
   let emptyRating = [];
   let topRating = 5;
   let halfRating = undefined;
-  let logo = object.p_logo;
+  let logo = object.p_image_thumb;
 
   const rating = object.p_rating + "";
   const ratingSplit = rating.split(".");

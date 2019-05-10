@@ -34,6 +34,10 @@ export default class Index extends React.Component {
                 parentProps={this.props.parentProps}
                 parentState={this.props.parentState}
                 loadMoreDataApiCall={this.props.loadMoreDataApiCall}
+                postMobileRegister={this.props.postMobileRegister}
+                mobileRegister={this.props.mobileRegister}
+                postOtpVerify={this.props.postOtpVerify}
+                otpVerify={this.props.otpVerify}
               />
             </div>
             <div class="column is-3">

@@ -20,7 +20,7 @@ const Seo = props => {
             <ul className="menu-list">
               {obj.list.map((obj, key) => {
                 return (
-                  <li>
+                  <li key={key}>
                     <a href={`${constant.baseUrl}${obj.url}`} target="_blank">
                       {obj.label}
                     </a>

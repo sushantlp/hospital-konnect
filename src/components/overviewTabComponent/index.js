@@ -147,7 +147,8 @@ const overviewTab = props => {
       <p class="subtitle is-4" style={{ marginBottom: "0.2em" }}>
         Detail
       </p>
-      <p
+
+      <div
         class="subtitle is-6 has-text-justified"
         style={{ whiteSpace: "pre-line" }}
       >
@@ -160,7 +161,7 @@ const overviewTab = props => {
         >
           {object.p_full_desc}
         </MoreAndLess>
-      </p>
+      </div>
 
       {object.p_cat === 1 ? (
         <div style={{ marginBottom: "1em" }}>
