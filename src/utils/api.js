@@ -165,5 +165,24 @@ export default {
         })
         .catch(error => console.log(error));
     });
+  },
+
+  mobileRegisterApi: mobile => {
+    return new Promise((resolve, reject) => {
+      fetch(
+        host +
+          "api/v1/web/signin?" +
+          getQueryString({
+            mobile: mobile
+          })
+      )
+        .then(response => {
+          response
+            .json()
+            .then(mobileRegister => resolve(mobileRegister))
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    });
   }
 };

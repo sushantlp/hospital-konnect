@@ -77,19 +77,29 @@ export default class Footer extends React.Component {
                     <p class="menu-label"> Company </p>
                     <ul class="menu-list">
                       <li>
-                        <a href="/">About Hospital Konnect</a>
+                        <a href="/" target="_blank">
+                          About Hospital Konnect
+                        </a>
                       </li>
                       <li>
-                        <a href="/">Terms &amp; Conditions</a>
+                        <a href="/terms" target="_blank">
+                          Terms &amp; Conditions
+                        </a>
                       </li>
                       <li>
-                        <a href="/">Privacy Policy</a>
+                        <a href="/privacy" target="_blank">
+                          Privacy Policy
+                        </a>
                       </li>
                       <li>
-                        <a href="/">Contact Us</a>
+                        <a href="/" target="_blank">
+                          Contact Us
+                        </a>
                       </li>
                       <li>
-                        <a href="/">FAQ's</a>
+                        <a href="/faq" target="_blank">
+                          FAQ's
+                        </a>
                       </li>
                     </ul>
                   </div>

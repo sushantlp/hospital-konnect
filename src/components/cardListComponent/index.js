@@ -406,10 +406,7 @@ export default class CardList extends React.Component {
         </div>
 
         {this.state.open ? (
-          <Modal
-            open={this.state.open}
-            updateOpenState={this.updateOpenState}
-          />
+          <Modal text="Enter your phone number (required)" />
         ) : null}
 
         {this.state.lightBox && (

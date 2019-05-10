@@ -9,9 +9,9 @@ import "./static/css/root.css";
 import Landing from "./containers/index-container";
 import CategoryList from "./containers/category-list-container";
 import Feature from "./containers/feature-container";
-import Faq from "./components/faqComponent/faq";
-import Privacy from "./components/privacyComponent/privacy";
-import Term from "./components/termComponent/term";
+import Faq from "./components/faqComponent";
+import Privacy from "./components/privacyComponent";
+import Term from "./components/termComponent";
 import Profile from "./components/profileFillComponent";
 
 const Root = ({ store }) => (

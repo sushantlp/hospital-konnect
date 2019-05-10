@@ -15,18 +15,9 @@
   height: 3rem;
 }
 
-/* .card-list .card-content {
-  max-width: max-content;
+.box-card-list .box {
+  background-color: rgba(240, 241, 245, 1);
 }
-
-.card-footer a {
-  color: rgb(38, 56, 104);
-} */
-
-/* .fees {
-  margin-left: 0.5em;
-  color: #363636;
-} */
 
 .card-footer .button {
   border-color: white;
