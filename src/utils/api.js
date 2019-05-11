@@ -184,5 +184,25 @@ export default {
         })
         .catch(error => console.log(error));
     });
+  },
+
+  otpVerifyApi: (mobile, otp) => {
+    return new Promise((resolve, reject) => {
+      fetch(
+        host +
+          "api/v1/web/verify/otp?" +
+          getQueryString({
+            mobile: mobile,
+            otp: otp
+          })
+      )
+        .then(response => {
+          response
+            .json()
+            .then(otpVerify => resolve(otpVerify))
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    });
   }
 };

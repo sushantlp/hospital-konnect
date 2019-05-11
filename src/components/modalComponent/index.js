@@ -9,30 +9,42 @@ export default class Modal extends React.Component {
       mobile: true,
       otp: false,
       mobileData: 0,
-      otpData: 0,
-      loading: false
+      otpInput1: -1,
+      otpInput2: -1,
+      otpInput3: -1,
+      otpInput4: -1,
+      loading: false,
+      errorStatus: false,
+      errorMsg: ""
     };
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.mobileRegister !== nextProps.mobileRegister) {
-      this.updateLoadingState();
-      this.updatemobileState();
-      this.updateotpState();
+      if (nextProps.mobileRegister.status === "SUCCESS") {
+        this.updateLoadingState();
+        this.updatemobileState();
+        this.updateotpState();
+      } else if (nextProps.mobileRegister.status === "FAIL") {
+        this.updateLoadingState();
+        this.updateErrorStatusState();
+        this.updateErrorMsgState(nextProps.mobileRegister.msg);
+      }
     } else if (this.props.otpVerify !== nextProps.otpVerify) {
+      console.log(nextProps.otpVerify);
     }
   }
 
-  onKeyPressOtp = e => {
-    let keyPressed = e.key;
-    let value = e.target.value;
-    console.log(value.length);
-    if (!/[0-9]/.test(keyPressed) || value.length !== 0) e.preventDefault();
-    else {
-      this.setState({
-        otpData: `${this.state.otpData}${e.target.value}`
-      });
-    }
+  updateErrorStatusState = () => {
+    this.setState({
+      errorStatus: !this.state.errorStatus
+    });
+  };
+
+  updateErrorMsgState = errorMsg => {
+    this.setState({
+      errorMsg: errorMsg
+    });
   };
 
   updateOpenState = () => {
@@ -62,25 +74,80 @@ export default class Modal extends React.Component {
   onKeyPressMobile = e => {
     let keyPressed = e.key;
     if (!/[0-9]/.test(keyPressed)) e.preventDefault();
-    else {
+  };
+
+  onChangeMobile = e => {
+    if (e.target.value === "")
+      this.setState({
+        mobileData: 0
+      });
+    else
       this.setState({
         mobileData: e.target.value
       });
+  };
+
+  onKeyPressOtp = e => {
+    let keyPressed = e.key;
+    let value = e.target.value;
+    if (!/[0-9]/.test(keyPressed) || value.length !== 0) e.preventDefault();
+  };
+
+  onChangeOtp = (e, position) => {
+    if (position === 1) {
+      if (e.target.value === "")
+        this.setState({
+          otpInput1: -1
+        });
+      else
+        this.setState({
+          otpInput1: e.target.value
+        });
+    } else if (position === 2) {
+      if (e.target.value === "")
+        this.setState({
+          otpInput2: -1
+        });
+      else
+        this.setState({
+          otpInput2: e.target.value
+        });
+    } else if (position === 3) {
+      if (e.target.value === "")
+        this.setState({
+          otpInput3: -1
+        });
+      else
+        this.setState({
+          otpInput3: e.target.value
+        });
+    } else {
+      if (e.target.value === "")
+        this.setState({
+          otpInput4: -1
+        });
+      else
+        this.setState({
+          otpInput4: e.target.value
+        });
     }
   };
 
   onClickApi = () => {
     if (this.state.mobile) {
       this.updateLoadingState();
-      const mobile = `91${this.state.mobileData}`;
-      this.props.postMobileRegister(mobile);
+      this.props.postMobileRegister(`91${this.state.mobileData}`);
     } else {
+      this.props.postOtpVerify(
+        `91${this.state.mobileData}`,
+        `${this.state.otpInput1}${this.state.otpInput2}${this.state.otpInput3}${
+          this.state.otpInput4
+        }`
+      );
     }
   };
 
   render() {
-    console.log("Render");
-    console.log(this.props);
     return (
       <div class={this.state.open ? "modal is-active" : "modal"}>
         <div class="modal-background" />
@@ -99,26 +166,28 @@ export default class Modal extends React.Component {
             </p>
             {this.state.mobile ? (
               <div class="field">
-                <div class="field">
-                  <div class="control has-icons-left has-icons-right">
-                    <input
-                      class="input is-medium"
-                      type="text"
-                      placeholder="Mobile"
-                      onKeyPress={this.onKeyPressMobile}
-                    />
-                    <span class="icon is-small is-left">
-                      <img src="https://img.icons8.com/wired/25/000000/touchscreen-smartphone.png" />
-                    </span>
-                  </div>
+                <div class="control has-icons-left has-icons-right">
+                  <input
+                    class="input is-medium"
+                    type="text"
+                    placeholder="Mobile"
+                    onKeyPress={this.onKeyPressMobile}
+                    onChange={this.onChangeMobile}
+                  />
+                  <span class="icon is-small is-left">
+                    <img src="https://img.icons8.com/wired/25/000000/touchscreen-smartphone.png" />
+                  </span>
                 </div>
+                {this.state.errorStatus ? (
+                  <p class="help is-danger">{this.state.errorMsg}</p>
+                ) : null}
               </div>
             ) : null}
 
             {this.state.otp ? (
               <div className="otp-input">
                 <div class="columns">
-                  <div class="column is-3">
+                  <div class="column">
                     <div class="field">
                       <div class="control">
                         <input
@@ -126,6 +195,7 @@ export default class Modal extends React.Component {
                           type="text"
                           placeholder="0"
                           onKeyPress={this.onKeyPressOtp}
+                          onChange={event => this.onChangeOtp(event, 1)}
                         />
                       </div>
                     </div>
@@ -139,6 +209,7 @@ export default class Modal extends React.Component {
                           type="text"
                           placeholder="0"
                           onKeyPress={this.onKeyPressOtp}
+                          onChange={event => this.onChangeOtp(event, 2)}
                         />
                       </div>
                     </div>
@@ -152,6 +223,7 @@ export default class Modal extends React.Component {
                           type="text"
                           placeholder="0"
                           onKeyPress={this.onKeyPressOtp}
+                          onChange={event => this.onChangeOtp(event, 3)}
                         />
                       </div>
                     </div>
@@ -165,6 +237,7 @@ export default class Modal extends React.Component {
                           type="text"
                           placeholder="0"
                           onKeyPress={this.onKeyPressOtp}
+                          onChange={event => this.onChangeOtp(event, 4)}
                         />
                       </div>
                     </div>
@@ -174,17 +247,58 @@ export default class Modal extends React.Component {
             ) : null}
           </section>
           <footer class="modal-card-foot">
-            <button
-              class={
-                this.state.loading
-                  ? "button is-medium is-loading"
-                  : "button is-medium"
-              }
-              // disabled={this.state.loading ? true : false}
-              onClick={() => this.onClickApi()}
-            >
-              Sumbit
-            </button>
+            {this.state.mobile ? (
+              this.state.mobileData === 0 ? (
+                <button
+                  class={
+                    this.state.loading
+                      ? "button is-medium is-loading"
+                      : "button is-medium"
+                  }
+                  onClick={() => this.onClickApi()}
+                  disabled
+                >
+                  Sumbit
+                </button>
+              ) : (
+                <button
+                  class={
+                    this.state.loading
+                      ? "button is-medium is-loading"
+                      : "button is-medium"
+                  }
+                  onClick={() => this.onClickApi()}
+                >
+                  Sumbit
+                </button>
+              )
+            ) : this.state.otpInput1 === -1 ||
+              this.state.otpInput2 === -1 ||
+              this.state.otpInput3 === -1 ||
+              this.state.otpInput4 === -1 ? (
+              <button
+                class={
+                  this.state.loading
+                    ? "button is-medium is-loading"
+                    : "button is-medium"
+                }
+                onClick={() => this.onClickApi()}
+                disabled
+              >
+                Sumbit
+              </button>
+            ) : (
+              <button
+                class={
+                  this.state.loading
+                    ? "button is-medium is-loading"
+                    : "button is-medium"
+                }
+                onClick={() => this.onClickApi()}
+              >
+                Sumbit
+              </button>
+            )}
           </footer>
         </div>
       </div>

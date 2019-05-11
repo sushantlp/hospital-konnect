@@ -17,3 +17,8 @@
   background-color: #6e7498;
   color: white;
 }
+
+.modal-card-foot button[disabled] {
+  background-color: #6e7498;
+  color: white;
+}
