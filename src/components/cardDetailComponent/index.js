@@ -1,6 +1,6 @@
 import React from "react";
 import _ from "lodash";
-import Modal from "../modalComponent";
+import Modal from "../authModalComponent";
 import Spinner from "../spinnerComponent";
 import Lightbox from "lightbox-react";
 import { Icon } from "semantic-ui-react/dist/commonjs";

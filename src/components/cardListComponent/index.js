@@ -1,7 +1,7 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import _ from "lodash";
-import Modal from "../modalComponent";
+import AuthModal from "../authModalComponent";
 import Lightbox from "lightbox-react";
 import Spinner from "../spinnerComponent";
 import { Icon } from "semantic-ui-react/dist/commonjs";
@@ -16,7 +16,8 @@ export default class CardList extends React.Component {
       open: false,
       photoIndex: 0,
       lightBox: false,
-      bundleImage: []
+      bundleImage: [],
+      partnerId: 0
     };
   }
 
@@ -331,11 +332,18 @@ export default class CardList extends React.Component {
     });
   };
 
+  updatePartnerState = partnerId => {
+    this.setState({
+      partnerId: partnerId
+    });
+  };
+
   onClickCardList = (object, flag) => {
     let categoryName = "";
 
     if (object.p_cat === 1 && flag) {
       this.updateOpenState();
+      this.updatePartnerState(object.p_id);
     } else {
       if (object.p_cat === 1) categoryName = "hospital";
       else if (object.p_cat === 2) categoryName = "ambulance";
@@ -406,13 +414,14 @@ export default class CardList extends React.Component {
         </div>
 
         {this.state.open ? (
-          <Modal
+          <AuthModal
             mobileText="Enter your phone number (required)"
             otpText="Enter your otp (required)"
             postMobileRegister={this.props.postMobileRegister}
             mobileRegister={this.props.mobileRegister}
             postOtpVerify={this.props.postOtpVerify}
             otpVerify={this.props.otpVerify}
+            partnerId={this.state.partnerId}
           />
         ) : null}
 

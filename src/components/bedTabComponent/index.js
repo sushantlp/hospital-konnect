@@ -1,6 +1,6 @@
 import React from "react";
 import _ from "lodash";
-import Modal from "../modalComponent";
+import Modal from "../authModalComponent";
 import { Popup } from "semantic-ui-react";
 
 import "./bed-tab.css";

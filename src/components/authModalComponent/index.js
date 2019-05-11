@@ -1,7 +1,9 @@
 import React from "react";
-import "./modal.css";
+import "./auth-modal.css";
 
-export default class Modal extends React.Component {
+import { Auth, Auth_Data } from "../../utils/constant";
+
+export default class AuthModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,17 +29,32 @@ export default class Modal extends React.Component {
         this.updateotpState();
       } else if (nextProps.mobileRegister.status === "FAIL") {
         this.updateLoadingState();
-        this.updateErrorStatusState();
+        this.updateErrorStatusState(true);
         this.updateErrorMsgState(nextProps.mobileRegister.msg);
       }
     } else if (this.props.otpVerify !== nextProps.otpVerify) {
-      console.log(nextProps.otpVerify);
+      if (nextProps.otpVerify.status === "SUCCESS") {
+        this.updateLoadingState();
+        console.log(this.props.partnerId);
+        const data = {
+          type: "APPOINTMENT",
+          partner_id: this.props.partnerId,
+          customer_id: nextProps.otpVerify.otpVerify.c_id,
+          role: nextProps.otpVerify.otpVerify.role
+        };
+        sessionStorage.setItem("Auth", true);
+        sessionStorage.setItem("Auth_Data", JSON.stringify(data));
+      } else if (nextProps.otpVerify.status === "FAIL") {
+        this.updateLoadingState();
+        this.updateErrorStatusState(true);
+        this.updateErrorMsgState(nextProps.otpVerify.msg);
+      }
     }
   }
 
-  updateErrorStatusState = () => {
+  updateErrorStatusState = bool => {
     this.setState({
-      errorStatus: !this.state.errorStatus
+      errorStatus: bool
     });
   };
 
@@ -138,6 +155,7 @@ export default class Modal extends React.Component {
       this.updateLoadingState();
       this.props.postMobileRegister(`91${this.state.mobileData}`);
     } else {
+      this.updateLoadingState();
       this.props.postOtpVerify(
         `91${this.state.mobileData}`,
         `${this.state.otpInput1}${this.state.otpInput2}${this.state.otpInput3}${
@@ -243,6 +261,9 @@ export default class Modal extends React.Component {
                     </div>
                   </div>
                 </div>
+                {this.state.errorStatus ? (
+                  <p class="help is-danger">{this.state.errorMsg}</p>
+                ) : null}
               </div>
             ) : null}
           </section>

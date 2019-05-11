@@ -1,6 +1,6 @@
 import React from "react";
 import _ from "lodash";
-import Modal from "../modalComponent";
+import Modal from "../authModalComponent";
 import { Popup } from "semantic-ui-react";
 import "./ambulance-tab.css";
 
@@ -91,14 +91,14 @@ const drawAmbulance = (
             class="button is-medium"
             title="Disabled button"
             disabled
-            style={{ backgroundColor: "#6e7498", color:"white" }}
+            style={{ backgroundColor: "#6e7498", color: "white" }}
           >
             Book
           </a>
         ) : (
           <a
             class="button is-medium"
-            style={{ backgroundColor: "#6e7498",color:"white" }}
+            style={{ backgroundColor: "#6e7498", color: "white" }}
             onClick={() => props.updateOpenState()}
           >
             Book
