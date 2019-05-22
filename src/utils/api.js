@@ -204,5 +204,88 @@ export default {
         })
         .catch(error => console.log(error));
     });
+  },
+
+  readProfileDetailApi: customerId => {
+    return new Promise((resolve, reject) => {
+      fetch(
+        `${host} 
+          api/v1/web/customers/${customerId}`
+      )
+        .then(response => {
+          response
+            .json()
+            .then(readProfile => resolve(readProfile))
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    });
+  },
+
+  writeProfileDetailApi: (customerId, firstName, lastName, email) => {
+    return new Promise((resolve, reject) => {
+      fetch(
+        `${host} 
+          api/v1/web/update/customers/${customerId}` +
+          getQueryString({
+            fname: firstName,
+            lname: lastName,
+            email: email
+          }),
+        {
+          method: "GET"
+        }
+      )
+        .then(response => {
+          response
+            .json()
+            .then(writeProfile => resolve(writeProfile))
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    });
+  },
+
+  referralBedApi: key => {
+    return new Promise((resolve, reject) => {
+      fetch(
+        `${host} 
+          api/v1/web/apply/referral` +
+          getQueryString({
+            referral_key: key
+          }),
+        {
+          method: "GET"
+        }
+      )
+        .then(response => {
+          response
+            .json()
+            .then(referralBed => resolve(referralBed))
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    });
+  },
+
+  tokenGenerateApi: (username, password, role) => {
+    return new Promise((resolve, reject) => {
+      fetch(
+        `${host} 
+          api/v1/web/token?` +
+          getQueryString({
+            username: username,
+            password: password,
+            role: role
+          })
+      )
+        .then(response => {
+          response
+            .json()
+            .then(tokenGenerate => resolve(tokenGenerate))
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    });
   }
 };

@@ -11,6 +11,8 @@ import { sideBarList } from "./side-bar-reducer";
 import { seoUrlList } from "./seo-url-reducer";
 import { mobileRegister } from "./mobile-register-reducer";
 import { otpVerify } from "./otp-verify-reducer";
+import { readProfile } from "./read-profile-reducer";
+import { writeProfile } from "./write-profile-reducer";
 
 export default combineReducers({
   cityLocality,
@@ -24,5 +26,7 @@ export default combineReducers({
   sideBarList,
   seoUrlList,
   mobileRegister,
-  otpVerify
+  otpVerify,
+  readProfile,
+  writeProfile
 });
