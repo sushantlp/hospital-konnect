@@ -208,10 +208,7 @@ export default {
 
   readProfileDetailApi: customerId => {
     return new Promise((resolve, reject) => {
-      fetch(
-        `${host} 
-          api/v1/web/customers/${customerId}`
-      )
+      fetch(`${host}api/v1/web/customers/${customerId}`)
         .then(response => {
           response
             .json()
@@ -225,8 +222,7 @@ export default {
   writeProfileDetailApi: (customerId, firstName, lastName, email) => {
     return new Promise((resolve, reject) => {
       fetch(
-        `${host} 
-          api/v1/web/update/customers/${customerId}` +
+        `${host}api/v1/web/update/customers/${customerId}` +
           getQueryString({
             fname: firstName,
             lname: lastName,
@@ -249,8 +245,7 @@ export default {
   referralBedApi: key => {
     return new Promise((resolve, reject) => {
       fetch(
-        `${host} 
-          api/v1/web/apply/referral` +
+        `${host}api/v1/web/apply/referral` +
           getQueryString({
             referral_key: key
           }),
@@ -271,8 +266,7 @@ export default {
   tokenGenerateApi: (username, password, role) => {
     return new Promise((resolve, reject) => {
       fetch(
-        `${host} 
-          api/v1/web/token?` +
+        `${host}api/v1/web/token?` +
           getQueryString({
             username: username,
             password: password,

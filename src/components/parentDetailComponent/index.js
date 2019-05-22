@@ -98,6 +98,7 @@ export default class ParentDetail extends React.Component {
                 postOtpVerify={this.props.postOtpVerify}
                 otpVerify={this.props.otpVerify}
                 partner={this.state.partner}
+                history={this.props.history}
               />
               <div class="section">
                 <Tab

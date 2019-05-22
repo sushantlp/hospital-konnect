@@ -422,6 +422,7 @@ export default class CardList extends React.Component {
             postOtpVerify={this.props.postOtpVerify}
             otpVerify={this.props.otpVerify}
             partnerId={this.state.partnerId}
+            history={this.props.parentProps.history}
           />
         ) : null}
 

@@ -252,6 +252,7 @@ const CardDetail = props => {
           postOtpVerify={props.postOtpVerify}
           otpVerify={props.otpVerify}
           partnerId={props.partner}
+          history={props.history}
         />
       ) : null}
 

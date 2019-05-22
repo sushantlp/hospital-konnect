@@ -43,6 +43,8 @@ export default class AuthModal extends React.Component {
         };
         sessionStorage.setItem("AUTH_STATUS", true);
         sessionStorage.setItem("AUTH_DATA", JSON.stringify(data));
+
+        this.props.history.push("/profile/");
       } else if (nextProps.otpVerify.status === "FAIL") {
         this.updateLoadingState();
         this.updateErrorStatusState(true);
