@@ -1,7 +1,7 @@
 import React from "react";
 import "./auth-modal.css";
 
-import { Auth, Auth_Data } from "../../utils/constant";
+// import { Auth, Auth_Data } from "../../utils/constant";
 
 export default class AuthModal extends React.Component {
   constructor(props) {
@@ -35,15 +35,14 @@ export default class AuthModal extends React.Component {
     } else if (this.props.otpVerify !== nextProps.otpVerify) {
       if (nextProps.otpVerify.status === "SUCCESS") {
         this.updateLoadingState();
-        console.log(this.props.partnerId);
         const data = {
           type: "APPOINTMENT",
           partner_id: this.props.partnerId,
           customer_id: nextProps.otpVerify.otpVerify.c_id,
           role: nextProps.otpVerify.otpVerify.role
         };
-        sessionStorage.setItem("Auth", true);
-        sessionStorage.setItem("Auth_Data", JSON.stringify(data));
+        sessionStorage.setItem("AUTH_STATUS", true);
+        sessionStorage.setItem("AUTH_DATA", JSON.stringify(data));
       } else if (nextProps.otpVerify.status === "FAIL") {
         this.updateLoadingState();
         this.updateErrorStatusState(true);

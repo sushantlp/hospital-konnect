@@ -1,6 +1,6 @@
 import React from "react";
 import _ from "lodash";
-import Modal from "../authModalComponent";
+import AuthModal from "../authModalComponent";
 import Spinner from "../spinnerComponent";
 import Lightbox from "lightbox-react";
 import { Icon } from "semantic-ui-react/dist/commonjs";
@@ -242,7 +242,17 @@ const CardDetail = props => {
       </div>
 
       {props.open ? (
-        <Modal open={props.open} updateOpenState={props.updateOpenState} />
+        <AuthModal
+          open={props.open}
+          updateOpenState={props.updateOpenState}
+          mobileText="Enter your phone number (required)"
+          otpText="Enter your otp (required)"
+          postMobileRegister={props.postMobileRegister}
+          mobileRegister={props.mobileRegister}
+          postOtpVerify={props.postOtpVerify}
+          otpVerify={props.otpVerify}
+          partnerId={props.partner}
+        />
       ) : null}
 
       {props.lightBox && (

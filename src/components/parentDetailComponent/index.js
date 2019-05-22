@@ -93,6 +93,11 @@ export default class ParentDetail extends React.Component {
                 intializeImageArray={this.intializeImageArray}
                 movePrevRequest={this.movePrevRequest}
                 moveNextRequest={this.moveNextRequest}
+                postMobileRegister={this.props.postMobileRegister}
+                mobileRegister={this.props.mobileRegister}
+                postOtpVerify={this.props.postOtpVerify}
+                otpVerify={this.props.otpVerify}
+                partner={this.state.partner}
               />
               <div class="section">
                 <Tab
