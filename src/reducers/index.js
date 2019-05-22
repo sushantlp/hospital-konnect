@@ -13,6 +13,8 @@ import { mobileRegister } from "./mobile-register-reducer";
 import { otpVerify } from "./otp-verify-reducer";
 import { readProfile } from "./read-profile-reducer";
 import { writeProfile } from "./write-profile-reducer";
+import { referralBed } from "./referral-bed-reducer";
+import { tokenGenerate } from "./token-generate-reducer";
 
 export default combineReducers({
   cityLocality,
@@ -28,5 +30,7 @@ export default combineReducers({
   mobileRegister,
   otpVerify,
   readProfile,
-  writeProfile
+  writeProfile,
+  referralBed,
+  tokenGenerate
 });
