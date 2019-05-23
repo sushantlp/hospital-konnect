@@ -222,7 +222,7 @@ export default {
   writeProfileDetailApi: (customerId, firstName, lastName, email) => {
     return new Promise((resolve, reject) => {
       fetch(
-        `${host}api/v1/web/update/customers/${customerId}` +
+        `${host}api/v1/web/update/customers/${customerId}?` +
           getQueryString({
             fname: firstName,
             lname: lastName,

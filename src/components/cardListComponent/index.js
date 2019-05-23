@@ -369,7 +369,7 @@ export default class CardList extends React.Component {
 
     if (this.props.parentState.page === 1)
       if (_.isEmpty(this.props.categoryList.categoryList)) {
-        return <Redirect to="/web" />;
+        return <Redirect to="/web/" />;
       }
 
     return (

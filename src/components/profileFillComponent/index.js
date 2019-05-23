@@ -11,19 +11,40 @@ export default class ProfileFill extends React.Component {
       c_email: "",
       c_fname: "",
       c_mobile: "",
-      c_lname: ""
+      c_lname: "",
+      emailError: false,
+      fNameError: false,
+      lNameError: false,
+      customerId: 0,
+      loading: false
     };
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(constant.EMAIL_REG);
     if (this.props.readProfile !== nextProps.readProfile) {
       this.setState({
-        c_email: nextProps.readProfile.readProfile.c_email,
-        c_fname: nextProps.readProfile.readProfile.c_fname,
-        c_lname: nextProps.readProfile.readProfile.c_lname,
+        c_email:
+          nextProps.readProfile.readProfile.c_email === null
+            ? ""
+            : nextProps.readProfile.readProfile.c_email,
+        c_fname:
+          nextProps.readProfile.readProfile.c_fname === null
+            ? ""
+            : nextProps.readProfile.readProfile.c_fname,
+        c_lname:
+          nextProps.readProfile.readProfile.c_lname === null
+            ? ""
+            : nextProps.readProfile.readProfile.c_lname,
         c_mobile: nextProps.readProfile.readProfile.c_mobile
       });
+    } else if (this.props.writeProfile !== nextProps.writeProfile) {
+      const data = {
+        first_name: this.state.c_fname,
+        last_name: this.state.c_lname,
+        email: this.state.c_email,
+        mobile: this.state.c_mobile
+      };
+      sessionStorage.setItem("PROFILE_DATA", JSON.stringify(data));
     }
   }
 
@@ -36,7 +57,90 @@ export default class ProfileFill extends React.Component {
 
     const sessionData = JSON.parse(authData);
     this.props.readProfileDetail(sessionData.customer_id);
+
+    this.setState({
+      customerId: sessionData.customer_id
+    });
   }
+
+  onChangeEmail = e => {
+    if (this.state.emailError)
+      this.setState({
+        emailError: !this.state.emailError
+      });
+
+    if (e.target.value === "")
+      this.setState({
+        c_email: "",
+        emailError: !this.state.emailError
+      });
+    else
+      this.setState({
+        c_email: e.target.value
+      });
+  };
+
+  onChangeFirstName = e => {
+    if (this.state.fNameError)
+      this.setState({
+        fNameError: !this.state.fNameError
+      });
+
+    if (e.target.value === "")
+      this.setState({
+        c_fname: "",
+        fNameError: !this.state.fNameError
+      });
+    else
+      this.setState({
+        c_fname: e.target.value
+      });
+  };
+
+  onChangeLastName = e => {
+    if (this.state.lNameError)
+      this.setState({
+        lNameError: !this.state.lNameError
+      });
+
+    if (e.target.value === "")
+      this.setState({
+        c_lname: "",
+        lNameError: !this.state.lNameError
+      });
+    else
+      this.setState({
+        c_lname: e.target.value
+      });
+  };
+
+  onClickApi = () => {
+    if (
+      this.state.c_fname === "" ||
+      this.state.c_lname === "" ||
+      this.state.c_email === ""
+    ) {
+      if (this.state.c_fname === "")
+        this.setState({
+          fNameError: true
+        });
+      if (this.state.c_lname === "")
+        this.setState({
+          lNameError: true
+        });
+      if (this.state.c_email === "")
+        this.setState({
+          emailError: true
+        });
+    } else {
+      this.props.writeProfileDetail(
+        this.state.customerId,
+        this.state.c_fname,
+        this.state.c_lname,
+        this.state.c_email
+      );
+    }
+  };
 
   render() {
     if (this.props.readProfile.status === "START") return <Spinner />;
@@ -50,7 +154,6 @@ export default class ProfileFill extends React.Component {
     )
       return <Spinner />;
 
-    console.log(this.state.c_fname);
     return (
       <div class="container">
         <div className="header">
@@ -69,6 +172,7 @@ export default class ProfileFill extends React.Component {
                       type="text"
                       placeholder="First Name"
                       value={this.state.c_fname}
+                      onChange={event => this.onChangeFirstName(event)}
                     />
                     <span class="icon is-small is-left">
                       <img src="https://img.icons8.com/ios/25/000000/name.png" />
@@ -78,6 +182,9 @@ export default class ProfileFill extends React.Component {
                   </span> */}
                   </div>
                 </div>
+                {this.state.fNameError ? (
+                  <p class="help is-danger">First name is mandatory</p>
+                ) : null}
               </div>
             </div>
 
@@ -92,12 +199,17 @@ export default class ProfileFill extends React.Component {
                       type="text"
                       placeholder="Last Name"
                       value={this.state.c_lname}
+                      onChange={event => this.onChangeLastName(event)}
                     />
                     <span class="icon is-small is-left">
                       <img src="https://img.icons8.com/ios/25/000000/name.png" />
                     </span>
                   </div>
                 </div>
+
+                {this.state.lNameError ? (
+                  <p class="help is-danger">Last name is mandatory</p>
+                ) : null}
               </div>
             </div>
 
@@ -112,7 +224,6 @@ export default class ProfileFill extends React.Component {
                       type="email"
                       placeholder="Email"
                       value={this.state.c_email}
-                      onKeyPress={this.onKeyPressEmail}
                       onChange={event => this.onChangeEmail(event)}
                     />
                     <span class="icon is-small is-left">
@@ -120,6 +231,9 @@ export default class ProfileFill extends React.Component {
                     </span>
                   </div>
                 </div>
+                {this.state.emailError ? (
+                  <p class="help is-danger">Email is not valid</p>
+                ) : null}
               </div>
             </div>
 
@@ -148,7 +262,12 @@ export default class ProfileFill extends React.Component {
 
             <div class="columns">
               <div class="column is-6 is-offset-3">
-                <button class="button is-large is-fullwidth">NEXT</button>
+                <button
+                  class="button is-large is-fullwidth"
+                  onClick={() => this.onClickApi()}
+                >
+                  NEXT
+                </button>
               </div>
             </div>
           </section>
