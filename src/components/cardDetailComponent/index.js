@@ -229,7 +229,7 @@ const CardDetail = props => {
             <div class="card-footer-item">
               <a
                 class="button is-medium"
-                onClick={() => props.updateOpenState()}
+                onClick={() => props.updateOpenState(true)}
               >
                 <span class="icon">
                   <img src="https://img.icons8.com/cotton/25/000000/calendar.png" />
@@ -241,9 +241,9 @@ const CardDetail = props => {
         ) : null}
       </div>
 
-      {props.open ? (
+      {props.authOpen ? (
         <AuthModal
-          open={props.open}
+          authOpen={props.authOpen}
           updateOpenState={props.updateOpenState}
           mobileText="Enter your phone number (required)"
           otpText="Enter your otp (required)"
@@ -251,7 +251,8 @@ const CardDetail = props => {
           mobileRegister={props.mobileRegister}
           postOtpVerify={props.postOtpVerify}
           otpVerify={props.otpVerify}
-          partnerId={props.partner}
+          type="APPOINTMENT"
+          selectedData={object}
           history={props.history}
         />
       ) : null}

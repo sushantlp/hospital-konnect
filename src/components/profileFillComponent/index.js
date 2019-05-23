@@ -56,6 +56,7 @@ export default class ProfileFill extends React.Component {
       this.props.history.push("/web/");
 
     const sessionData = JSON.parse(authData);
+    console.log(sessionData);
     this.props.readProfileDetail(sessionData.customer_id);
 
     this.setState({
@@ -132,7 +133,15 @@ export default class ProfileFill extends React.Component {
         this.setState({
           emailError: true
         });
+    } else if (!constant.EMAIL_REG.test(this.state.c_email)) {
+      this.setState({
+        emailError: true
+      });
     } else {
+      this.setState({
+        loading: !this.state.loading
+      });
+
       this.props.writeProfileDetail(
         this.state.customerId,
         this.state.c_fname,
@@ -152,127 +161,131 @@ export default class ProfileFill extends React.Component {
       this.props.readProfile.readProfile.c_mobile !== null &&
       this.props.readProfile.readProfile.c_lname !== null
     )
-      return <Spinner />;
+      // return <Spinner />;
 
-    return (
-      <div class="container">
-        <div className="header">
-          <h1>HOSPITAL KONNECT </h1>
-          <p>JUST KONNECT </p>
-        </div>
+      return (
+        <div class="container">
+          <div className="header">
+            <h1>HOSPITAL KONNECT </h1>
+            <p>JUST KONNECT </p>
+          </div>
 
-        <div className="form">
-          <section class="section">
-            <div class="columns">
-              <div class="column is-6 is-offset-3">
-                <div class="field">
-                  <div class="control has-icons-left has-icons-right">
-                    <input
-                      class="input is-large"
-                      type="text"
-                      placeholder="First Name"
-                      value={this.state.c_fname}
-                      onChange={event => this.onChangeFirstName(event)}
-                    />
-                    <span class="icon is-small is-left">
-                      <img src="https://img.icons8.com/ios/25/000000/name.png" />
-                    </span>
-                    {/* <span class="icon is-small is-right">
+          <div className="form">
+            <section class="section">
+              <div class="columns">
+                <div class="column is-6 is-offset-3">
+                  <div class="field">
+                    <div class="control has-icons-left has-icons-right">
+                      <input
+                        class="input is-large"
+                        type="text"
+                        placeholder="First Name"
+                        value={this.state.c_fname}
+                        onChange={event => this.onChangeFirstName(event)}
+                      />
+                      <span class="icon is-small is-left">
+                        <img src="https://img.icons8.com/ios/25/000000/name.png" />
+                      </span>
+                      {/* <span class="icon is-small is-right">
                     <i class="fas fa-check fa-xs" />
                   </span> */}
+                    </div>
                   </div>
-                </div>
-                {this.state.fNameError ? (
-                  <p class="help is-danger">First name is mandatory</p>
-                ) : null}
-              </div>
-            </div>
-
-            <hr className="spacer is-0" />
-
-            <div class="columns">
-              <div class="column is-6 is-offset-3">
-                <div class="field">
-                  <div class="control has-icons-left has-icons-right">
-                    <input
-                      class="input is-large"
-                      type="text"
-                      placeholder="Last Name"
-                      value={this.state.c_lname}
-                      onChange={event => this.onChangeLastName(event)}
-                    />
-                    <span class="icon is-small is-left">
-                      <img src="https://img.icons8.com/ios/25/000000/name.png" />
-                    </span>
-                  </div>
-                </div>
-
-                {this.state.lNameError ? (
-                  <p class="help is-danger">Last name is mandatory</p>
-                ) : null}
-              </div>
-            </div>
-
-            <hr className="spacer is-0" />
-
-            <div class="columns">
-              <div class="column is-6 is-offset-3">
-                <div class="field">
-                  <div class="control has-icons-left has-icons-right">
-                    <input
-                      class="input is-large"
-                      type="email"
-                      placeholder="Email"
-                      value={this.state.c_email}
-                      onChange={event => this.onChangeEmail(event)}
-                    />
-                    <span class="icon is-small is-left">
-                      <img src="https://img.icons8.com/ios/25/000000/secured-letter.png" />
-                    </span>
-                  </div>
-                </div>
-                {this.state.emailError ? (
-                  <p class="help is-danger">Email is not valid</p>
-                ) : null}
-              </div>
-            </div>
-
-            <hr className="spacer is-0" />
-
-            <div class="columns">
-              <div class="column is-6 is-offset-3">
-                <div class="field">
-                  <div class="control has-icons-left has-icons-right">
-                    <input
-                      class="input is-large"
-                      type="text"
-                      placeholder="Mobile"
-                      disabled
-                      value={this.state.c_mobile}
-                    />
-                    <span class="icon is-small is-left">
-                      <img src="https://img.icons8.com/wired/25/000000/touchscreen-smartphone.png" />
-                    </span>
-                  </div>
+                  {this.state.fNameError ? (
+                    <p class="help is-danger">First name is mandatory</p>
+                  ) : null}
                 </div>
               </div>
-            </div>
 
-            <hr className="spacer is-2" />
+              <hr className="spacer is-0" />
 
-            <div class="columns">
-              <div class="column is-6 is-offset-3">
-                <button
-                  class="button is-large is-fullwidth"
-                  onClick={() => this.onClickApi()}
-                >
-                  NEXT
-                </button>
+              <div class="columns">
+                <div class="column is-6 is-offset-3">
+                  <div class="field">
+                    <div class="control has-icons-left has-icons-right">
+                      <input
+                        class="input is-large"
+                        type="text"
+                        placeholder="Last Name"
+                        value={this.state.c_lname}
+                        onChange={event => this.onChangeLastName(event)}
+                      />
+                      <span class="icon is-small is-left">
+                        <img src="https://img.icons8.com/ios/25/000000/name.png" />
+                      </span>
+                    </div>
+                  </div>
+
+                  {this.state.lNameError ? (
+                    <p class="help is-danger">Last name is mandatory</p>
+                  ) : null}
+                </div>
               </div>
-            </div>
-          </section>
+
+              <hr className="spacer is-0" />
+
+              <div class="columns">
+                <div class="column is-6 is-offset-3">
+                  <div class="field">
+                    <div class="control has-icons-left has-icons-right">
+                      <input
+                        class="input is-large"
+                        type="email"
+                        placeholder="Email"
+                        value={this.state.c_email}
+                        onChange={event => this.onChangeEmail(event)}
+                      />
+                      <span class="icon is-small is-left">
+                        <img src="https://img.icons8.com/ios/25/000000/secured-letter.png" />
+                      </span>
+                    </div>
+                  </div>
+                  {this.state.emailError ? (
+                    <p class="help is-danger">Email is not valid</p>
+                  ) : null}
+                </div>
+              </div>
+
+              <hr className="spacer is-0" />
+
+              <div class="columns">
+                <div class="column is-6 is-offset-3">
+                  <div class="field">
+                    <div class="control has-icons-left has-icons-right">
+                      <input
+                        class="input is-large"
+                        type="text"
+                        placeholder="Mobile"
+                        disabled
+                        value={this.state.c_mobile}
+                      />
+                      <span class="icon is-small is-left">
+                        <img src="https://img.icons8.com/wired/25/000000/touchscreen-smartphone.png" />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <hr className="spacer is-2" />
+
+              <div class="columns">
+                <div class="column is-6 is-offset-3">
+                  <button
+                    class={
+                      this.state.loading
+                        ? "button is-large is-fullwidth is-loading"
+                        : "button is-large is-fullwidth"
+                    }
+                    onClick={() => this.onClickApi()}
+                  >
+                    NEXT
+                  </button>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
-      </div>
-    );
+      );
   }
 }

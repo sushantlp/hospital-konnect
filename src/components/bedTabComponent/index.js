@@ -1,6 +1,6 @@
 import React from "react";
 import _ from "lodash";
-import Modal from "../authModalComponent";
+import BedModal from "../bedModalComponent";
 import { Popup } from "semantic-ui-react";
 
 import "./bed-tab.css";
@@ -89,7 +89,7 @@ const drawBed = (
           <a
             class="button is-medium"
             style={{ backgroundColor: "#6e7498", color: "white" }}
-            onClick={() => props.updateOpenState()}
+            onClick={() => props.updateBedOpenState()}
           >
             Book
           </a>
@@ -161,9 +161,7 @@ const bedTab = props => {
   return (
     <React.Fragment>
       {loopBed(json, props.categoryFeature.categoryFeature.p_cat, props)}
-      {props.open ? (
-        <Modal open={props.open} updateOpenState={props.updateOpenState} />
-      ) : null}
+      {props.open ? <BedModal /> : null}
     </React.Fragment>
   );
 };

@@ -19,7 +19,9 @@ export default class ParentDetail extends React.Component {
         partner: 0,
         category: 0,
         flag: "true",
-        open: false,
+
+        authOpen: false,
+        bedOpen: false,
         photoIndex: 0,
         lightBox: false,
         bundleImage: []
@@ -33,7 +35,8 @@ export default class ParentDetail extends React.Component {
         partner: parseInt(partnerArray[1], 10),
         category: parseInt(categoryArray[1], 10),
         flag: flagArray[1],
-        open: false,
+
+        authOpen: false,
         photoIndex: 0,
         lightBox: false,
         bundleImage: []
@@ -47,9 +50,16 @@ export default class ParentDetail extends React.Component {
     this.props.getSeoUrl(this.state.partner);
   }
 
-  updateOpenState = () => {
+  updateOpenState = bool => {
+    console.log("Open fuckers");
     this.setState({
-      open: !this.state.open
+      authOpen: bool
+    });
+  };
+
+  updateBedOpenState = () => {
+    this.setState({
+      bedOpen: !this.state.bedOpen
     });
   };
 
@@ -85,7 +95,7 @@ export default class ParentDetail extends React.Component {
             <div class="column is-9">
               <Card
                 categoryFeature={this.props.categoryFeature}
-                open={this.state.open}
+                authOpen={this.state.authOpen}
                 photoIndex={this.state.photoIndex}
                 lightBox={this.state.lightBox}
                 bundleImage={this.state.bundleImage}
@@ -97,7 +107,6 @@ export default class ParentDetail extends React.Component {
                 mobileRegister={this.props.mobileRegister}
                 postOtpVerify={this.props.postOtpVerify}
                 otpVerify={this.props.otpVerify}
-                partner={this.state.partner}
                 history={this.props.history}
               />
               <div class="section">
@@ -107,6 +116,8 @@ export default class ParentDetail extends React.Component {
                   category={this.state.category}
                   open={this.state.open}
                   updateOpenState={this.updateOpenState}
+                  bedOpen={this.state.bedOpen}
+                  updateBedOpenState={this.updateBedOpenState}
                 />
               </div>
             </div>

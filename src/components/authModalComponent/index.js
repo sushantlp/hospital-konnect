@@ -7,7 +7,6 @@ export default class AuthModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: true,
       mobile: true,
       otp: false,
       mobileData: 0,
@@ -36,11 +35,21 @@ export default class AuthModal extends React.Component {
       if (nextProps.otpVerify.status === "SUCCESS") {
         this.updateLoadingState();
         const data = {
-          type: "APPOINTMENT",
-          partner_id: this.props.partnerId,
+          type: this.props.type,
           customer_id: nextProps.otpVerify.otpVerify.c_id,
           role: nextProps.otpVerify.otpVerify.role
         };
+
+        if (this.props.type !== "APPOINTMENT")
+          sessionStorage.setItem(
+            "ALL_DATA",
+            JSON.stringify(this.props.selectedData)
+          );
+
+        sessionStorage.setItem(
+          "PACKAGE_DATA",
+          JSON.stringify(this.props.selectedPackage)
+        );
         sessionStorage.setItem("AUTH_STATUS", true);
         sessionStorage.setItem("AUTH_DATA", JSON.stringify(data));
 
@@ -62,12 +71,6 @@ export default class AuthModal extends React.Component {
   updateErrorMsgState = errorMsg => {
     this.setState({
       errorMsg: errorMsg
-    });
-  };
-
-  updateOpenState = () => {
-    this.setState({
-      open: !this.state.open
     });
   };
 
@@ -167,8 +170,9 @@ export default class AuthModal extends React.Component {
   };
 
   render() {
+    console.log("Upper");
     return (
-      <div class={this.state.open ? "modal is-active" : "modal"}>
+      <div class={this.props.authOpen ? "modal is-active" : "modal"}>
         <div class="modal-background" />
         <div class="modal-card">
           <header class="modal-card-head">
@@ -176,7 +180,7 @@ export default class AuthModal extends React.Component {
             <button
               class="delete"
               aria-label="close"
-              onClick={this.updateOpenState}
+              onClick={() => this.props.updateOpenState(false)}
             />
           </header>
           <section class="modal-card-body">

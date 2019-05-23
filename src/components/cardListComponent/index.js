@@ -13,11 +13,12 @@ export default class CardList extends React.Component {
     super(props);
     this.state = {
       isLoading: true,
-      open: false,
+      authOpen: false,
       photoIndex: 0,
       lightBox: false,
       bundleImage: [],
-      partnerId: 0
+      // partnerId: 0
+      selectedList: {}
     };
   }
 
@@ -326,24 +327,31 @@ export default class CardList extends React.Component {
     });
   };
 
-  updateOpenState = () => {
+  updateOpenState = bool => {
     this.setState({
-      open: !this.state.open
+      authOpen: bool
     });
   };
 
-  updatePartnerState = partnerId => {
+  // updatePartnerState = partnerId => {
+  //   this.setState({
+  //     partnerId: partnerId
+  //   });
+  // };
+
+  updateSelectedList = list => {
     this.setState({
-      partnerId: partnerId
+      selectedList: list
     });
   };
 
   onClickCardList = (object, flag) => {
     let categoryName = "";
-
+    console.log(object);
     if (object.p_cat === 1 && flag) {
-      this.updateOpenState();
-      this.updatePartnerState(object.p_id);
+      this.updateOpenState(true);
+      this.updateSelectedList(object);
+      // this.updatePartnerState(object.p_id);
     } else {
       if (object.p_cat === 1) categoryName = "hospital";
       else if (object.p_cat === 2) categoryName = "ambulance";
@@ -413,7 +421,7 @@ export default class CardList extends React.Component {
           )}
         </div>
 
-        {this.state.open ? (
+        {this.state.authOpen ? (
           <AuthModal
             mobileText="Enter your phone number (required)"
             otpText="Enter your otp (required)"
@@ -421,8 +429,11 @@ export default class CardList extends React.Component {
             mobileRegister={this.props.mobileRegister}
             postOtpVerify={this.props.postOtpVerify}
             otpVerify={this.props.otpVerify}
-            partnerId={this.state.partnerId}
             history={this.props.parentProps.history}
+            selectedData={this.state.selectedList}
+            authOpen={this.state.authOpen}
+            updateOpenState={this.updateOpenState}
+            type="APPOINTMENT"
           />
         ) : null}
 
