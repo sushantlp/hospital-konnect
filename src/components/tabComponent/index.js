@@ -29,6 +29,17 @@ export default class Tab extends React.Component {
     });
   };
 
+  // onClickBook = (clickPackage, categoryFeature, category) => {
+  //   console.log(clickPackage);
+  //   console.log(categoryFeature);
+  //   console.log(category);
+
+  //   const authStatus = sessionStorage.getItem("AUTH_STATUS");
+  //   if (authStatus !== null || authStatus) this.props.updateBedOpenState(true);
+
+  //   this.props.updateOpenState(true);
+  // };
+
   // handleClick = () => {
   //   console.log("Hello");
   // };
@@ -140,8 +151,15 @@ export default class Tab extends React.Component {
             <Bed
               categoryFeature={this.props.categoryFeature}
               parentState={this.state}
-              open={this.props.open}
-              updateOpenState={this.props.updateOpenState}
+              authOpen={this.state.authOpen}
+              updateOpenState={this.updateOpenState}
+              bedOpen={this.state.bedOpen}
+              updateBedOpenState={this.updateBedOpenState}
+              postMobileRegister={this.props.postMobileRegister}
+              mobileRegister={this.props.mobileRegister}
+              postOtpVerify={this.props.postOtpVerify}
+              otpVerify={this.props.otpVerify}
+              onClickBook={this.onClickBook}
             />
           ) : null
         ) : null}
@@ -158,8 +176,13 @@ export default class Tab extends React.Component {
             <Ambulance
               categoryFeature={this.props.categoryFeature}
               parentState={this.state}
-              open={this.props.open}
-              updateOpenState={this.props.updateOpenState}
+              authOpen={this.state.authOpen}
+              updateOpenState={this.updateOpenState}
+              postMobileRegister={this.props.postMobileRegister}
+              mobileRegister={this.props.mobileRegister}
+              postOtpVerify={this.props.postOtpVerify}
+              otpVerify={this.props.otpVerify}
+              onClickBook={this.onClickBook}
               // handleClick={this.handleClick}
               // this={this}
             />
@@ -171,8 +194,15 @@ export default class Tab extends React.Component {
             <Bed
               categoryFeature={this.props.categoryFeature}
               parentState={this.state}
-              open={this.props.open}
-              updateOpenState={this.props.updateOpenState}
+              authOpen={this.state.authOpen}
+              updateOpenState={this.updateOpenState}
+              bedOpen={this.state.bedOpen}
+              updateBedOpenState={this.updateBedOpenState}
+              postMobileRegister={this.props.postMobileRegister}
+              mobileRegister={this.props.mobileRegister}
+              postOtpVerify={this.props.postOtpVerify}
+              otpVerify={this.props.otpVerify}
+              onClickBook={this.onClickBook}
             />
           ) : null
         ) : null}
@@ -182,8 +212,15 @@ export default class Tab extends React.Component {
             <Bed
               categoryFeature={this.props.categoryFeature}
               parentState={this.state}
-              open={this.props.open}
-              updateOpenState={this.props.updateOpenState}
+              authOpen={this.state.authOpen}
+              updateOpenState={this.updateOpenState}
+              bedOpen={this.state.bedOpen}
+              updateBedOpenState={this.updateBedOpenState}
+              postMobileRegister={this.props.postMobileRegister}
+              mobileRegister={this.props.mobileRegister}
+              postOtpVerify={this.props.postOtpVerify}
+              otpVerify={this.props.otpVerify}
+              onClickBook={this.onClickBook}
             />
           ) : null
         ) : null}

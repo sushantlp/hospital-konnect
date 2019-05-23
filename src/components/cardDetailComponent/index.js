@@ -229,7 +229,7 @@ const CardDetail = props => {
             <div class="card-footer-item">
               <a
                 class="button is-medium"
-                onClick={() => props.updateOpenState(true)}
+                onClick={() => props.onClickAppointment(object)}
               >
                 <span class="icon">
                   <img src="https://img.icons8.com/cotton/25/000000/calendar.png" />

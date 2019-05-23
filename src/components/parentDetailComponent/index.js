@@ -51,15 +51,14 @@ export default class ParentDetail extends React.Component {
   }
 
   updateOpenState = bool => {
-    console.log("Open fuckers");
     this.setState({
       authOpen: bool
     });
   };
 
-  updateBedOpenState = () => {
+  updateBedOpenState = bool => {
     this.setState({
-      bedOpen: !this.state.bedOpen
+      bedOpen: bool
     });
   };
 
@@ -77,6 +76,16 @@ export default class ParentDetail extends React.Component {
     this.setState({
       photoIndex: (photoIndex + 1) % bundleImage
     });
+  };
+
+  onClickAppointment = object => {
+    const authStatus = sessionStorage.getItem("AUTH_STATUS");
+    if (authStatus !== null || authStatus) {
+      sessionStorage.setItem("ALL_DATA", JSON.stringify(object));
+      this.props.history.push("/profile/");
+    }
+
+    this.updateOpenState(true);
   };
 
   render() {
@@ -108,16 +117,22 @@ export default class ParentDetail extends React.Component {
                 postOtpVerify={this.props.postOtpVerify}
                 otpVerify={this.props.otpVerify}
                 history={this.props.history}
+                onClickAppointment={this.onClickAppointment}
               />
               <div class="section">
                 <Tab
                   categoryFeature={this.props.categoryFeature}
                   flag={this.state.flag}
                   category={this.state.category}
-                  open={this.state.open}
+                  authOpen={this.state.authOpen}
                   updateOpenState={this.updateOpenState}
                   bedOpen={this.state.bedOpen}
                   updateBedOpenState={this.updateBedOpenState}
+                  postMobileRegister={this.props.postMobileRegister}
+                  mobileRegister={this.props.mobileRegister}
+                  postOtpVerify={this.props.postOtpVerify}
+                  otpVerify={this.props.otpVerify}
+                  history={this.props.history}
                 />
               </div>
             </div>

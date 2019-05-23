@@ -333,12 +333,6 @@ export default class CardList extends React.Component {
     });
   };
 
-  // updatePartnerState = partnerId => {
-  //   this.setState({
-  //     partnerId: partnerId
-  //   });
-  // };
-
   updateSelectedList = list => {
     this.setState({
       selectedList: list
@@ -347,11 +341,15 @@ export default class CardList extends React.Component {
 
   onClickCardList = (object, flag) => {
     let categoryName = "";
-    console.log(object);
     if (object.p_cat === 1 && flag) {
+      const authStatus = sessionStorage.getItem("AUTH_STATUS");
+      if (authStatus !== null || authStatus) {
+        sessionStorage.setItem("ALL_DATA", JSON.stringify(object));
+        this.props.parentProps.history.push("/profile/");
+      }
+
       this.updateOpenState(true);
       this.updateSelectedList(object);
-      // this.updatePartnerState(object.p_id);
     } else {
       if (object.p_cat === 1) categoryName = "hospital";
       else if (object.p_cat === 2) categoryName = "ambulance";

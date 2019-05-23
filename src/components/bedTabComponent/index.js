@@ -1,6 +1,7 @@
 import React from "react";
 import _ from "lodash";
 import BedModal from "../bedModalComponent";
+import AuthModal from "../authModalComponent";
 import { Popup } from "semantic-ui-react";
 
 import "./bed-tab.css";
@@ -14,7 +15,9 @@ const drawBed = (
   terms,
   availability,
   obj,
-  props
+  props,
+  categoryFeature,
+  category
 ) => {
   return (
     <div class="box" key={key}>
@@ -89,7 +92,7 @@ const drawBed = (
           <a
             class="button is-medium"
             style={{ backgroundColor: "#6e7498", color: "white" }}
-            onClick={() => props.updateBedOpenState()}
+            onClick={() => props.onClickBook(obj, categoryFeature, category)}
           >
             Book
           </a>
@@ -99,7 +102,7 @@ const drawBed = (
   );
 };
 
-const loopBed = (object, category, props) => {
+const loopBed = (object, category, props, categoryFeature) => {
   return object.map((obj, key) => {
     let id = 0;
     let title = "";
@@ -142,13 +145,16 @@ const loopBed = (object, category, props) => {
       terms,
       availability,
       obj,
-      props
+      props,
+      categoryFeature,
+      category
     );
   });
 };
 
 const bedTab = props => {
   let json = [];
+
   if (props.categoryFeature.categoryFeature.p_cat === 1)
     json = props.categoryFeature.categoryFeature.p_beds;
   else if (props.categoryFeature.categoryFeature.p_cat === 3)
@@ -160,8 +166,28 @@ const bedTab = props => {
 
   return (
     <React.Fragment>
-      {loopBed(json, props.categoryFeature.categoryFeature.p_cat, props)}
-      {props.open ? <BedModal /> : null}
+      {loopBed(
+        json,
+        props.categoryFeature.categoryFeature.p_cat,
+        props,
+        props.categoryFeature.categoryFeature
+      )}
+      {props.bedOpen ? <BedModal /> : null}
+      {props.authOpen ? (
+        <AuthModal
+          authOpen={props.authOpen}
+          updateOpenState={props.updateOpenState}
+          mobileText="Enter your phone number (required)"
+          otpText="Enter your otp (required)"
+          postMobileRegister={props.postMobileRegister}
+          mobileRegister={props.mobileRegister}
+          postOtpVerify={props.postOtpVerify}
+          otpVerify={props.otpVerify}
+          type="APPOINTMENT"
+          // selectedData={object}
+          history={props.history}
+        />
+      ) : null}
     </React.Fragment>
   );
 };

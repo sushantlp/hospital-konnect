@@ -54,11 +54,8 @@ export default class ProfileFill extends React.Component {
     const authData = sessionStorage.getItem("AUTH_DATA");
     if (authStatus === null || authData === null)
       this.props.history.push("/web/");
-
     const sessionData = JSON.parse(authData);
-    console.log(sessionData);
     this.props.readProfileDetail(sessionData.customer_id);
-
     this.setState({
       customerId: sessionData.customer_id
     });

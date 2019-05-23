@@ -42,14 +42,15 @@ export default class AuthModal extends React.Component {
 
         if (this.props.type !== "APPOINTMENT")
           sessionStorage.setItem(
-            "ALL_DATA",
-            JSON.stringify(this.props.selectedData)
+            "PACKAGE_DATA",
+            JSON.stringify(this.props.selectedPackage)
           );
 
         sessionStorage.setItem(
-          "PACKAGE_DATA",
-          JSON.stringify(this.props.selectedPackage)
+          "ALL_DATA",
+          JSON.stringify(this.props.selectedData)
         );
+
         sessionStorage.setItem("AUTH_STATUS", true);
         sessionStorage.setItem("AUTH_DATA", JSON.stringify(data));
 
