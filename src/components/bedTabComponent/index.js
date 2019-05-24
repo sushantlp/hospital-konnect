@@ -17,7 +17,7 @@ const drawBed = (
   obj,
   props,
   categoryFeature,
-  category
+  bedFlag
 ) => {
   return (
     <div class="box" key={key}>
@@ -92,7 +92,7 @@ const drawBed = (
           <a
             class="button is-medium"
             style={{ backgroundColor: "#6e7498", color: "white" }}
-            onClick={() => props.onClickBook(obj, categoryFeature, category)}
+            onClick={() => props.onClickBook(obj, categoryFeature, bedFlag)}
           >
             Book
           </a>
@@ -111,6 +111,7 @@ const loopBed = (object, category, props, categoryFeature) => {
     let cancelPolicy = "";
     let terms = "";
     let availability = 0;
+    let bedFlag = false;
     if (category === 1) {
       id = obj.b_id;
       title = obj.b_title;
@@ -119,6 +120,7 @@ const loopBed = (object, category, props, categoryFeature) => {
       cancelPolicy = obj.b_cancel_policy;
       terms = obj.b_tnc;
       availability = obj.b_availability;
+      bedFlag = true;
     } else if (category === 3) {
       id = obj.e_id;
       title = obj.e_title;
@@ -127,6 +129,7 @@ const loopBed = (object, category, props, categoryFeature) => {
       cancelPolicy = obj.e_cancel_policy;
       terms = obj.e_tnc;
       availability = obj.e_availability;
+      bedFlag = true;
     } else if (category === 4) {
       id = obj.pac_id;
       title = obj.pac_title;
@@ -135,6 +138,7 @@ const loopBed = (object, category, props, categoryFeature) => {
       cancelPolicy = obj.pac_cancel_policy;
       terms = obj.pac_tnc;
       availability = obj.pac_availability;
+      bedFlag = true;
     } else return true;
     return drawBed(
       id,
@@ -147,7 +151,7 @@ const loopBed = (object, category, props, categoryFeature) => {
       obj,
       props,
       categoryFeature,
-      category
+      bedFlag
     );
   });
 };
@@ -172,7 +176,17 @@ const bedTab = props => {
         props,
         props.categoryFeature.categoryFeature
       )}
-      {props.bedOpen ? <BedModal /> : null}
+      {props.bedOpen ? (
+        <BedModal
+          bedOpen={props.bedOpen}
+          updateBedOpenState={props.updateBedOpenState}
+          referralBed={props.referralBed}
+          validateReferralBed={props.validateReferralBed}
+          updateOpenState={props.updateOpenState}
+          selectedData={props.selectedData}
+          selectedPackage={props.selectedPackage}
+        />
+      ) : null}
       {props.authOpen ? (
         <AuthModal
           authOpen={props.authOpen}
@@ -183,8 +197,9 @@ const bedTab = props => {
           mobileRegister={props.mobileRegister}
           postOtpVerify={props.postOtpVerify}
           otpVerify={props.otpVerify}
-          type="APPOINTMENT"
-          // selectedData={object}
+          type="BOOKING"
+          selectedData={props.selectedData}
+          selectedPackage={props.selectedPackage}
           history={props.history}
         />
       ) : null}

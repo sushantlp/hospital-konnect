@@ -15,7 +15,8 @@ const drawAmbulance = (
   thirdParty,
   terms,
   obj,
-  props
+  props,
+  json
 ) => {
   const priceSplit = `Inside city (First 25 km) : ${
     priceList.in_city_base
@@ -99,7 +100,7 @@ const drawAmbulance = (
           <a
             class="button is-medium"
             style={{ backgroundColor: "#6e7498", color: "white" }}
-            onClick={() => props.updateOpenState()}
+            onClick={() => props.onClickBook(obj, json, false)}
           >
             Book
           </a>
@@ -109,7 +110,7 @@ const drawAmbulance = (
   );
 };
 
-const loopAmbulance = (object, category, props) => {
+const loopAmbulance = (object, category, props, json) => {
   return object.map((obj, key) => {
     let thirdParty = undefined;
     if (category === 1) thirdParty = obj.a_third_party_service;
@@ -124,7 +125,8 @@ const loopAmbulance = (object, category, props) => {
       thirdParty,
       obj.a_tnc,
       obj,
-      props
+      props,
+      json
     );
   });
 };
@@ -134,7 +136,7 @@ const ambulanceTab = props => {
   if (_.isEmpty(json)) return <div />;
   return (
     <React.Fragment>
-      {loopAmbulance(json.p_ambulances, json.p_cat, props)}
+      {loopAmbulance(json.p_ambulances, json.p_cat, props, json)}
       {props.open ? (
         <Modal open={props.open} updateOpenState={props.updateOpenState} />
       ) : null}

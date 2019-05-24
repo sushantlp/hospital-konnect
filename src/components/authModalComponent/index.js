@@ -171,7 +171,6 @@ export default class AuthModal extends React.Component {
   };
 
   render() {
-    console.log("Upper");
     return (
       <div class={this.props.authOpen ? "modal is-active" : "modal"}>
         <div class="modal-background" />

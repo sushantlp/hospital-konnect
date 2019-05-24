@@ -133,6 +133,8 @@ export default class ParentDetail extends React.Component {
                   postOtpVerify={this.props.postOtpVerify}
                   otpVerify={this.props.otpVerify}
                   history={this.props.history}
+                  referralBed={this.props.referralBed}
+                  validateReferralBed={this.props.validateReferralBed}
                 />
               </div>
             </div>

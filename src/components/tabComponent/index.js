@@ -20,7 +20,9 @@ export default class Tab extends React.Component {
     }
 
     this.state = {
-      navigation: navigation
+      navigation: navigation,
+      selectedData: {},
+      selectedPackage: {}
     };
   }
   changeTab = text => {
@@ -29,16 +31,32 @@ export default class Tab extends React.Component {
     });
   };
 
-  // onClickBook = (clickPackage, categoryFeature, category) => {
-  //   console.log(clickPackage);
-  //   console.log(categoryFeature);
-  //   console.log(category);
+  onClickBook = (packages, categoryFeature, bedFlag) => {
+    console.log(packages);
+    this.setState({
+      selectedData: categoryFeature,
+      selectedPackage: packages
+    });
 
-  //   const authStatus = sessionStorage.getItem("AUTH_STATUS");
-  //   if (authStatus !== null || authStatus) this.props.updateBedOpenState(true);
-
-  //   this.props.updateOpenState(true);
-  // };
+    if (categoryFeature.p_cat === 1 && bedFlag && packages.b_type !== 4) {
+      this.props.updateBedOpenState(true);
+    } else {
+      const authStatus = sessionStorage.getItem("AUTH_STATUS");
+      if (authStatus !== null || authStatus) {
+        sessionStorage.setItem(
+          "ALL_DATA",
+          JSON.stringify(this.state.selectedData)
+        );
+        sessionStorage.setItem(
+          "PACKAGE_DATA",
+          JSON.stringify(this.state.selectedPackage)
+        );
+        this.props.history.push("/profile/");
+      } else {
+        this.props.updateOpenState(true);
+      }
+    }
+  };
 
   // handleClick = () => {
   //   console.log("Hello");
@@ -151,15 +169,19 @@ export default class Tab extends React.Component {
             <Bed
               categoryFeature={this.props.categoryFeature}
               parentState={this.state}
-              authOpen={this.state.authOpen}
-              updateOpenState={this.updateOpenState}
-              bedOpen={this.state.bedOpen}
-              updateBedOpenState={this.updateBedOpenState}
+              authOpen={this.props.authOpen}
+              updateOpenState={this.props.updateOpenState}
+              bedOpen={this.props.bedOpen}
+              updateBedOpenState={this.props.updateBedOpenState}
               postMobileRegister={this.props.postMobileRegister}
               mobileRegister={this.props.mobileRegister}
               postOtpVerify={this.props.postOtpVerify}
               otpVerify={this.props.otpVerify}
               onClickBook={this.onClickBook}
+              referralBed={this.props.referralBed}
+              validateReferralBed={this.props.validateReferralBed}
+              selectedData={this.state.selectedData}
+              selectedPackage={this.state.selectedPackage}
             />
           ) : null
         ) : null}
@@ -176,8 +198,8 @@ export default class Tab extends React.Component {
             <Ambulance
               categoryFeature={this.props.categoryFeature}
               parentState={this.state}
-              authOpen={this.state.authOpen}
-              updateOpenState={this.updateOpenState}
+              authOpen={this.props.authOpen}
+              updateOpenState={this.props.updateOpenState}
               postMobileRegister={this.props.postMobileRegister}
               mobileRegister={this.props.mobileRegister}
               postOtpVerify={this.props.postOtpVerify}
@@ -194,10 +216,10 @@ export default class Tab extends React.Component {
             <Bed
               categoryFeature={this.props.categoryFeature}
               parentState={this.state}
-              authOpen={this.state.authOpen}
-              updateOpenState={this.updateOpenState}
-              bedOpen={this.state.bedOpen}
-              updateBedOpenState={this.updateBedOpenState}
+              authOpen={this.props.authOpen}
+              updateOpenState={this.props.updateOpenState}
+              bedOpen={this.props.bedOpen}
+              updateBedOpenState={this.props.updateBedOpenState}
               postMobileRegister={this.props.postMobileRegister}
               mobileRegister={this.props.mobileRegister}
               postOtpVerify={this.props.postOtpVerify}
@@ -212,10 +234,10 @@ export default class Tab extends React.Component {
             <Bed
               categoryFeature={this.props.categoryFeature}
               parentState={this.state}
-              authOpen={this.state.authOpen}
-              updateOpenState={this.updateOpenState}
-              bedOpen={this.state.bedOpen}
-              updateBedOpenState={this.updateBedOpenState}
+              authOpen={this.props.authOpen}
+              updateOpenState={this.props.updateOpenState}
+              bedOpen={this.props.bedOpen}
+              updateBedOpenState={this.props.updateBedOpenState}
               postMobileRegister={this.props.postMobileRegister}
               mobileRegister={this.props.mobileRegister}
               postOtpVerify={this.props.postOtpVerify}

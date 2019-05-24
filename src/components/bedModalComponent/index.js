@@ -5,23 +5,76 @@ export default class BedModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: true,
       errorStatus: false,
-      loading: false
+      errorMsg: "",
+      loading: false,
+      referal: ""
     };
   }
 
-  componentWillReceiveProps(nextProps) {}
+  componentWillReceiveProps(nextProps) {
+    if (this.props.referralBed !== nextProps.referralBed) {
+      if (nextProps.referralBed.status === "SUCCESS") {
+        this.updateLoadingState(false);
+        const authStatus = sessionStorage.getItem("AUTH_STATUS");
+        if (authStatus !== null || authStatus) {
+          sessionStorage.setItem(
+            "ALL_DATA",
+            JSON.stringify(this.props.selectedData)
+          );
+          sessionStorage.setItem(
+            "PACKAGE_DATA",
+            JSON.stringify(this.props.selectedPackage)
+          );
+          this.pros.history.push("/profile/");
+        } else {
+          this.props.updateBedOpenState(false);
+          this.props.updateOpenState(true);
+        }
+      } else if (nextProps.referralBed.status === "FAIL") {
+        this.updateLoadingState(false);
+        this.updateErrorStatus(true);
+        this.updateErrorMsg(nextProps.referralBed.msg);
+      }
+    }
+  }
 
-  updateOpenState = () => {
+  onChangeReferal = e => {
+    if (e.target.value === "")
+      this.setState({
+        referal: ""
+      });
+    else
+      this.setState({
+        referal: e.target.value
+      });
+  };
+
+  updateErrorMsg = msg => {
     this.setState({
-      open: !this.state.open
+      errorMsg: msg
     });
   };
 
+  updateErrorStatus = bool => {
+    this.setState({
+      errorStatus: bool
+    });
+  };
+
+  updateLoadingState = bool => {
+    this.setState({
+      loading: bool
+    });
+  };
+
+  onClickApi = () => {
+    this.updateLoadingState(true);
+    this.props.validateReferralBed(this.state.referal);
+  };
   render() {
     return (
-      <div class={this.state.open ? "modal is-active" : "modal"}>
+      <div class={this.props.bedOpen ? "modal is-active" : "modal"}>
         <div class="modal-background" />
         <div class="modal-card">
           <header class="modal-card-head">
@@ -29,7 +82,7 @@ export default class BedModal extends React.Component {
             <button
               class="delete"
               aria-label="close"
-              onClick={this.updateOpenState}
+              onClick={() => this.props.updateBedOpenState(false)}
             />
           </header>
           <section class="modal-card-body">
@@ -41,27 +94,34 @@ export default class BedModal extends React.Component {
                   class="input is-medium"
                   type="text"
                   placeholder="Referal code"
-                  // onKeyPress={this.onKeyPressMobile}
-                  // onChange={this.onChangeMobile}
+                  onChange={event => this.onChangeReferal(event)}
                 />
                 <span class="icon is-small is-left">
-                  <img src="https://img.icons8.com/wired/25/000000/touchscreen-smartphone.png" />
+                  <img src="https://img.icons8.com/ios/25/000000/code-file.png" />
                 </span>
               </div>
-              {this.state.errorStatus ? <p class="help is-danger">""</p> : null}
+              {this.state.errorStatus ? (
+                <p class="help is-danger">{this.state.errorMsg}</p>
+              ) : null}
             </div>
           </section>
           <footer class="modal-card-foot">
-            <button
-              class={
-                this.state.loading
-                  ? "button is-medium is-loading"
-                  : "button is-medium"
-              }
-              // onClick={() => this.onClickApi()}
-            >
-              Sumbit
-            </button>
+            {this.state.referal === "" ? (
+              <button class="button is-medium" disabled>
+                Sumbit
+              </button>
+            ) : (
+              <button
+                class={
+                  this.state.loading
+                    ? "button is-medium is-loading"
+                    : "button is-medium"
+                }
+                onClick={() => this.onClickApi()}
+              >
+                Sumbit
+              </button>
+            )}
           </footer>
         </div>
       </div>

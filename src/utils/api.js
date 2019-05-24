@@ -245,7 +245,7 @@ export default {
   referralBedApi: key => {
     return new Promise((resolve, reject) => {
       fetch(
-        `${host}api/v1/web/apply/referral` +
+        `${host}api/v1/web/apply/referral?` +
           getQueryString({
             referral_key: key
           }),
