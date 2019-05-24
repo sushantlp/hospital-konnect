@@ -1,7 +1,7 @@
 import api from "../utils/api";
 
 export const actionType = {
-  tokenGenerate: "REFERRAL_BED"
+  tokenGenerate: "TOKEN_GENERATE"
 };
 
 export function getTokenGenerate(username, password, role) {

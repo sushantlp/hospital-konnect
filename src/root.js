@@ -13,6 +13,8 @@ import Profile from "./containers/profile-container";
 import Faq from "./components/faqComponent";
 import Privacy from "./components/privacyComponent";
 import Term from "./components/termComponent";
+import Appointment from "./components/appointmentComponent";
+import PackageBooking from "./components/packageBookingComponent";
 
 const Root = ({ store }) => (
   <Provider store={store}>
@@ -24,22 +26,20 @@ const Root = ({ store }) => (
           <Route exact path="/privacy/" component={Privacy} />
           <Route exact path="/faq/" component={Faq} />
           <Route exact path="/profile/" component={Profile} />
-
+          <Route exact path="/appointment/" component={Appointment} />
+          <Route exact path="/package-booking/" component={PackageBooking} />
           <Route exact path="/web/" component={Landing} />
           <Route exact path="/:city/:locality" component={Landing} />
-
           <Route
             exact
             path="/:city/:locality/:category"
             component={CategoryList}
           />
-
           <Route
             exact
             path="/:city/:locality/:category/:partner"
             component={Feature}
           />
-
           <Route component={Landing} />
         </Switch>
       </div>

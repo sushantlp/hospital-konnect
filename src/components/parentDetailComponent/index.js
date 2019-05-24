@@ -80,9 +80,19 @@ export default class ParentDetail extends React.Component {
 
   onClickAppointment = object => {
     const authStatus = sessionStorage.getItem("AUTH_STATUS");
+    let authData = sessionStorage.getItem("AUTH_DATA");
+    authData = JSON.parse(authData);
     if (authStatus !== null || authStatus) {
+      const data = {
+        type: "APPOINTMENT",
+        customer_id: authData.customer_id,
+        role: authData.role
+      };
+
+      sessionStorage.setItem("AUTH_DATA", JSON.stringify(data));
       sessionStorage.setItem("ALL_DATA", JSON.stringify(object));
-      this.props.history.push("/profile/");
+      sessionStorage.setItem("PACKAGE_DATA", JSON.stringify({}));
+      this.props.history.push("/appointment/");
     }
 
     this.updateOpenState(true);

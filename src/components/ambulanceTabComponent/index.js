@@ -1,6 +1,6 @@
 import React from "react";
 import _ from "lodash";
-import Modal from "../authModalComponent";
+import AuthModal from "../authModalComponent";
 import { Popup } from "semantic-ui-react";
 import "./ambulance-tab.css";
 
@@ -137,8 +137,21 @@ const ambulanceTab = props => {
   return (
     <React.Fragment>
       {loopAmbulance(json.p_ambulances, json.p_cat, props, json)}
-      {props.open ? (
-        <Modal open={props.open} updateOpenState={props.updateOpenState} />
+      {props.authOpen ? (
+        <AuthModal
+          authOpen={props.authOpen}
+          updateOpenState={props.updateOpenState}
+          mobileText="Enter your phone number (required)"
+          otpText="Enter your otp (required)"
+          postMobileRegister={props.postMobileRegister}
+          mobileRegister={props.mobileRegister}
+          postOtpVerify={props.postOtpVerify}
+          otpVerify={props.otpVerify}
+          type="BOOKING"
+          selectedData={props.selectedData}
+          selectedPackage={props.selectedPackage}
+          history={props.history}
+        />
       ) : null}
     </React.Fragment>
   );

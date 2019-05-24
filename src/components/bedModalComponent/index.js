@@ -17,7 +17,17 @@ export default class BedModal extends React.Component {
       if (nextProps.referralBed.status === "SUCCESS") {
         this.updateLoadingState(false);
         const authStatus = sessionStorage.getItem("AUTH_STATUS");
+        let authData = sessionStorage.getItem("AUTH_DATA");
+        authData = JSON.parse(authData);
         if (authStatus !== null || authStatus) {
+          const data = {
+            type: this.props.type,
+            customer_id: authData.customer_id,
+            role: authData.role
+          };
+
+          sessionStorage.setItem("AUTH_DATA", JSON.stringify(data));
+
           sessionStorage.setItem(
             "ALL_DATA",
             JSON.stringify(this.props.selectedData)
@@ -26,7 +36,7 @@ export default class BedModal extends React.Component {
             "PACKAGE_DATA",
             JSON.stringify(this.props.selectedPackage)
           );
-          this.pros.history.push("/profile/");
+          this.props.history.push("/package-booking/");
         } else {
           this.props.updateBedOpenState(false);
           this.props.updateOpenState(true);

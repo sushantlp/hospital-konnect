@@ -32,7 +32,6 @@ export default class Tab extends React.Component {
   };
 
   onClickBook = (packages, categoryFeature, bedFlag) => {
-    console.log(packages);
     this.setState({
       selectedData: categoryFeature,
       selectedPackage: packages
@@ -42,16 +41,19 @@ export default class Tab extends React.Component {
       this.props.updateBedOpenState(true);
     } else {
       const authStatus = sessionStorage.getItem("AUTH_STATUS");
+      let authData = sessionStorage.getItem("AUTH_DATA");
+      authData = JSON.parse(authData);
       if (authStatus !== null || authStatus) {
-        sessionStorage.setItem(
-          "ALL_DATA",
-          JSON.stringify(this.state.selectedData)
-        );
-        sessionStorage.setItem(
-          "PACKAGE_DATA",
-          JSON.stringify(this.state.selectedPackage)
-        );
-        this.props.history.push("/profile/");
+        const data = {
+          type: "BOOKING",
+          customer_id: authData.customer_id,
+          role: authData.role
+        };
+
+        sessionStorage.setItem("AUTH_DATA", JSON.stringify(data));
+        sessionStorage.setItem("ALL_DATA", JSON.stringify(categoryFeature));
+        sessionStorage.setItem("PACKAGE_DATA", JSON.stringify(packages));
+        this.props.history.push("/package-booking/");
       } else {
         this.props.updateOpenState(true);
       }
@@ -182,6 +184,7 @@ export default class Tab extends React.Component {
               validateReferralBed={this.props.validateReferralBed}
               selectedData={this.state.selectedData}
               selectedPackage={this.state.selectedPackage}
+              history={this.props.history}
             />
           ) : null
         ) : null}
@@ -205,6 +208,9 @@ export default class Tab extends React.Component {
               postOtpVerify={this.props.postOtpVerify}
               otpVerify={this.props.otpVerify}
               onClickBook={this.onClickBook}
+              selectedData={this.state.selectedData}
+              selectedPackage={this.state.selectedPackage}
+              history={this.props.history}
               // handleClick={this.handleClick}
               // this={this}
             />
@@ -225,6 +231,9 @@ export default class Tab extends React.Component {
               postOtpVerify={this.props.postOtpVerify}
               otpVerify={this.props.otpVerify}
               onClickBook={this.onClickBook}
+              selectedData={this.state.selectedData}
+              selectedPackage={this.state.selectedPackage}
+              history={this.props.history}
             />
           ) : null
         ) : null}
@@ -243,6 +252,9 @@ export default class Tab extends React.Component {
               postOtpVerify={this.props.postOtpVerify}
               otpVerify={this.props.otpVerify}
               onClickBook={this.onClickBook}
+              selectedData={this.state.selectedData}
+              selectedPackage={this.state.selectedPackage}
+              history={this.props.history}
             />
           ) : null
         ) : null}

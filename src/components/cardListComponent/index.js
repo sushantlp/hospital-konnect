@@ -343,9 +343,19 @@ export default class CardList extends React.Component {
     let categoryName = "";
     if (object.p_cat === 1 && flag) {
       const authStatus = sessionStorage.getItem("AUTH_STATUS");
+      let authData = sessionStorage.getItem("AUTH_DATA");
+      authData = JSON.parse(authData);
       if (authStatus !== null || authStatus) {
+        const data = {
+          type: "APPOINTMENT",
+          customer_id: authData.customer_id,
+          role: authData.role
+        };
+
+        sessionStorage.setItem("AUTH_DATA", JSON.stringify(data));
         sessionStorage.setItem("ALL_DATA", JSON.stringify(object));
-        this.props.parentProps.history.push("/profile/");
+        sessionStorage.setItem("PACKAGE_DATA", JSON.stringify({}));
+        this.props.parentProps.history.push("/appointment/");
       }
 
       this.updateOpenState(true);

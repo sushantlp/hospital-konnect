@@ -185,6 +185,8 @@ const bedTab = props => {
           updateOpenState={props.updateOpenState}
           selectedData={props.selectedData}
           selectedPackage={props.selectedPackage}
+          type="BOOKING"
+          history={props.history}
         />
       ) : null}
       {props.authOpen ? (
