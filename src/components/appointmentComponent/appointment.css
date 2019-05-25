@@ -2,3 +2,7 @@
   background-color: #6e7498;
   color: white;
 }
+
+.react-time-picker {
+  float: right;
+}

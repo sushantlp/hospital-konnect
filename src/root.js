@@ -15,6 +15,7 @@ import Privacy from "./components/privacyComponent";
 import Term from "./components/termComponent";
 import Appointment from "./components/appointmentComponent";
 import PackageBooking from "./components/packageBookingComponent";
+import Address from "./components/addressComponent";
 
 const Root = ({ store }) => (
   <Provider store={store}>
@@ -28,6 +29,7 @@ const Root = ({ store }) => (
           <Route exact path="/profile/" component={Profile} />
           <Route exact path="/appointment/" component={Appointment} />
           <Route exact path="/package-booking/" component={PackageBooking} />
+          <Route exact path="/address/" component={Address} />
           <Route exact path="/web/" component={Landing} />
           <Route exact path="/:city/:locality" component={Landing} />
           <Route

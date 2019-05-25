@@ -231,7 +231,11 @@ export default class ProfileFill extends React.Component {
                 <div class="field">
                   <div class="control has-icons-left has-icons-right">
                     <input
-                      class= {this.state.emailError ? "input is-large is-danger":"input is-large"}
+                      class={
+                        this.state.emailError
+                          ? "input is-large is-danger"
+                          : "input is-large"
+                      }
                       type="email"
                       placeholder="Email"
                       value={this.state.c_email}

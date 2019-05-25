@@ -3,17 +3,29 @@ import React from "react";
 import Header from "../headerComponent/header";
 import Footer from "../footerComponent/footer";
 
+import DatePicker from "react-date-picker";
+import TimePicker from "react-time-picker";
+import moment from "moment-timezone";
 import "./appointment.css";
-import "bulma-calendar/dist/css/bulma-calendar.min.css";
-import "bulma-calendar/dist/js/bulma-calendar.min.js";
 
 export default class Appointment extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      time: moment().format("HH:mm"),
+      date: new Date()
+    };
   }
 
   componentWillReceiveProps(nextProps) {}
+
+  onChangeTime = e => {
+    console.log(e);
+  };
+
+  onChangeDate = e => {
+    console.log(e);
+  };
 
   render() {
     return (
@@ -56,7 +68,16 @@ export default class Appointment extends React.Component {
                   </article>
                 </div>
 
-                <input type="date" />
+                <section class="section">
+                  <DatePicker
+                    onChange={event => this.onChangeDate(event)}
+                    value={this.state.date}
+                  />
+                  <TimePicker
+                    onChange={event => this.onChangeTime(event)}
+                    value={this.state.time}
+                  />
+                </section>
               </div>
               <div class="column ">
                 <p class="title is-4" style={{ color: "#414146" }}>
@@ -108,11 +129,13 @@ export default class Appointment extends React.Component {
                   <div class="control">
                     <input
                       class="input is-large"
-                      type="email"
+                      type="text"
                       placeholder="Mobile"
                     />
                   </div>
                 </div>
+
+                <hr className="spacer is-1" />
 
                 <div class="field">
                   <label class="label" style={{ fontWeight: "400" }}>
@@ -129,21 +152,33 @@ export default class Appointment extends React.Component {
                   </div>
                 </div>
 
+                <hr className="spacer is-1" />
+
                 <div class="field">
                   <label class="label" style={{ fontWeight: "400" }}>
-                    Payment Mode
+                    Choose a payment option to Book Appointment
                   </label>
-                  <div class="control">
-                    <label class="radio">
-                      <input type="radio" name="question" />
-                      Pay online
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="question" />
-                      Pay later
-                    </label>
+
+                  <div class="field">
+                    <input
+                      class="is-checkradio"
+                      id="Pay-online"
+                      type="radio"
+                      name="exampleRadioInline"
+                      checked="checked"
+                    />
+                    <label for="Pay-online">Pay online</label>
+                    <input
+                      class="is-checkradio"
+                      id="Pay-later"
+                      type="radio"
+                      name="exampleRadioInline"
+                    />
+                    <label for="Pay-later">Pay later</label>
                   </div>
                 </div>
+
+                <hr className="spacer is-2" />
                 <div className="appointment-button">
                   <button class="button is-large is-fullwidth">CONFIRM</button>
                 </div>
