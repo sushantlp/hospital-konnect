@@ -144,7 +144,14 @@ const LeftSideComponent = props => {
 
       <hr className="spacer is-2" />
       <div className="appointment-button">
-        <button class="button is-large is-fullwidth" onClick={props.onClickApi}>
+        <button
+          class={
+            props.state.loading
+              ? "button is-large is-loading is-fullwidth"
+              : "button is-large is-fullwidth"
+          }
+          onClick={props.onClickApi}
+        >
           CONFIRM
         </button>
       </div>

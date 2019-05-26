@@ -49,7 +49,29 @@ export default class Appointment extends React.Component {
     this.initialDepartment(JSON.parse(allData), JSON.parse(authData));
   }
 
-  componentWillReceiveProps(nextProps) {}
+  componentWillReceiveProps(nextProps) {
+    if (this.props.offlineAppointment !== nextProps.offlineAppointment) {
+      if (nextProps.offlineAppointment.status === "SUCCESS") {
+        this.setState({
+          loading: !this.state.loading
+        });
+      } else if (nextProps.offlineAppointment.status === "FAIL") {
+        this.setState({
+          loading: !this.state.loading
+        });
+      }
+    } else if (this.props.onlineAppointment !== nextProps.onlineAppointment) {
+      if (nextProps.onlineAppointment.status === "SUCCESS") {
+        this.setState({
+          loading: !this.state.loading
+        });
+      } else if (nextProps.onlineAppointment.status === "FAIL") {
+        this.setState({
+          loading: !this.state.loading
+        });
+      }
+    }
+  }
 
   updateProfileState = profile => {
     this.setState({
@@ -79,10 +101,8 @@ export default class Appointment extends React.Component {
   };
 
   onChangeDate = e => {
-    const parse = moment(Date.parse(e)).format("YYYY-MM-DD");
     this.setState({
-      firstDate: e,
-      parseFirstDate: parse
+      firstDate: e
     });
   };
 
@@ -177,11 +197,11 @@ export default class Appointment extends React.Component {
   };
 
   onClickApi = () => {
-    console.log(this.state.departmentId);
     if (
       this.state.c_fname === "" ||
       this.state.c_lname === "" ||
-      this.state.c_email === ""
+      this.state.c_email === "" ||
+      this.state.c_mobile === ""
     ) {
       if (this.state.c_fname === "")
         this.setState({
@@ -195,6 +215,11 @@ export default class Appointment extends React.Component {
         this.setState({
           emailError: true
         });
+
+      if (this.state.c_mobile === "")
+        this.setState({
+          mobileError: true
+        });
     } else if (!constant.EMAIL_REG.test(this.state.c_email)) {
       this.setState({
         emailError: true
@@ -203,7 +228,91 @@ export default class Appointment extends React.Component {
       this.setState({
         loading: !this.state.loading
       });
+
+      const mobile = `91${this.state.c_mobile}`;
+      const amount = this.state.all_data.p_reg_charge * 100;
+      const date = moment(Date.parse(this.state.firstDate)).format(
+        "YYYY-MM-DD"
+      );
+
+      if (this.state.payment === "PAY_ONLINE")
+        this.invokeRazorPay(
+          this.state.c_email,
+          this.state.c_mobile,
+          amount,
+          this.state.all_data.p_name,
+          this.onlinePaymentApi
+        );
+      else
+        this.props.postOfflineAppointment(
+          this.state.auth_data.customer_id,
+          this.state.c_fname,
+          this.state.c_lname,
+          this.state.c_email,
+          mobile,
+          this.state.all_data.p_id,
+          this.state.departmentId,
+          amount,
+          date,
+          this.state.time
+        );
     }
+  };
+
+  onlinePaymentApi = (paymentId, promises) => {
+    const mobile = `91${this.state.c_mobile}`;
+    const amount = this.state.all_data.p_reg_charge * 100;
+    const date = moment(Date.parse(this.state.firstDate)).format("YYYY-MM-DD");
+
+    if (promises)
+      this.props.postOnlineAppointment(
+        this.state.auth_data.customer_id,
+        this.state.c_fname,
+        this.state.c_lname,
+        this.state.c_email,
+        mobile,
+        this.state.all_data.p_id,
+        this.state.departmentId,
+        amount,
+        paymentId,
+        date,
+        this.state.time
+      );
+    else console.log("Payment not done");
+  };
+
+  invokeRazorPay = (email, mobile, amount, name, onlinePaymentApi) => {
+    console.log("Invoke");
+    const options = {
+      key: "rzp_test_XNKKob8Iy77wXR",
+      amount: amount, // 2000 paise = INR 20
+      name: name,
+      description: "Booking",
+      image:
+        "https://res.cloudinary.com/dp67gawk6/image/upload/c_scale,w_50/v1539007601/ballyhoo/EMAIL/ballyhoo_black.png",
+      handler: function(response) {
+        onlinePaymentApi(response.razorpay_payment_id, true);
+      },
+      modal: {
+        ondismiss: function() {
+          onlinePaymentApi(undefined, false);
+        }
+      },
+      prefill: {
+        // name: userName,
+        email: email,
+        contact: mobile
+      },
+      notes: {
+        address: ""
+      },
+      theme: {
+        color: "#F37254"
+      }
+    };
+
+    const rzp = new window.Razorpay(options);
+    rzp.open();
   };
 
   render() {
@@ -220,6 +329,11 @@ export default class Appointment extends React.Component {
 
     const rightHeader = this.state.all_data.p_name;
     const rightCharge = this.state.all_data.p_reg_charge;
+
+    const thumbImage =
+      this.state.all_data.p_image_thumb === undefined
+        ? this.state.all_data.p_logo
+        : this.state.all_data.p_image_thumb;
 
     const rightAddress =
       this.state.all_data.p_locality === undefined
@@ -247,6 +361,7 @@ export default class Appointment extends React.Component {
                   rightSpeciality={rightSpeciality}
                   rightAddress={rightAddress}
                   rightCharge={rightCharge}
+                  thumbImage={thumbImage}
                 />
                 <section class="section">
                   <DatePicker

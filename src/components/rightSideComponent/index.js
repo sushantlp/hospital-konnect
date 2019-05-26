@@ -9,10 +9,7 @@ const RightSideComponent = props => {
         <article class="media">
           <div class="media-left">
             <figure class="image is-128x128">
-              <img
-                src="http://res.cloudinary.com/dp67gawk6/image/upload/w_128,h_128,c_fill,g_center/v1557205909/HK/PartnerImage/partner_24/image_1.jpg"
-                alt="Image"
-              />
+              <img src={props.thumbImage} alt="Image" />
             </figure>
           </div>
           <div class="media-content">
