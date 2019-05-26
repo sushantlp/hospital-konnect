@@ -39,11 +39,13 @@ export default class ProfileFill extends React.Component {
         c_mobile: nextProps.readProfile.readProfile.c_mobile
       });
     } else if (this.props.writeProfile !== nextProps.writeProfile) {
+      const data = this.state.c_mobile + "";
+
       const profile = {
         first_name: this.state.c_fname,
         last_name: this.state.c_lname,
         email: this.state.c_email,
-        mobile: this.state.c_mobile
+        mobile: data.slice(2)
       };
       sessionStorage.setItem("PROFILE_DATA", JSON.stringify(profile));
     }
@@ -160,11 +162,13 @@ export default class ProfileFill extends React.Component {
       this.props.readProfile.readProfile.c_mobile !== null &&
       this.props.readProfile.readProfile.c_lname !== null
     ) {
+      const data = this.props.readProfile.readProfile.c_mobile + "";
+
       const profile = {
         c_fname: this.props.readProfile.readProfile.c_fname,
         c_lname: this.props.readProfile.readProfile.c_lname,
         c_email: this.props.readProfile.readProfile.c_email,
-        c_mobile: this.props.readProfile.readProfile.c_mobile
+        c_mobile: data.slice(2)
       };
 
       sessionStorage.setItem("PROFILE_DATA", JSON.stringify(profile));

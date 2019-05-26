@@ -18,19 +18,18 @@ const RightSideComponent = props => {
           <div class="media-content">
             <div class="content">
               <p class="title is-4" style={{ fontWeight: "400" }}>
-                Apollo City Hospital
+                {props.rightHeader}
               </p>
-              <p class="subtitle is-6">JP Nagar, Bangalore</p>
-              <p class="subtitle is-6">
-                Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-              </p>
+              <p class="subtitle is-6">{props.rightAddress}</p>
+              <p class="subtitle is-6">{props.rightSpeciality}</p>
             </div>
 
             <hr className="spacer is-1" />
             <p class="subtitle is-5">
               Consultation fees:{"  "}
               <span>
-                <del>&#x20b9;</del>300
+                <del>&#x20b9;</del>
+                {props.rightCharge}
               </span>
             </p>
           </div>
