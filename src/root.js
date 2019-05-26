@@ -13,7 +13,7 @@ import Profile from "./containers/profile-container";
 import Faq from "./components/faqComponent";
 import Privacy from "./components/privacyComponent";
 import Term from "./components/termComponent";
-import Appointment from "./components/appointmentComponent";
+import Appointment from "./containers/appointment-container";
 import PackageBooking from "./components/packageBookingComponent";
 import Address from "./components/addressComponent";
 

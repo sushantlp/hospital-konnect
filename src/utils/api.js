@@ -281,5 +281,83 @@ export default {
         })
         .catch(error => console.log(error));
     });
+  },
+
+  onlineAppointmentApi: (
+    customerId,
+    firstName,
+    lastName,
+    email,
+    mobile,
+    partnerId,
+    departmentId,
+    amount,
+    paymentId,
+    bookingDate,
+    bookingTime
+  ) => {
+    return new Promise((resolve, reject) => {
+      fetch(`${host}api/v1/web/book/hospital/appointments/online`, {
+        method: "POST",
+        body: JSON.stringify({
+          c_id: customerId,
+          c_fname: firstName,
+          c_lname: lastName,
+          c_email: email,
+          c_mobile: mobile,
+          p_id: partnerId,
+          dep_id: departmentId,
+          amount: amount,
+          online_payment_id: paymentId,
+          book_date: bookingDate,
+          book_time: bookingTime
+        })
+      })
+        .then(response => {
+          response
+            .json()
+            .then(onlineAppointment => resolve(onlineAppointment))
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    });
+  },
+
+  offlineAppointmentApi: (
+    customerId,
+    firstName,
+    lastName,
+    email,
+    mobile,
+    partnerId,
+    departmentId,
+    amount,
+    bookingDate,
+    bookingTime
+  ) => {
+    return new Promise((resolve, reject) => {
+      fetch(`${host}api/v1/web/book/hospital/appointments/pav`, {
+        method: "POST",
+        body: JSON.stringify({
+          c_id: customerId,
+          c_fname: firstName,
+          c_lname: lastName,
+          c_email: email,
+          c_mobile: mobile,
+          p_id: partnerId,
+          dep_id: departmentId,
+          amount: amount,
+          book_date: bookingDate,
+          book_time: bookingTime
+        })
+      })
+        .then(response => {
+          response
+            .json()
+            .then(offlineAppointment => resolve(offlineAppointment))
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    });
   }
 };

@@ -15,6 +15,8 @@ import { readProfile } from "./read-profile-reducer";
 import { writeProfile } from "./write-profile-reducer";
 import { referralBed } from "./referral-bed-reducer";
 import { tokenGenerate } from "./token-generate-reducer";
+import { onlineAppointment } from "./online-appointment-reducer";
+import { offlineAppointment } from "./offline-appointment-reducer";
 
 export default combineReducers({
   cityLocality,
@@ -32,5 +34,7 @@ export default combineReducers({
   readProfile,
   writeProfile,
   referralBed,
-  tokenGenerate
+  tokenGenerate,
+  onlineAppointment,
+  offlineAppointment
 });

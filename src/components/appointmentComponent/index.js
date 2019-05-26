@@ -31,7 +31,8 @@ export default class Appointment extends React.Component {
       fNameError: false,
       lNameError: false,
       loading: false,
-      departmentId: 0
+      departmentId: 0,
+      payment: "PAY_ONLINE"
     };
   }
 
@@ -45,6 +46,7 @@ export default class Appointment extends React.Component {
     this.updateProfileState(JSON.parse(profileData));
     this.updateAuthDataState(JSON.parse(authData));
     this.updateAllDataState(JSON.parse(allData));
+    this.initialDepartment(JSON.parse(allData), JSON.parse(authData));
   }
 
   componentWillReceiveProps(nextProps) {}
@@ -85,14 +87,21 @@ export default class Appointment extends React.Component {
   };
 
   onChangeRadio = (e, name) => {
-    console.log(e);
-    console.log(name);
+    this.setState({
+      payment: name
+    });
   };
 
   onChangeDropdown = departmentId => {
     this.setState({
       departmentId
     });
+  };
+
+  initialDepartment = (allData, authData) => {
+    if (authData.type === "APPOINTMENT")
+      if (allData.p_departments.length !== 0)
+        this.onChangeDropdown(allData.p_departments[0].dep_id);
   };
 
   onChangeEmail = e => {
@@ -168,6 +177,7 @@ export default class Appointment extends React.Component {
   };
 
   onClickApi = () => {
+    console.log(this.state.departmentId);
     if (
       this.state.c_fname === "" ||
       this.state.c_lname === "" ||

@@ -1,5 +1,4 @@
 import React from "react";
-
 import "./left-side.css";
 
 const LeftSideComponent = props => {
@@ -122,7 +121,7 @@ const LeftSideComponent = props => {
             class="is-checkradio"
             id="Pay-online"
             type="radio"
-            checked="checked"
+            checked={props.state.payment === "PAY_ONLINE" ? "checked" : ""}
             name="exampleRadioInline"
             onChange={event => props.onChangeRadio(event, "PAY_ONLINE")}
           />
@@ -133,6 +132,7 @@ const LeftSideComponent = props => {
             class="is-checkradio"
             id="Pay-later"
             type="radio"
+            checked={props.state.payment === "PAY_LATER" ? "checked" : ""}
             name="exampleRadioInline"
             onChange={event => props.onChangeRadio(event, "PAY_LATER")}
           />
