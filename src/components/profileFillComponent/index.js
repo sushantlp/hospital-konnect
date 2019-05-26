@@ -39,13 +39,13 @@ export default class ProfileFill extends React.Component {
         c_mobile: nextProps.readProfile.readProfile.c_mobile
       });
     } else if (this.props.writeProfile !== nextProps.writeProfile) {
-      const data = {
+      const profile = {
         first_name: this.state.c_fname,
         last_name: this.state.c_lname,
         email: this.state.c_email,
         mobile: this.state.c_mobile
       };
-      sessionStorage.setItem("PROFILE_DATA", JSON.stringify(data));
+      sessionStorage.setItem("PROFILE_DATA", JSON.stringify(profile));
     }
   }
 
@@ -160,6 +160,15 @@ export default class ProfileFill extends React.Component {
       this.props.readProfile.readProfile.c_mobile !== null &&
       this.props.readProfile.readProfile.c_lname !== null
     ) {
+      const profile = {
+        c_fname: this.props.readProfile.readProfile.c_fname,
+        c_lname: this.props.readProfile.readProfile.c_lname,
+        c_email: this.props.readProfile.readProfile.c_email,
+        c_mobile: this.props.readProfile.readProfile.c_mobile
+      };
+
+      sessionStorage.setItem("PROFILE_DATA", JSON.stringify(profile));
+
       if (this.state.type === "BOOKING")
         this.props.history.push("/package-booking/");
       else this.props.history.push("/appointment/");

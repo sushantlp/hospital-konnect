@@ -62,6 +62,8 @@ export default class Search extends React.Component {
       return city;
     });
 
+    sessionStorage.setItem("CITY_LOCALITY", JSON.stringify(props));
+
     this.setCityName(cityName, 1);
     this.setState({
       cityList: cityArray
