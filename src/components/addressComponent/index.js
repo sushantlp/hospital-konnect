@@ -129,7 +129,16 @@ const AddressComponent = props => {
 
           <div class="columns">
             <div class="column is-6 is-offset-3">
-              <button class="button is-large is-fullwidth">NEXT</button>
+              <button
+                class={
+                  props.state.loading
+                    ? "button is-large is-loading is-fullwidth"
+                    : "button is-large is-fullwidth"
+                }
+                onClick={() => props.onClickApi}
+              >
+                NEXT
+              </button>
             </div>
           </div>
         </section>

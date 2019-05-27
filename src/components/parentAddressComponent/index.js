@@ -14,7 +14,7 @@ export default class ParentAddress extends React.Component {
       addressTwoError: false,
       loading: false,
       ambulance: false,
-      prev: false,
+      prev: true,
       next: false,
 
       addressOne: "",
@@ -23,6 +23,7 @@ export default class ParentAddress extends React.Component {
       cityId: 0,
       localityId: 0,
 
+      rawArray: [],
       cityArray: [],
       localityArray: []
     };
@@ -37,6 +38,7 @@ export default class ParentAddress extends React.Component {
     const destinationAddress = sessionStorage.getItem("DESTINATION_ADDRESS");
     const cityLocality = sessionStorage.getItem("CITY_LOCALITY");
 
+    if (currentAddress !== null) this.initialCurrentAddress(currentAddress);
     this.initialCityLocality(JSON.parse(cityLocality));
     this.checkType(JSON.parse(allData), JSON.parse(packageData));
   }
@@ -53,6 +55,16 @@ export default class ParentAddress extends React.Component {
     });
   };
 
+  initialCurrentAddress = currentAddress => {
+    this.setState({
+      addressOne: currentAddress.address.address_one,
+      addressTwo: currentAddress.address.address_two,
+      landmark: currentAddress.address.landmark,
+      cityId: currentAddress.address.city_id,
+      localityId: currentAddress.address.locality_id
+    });
+  };
+
   initialCityLocality = cityLocality => {
     const city = cityLocality.map((json, index) => {
       let obj = {};
@@ -63,7 +75,8 @@ export default class ParentAddress extends React.Component {
     this.createLocality(cityLocality[0].localities);
 
     this.setState({
-      cityArray: city
+      cityArray: city,
+      rawArray: cityLocality
     });
   };
 
@@ -89,21 +102,61 @@ export default class ParentAddress extends React.Component {
   };
 
   onChangeCity = e => {
+    const filterArray = this.state.rawArray.filter(
+      raw => raw.c_id === parseInt(e.target.value, 10)
+    );
+
+    this.createLocality(filterArray[0].localities);
     this.setState({
       cityId: parseInt(e.target.value, 10)
     });
   };
 
+  onPrevClick = () => {
+    this.setState({
+      loading: !this.state.loading
+    });
+
+    if (this.state.addressOne === "" || this.state.addressTwo === "") {
+      if (this.state.addressOne === "")
+        this.setState({
+          addressOneError: true
+        });
+
+      if (this.state.addressTwo === "")
+        this.setState({
+          addressTwoError: true
+        });
+    }
+  };
+
+  onNextClick = () => {};
+
   render() {
     return (
       <React.Fragment>
         <Header />
-        <Address
-          addressHeader="Current Address"
-          state={this.state}
-          onChangeCity={this.onChangeCity}
-          onChangeLocality={this.onChangeLocality}
-        />
+
+        {this.state.prev ? (
+          <Address
+            addressHeader="Current Address"
+            state={this.state}
+            onChangeCity={this.onChangeCity}
+            onChangeLocality={this.onChangeLocality}
+            onClickApi={this.onPrevClick}
+          />
+        ) : null}
+
+        {this.state.next ? (
+          <Address
+            addressHeader="Destination Address"
+            state={this.state}
+            onChangeCity={this.onChangeCity}
+            onChangeLocality={this.onChangeLocality}
+            onClickApi={this.onNextClick}
+          />
+        ) : null}
+
         <Footer />
       </React.Fragment>
     );
