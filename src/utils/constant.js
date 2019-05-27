@@ -4,6 +4,7 @@
 
 export default {
   City_Locality: "CITY_LOCALITY",
+  Referral_Bed: "REFERRAL_BED",
   Auth_Data: "AUTH_DATA",
   Auth: "AUTH_STATUS",
   ALL_Data: "ALL_DATA",

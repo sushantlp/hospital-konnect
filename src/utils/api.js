@@ -359,5 +359,87 @@ export default {
         })
         .catch(error => console.log(error));
     });
+  },
+
+  onlineBedApi: (
+    customerId,
+    firstName,
+    lastName,
+    email,
+    mobile,
+    partnerId,
+    bedId,
+    amount,
+    paymentId,
+    bookingFromDate,
+    bookingToDate,
+    referralPartnerId
+  ) => {
+    return new Promise((resolve, reject) => {
+      fetch(`${host}api/v1/web/book/beds/online`, {
+        method: "POST",
+        body: JSON.stringify({
+          c_id: customerId,
+          c_fname: firstName,
+          c_lname: lastName,
+          c_email: email,
+          c_mobile: mobile,
+          p_id: partnerId,
+          bed_id: bedId,
+          amount: amount,
+          book_from_date: bookingFromDate,
+          book_to_date: bookingToDate,
+          referral_partner_id: referralPartnerId,
+          online_payment_id: paymentId
+        })
+      })
+        .then(response => {
+          response
+            .json()
+            .then(onlineBed => resolve(onlineBed))
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    });
+  },
+
+  offlineBedApi: (
+    customerId,
+    firstName,
+    lastName,
+    email,
+    mobile,
+    partnerId,
+    bedId,
+    amount,
+    bookingFromDate,
+    bookingToDate,
+    referralPartnerId
+  ) => {
+    return new Promise((resolve, reject) => {
+      fetch(`${host}api/v1/web/book/beds/pav`, {
+        method: "POST",
+        body: JSON.stringify({
+          c_id: customerId,
+          c_fname: firstName,
+          c_lname: lastName,
+          c_email: email,
+          c_mobile: mobile,
+          p_id: partnerId,
+          bed_id: bedId,
+          amount: amount,
+          book_from_date: bookingFromDate,
+          book_to_date: bookingToDate,
+          referral_partner_id: referralPartnerId
+        })
+      })
+        .then(response => {
+          response
+            .json()
+            .then(onlineBed => resolve(onlineBed))
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    });
   }
 };

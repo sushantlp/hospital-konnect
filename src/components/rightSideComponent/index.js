@@ -18,12 +18,28 @@ const RightSideComponent = props => {
                 {props.rightHeader}
               </p>
               <p class="subtitle is-6">{props.rightAddress}</p>
-              <p class="subtitle is-6">{props.rightSpeciality}</p>
+
+              {props.rightSpeciality === undefined ? null : (
+                <p class="subtitle is-6">{props.rightSpeciality}</p>
+              )}
             </div>
+
+            {props.whichPackage === undefined ? null : (
+              <hr className="spacer is-1" />
+            )}
+
+            {props.whichPackage === undefined ? null : (
+              <p>
+                <strong>{props.whichPackage}</strong>
+                <br />
+                {props.packageName}
+              </p>
+            )}
 
             <hr className="spacer is-1" />
             <p class="subtitle is-5">
-              Consultation fees:{"  "}
+              {props.feeTitle}
+              {"  "}
               <span>
                 <del>&#x20b9;</del>
                 {props.rightCharge}

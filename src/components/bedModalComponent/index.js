@@ -16,6 +16,11 @@ export default class BedModal extends React.Component {
     if (this.props.referralBed !== nextProps.referralBed) {
       if (nextProps.referralBed.status === "SUCCESS") {
         this.updateLoadingState(false);
+
+        sessionStorage.setItem(
+          "REFERRAL_BED",
+          JSON.stringify(nextProps.referralBed.referralBed.referral_partner)
+        );
         const authStatus = sessionStorage.getItem("AUTH_STATUS");
         let authData = sessionStorage.getItem("AUTH_DATA");
         authData = JSON.parse(authData);

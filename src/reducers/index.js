@@ -17,6 +17,8 @@ import { referralBed } from "./referral-bed-reducer";
 import { tokenGenerate } from "./token-generate-reducer";
 import { onlineAppointment } from "./online-appointment-reducer";
 import { offlineAppointment } from "./offline-appointment-reducer";
+import { onlineBed } from "./online-bed-reducer";
+import { offlineBed } from "./offline-bed-reducer";
 
 export default combineReducers({
   cityLocality,
@@ -36,5 +38,7 @@ export default combineReducers({
   referralBed,
   tokenGenerate,
   onlineAppointment,
-  offlineAppointment
+  offlineAppointment,
+  onlineBed,
+  offlineBed
 });

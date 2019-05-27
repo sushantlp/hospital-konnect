@@ -26,6 +26,8 @@ export default class AuthModal extends React.Component {
         this.updateLoadingState();
         this.updatemobileState();
         this.updateotpState();
+
+        
       } else if (nextProps.mobileRegister.status === "FAIL") {
         this.updateLoadingState();
         this.updateErrorStatusState(true);

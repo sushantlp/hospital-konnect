@@ -7,9 +7,14 @@ import LeftSide from "../leftSideComponent";
 import DatePicker from "react-date-picker";
 import TimePicker from "react-time-picker";
 import moment from "moment-timezone";
+import {
+  NotificationContainer,
+  NotificationManager
+} from "react-notifications";
 
 import constant from "../../utils/constant";
 
+import "react-notifications/lib/notifications.css";
 import "./appointment.css";
 
 export default class Appointment extends React.Component {
@@ -18,8 +23,7 @@ export default class Appointment extends React.Component {
     this.state = {
       time: moment().format("HH:mm"),
       firstDate: new Date(),
-      lastDate: new Date(),
-      parseFirstDate: new Date(),
+
       auth_data: {},
       all_data: {},
       c_email: "",
@@ -55,20 +59,30 @@ export default class Appointment extends React.Component {
         this.setState({
           loading: !this.state.loading
         });
+
+        NotificationManager.success("Successful", "Successful");
+
+        this.props.history.push("/web/");
       } else if (nextProps.offlineAppointment.status === "FAIL") {
         this.setState({
           loading: !this.state.loading
         });
+
+        NotificationManager.error("Something wrong our side", "Error");
       }
     } else if (this.props.onlineAppointment !== nextProps.onlineAppointment) {
       if (nextProps.onlineAppointment.status === "SUCCESS") {
         this.setState({
           loading: !this.state.loading
         });
+
+        NotificationManager.success("Successful", "Successful");
       } else if (nextProps.onlineAppointment.status === "FAIL") {
         this.setState({
           loading: !this.state.loading
         });
+
+        NotificationManager.error("Something wrong our side", "Error");
       }
     }
   }
@@ -362,6 +376,7 @@ export default class Appointment extends React.Component {
                   rightAddress={rightAddress}
                   rightCharge={rightCharge}
                   thumbImage={thumbImage}
+                  feeTitle="Consultation fees :"
                 />
                 <section class="section">
                   <DatePicker
@@ -392,6 +407,8 @@ export default class Appointment extends React.Component {
             </div>
           </div>
         </section>
+
+        <NotificationContainer />
         <Footer />
       </React.Fragment>
     );
