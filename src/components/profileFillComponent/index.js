@@ -2,6 +2,11 @@ import React from "react";
 import Spinner from "../spinnerComponent";
 import "./profile-fill.css";
 
+import {
+  NotificationContainer,
+  NotificationManager
+} from "react-notifications";
+
 import constant from "../../utils/constant";
 
 export default class ProfileFill extends React.Component {
@@ -23,31 +28,43 @@ export default class ProfileFill extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.readProfile !== nextProps.readProfile) {
-      this.setState({
-        c_email:
-          nextProps.readProfile.readProfile.c_email === null
-            ? ""
-            : nextProps.readProfile.readProfile.c_email,
-        c_fname:
-          nextProps.readProfile.readProfile.c_fname === null
-            ? ""
-            : nextProps.readProfile.readProfile.c_fname,
-        c_lname:
-          nextProps.readProfile.readProfile.c_lname === null
-            ? ""
-            : nextProps.readProfile.readProfile.c_lname,
-        c_mobile: nextProps.readProfile.readProfile.c_mobile
-      });
+      if (nextProps.readProfile.status === "SUCCESS") {
+        this.setState({
+          c_email:
+            nextProps.readProfile.readProfile.c_email === null
+              ? ""
+              : nextProps.readProfile.readProfile.c_email,
+          c_fname:
+            nextProps.readProfile.readProfile.c_fname === null
+              ? ""
+              : nextProps.readProfile.readProfile.c_fname,
+          c_lname:
+            nextProps.readProfile.readProfile.c_lname === null
+              ? ""
+              : nextProps.readProfile.readProfile.c_lname,
+          c_mobile: nextProps.readProfile.readProfile.c_mobile
+        });
+      } else if (nextProps.readProfile.status === "FAIL")
+        NotificationManager.error(nextProps.readProfile.msg, "Error");
     } else if (this.props.writeProfile !== nextProps.writeProfile) {
-      const data = this.state.c_mobile + "";
+      if (nextProps.writeProfile.status === "SUCCESS") {
+        const data = this.state.c_mobile + "";
 
-      const profile = {
-        first_name: this.state.c_fname,
-        last_name: this.state.c_lname,
-        email: this.state.c_email,
-        mobile: data.slice(2)
-      };
-      sessionStorage.setItem("PROFILE_DATA", JSON.stringify(profile));
+        const profile = {
+          c_fname: this.state.c_fname,
+          c_lname: this.state.c_lname,
+          c_email: this.state.c_email,
+          c_mobile: data.slice(2)
+        };
+
+        sessionStorage.setItem("PROFILE_DATA", JSON.stringify(profile));
+        this.routeLogic();
+      } else if (nextProps.writeProfile.status === "FAIL") {
+        NotificationManager.error(nextProps.writeProfile.msg, "Error");
+        this.setState({
+          loading: !this.state.loading
+        });
+      }
     }
   }
 
@@ -152,6 +169,27 @@ export default class ProfileFill extends React.Component {
     }
   };
 
+  routeLogic = () => {
+    if (this.state.type === "BOOKING") {
+      let allData = sessionStorage.getItem("ALL_DATA");
+      let packageData = sessionStorage.getItem("PACKAGE_DATA");
+
+      allData = JSON.parse(allData);
+      packageData = JSON.parse(packageData);
+
+      if (allData.p_cat === 1) {
+        if (packageData.a_id !== undefined)
+          this.props.history.push("/address/");
+
+        this.props.history.push("/package-booking/");
+      } else if (allData.p_cat === 7) {
+        console.log("Category 7");
+      } else {
+        this.props.history.push("/address/");
+      }
+    } else this.props.history.push("/appointment/");
+  };
+
   render() {
     if (this.props.readProfile.status === "START") return <Spinner />;
     else if (this.props.readProfile.status === "FAIL") return <Spinner />;
@@ -173,14 +211,12 @@ export default class ProfileFill extends React.Component {
 
       sessionStorage.setItem("PROFILE_DATA", JSON.stringify(profile));
 
-      if (this.state.type === "BOOKING")
-        this.props.history.push("/package-booking/");
-      else this.props.history.push("/appointment/");
+      this.routeLogic();
     }
 
     return (
       <div class="container">
-        <div className="header">
+        <div className="profile-header">
           <h1>HOSPITAL KONNECT </h1>
           <p>JUST KONNECT </p>
         </div>
@@ -304,6 +340,8 @@ export default class ProfileFill extends React.Component {
             </div>
           </section>
         </div>
+
+        <NotificationContainer />
       </div>
     );
   }

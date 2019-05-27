@@ -2,6 +2,7 @@ import React from "react";
 import "./left-side.css";
 
 const LeftSideComponent = props => {
+  console.log(props);
   return (
     <div className="left-side-header">
       <p class="title is-4">{props.leftHeaderName}</p>

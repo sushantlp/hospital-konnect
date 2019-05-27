@@ -3,6 +3,8 @@
 // export const Auth_Data = "AUTH_DATA";
 
 export default {
+  Current_Address: "CURRENT_ADDRESS",
+  Destination_Address: "DESTINATION_ADDRESS",
   City_Locality: "CITY_LOCALITY",
   Referral_Bed: "REFERRAL_BED",
   Auth_Data: "AUTH_DATA",

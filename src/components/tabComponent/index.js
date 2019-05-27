@@ -53,7 +53,16 @@ export default class Tab extends React.Component {
         sessionStorage.setItem("AUTH_DATA", JSON.stringify(data));
         sessionStorage.setItem("ALL_DATA", JSON.stringify(categoryFeature));
         sessionStorage.setItem("PACKAGE_DATA", JSON.stringify(packages));
-        this.props.history.push("/package-booking/");
+
+        if (categoryFeature.p_cat === 1) {
+          if (packages.a_id !== undefined) this.props.history.push("/address/");
+
+          this.props.history.push("/package-booking/");
+        } else if (categoryFeature.p_cat === 7) {
+          console.log("Category 7");
+        } else {
+          this.props.history.push("/address/");
+        }
       } else {
         this.props.updateOpenState(true);
       }

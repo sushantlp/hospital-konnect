@@ -15,7 +15,7 @@ import Privacy from "./components/privacyComponent";
 import Term from "./components/termComponent";
 import Appointment from "./containers/appointment-container";
 import PackageBooking from "./containers/booking-container";
-import Address from "./components/addressComponent";
+import Address from "./components/parentAddressComponent";
 
 const Root = ({ store }) => (
   <Provider store={store}>

@@ -23,7 +23,6 @@ export default class Appointment extends React.Component {
     this.state = {
       time: moment().format("HH:mm"),
       firstDate: new Date(),
-
       auth_data: {},
       all_data: {},
       c_email: "",
@@ -126,16 +125,19 @@ export default class Appointment extends React.Component {
     });
   };
 
-  onChangeDropdown = departmentId => {
+  onChangeDropdown = e => {
+    console.log(e.target.value);
     this.setState({
-      departmentId
+      departmentId: parseInt(e.target.value, 10)
     });
   };
 
   initialDepartment = (allData, authData) => {
     if (authData.type === "APPOINTMENT")
       if (allData.p_departments.length !== 0)
-        this.onChangeDropdown(allData.p_departments[0].dep_id);
+        this.setState({
+          departmentId: parseInt(allData.p_departments[0].dep_id, 10)
+        });
   };
 
   onChangeEmail = e => {
@@ -292,7 +294,13 @@ export default class Appointment extends React.Component {
         date,
         this.state.time
       );
-    else console.log("Payment not done");
+    else {
+      console.log("Payment not done");
+
+      this.setState({
+        loading: !this.state.loading
+      });
+    }
   };
 
   invokeRazorPay = (email, mobile, amount, name, onlinePaymentApi) => {
@@ -362,7 +370,7 @@ export default class Appointment extends React.Component {
           ? special.spl_name
           : `${rightSpeciality} | ${special.spl_name}`;
     });
-
+    console.log(this.state);
     return (
       <React.Fragment>
         <Header />

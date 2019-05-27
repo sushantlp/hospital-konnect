@@ -4,6 +4,7 @@ import Footer from "../footerComponent/footer";
 import RightSide from "../rightSideComponent";
 import LeftSide from "../leftSideComponent";
 import DatePicker from "react-date-picker";
+import TimePicker from "react-time-picker";
 
 import moment from "moment-timezone";
 import {
@@ -38,8 +39,8 @@ export default class PackageBooking extends React.Component {
       payment: "PAY_ONLINE",
       right_charge: 0,
       default_charge: 0,
-      hospitalBed: false,
-      hospitalAmbulance: false,
+      hospital_bed: false,
+      hospital_ambulance: false,
       whichPackage: undefined,
       packageName: undefined,
       category_id: 0
@@ -103,7 +104,7 @@ export default class PackageBooking extends React.Component {
     if (all.p_cat === 1) {
       if (packages.a_title !== undefined) {
         this.setState({
-          hospitalAmbulance: true,
+          hospital_ambulance: true,
           right_charge: packages.a_price,
           default_charge: packages.a_price,
           whichPackage: "Selected Ambulance",
@@ -113,7 +114,7 @@ export default class PackageBooking extends React.Component {
         });
       } else {
         this.setState({
-          hospitalbed: true,
+          hospital_bed: true,
           right_charge: packages.b_price,
           default_charge: packages.b_price,
           whichPackage: "Selected Bed",
@@ -200,6 +201,12 @@ export default class PackageBooking extends React.Component {
   onChangeDropdown = departmentId => {
     this.setState({
       departmentId
+    });
+  };
+
+  onChangeTime = time => {
+    this.setState({
+      time
     });
   };
 
@@ -319,7 +326,7 @@ export default class PackageBooking extends React.Component {
           "YYYY-MM-DD"
         );
 
-        if (this.state.hospitalBed) {
+        if (this.state.hospital_bed) {
           if (this.state.payment === "PAY_ONLINE")
             this.invokeRazorPay(
               this.state.c_email,
@@ -343,6 +350,7 @@ export default class PackageBooking extends React.Component {
               this.state.referral_partner_id
             );
         } else {
+          console.log("Hell");
         }
       }
     }
@@ -447,12 +455,21 @@ export default class PackageBooking extends React.Component {
                     onChange={event => this.onChangeFromDate(event)}
                     value={this.state.from_date}
                   />
-                  <span style={{ float: "right" }}>
-                    <DatePicker
-                      onChange={event => this.onChangeToDate(event)}
-                      value={this.state.to_date}
+                  {this.state.hospital_bed ? (
+                    <span style={{ float: "right" }}>
+                      <DatePicker
+                        onChange={event => this.onChangeToDate(event)}
+                        value={this.state.to_date}
+                      />
+                    </span>
+                  ) : null}
+
+                  {this.state.hospital_bed ? null : (
+                    <TimePicker
+                      onChange={event => this.onChangeTime(event)}
+                      value={this.state.time}
                     />
-                  </span>
+                  )}
                 </section>
               </div>
               <div class="column ">
