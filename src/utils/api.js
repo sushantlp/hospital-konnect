@@ -561,5 +561,177 @@ export default {
         })
         .catch(error => console.log(error));
     });
+  },
+
+  onlineEquipmentApi: (
+    customerId,
+    firstName,
+    lastName,
+    email,
+    mobile,
+    partnerId,
+    equipmentId,
+    bookingFromDate,
+    bookingToDate,
+    amount,
+    paymentId,
+    addCharge,
+    address
+  ) => {
+    return new Promise((resolve, reject) => {
+      fetch(`${host}api/v1/web/book/equipments/online`, {
+        method: "POST",
+        body: JSON.stringify({
+          c_id: customerId,
+          c_fname: firstName,
+          c_lname: lastName,
+          c_email: email,
+          c_mobile: mobile,
+          p_id: partnerId,
+          equip_id: equipmentId,
+          book_from_date: bookingFromDate,
+          book_to_date: bookingToDate,
+          amount: amount,
+          online_payment_id: paymentId,
+          add_charges: addCharge,
+          c_address: address
+        })
+      })
+        .then(response => {
+          response
+            .json()
+            .then(onlineEquipment => resolve(onlineEquipment))
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    });
+  },
+
+  offlineEquipmentApi: (
+    customerId,
+    firstName,
+    lastName,
+    email,
+    mobile,
+    partnerId,
+    equipmentId,
+    bookingFromDate,
+    bookingToDate,
+    amount,
+    addCharge,
+    address
+  ) => {
+    return new Promise((resolve, reject) => {
+      fetch(`${host}api/v1/web/book/equipments/pav`, {
+        method: "POST",
+        body: JSON.stringify({
+          c_id: customerId,
+          c_fname: firstName,
+          c_lname: lastName,
+          c_email: email,
+          c_mobile: mobile,
+          p_id: partnerId,
+          equip_id: equipmentId,
+          book_from_date: bookingFromDate,
+          book_to_date: bookingToDate,
+          amount: amount,
+          add_charges: addCharge,
+          c_address: address
+        })
+      })
+        .then(response => {
+          response
+            .json()
+            .then(offlineEquipment => resolve(offlineEquipment))
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    });
+  },
+
+  offlineNursingApi: (
+    customerId,
+    firstName,
+    lastName,
+    email,
+    mobile,
+    partnerId,
+    nursingId,
+    bookingFromDate,
+    bookingToDate,
+    amount,
+    addCharge,
+    address
+  ) => {
+    return new Promise((resolve, reject) => {
+      fetch(`${host}api/v1/web/book/packages/pav`, {
+        method: "POST",
+        body: JSON.stringify({
+          c_id: customerId,
+          c_fname: firstName,
+          c_lname: lastName,
+          c_email: email,
+          c_mobile: mobile,
+          p_id: partnerId,
+          pac_id: nursingId,
+          book_from_date: bookingFromDate,
+          book_to_date: bookingToDate,
+          amount: amount,
+          add_charges: addCharge,
+          c_address: address
+        })
+      })
+        .then(response => {
+          response
+            .json()
+            .then(offlineNursing => resolve(offlineNursing))
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    });
+  },
+
+  onlineNursingApi: (
+    customerId,
+    firstName,
+    lastName,
+    email,
+    mobile,
+    partnerId,
+    nursingId,
+    bookingFromDate,
+    bookingToDate,
+    amount,
+    paymentId,
+    addCharge,
+    address
+  ) => {
+    return new Promise((resolve, reject) => {
+      fetch(`${host}api/v1/web/book/packages/online`, {
+        method: "POST",
+        body: JSON.stringify({
+          c_id: customerId,
+          c_fname: firstName,
+          c_lname: lastName,
+          c_email: email,
+          c_mobile: mobile,
+          p_id: partnerId,
+          pac_id: nursingId,
+          book_from_date: bookingFromDate,
+          book_to_date: bookingToDate,
+          amount: amount,
+          online_payment_id: paymentId,
+          add_charges: addCharge,
+          c_address: address
+        })
+      })
+        .then(response => {
+          response
+            .json()
+            .then(offlineNursing => resolve(offlineNursing))
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    });
   }
 };

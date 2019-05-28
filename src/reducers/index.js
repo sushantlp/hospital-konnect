@@ -22,6 +22,11 @@ import { offlineBed } from "./offline-bed-reducer";
 import { ambulanceDistance } from "./ambulance-distance-reducer";
 import { offlineAmbulance } from "./offline-ambulance-reducer";
 import { onlineAmbulance } from "./online-ambulance-reducer";
+import { onlineEquipment } from "./online-equipment-reducer";
+import { offlineEquipment } from "./offline-equipment-reducer";
+
+import { offlineNursing } from "./offline-nursing-reducer";
+import { onlineNursing } from "./online-nursing-reducer";
 
 export default combineReducers({
   cityLocality,
@@ -46,5 +51,9 @@ export default combineReducers({
   offlineBed,
   ambulanceDistance,
   offlineAmbulance,
-  onlineAmbulance
+  onlineAmbulance,
+  onlineEquipment,
+  offlineEquipment,
+  onlineNursing,
+  offlineNursing
 });
