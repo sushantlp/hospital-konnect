@@ -27,6 +27,7 @@ import { offlineEquipment } from "./offline-equipment-reducer";
 
 import { offlineNursing } from "./offline-nursing-reducer";
 import { onlineNursing } from "./online-nursing-reducer";
+import { airAmbulance } from "./air-ambulance-reducer";
 
 export default combineReducers({
   cityLocality,
@@ -55,5 +56,6 @@ export default combineReducers({
   onlineEquipment,
   offlineEquipment,
   onlineNursing,
-  offlineNursing
+  offlineNursing,
+  airAmbulance
 });

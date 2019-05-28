@@ -733,5 +733,27 @@ export default {
         })
         .catch(error => console.log(error));
     });
+  },
+
+  airAmbulanceApi: (firstName, lastName, email, mobile, enquiry) => {
+    return new Promise((resolve, reject) => {
+      fetch(`${host}api/v1/web/calculate/ambulance/amount`, {
+        method: "POST",
+        body: JSON.stringify({
+          c_fname: firstName,
+          c_lname: lastName,
+          c_email: email,
+          c_mobile: mobile,
+          enquiry: enquiry
+        })
+      })
+        .then(response => {
+          response
+            .json()
+            .then(airAmbulance => resolve(airAmbulance))
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    });
   }
 };
