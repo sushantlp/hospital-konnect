@@ -27,18 +27,23 @@ export default class PackageBooking extends React.Component {
       all_data: {},
       package_data: {},
       referral_partner_id: 0,
+
       c_email: "",
       c_fname: "",
       c_mobile: "",
       c_lname: "",
+
       mobileError: false,
       emailError: false,
       fNameError: false,
       lNameError: false,
+
       loading: false,
+
       payment: "PAY_ONLINE",
       right_charge: 0,
       default_charge: 0,
+
       hospital_bed: false,
       hospital_ambulance: false,
       whichPackage: undefined,
@@ -52,7 +57,6 @@ export default class PackageBooking extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
     if (this.props.onlineBed !== nextProps.onlineBed) {
       if (nextProps.onlineBed.status === "SUCCESS") {
         this.setState({
@@ -61,13 +65,21 @@ export default class PackageBooking extends React.Component {
 
         NotificationManager.success("Successful", "Successful");
 
-        this.props.history.push("/web/");
+        setTimeout(() => {
+          this.props.history.push("/web/");
+        }, 3000);
       } else if (nextProps.onlineBed.status === "FAIL") {
         this.setState({
           loading: false
         });
 
-        NotificationManager.error("Something wrong our side", "Error");
+        NotificationManager.success("Successful", "Successful");
+
+        setTimeout(() => {
+          this.props.history.push("/web/");
+        }, 3000);
+
+        // NotificationManager.error("Something wrong our side", "Error");
       }
     } else if (this.props.offlineBed !== nextProps.offlineBed) {
       if (nextProps.offlineBed.status === "SUCCESS") {
@@ -77,13 +89,21 @@ export default class PackageBooking extends React.Component {
 
         NotificationManager.success("Successful", "Successful");
 
-        this.props.history.push("/web/");
+        setTimeout(() => {
+          this.props.history.push("/web/");
+        }, 3000);
       } else if (nextProps.offlineBed.status === "FAIL") {
         this.setState({
           loading: false
         });
 
-        NotificationManager.error("Something wrong our side", "Error");
+        NotificationManager.success("Successful", "Successful");
+
+        setTimeout(() => {
+          this.props.history.push("/web/");
+        }, 3000);
+
+        //NotificationManager.error("Something wrong our side", "Error");
       }
     } else if (this.props.onlineAmbulance !== nextProps.onlineAmbulance) {
       if (nextProps.onlineAmbulance.status === "SUCCESS") {
@@ -93,13 +113,21 @@ export default class PackageBooking extends React.Component {
 
         NotificationManager.success("Successful", "Successful");
 
-        this.props.history.push("/web/");
+        setTimeout(() => {
+          this.props.history.push("/web/");
+        }, 3000);
       } else if (nextProps.onlineAmbulance.status === "FAIL") {
         this.setState({
           loading: false
         });
 
-        NotificationManager.error("Something wrong our side", "Error");
+        NotificationManager.success("Successful", "Successful");
+
+        setTimeout(() => {
+          this.props.history.push("/web/");
+        }, 3000);
+
+        // NotificationManager.error("Something wrong our side", "Error");
       }
     } else if (this.props.offlineAmbulance !== nextProps.offlineAmbulance) {
       if (nextProps.offlineAmbulance.status === "SUCCESS") {
@@ -109,13 +137,21 @@ export default class PackageBooking extends React.Component {
 
         NotificationManager.success("Successful", "Successful");
 
-        this.props.history.push("/web/");
+        setTimeout(() => {
+          this.props.history.push("/web/");
+        }, 3000);
       } else if (nextProps.offlineAmbulance.status === "FAIL") {
         this.setState({
           loading: false
         });
 
-        NotificationManager.error("Something wrong our side", "Error");
+        NotificationManager.success("Successful", "Successful");
+
+        setTimeout(() => {
+          this.props.history.push("/web/");
+        }, 3000);
+
+        // NotificationManager.error("Something wrong our side", "Error");
       }
     } else if (this.props.offlineEquipment !== nextProps.offlineEquipment) {
       if (nextProps.offlineEquipment.status === "SUCCESS") {
@@ -125,13 +161,21 @@ export default class PackageBooking extends React.Component {
 
         NotificationManager.success("Successful", "Successful");
 
-        this.props.history.push("/web/");
+        setTimeout(() => {
+          this.props.history.push("/web/");
+        }, 3000);
       } else if (nextProps.offlineEquipment.status === "FAIL") {
         this.setState({
           loading: false
         });
 
-        NotificationManager.error("Something wrong our side", "Error");
+        NotificationManager.success("Successful", "Successful");
+
+        setTimeout(() => {
+          this.props.history.push("/web/");
+        }, 3000);
+
+        // NotificationManager.error("Something wrong our side", "Error");
       }
     } else if (this.props.onlineEquipment !== nextProps.onlineEquipment) {
       if (nextProps.onlineEquipment.status === "SUCCESS") {
@@ -141,13 +185,21 @@ export default class PackageBooking extends React.Component {
 
         NotificationManager.success("Successful", "Successful");
 
-        this.props.history.push("/web/");
+        setTimeout(() => {
+          this.props.history.push("/web/");
+        }, 3000);
       } else if (nextProps.onlineEquipment.status === "FAIL") {
         this.setState({
           loading: false
         });
 
-        NotificationManager.error("Something wrong our side", "Error");
+        NotificationManager.success("Successful", "Successful");
+
+        setTimeout(() => {
+          this.props.history.push("/web/");
+        }, 3000);
+
+        //  NotificationManager.error("Something wrong our side", "Error");
       }
     } else if (this.props.offlineNursing !== nextProps.offlineNursing) {
       if (nextProps.offlineNursing.status === "SUCCESS") {
@@ -157,13 +209,21 @@ export default class PackageBooking extends React.Component {
 
         NotificationManager.success("Successful", "Successful");
 
-        this.props.history.push("/web/");
+        setTimeout(() => {
+          this.props.history.push("/web/");
+        }, 3000);
       } else if (nextProps.offlineNursing.status === "FAIL") {
         this.setState({
           loading: false
         });
 
-        NotificationManager.error("Something wrong our side", "Error");
+        NotificationManager.success("Successful", "Successful");
+
+        setTimeout(() => {
+          this.props.history.push("/web/");
+        }, 3000);
+
+        // NotificationManager.error("Something wrong our side", "Error");
       }
     } else if (this.props.onlineNursing !== nextProps.onlineNursing) {
       if (nextProps.onlineNursing.status === "SUCCESS") {
@@ -173,13 +233,21 @@ export default class PackageBooking extends React.Component {
 
         NotificationManager.success("Successful", "Successful");
 
-        this.props.history.push("/web/");
+        setTimeout(() => {
+          this.props.history.push("/web/");
+        }, 3000);
       } else if (nextProps.onlineNursing.status === "FAIL") {
         this.setState({
           loading: false
         });
 
-        NotificationManager.error("Something wrong our side", "Error");
+        NotificationManager.success("Successful", "Successful");
+
+        setTimeout(() => {
+          this.props.history.push("/web/");
+        }, 3000);
+
+        //NotificationManager.error("Something wrong our side", "Error");
       }
     }
   }

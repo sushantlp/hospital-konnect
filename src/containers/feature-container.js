@@ -8,6 +8,7 @@ import { getSeoUrl } from "../actions/seo-url-action";
 import { postMobileRegister } from "../actions/mobile-register-action";
 import { postOtpVerify } from "../actions/otp-verify-action";
 import { validateReferralBed } from "../actions/referral-bed-action";
+import { postAirAmbulance } from "../actions/air-ambulance-action";
 
 function mapStateToProps(state) {
   return {
@@ -15,7 +16,8 @@ function mapStateToProps(state) {
     seoUrlList: state.seoUrlList,
     mobileRegister: state.mobileRegister,
     otpVerify: state.otpVerify,
-    referralBed: state.referralBed
+    referralBed: state.referralBed,
+    airAmbulance: state.airAmbulance
   };
 }
 
@@ -27,7 +29,8 @@ export default withRouter(
       getSeoUrl: getSeoUrl,
       postMobileRegister: postMobileRegister,
       postOtpVerify: postOtpVerify,
-      validateReferralBed: validateReferralBed
+      validateReferralBed: validateReferralBed,
+      postAirAmbulance: postAirAmbulance
     }
   )(ParentDetail)
 );

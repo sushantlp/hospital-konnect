@@ -6,6 +6,7 @@ import Card from "../cardDetailComponent";
 import Seo from "../seoComponent";
 import Tab from "../tabComponent";
 import Banner from "../bannerComponent";
+import Enquiry from "../enquiryModelComponent";
 
 import "./parent-detail.css";
 
@@ -24,7 +25,9 @@ export default class ParentDetail extends React.Component {
         bedOpen: false,
         photoIndex: 0,
         lightBox: false,
-        bundleImage: []
+        bundleImage: [],
+
+        enquiryModal: false
       };
     } else {
       const partnerArray = splitArray[0].split("=");
@@ -39,7 +42,8 @@ export default class ParentDetail extends React.Component {
         authOpen: false,
         photoIndex: 0,
         lightBox: false,
-        bundleImage: []
+        bundleImage: [],
+        enquiryModal: false
       };
     }
   }
@@ -98,6 +102,18 @@ export default class ParentDetail extends React.Component {
     this.updateOpenState(true);
   };
 
+  onClickEnquiry = object => {
+    console.log(object);
+
+    this.updateEnquiryModal(true);
+  };
+
+  updateEnquiryModal = bool => {
+    this.setState({
+      enquiryModal: bool
+    });
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -108,6 +124,16 @@ export default class ParentDetail extends React.Component {
             <Banner />
           </div>
         </section> */}
+
+        {this.state.enquiryModal ? (
+          <Enquiry
+            enquiryModal={this.state.enquiryModal}
+            updateEnquiryModal={this.updateEnquiryModal}
+            airAmbulance={this.props.airAmbulance}
+            postAirAmbulance={this.props.postAirAmbulance}
+            history={this.props.history}
+          />
+        ) : null}
 
         <section class="section">
           <div class="columns">
@@ -128,6 +154,7 @@ export default class ParentDetail extends React.Component {
                 otpVerify={this.props.otpVerify}
                 history={this.props.history}
                 onClickAppointment={this.onClickAppointment}
+                onClickEnquiry={this.onClickEnquiry}
               />
               <div class="section">
                 <Tab

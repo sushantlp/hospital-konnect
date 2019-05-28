@@ -239,6 +239,31 @@ const CardDetail = props => {
             </div>
           </footer>
         ) : null}
+
+        {object.p_cat === 7 ? (
+          <footer class="card-footer">
+            <div class="card-footer-item">
+              <a class="button is-medium">
+                <span class="icon">
+                  <img src="https://img.icons8.com/ios/25/000000/phone-filled.png" />
+                </span>
+                <span>{object.p_other_contacts[0]}</span>
+              </a>
+            </div>
+
+            <div class="card-footer-item">
+              <a
+                class="button is-large"
+                onClick={() => props.onClickEnquiry(object)}
+              >
+                <span class="icon">
+                  <img src="https://img.icons8.com/ios/25/000000/paper-plane-filled.png" />
+                </span>
+                <span>Enquiry</span>
+              </a>
+            </div>
+          </footer>
+        ) : null}
       </div>
 
       {props.authOpen ? (

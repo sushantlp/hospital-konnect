@@ -15,7 +15,7 @@ export default class Footer extends React.Component {
                     <img
                       alt="Hospital Konnect - Just Konnect"
                       role="presentation"
-                      src="https://res.cloudinary.com/dp67gawk6/image/upload/v1557299534/HK/hk-logo.jpg"
+                      src="https://res.cloudinary.com/dp67gawk6/image/upload/v1557299534/HK/hk-logo-new.jpg"
                     />
                   </div>
                   <div className="brand-content">

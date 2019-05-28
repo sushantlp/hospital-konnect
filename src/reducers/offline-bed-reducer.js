@@ -1,4 +1,4 @@
-import { actionType } from "../actions/online-bed-action";
+import { actionType } from "../actions/offline-bed-action";
 
 const initialState = {
   offlineBed: {},
