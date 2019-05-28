@@ -15,9 +15,15 @@ const AddressComponent = props => {
               <div class="field">
                 <div class="control has-icons-left has-icons-right">
                   <input
-                    class="input is-large"
+                    class={
+                      props.state.addressOneError
+                        ? "input is-large is-danger"
+                        : "input is-large"
+                    }
                     type="text"
                     placeholder="Address one"
+                    onChange={props.onChangeAddressOne}
+                    value={props.state.addressOne}
                   />
                   <span class="icon is-small is-left">
                     <img src="https://img.icons8.com/wired/25/000000/worldwide-location.png" />
@@ -40,9 +46,15 @@ const AddressComponent = props => {
               <div class="field">
                 <div class="control has-icons-left has-icons-right">
                   <input
-                    class="input is-large"
+                    class={
+                      props.state.addressTwoError
+                        ? "input is-large is-danger"
+                        : "input is-large"
+                    }
                     type="text"
                     placeholder="Address two"
+                    onChange={props.onChangeAddressTwo}
+                    value={props.state.addressTwo}
                   />
                   <span class="icon is-small is-left">
                     <img src="https://img.icons8.com/wired/25/000000/worldwide-location.png" />
@@ -66,6 +78,8 @@ const AddressComponent = props => {
                     class="input is-large"
                     type="text"
                     placeholder="Landmark"
+                    onChange={props.onChangeLandmark}
+                    value={props.state.landmark}
                   />
                   <span class="icon is-small is-left">
                     <img src="https://img.icons8.com/ios/25/000000/palace.png" />
@@ -135,7 +149,7 @@ const AddressComponent = props => {
                     ? "button is-large is-loading is-fullwidth"
                     : "button is-large is-fullwidth"
                 }
-                onClick={() => props.onClickApi}
+                onClick={() => props.onClickApi()}
               >
                 NEXT
               </button>

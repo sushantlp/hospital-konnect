@@ -126,7 +126,6 @@ export default class Appointment extends React.Component {
   };
 
   onChangeDropdown = e => {
-    console.log(e.target.value);
     this.setState({
       departmentId: parseInt(e.target.value, 10)
     });

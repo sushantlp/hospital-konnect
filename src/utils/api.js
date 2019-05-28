@@ -441,5 +441,125 @@ export default {
         })
         .catch(error => console.log(error));
     });
+  },
+
+  ambulanceDistanceApi: (
+    partnerId,
+    ambulanceId,
+    currentAddress,
+    destinationAddress
+  ) => {
+    return new Promise((resolve, reject) => {
+      fetch(`${host}api/v1/web/calculate/ambulance/amount`, {
+        method: "POST",
+        body: JSON.stringify({
+          p_id: partnerId,
+          amb_id: ambulanceId,
+          from_address: currentAddress,
+          to_address: destinationAddress
+        })
+      })
+        .then(response => {
+          response
+            .json()
+            .then(ambulanceDistance => resolve(ambulanceDistance))
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    });
+  },
+
+  onlineAmbulanceApi: (
+    customerId,
+    firstName,
+    lastName,
+    email,
+    mobile,
+    partnerId,
+    ambulanceId,
+    bookingDate,
+    bookingTime,
+    amount,
+    complimentary,
+    addCharge,
+    fromAddress,
+    toAddress,
+    paymentId
+  ) => {
+    return new Promise((resolve, reject) => {
+      fetch(`${host}api/v1/web/book/ambulances/online`, {
+        method: "POST",
+        body: JSON.stringify({
+          c_id: customerId,
+          c_fname: firstName,
+          c_lname: lastName,
+          c_email: email,
+          c_mobile: mobile,
+          p_id: partnerId,
+          amb_id: ambulanceId,
+          book_date: bookingDate,
+          book_time: bookingTime,
+          amount: amount,
+          complimentary: complimentary,
+          add_charges: addCharge,
+          c_from_address: fromAddress,
+          c_to_address: toAddress,
+          online_payment_id: paymentId
+        })
+      })
+        .then(response => {
+          response
+            .json()
+            .then(onlineAmbulance => resolve(onlineAmbulance))
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    });
+  },
+
+  offlineAmbulanceApi: (
+    customerId,
+    firstName,
+    lastName,
+    email,
+    mobile,
+    partnerId,
+    ambulanceId,
+    bookingDate,
+    bookingTime,
+    amount,
+    complimentary,
+    addCharge,
+    fromAddress,
+    toAddress
+  ) => {
+    return new Promise((resolve, reject) => {
+      fetch(`${host}api/v1/web/book/ambulances/pav`, {
+        method: "POST",
+        body: JSON.stringify({
+          c_id: customerId,
+          c_fname: firstName,
+          c_lname: lastName,
+          c_email: email,
+          c_mobile: mobile,
+          p_id: partnerId,
+          amb_id: ambulanceId,
+          book_date: bookingDate,
+          book_time: bookingTime,
+          amount: amount,
+          complimentary: complimentary,
+          add_charges: addCharge,
+          c_from_address: fromAddress,
+          c_to_address: toAddress
+        })
+      })
+        .then(response => {
+          response
+            .json()
+            .then(offlineAmbulance => resolve(offlineAmbulance))
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    });
   }
 };

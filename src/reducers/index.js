@@ -19,6 +19,9 @@ import { onlineAppointment } from "./online-appointment-reducer";
 import { offlineAppointment } from "./offline-appointment-reducer";
 import { onlineBed } from "./online-bed-reducer";
 import { offlineBed } from "./offline-bed-reducer";
+import { ambulanceDistance } from "./ambulance-distance-reducer";
+import { offlineAmbulance } from "./offline-ambulance-reducer";
+import { onlineAmbulance } from "./online-ambulance-reducer";
 
 export default combineReducers({
   cityLocality,
@@ -40,5 +43,8 @@ export default combineReducers({
   onlineAppointment,
   offlineAppointment,
   onlineBed,
-  offlineBed
+  offlineBed,
+  ambulanceDistance,
+  offlineAmbulance,
+  onlineAmbulance
 });
