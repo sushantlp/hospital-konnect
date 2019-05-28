@@ -116,6 +116,70 @@ export default class PackageBooking extends React.Component {
 
         NotificationManager.error("Something wrong our side", "Error");
       }
+    } else if (this.props.offlineEquipment !== nextProps.offlineEquipment) {
+      if (nextProps.offlineEquipment.status === "SUCCESS") {
+        this.setState({
+          loading: !this.state.loading
+        });
+
+        NotificationManager.success("Successful", "Successful");
+
+        this.props.history.push("/web/");
+      } else if (nextProps.offlineEquipment.status === "FAIL") {
+        this.setState({
+          loading: !this.state.loading
+        });
+
+        NotificationManager.error("Something wrong our side", "Error");
+      }
+    } else if (this.props.onlineEquipment !== nextProps.onlineEquipment) {
+      if (nextProps.onlineEquipment.status === "SUCCESS") {
+        this.setState({
+          loading: !this.state.loading
+        });
+
+        NotificationManager.success("Successful", "Successful");
+
+        this.props.history.push("/web/");
+      } else if (nextProps.onlineEquipment.status === "FAIL") {
+        this.setState({
+          loading: !this.state.loading
+        });
+
+        NotificationManager.error("Something wrong our side", "Error");
+      }
+    } else if (this.props.offlineNursing !== nextProps.offlineNursing) {
+      if (nextProps.offlineNursing.status === "SUCCESS") {
+        this.setState({
+          loading: !this.state.loading
+        });
+
+        NotificationManager.success("Successful", "Successful");
+
+        this.props.history.push("/web/");
+      } else if (nextProps.offlineNursing.status === "FAIL") {
+        this.setState({
+          loading: !this.state.loading
+        });
+
+        NotificationManager.error("Something wrong our side", "Error");
+      }
+    } else if (this.props.onlineNursing !== nextProps.onlineNursing) {
+      if (nextProps.onlineNursing.status === "SUCCESS") {
+        this.setState({
+          loading: !this.state.loading
+        });
+
+        NotificationManager.success("Successful", "Successful");
+
+        this.props.history.push("/web/");
+      } else if (nextProps.onlineNursing.status === "FAIL") {
+        this.setState({
+          loading: !this.state.loading
+        });
+
+        NotificationManager.error("Something wrong our side", "Error");
+      }
     }
   }
 
