@@ -34,10 +34,13 @@ export default withRouter(
     {
       postOfflineBed: postOfflineBed,
       postOnlineBed: postOnlineBed,
+
       postOnlineAmbulance: postOnlineAmbulance,
       postOfflineAmbulance: postOfflineAmbulance,
+
       postOfflineEquipment: postOfflineEquipment,
       postOnlineEquipment: postOnlineEquipment,
+
       postOfflineNursing: postOfflineNursing,
       postOnlineNursing: postOnlineNursing
     }

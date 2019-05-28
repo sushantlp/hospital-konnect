@@ -303,7 +303,6 @@ export default class Appointment extends React.Component {
   };
 
   invokeRazorPay = (email, mobile, amount, name, onlinePaymentApi) => {
-    console.log("Invoke");
     const options = {
       key: "rzp_test_XNKKob8Iy77wXR",
       amount: amount, // 2000 paise = INR 20
@@ -369,7 +368,7 @@ export default class Appointment extends React.Component {
           ? special.spl_name
           : `${rightSpeciality} | ${special.spl_name}`;
     });
-    console.log(this.state);
+
     return (
       <React.Fragment>
         <Header />

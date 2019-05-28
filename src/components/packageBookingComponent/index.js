@@ -52,10 +52,11 @@ export default class PackageBooking extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
     if (this.props.onlineBed !== nextProps.onlineBed) {
       if (nextProps.onlineBed.status === "SUCCESS") {
         this.setState({
-          loading: !this.state.loading
+          loading: false
         });
 
         NotificationManager.success("Successful", "Successful");
@@ -63,7 +64,7 @@ export default class PackageBooking extends React.Component {
         this.props.history.push("/web/");
       } else if (nextProps.onlineBed.status === "FAIL") {
         this.setState({
-          loading: !this.state.loading
+          loading: false
         });
 
         NotificationManager.error("Something wrong our side", "Error");
@@ -71,7 +72,7 @@ export default class PackageBooking extends React.Component {
     } else if (this.props.offlineBed !== nextProps.offlineBed) {
       if (nextProps.offlineBed.status === "SUCCESS") {
         this.setState({
-          loading: !this.state.loading
+          loading: false
         });
 
         NotificationManager.success("Successful", "Successful");
@@ -79,7 +80,7 @@ export default class PackageBooking extends React.Component {
         this.props.history.push("/web/");
       } else if (nextProps.offlineBed.status === "FAIL") {
         this.setState({
-          loading: !this.state.loading
+          loading: false
         });
 
         NotificationManager.error("Something wrong our side", "Error");
@@ -87,7 +88,7 @@ export default class PackageBooking extends React.Component {
     } else if (this.props.onlineAmbulance !== nextProps.onlineAmbulance) {
       if (nextProps.onlineAmbulance.status === "SUCCESS") {
         this.setState({
-          loading: !this.state.loading
+          loading: false
         });
 
         NotificationManager.success("Successful", "Successful");
@@ -95,7 +96,7 @@ export default class PackageBooking extends React.Component {
         this.props.history.push("/web/");
       } else if (nextProps.onlineAmbulance.status === "FAIL") {
         this.setState({
-          loading: !this.state.loading
+          loading: false
         });
 
         NotificationManager.error("Something wrong our side", "Error");
@@ -103,7 +104,7 @@ export default class PackageBooking extends React.Component {
     } else if (this.props.offlineAmbulance !== nextProps.offlineAmbulance) {
       if (nextProps.offlineAmbulance.status === "SUCCESS") {
         this.setState({
-          loading: !this.state.loading
+          loading: false
         });
 
         NotificationManager.success("Successful", "Successful");
@@ -111,7 +112,7 @@ export default class PackageBooking extends React.Component {
         this.props.history.push("/web/");
       } else if (nextProps.offlineAmbulance.status === "FAIL") {
         this.setState({
-          loading: !this.state.loading
+          loading: false
         });
 
         NotificationManager.error("Something wrong our side", "Error");
@@ -119,7 +120,7 @@ export default class PackageBooking extends React.Component {
     } else if (this.props.offlineEquipment !== nextProps.offlineEquipment) {
       if (nextProps.offlineEquipment.status === "SUCCESS") {
         this.setState({
-          loading: !this.state.loading
+          loading: false
         });
 
         NotificationManager.success("Successful", "Successful");
@@ -127,7 +128,7 @@ export default class PackageBooking extends React.Component {
         this.props.history.push("/web/");
       } else if (nextProps.offlineEquipment.status === "FAIL") {
         this.setState({
-          loading: !this.state.loading
+          loading: false
         });
 
         NotificationManager.error("Something wrong our side", "Error");
@@ -135,7 +136,7 @@ export default class PackageBooking extends React.Component {
     } else if (this.props.onlineEquipment !== nextProps.onlineEquipment) {
       if (nextProps.onlineEquipment.status === "SUCCESS") {
         this.setState({
-          loading: !this.state.loading
+          loading: false
         });
 
         NotificationManager.success("Successful", "Successful");
@@ -143,7 +144,7 @@ export default class PackageBooking extends React.Component {
         this.props.history.push("/web/");
       } else if (nextProps.onlineEquipment.status === "FAIL") {
         this.setState({
-          loading: !this.state.loading
+          loading: false
         });
 
         NotificationManager.error("Something wrong our side", "Error");
@@ -151,7 +152,7 @@ export default class PackageBooking extends React.Component {
     } else if (this.props.offlineNursing !== nextProps.offlineNursing) {
       if (nextProps.offlineNursing.status === "SUCCESS") {
         this.setState({
-          loading: !this.state.loading
+          loading: false
         });
 
         NotificationManager.success("Successful", "Successful");
@@ -159,7 +160,7 @@ export default class PackageBooking extends React.Component {
         this.props.history.push("/web/");
       } else if (nextProps.offlineNursing.status === "FAIL") {
         this.setState({
-          loading: !this.state.loading
+          loading: false
         });
 
         NotificationManager.error("Something wrong our side", "Error");
@@ -167,7 +168,7 @@ export default class PackageBooking extends React.Component {
     } else if (this.props.onlineNursing !== nextProps.onlineNursing) {
       if (nextProps.onlineNursing.status === "SUCCESS") {
         this.setState({
-          loading: !this.state.loading
+          loading: false
         });
 
         NotificationManager.success("Successful", "Successful");
@@ -175,7 +176,7 @@ export default class PackageBooking extends React.Component {
         this.props.history.push("/web/");
       } else if (nextProps.onlineNursing.status === "FAIL") {
         this.setState({
-          loading: !this.state.loading
+          loading: false
         });
 
         NotificationManager.error("Something wrong our side", "Error");
@@ -621,7 +622,7 @@ export default class PackageBooking extends React.Component {
             this.onlineEquimentApi
           );
         else
-          this.postOfflineEquipment(
+          this.props.postOfflineEquipment(
             this.state.auth_data.customer_id,
             this.state.c_fname,
             this.state.c_lname,
@@ -652,7 +653,7 @@ export default class PackageBooking extends React.Component {
             this.onlineNursingApi
           );
         else
-          this.postOfflineNursing(
+          this.props.postOfflineNursing(
             this.state.auth_data.customer_id,
             this.state.c_fname,
             this.state.c_lname,
@@ -678,7 +679,7 @@ export default class PackageBooking extends React.Component {
     const toDate = moment(Date.parse(this.state.to_date)).format("YYYY-MM-DD");
 
     if (promises) {
-      this.postOnlineNursing(
+      this.props.postOnlineNursing(
         this.state.auth_data.customer_id,
         this.state.c_fname,
         this.state.c_lname,
