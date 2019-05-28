@@ -15,7 +15,6 @@ export function postOfflineNursing(
   bookingFromDate,
   bookingToDate,
   amount,
-  addCharge,
   address
 ) {
   return dispatch => {
@@ -31,7 +30,6 @@ export function postOfflineNursing(
         bookingFromDate,
         bookingToDate,
         amount,
-        addCharge,
         address
       )
       .then(offlineNursing =>

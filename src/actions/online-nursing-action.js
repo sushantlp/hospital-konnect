@@ -16,7 +16,6 @@ export function postOnlineNursing(
   bookingToDate,
   amount,
   paymentId,
-  addCharge,
   address
 ) {
   return dispatch => {
@@ -33,7 +32,6 @@ export function postOnlineNursing(
         bookingToDate,
         amount,
         paymentId,
-        addCharge,
         address
       )
       .then(onlineNursing =>

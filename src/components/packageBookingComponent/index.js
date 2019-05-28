@@ -43,7 +43,11 @@ export default class PackageBooking extends React.Component {
       hospital_ambulance: false,
       whichPackage: undefined,
       packageName: undefined,
-      category_id: 0
+      category_id: 0,
+
+      charge_apply: [],
+      current_address: {},
+      destination_address: {}
     };
   }
 
@@ -80,6 +84,38 @@ export default class PackageBooking extends React.Component {
 
         NotificationManager.error("Something wrong our side", "Error");
       }
+    } else if (this.props.onlineAmbulance !== nextProps.onlineAmbulance) {
+      if (nextProps.onlineAmbulance.status === "SUCCESS") {
+        this.setState({
+          loading: !this.state.loading
+        });
+
+        NotificationManager.success("Successful", "Successful");
+
+        this.props.history.push("/web/");
+      } else if (nextProps.onlineAmbulance.status === "FAIL") {
+        this.setState({
+          loading: !this.state.loading
+        });
+
+        NotificationManager.error("Something wrong our side", "Error");
+      }
+    } else if (this.props.offlineAmbulance !== nextProps.offlineAmbulance) {
+      if (nextProps.offlineAmbulance.status === "SUCCESS") {
+        this.setState({
+          loading: !this.state.loading
+        });
+
+        NotificationManager.success("Successful", "Successful");
+
+        this.props.history.push("/web/");
+      } else if (nextProps.offlineAmbulance.status === "FAIL") {
+        this.setState({
+          loading: !this.state.loading
+        });
+
+        NotificationManager.error("Something wrong our side", "Error");
+      }
     }
   }
 
@@ -92,6 +128,14 @@ export default class PackageBooking extends React.Component {
     const packageData = sessionStorage.getItem("PACKAGE_DATA");
     const referralBed = sessionStorage.getItem("REFERRAL_BED");
 
+    const currentAddress = sessionStorage.getItem("CURRENT_ADDRESS");
+    const destinationAddress = sessionStorage.getItem("DESTINATION_ADDRESS");
+
+    if (currentAddress !== null)
+      this.updateCurrentAddress(JSON.parse(currentAddress));
+    if (destinationAddress !== null)
+      this.updateDestinationAddress(JSON.parse(destinationAddress));
+
     this.updateProfileState(JSON.parse(profileData));
     this.updateAuthDataState(JSON.parse(authData));
     this.updateAllDataState(JSON.parse(allData));
@@ -103,9 +147,14 @@ export default class PackageBooking extends React.Component {
   checkType = (all, packages) => {
     if (all.p_cat === 1) {
       if (packages.a_title !== undefined) {
+        const charge = this.calculateAdditionalCharge(
+          packages.a_price,
+          packages.a_add_charges
+        );
+
         this.setState({
           hospital_ambulance: true,
-          right_charge: packages.a_price,
+          right_charge: charge,
           default_charge: packages.a_price,
           whichPackage: "Selected Ambulance",
           packageName: packages.a_title,
@@ -124,9 +173,94 @@ export default class PackageBooking extends React.Component {
         });
       }
     } else if (all.p_cat === 2) {
+      const charge = this.calculateAdditionalCharge(
+        packages.a_price,
+        packages.a_add_charges
+      );
+
+      this.setState({
+        right_charge: charge,
+        default_charge: packages.a_price,
+        whichPackage: "Selected Ambulance",
+        packageName: packages.a_title,
+        category_id: all.p_cat,
+        package_data: packages
+      });
     } else if (all.p_cat === 3) {
+      let charge = this.calculateAdditionalCharge(
+        packages.e_price,
+        packages.e_add_charges
+      );
+
+      this.setState({
+        right_charge: charge + parseFloat(packages.e_deposit),
+        default_charge: packages.e_price,
+        whichPackage: "Selected Equiment",
+        packageName: packages.e_title,
+        category_id: all.p_cat,
+        package_data: packages
+      });
     } else if (all.p_cat === 4) {
+      this.setState({
+        right_charge: parseFloat(packages.pac_price),
+        default_charge: packages.pac_price,
+        whichPackage: "Selected Nursing Package",
+        packageName: packages.pac_title,
+        category_id: all.p_cat,
+        package_data: packages
+      });
     }
+  };
+
+  updateCurrentAddress = address => {
+    const current = {
+      address_line_1: address.address_one,
+      address_line_2: address.address_two,
+      landmark: address.landmark,
+      city_id: address.city_id,
+      locality_id: address.locality_id
+    };
+
+    this.setState({
+      current_address: current
+    });
+  };
+
+  updateDestinationAddress = address => {
+    const destination = {
+      address_line_1: address.address_one,
+      address_line_2: address.address_two,
+      landmark: address.landmark,
+      city_id: address.city_id,
+      locality_id: address.locality_id
+    };
+
+    this.setState({
+      destination_address: destination
+    });
+  };
+
+  calculateAdditionalCharge = (price, charges) => {
+    let value = 0;
+    let percent = 0;
+
+    const apply = charges.map((charge, index) => {
+      if (charge.type === 1)
+        value = parseFloat(value) + parseFloat(charge.value);
+      else percent = parseFloat(percent) + parseFloat(charge.value);
+
+      return charge.charge_id;
+    });
+    console.log(apply);
+    this.setState({
+      charge_apply: apply
+    });
+
+    if (percent !== 0) {
+      const percentPrice = (price * percent) / 100;
+
+      return parseFloat(price) + parseFloat(percentPrice) + parseFloat(value);
+    } else return parseFloat(price) + parseFloat(value);
   };
 
   updateReferralBed = id => {
@@ -175,7 +309,8 @@ export default class PackageBooking extends React.Component {
       to_date: e
     });
 
-    this.dateDifference(this.state.from_date, e);
+    if (this.state.all_data.p_cat === 1)
+      this.dateDifference(this.state.from_date, e);
   };
 
   dateDifference = (from, to) => {
@@ -316,9 +451,8 @@ export default class PackageBooking extends React.Component {
       });
 
       const mobile = `91${this.state.c_mobile}`;
-
+      const amount = this.state.right_charge * 100;
       if (this.state.category_id === 1) {
-        const amount = this.state.right_charge * 100;
         const fromDate = moment(Date.parse(this.state.from_date)).format(
           "YYYY-MM-DD"
         );
@@ -350,10 +484,209 @@ export default class PackageBooking extends React.Component {
               this.state.referral_partner_id
             );
         } else {
-          console.log("Hell");
+          if (this.state.payment === "PAY_ONLINE")
+            this.invokeRazorPay(
+              this.state.c_email,
+              this.state.c_mobile,
+              amount,
+              this.state.all_data.p_name,
+              this.onlineAmbulanceApi
+            );
+          else
+            this.props.postOfflineAmbulance(
+              this.state.auth_data.customer_id,
+              this.state.c_fname,
+              this.state.c_lname,
+              this.state.c_email,
+              mobile,
+              this.state.all_data.p_id,
+              this.state.package_data.a_id,
+              fromDate,
+              this.state.time,
+              amount,
+              0,
+              this.state.charge_apply,
+              this.state.current_address,
+              this.state.destination_address
+            );
         }
+      } else if (this.state.category_id === 2) {
+        const fromDate = moment(Date.parse(this.state.from_date)).format(
+          "YYYY-MM-DD"
+        );
+
+        if (this.state.payment === "PAY_ONLINE")
+          this.invokeRazorPay(
+            this.state.c_email,
+            this.state.c_mobile,
+            amount,
+            this.state.all_data.p_name,
+            this.onlineAmbulanceApi
+          );
+        else
+          this.props.postOfflineAmbulance(
+            this.state.auth_data.customer_id,
+            this.state.c_fname,
+            this.state.c_lname,
+            this.state.c_email,
+            mobile,
+            this.state.all_data.p_id,
+            this.state.package_data.a_id,
+            fromDate,
+            this.state.time,
+            amount,
+            0,
+            this.state.charge_apply,
+            this.state.current_address,
+            this.state.destination_address
+          );
+      } else if (this.state.category_id === 3) {
+        const fromDate = moment(Date.parse(this.state.from_date)).format(
+          "YYYY-MM-DD"
+        );
+        const toDate = moment(Date.parse(this.state.to_date)).format(
+          "YYYY-MM-DD"
+        );
+
+        if (this.state.payment === "PAY_ONLINE")
+          this.invokeRazorPay(
+            this.state.c_email,
+            this.state.c_mobile,
+            amount,
+            this.state.all_data.p_name,
+            this.onlineEquimentApi
+          );
+        else
+          this.postOfflineEquipment(
+            this.state.auth_data.customer_id,
+            this.state.c_fname,
+            this.state.c_lname,
+            this.state.c_email,
+            mobile,
+            this.state.all_data.p_id,
+            this.state.package_data.e_id,
+            fromDate,
+            toDate,
+            amount,
+            this.state.charge_apply,
+            this.state.current_address
+          );
+      } else if (this.state.category_id === 4) {
+        const fromDate = moment(Date.parse(this.state.from_date)).format(
+          "YYYY-MM-DD"
+        );
+        const toDate = moment(Date.parse(this.state.to_date)).format(
+          "YYYY-MM-DD"
+        );
+
+        if (this.state.payment === "PAY_ONLINE")
+          this.invokeRazorPay(
+            this.state.c_email,
+            this.state.c_mobile,
+            amount,
+            this.state.all_data.p_name,
+            this.onlineNursingApi
+          );
+        else
+          this.postOfflineNursing(
+            this.state.auth_data.customer_id,
+            this.state.c_fname,
+            this.state.c_lname,
+            this.state.c_email,
+            mobile,
+            this.state.all_data.p_id,
+            this.state.package_data.pac_id,
+            fromDate,
+            toDate,
+            amount,
+            this.state.current_address
+          );
       }
     }
+  };
+
+  onlineNursingApi = (paymentId, promises) => {
+    const mobile = `91${this.state.c_mobile}`;
+    const amount = this.state.right_charge * 100;
+    const fromDate = moment(Date.parse(this.state.from_date)).format(
+      "YYYY-MM-DD"
+    );
+    const toDate = moment(Date.parse(this.state.to_date)).format("YYYY-MM-DD");
+
+    if (promises) {
+      this.postOnlineNursing(
+        this.state.auth_data.customer_id,
+        this.state.c_fname,
+        this.state.c_lname,
+        this.state.c_email,
+        mobile,
+        this.state.all_data.p_id,
+        this.state.package_data.pac_id,
+        fromDate,
+        toDate,
+        amount,
+        paymentId,
+        this.state.current_address
+      );
+    } else console.log("Payment not done");
+  };
+
+  onlineEquimentApi = (paymentId, promises) => {
+    const mobile = `91${this.state.c_mobile}`;
+    const amount = this.state.right_charge * 100;
+    const fromDate = moment(Date.parse(this.state.from_date)).format(
+      "YYYY-MM-DD"
+    );
+    const toDate = moment(Date.parse(this.state.to_date)).format("YYYY-MM-DD");
+
+    if (promises) {
+      this.props.postOnlineEquipment(
+        this.state.auth_data.customer_id,
+        this.state.c_fname,
+        this.state.c_lname,
+        this.state.c_email,
+        mobile,
+        this.state.all_data.p_id,
+        this.state.package_data.e_id,
+        fromDate,
+        toDate,
+        amount,
+        paymentId,
+        this.state.charge_apply,
+        this.state.current_address
+      );
+    } else console.log("Payment not done");
+  };
+
+  onlineAmbulanceApi = (paymentId, promises) => {
+    const mobile = `91${this.state.c_mobile}`;
+    const amount = this.state.right_charge * 100;
+    const fromDate = moment(Date.parse(this.state.from_date)).format(
+      "YYYY-MM-DD"
+    );
+    let complimentary = 0;
+
+    // if (this.state.category_id === 1)
+    //   complimentary = this.state.package_data.a_complimentary;
+    if (promises) {
+      this.props.postOnlineAmbulance(
+        this.state.auth_data.customer_id,
+        this.state.c_fname,
+        this.state.c_lname,
+        this.state.c_email,
+        mobile,
+        this.state.all_data.p_id,
+        this.state.package_data.a_id,
+        fromDate,
+        this.state.time,
+        amount,
+        complimentary,
+        this.state.charge_apply,
+        this.state.current_address,
+        this.state.destination_address,
+        paymentId
+      );
+    } else console.log("Payment not done");
   };
 
   onlineBedApi = (paymentId, promises) => {
@@ -379,8 +712,7 @@ export default class PackageBooking extends React.Component {
         toDate,
         this.state.referral_partner_id
       );
-    }
-    console.log("Payment not done");
+    } else console.log("Payment not done");
   };
 
   invokeRazorPay = (email, mobile, amount, name, callBackApi) => {
@@ -455,7 +787,9 @@ export default class PackageBooking extends React.Component {
                     onChange={event => this.onChangeFromDate(event)}
                     value={this.state.from_date}
                   />
-                  {this.state.hospital_bed ? (
+                  {this.state.hospital_bed ||
+                  this.state.all_data.p_cat === 3 ||
+                  this.state.all_data.p_cat === 4 ? (
                     <span style={{ float: "right" }}>
                       <DatePicker
                         onChange={event => this.onChangeToDate(event)}
@@ -464,7 +798,9 @@ export default class PackageBooking extends React.Component {
                     </span>
                   ) : null}
 
-                  {this.state.hospital_bed ? null : (
+                  {this.state.hospital_bed ||
+                  this.state.all_data.p_cat === 3 ||
+                  this.state.all_data.p_cat === 4 ? null : (
                     <TimePicker
                       onChange={event => this.onChangeTime(event)}
                       value={this.state.time}

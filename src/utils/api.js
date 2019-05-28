@@ -660,7 +660,6 @@ export default {
     bookingFromDate,
     bookingToDate,
     amount,
-    addCharge,
     address
   ) => {
     return new Promise((resolve, reject) => {
@@ -677,7 +676,6 @@ export default {
           book_from_date: bookingFromDate,
           book_to_date: bookingToDate,
           amount: amount,
-          add_charges: addCharge,
           c_address: address
         })
       })
@@ -703,7 +701,6 @@ export default {
     bookingToDate,
     amount,
     paymentId,
-    addCharge,
     address
   ) => {
     return new Promise((resolve, reject) => {
@@ -721,7 +718,6 @@ export default {
           book_to_date: bookingToDate,
           amount: amount,
           online_payment_id: paymentId,
-          add_charges: addCharge,
           c_address: address
         })
       })
