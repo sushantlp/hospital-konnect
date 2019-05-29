@@ -320,7 +320,9 @@ export default class EnquiryModal extends React.Component {
               <div class="control">
                 <textarea
                   class={
-                    this.state.enquiryError ? "textarea is-danger" : "textarea"
+                    this.state.enquiryError
+                      ? "textarea is-danger"
+                      : "textarea is-large"
                   }
                   placeholder="Enquiry"
                   value={this.state.enquiry}

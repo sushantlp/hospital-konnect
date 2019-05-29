@@ -114,10 +114,11 @@ export default class Footer extends React.Component {
                           href="https://facebook.com/getbedtimestories"
                           target="_blank"
                         >
-                          <img
+                          <img src="https://img.icons8.com/color/30/000000/facebook-new.png" />
+                          {/* <img
                             role="presentation"
                             src="https://getbedtimestories.com/assets/images/icons/social/facebook-f18752b0.svg?1553506572"
-                          />
+                          /> */}
                           Facebook
                         </a>
                       </li>
@@ -126,10 +127,11 @@ export default class Footer extends React.Component {
                           href="https://facebook.com/getbedtimestories"
                           target="_blank"
                         >
-                          <img
+                          <img src="https://img.icons8.com/color/30/000000/instagram-new.png" />
+                          {/* <img
                             role="presentation"
                             src="https://getbedtimestories.com/assets/images/icons/social/instagram-89cb51bf.svg?1553506572"
-                          />
+                          /> */}
                           Instagram
                         </a>
                       </li>
@@ -138,10 +140,11 @@ export default class Footer extends React.Component {
                           href="https://facebook.com/getbedtimestories"
                           target="_blank"
                         >
-                          <img
+                          <img src="https://img.icons8.com/color/30/000000/twitter.png" />
+                          {/* <img
                             role="presentation"
                             src="https://getbedtimestories.com/assets/images/icons/social/twitter-42c2f562.svg?1553506572"
-                          />
+                          /> */}
                           Twitter
                         </a>
                       </li>
