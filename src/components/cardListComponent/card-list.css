@@ -1,0 +1,96 @@
+.spacer {
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 0;
+  background: none;
+  border: none;
+}
+
+.spacer.is-1 {
+  height: 1rem;
+}
+
+.spacer.is-3 {
+  height: 3rem;
+}
+
+.box-card-list .box {
+  background-color: rgba(240, 241, 245, 1);
+}
+
+.card-footer .button {
+  border-color: white;
+}
+
+.card-footer .button:hover {
+  border-color: #dbdbdb;
+}
+
+.box-card-list {
+  line-height: 1.66667;
+  margin-bottom: 2em;
+}
+
+.hospital-image span {
+  padding-left: 0.5em;
+}
+
+.hospital-image span:hover {
+  cursor: pointer;
+}
+
+.hospital-image span img {
+  border-radius: 5px;
+}
+
+.rating-container {
+  background-color: #f0f0f5;
+  padding: 3px 0 3px 3px;
+  margin-right: 3px;
+  border-radius: 3px;
+}
+
+.rating-container .rating-number {
+  color: #23d160;
+  font-weight: 700;
+  font-size: 14px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.right-box .location-price-open {
+  margin-top: 1em;
+}
+
+.right-box .location-price-open p {
+  font-weight: 300;
+}
+
+.right-box .location-price-open p span {
+  padding-left: 0.5em;
+}
+
+.doctor {
+  font-weight: 300;
+}
+
+.box-card-list .box {
+  padding: 0.2em;
+}
+
+.box-card-list .box .card-footer {
+  margin-top: 0em;
+}
+
+.box-card-list .box figure{
+    margin: 0.5em;
+}
+
+.box-card-list .box .media-content .content{
+    margin-left: 1em;
+}
+
+.box-card-list .box .media .right-box {
+  margin-right:1em;
+}

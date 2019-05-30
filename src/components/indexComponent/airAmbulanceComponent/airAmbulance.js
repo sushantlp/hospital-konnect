@@ -1,40 +1,52 @@
 import React from "react";
+import { Route } from "react-router-dom";
+import _ from "lodash";
 
-import { Container, Grid, Button } from "semantic-ui-react";
-import "../../../static/css/root.css";
-import "./static/css/airAmbulance.css";
+import { Container, Grid, Image } from "semantic-ui-react";
+import "./airAmbulance.css";
 
 export default class AirAmbulance extends React.Component {
   render() {
+    if (this.props.homeDetail.status === "START") return <div />;
+    else if (this.props.homeDetail.status === "FAIL") return <div />;
+
+    const object = this.props.homeDetail.homeDetail.AAMB;
+
     return (
-      <Container className="air-ambulance-container" style={{ width: "89em" }}>
-        <div className="header-container">
-          <h4 className="header-name">AIR AMBULANCE</h4>
-          <div className="underscore" />
+      <Container style={{ width: "89em", lineHeight: "1.66667" }}>
+        <br />
+        <h4 className="header-name">AIR AMBULANCE</h4>
+        <div className="underscore" />
+        <br />
+        <div className="air-ambulance-container">
+          <Grid>
+            <Grid.Row columns={4}>
+              <Grid.Column>
+                <p class="title is-4" style={{ lineHeight: "1.66667" }}>
+                  {object.detail.head}
+                </p>
+                <p
+                  class="subtitle is-6 has-text-justified"
+                  style={{ lineHeight: "1.66667", whiteSpace: "pre-line" }}
+                >
+                  {object.detail.body}
+                </p>
+                <div
+                  class="buttons are-medium"
+                  onClick={() =>
+                    this.props.tripToDetailView(object, "air-ambulance", 7)
+                  }
+                >
+                  <span class="button">View Detail</span>
+                </div>
+              </Grid.Column>
+            </Grid.Row>
+
+            <Grid.Row columns={8}>
+              <Image src={object.img} alt={object.detail} />
+            </Grid.Row>
+          </Grid>
         </div>
-
-        <Grid fluid stackable columns="3">
-          <Grid.Row>
-            <Grid.Column>
-              <Button
-                inverted
-                color="violet"
-                size="large"
-                style={{ marginTop: "8em", marginLeft: "10em" }}
-              >
-                Book Air Ambulance
-              </Button>
-            </Grid.Column>
-
-            <Grid.Column />
-            <Grid.Column>
-              <img
-                src="https://res.cloudinary.com/dp67gawk6/image/upload/v1545142191/ballyhoo/BALLYHOO_WEBSITE/airamulance.svg"
-                alt=""
-              />
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
       </Container>
     );
   }

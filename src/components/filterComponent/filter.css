@@ -1,0 +1,16 @@
+.navbar {
+  max-width: 360px;
+  font-size: 1.125rem;
+  line-height: 1.66667;
+}
+
+.navbar-dropdown {
+  max-width: 360px;
+  font-size: 1.125rem;
+  line-height: 1.66667;
+}
+
+.has-text-centered span {
+  color: rgb(43, 191, 237);
+  cursor: pointer;
+}

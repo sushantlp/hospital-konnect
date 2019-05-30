@@ -1,0 +1,25 @@
+.ambulance-container {
+  margin-top: 8vh;
+}
+
+.slick-prev,
+.slick-next {
+  font-size: 15px !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  content: "" !important;
+}
+
+.amb-header {
+  background: transparent;
+  padding: 5px;
+  font-size: 1.2em;
+  color: rgb(38, 56, 104);
+}
+
+.ambulance {
+  margin: 10px;
+  cursor: pointer;
+}

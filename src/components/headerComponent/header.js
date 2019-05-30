@@ -2,9 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { Menu } from "semantic-ui-react/dist/commonjs";
-
-import "./static/css/header.css";
-import "../../static/css/root.css";
+import "./header.css";
+// import "../../static/css/root.css";
 
 export default class Header extends React.Component {
   render() {
@@ -17,13 +16,14 @@ export default class Header extends React.Component {
         >
           <Link to={"/"}>
             <Menu.Item>
-              <h1
+              <h2
                 style={{
-                  color: "#ed3237"
+                  color: "white"
                 }}
               >
-                HK
-              </h1>
+                Hospital Konnect
+                <span style={{ fontStyle: "italic" }}> - Just Konnect</span>
+              </h2>
             </Menu.Item>
           </Link>
         </Menu>

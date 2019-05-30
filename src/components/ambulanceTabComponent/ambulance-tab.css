@@ -1,0 +1,27 @@
+.content .ambulance-price {
+  font-size: 1em;
+  margin-left: 0.5em;
+}
+
+.content .available-yes {
+  font-size: 1em;
+  margin-left: 0.5em;
+  color: #23d160;
+}
+
+.content .available-no {
+  font-size: 1em;
+  margin-left: 0.5em;
+  color: #ff3860;
+}
+
+/* .content .ambulance-price:hover {
+  color: #118fe4;
+  text-decoration: underline;
+} */
+
+/* .ui top left popup transition visible {
+  text-align: center;
+  line-height: 1.66667;
+  word-break: break-word;
+} */

@@ -1,0 +1,22 @@
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "GT Eesti Display", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.modal {
+  display: none;
+}
+
+.Container {
+  line-height: 1.66667;
+}
+
+.air-ambulance-container .button {
+  background-color: #6e7498;
+  color: white;
+}

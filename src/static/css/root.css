@@ -1,29 +1,42 @@
-@font-face {
+/* @font-face {
   font-family: "Timeburner";
   font-style: normal;
   font-weight: normal;
   src: local("Timeburner"), local("Timeburner"),
     url("../font/timeburnernormal.ttf") format("ttf"),
     url("../font/timeburnerbold.ttf") format("ttf");
-}
+} */
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "Timeburner", sans-serif;
-  -webkit-font-smoothing: antialiased;
+  overflow-x: initial;
+  /* font-family: "Timeburner", sans-serif;
+  -webkit-font-smoothing: antialiased; */
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "GT Eesti Display", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 .header-container {
   margin-top: 1.5em;
   margin-bottom: 1.5em;
 }
+
 .header-name {
   color: rgb(39, 37, 37);
   font-weight: 600;
   font-size: 1.5em;
   font-family: "Timeburner", sans-serif;
 }
+
 .underscore {
   background-image: -webkit-gradient(
     linear,
@@ -37,9 +50,9 @@ body {
   height: 4px;
   display: block;
   box-sizing: border-box;
-  width: 40px;
+  width: 80px;
 }
 
-html {
+/* html {
   font-family: "Timeburner", sans-serif;
-}
+} */

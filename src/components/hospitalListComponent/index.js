@@ -1,36 +1,54 @@
 import React from "react";
 
-import { Grid } from "semantic-ui-react";
+import Same from "../sameComponent";
+import Filter from "../filterComponent";
+import Banner from "../bannerComponent";
+import CardList from "../cardListComponent";
 
-import HospitalFilter from "./hospitalFilterComponent/hospital-filter";
-import HospitalCard from "./hospitalCardComponent/hospital-card";
-import SeoLink from "./seoLinkComponent/seo-link";
-
-import Header from "../headerComponent/header";
-import Footer from "../footerComponent/footer";
-import "./static/css/index.css";
+import "./hospital-list.css";
 
 export default class Index extends React.Component {
+  componentWillMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
       <React.Fragment>
-        <Header />
-        <div className="hospital-div">
-          <Grid stackable>
-            <Grid.Row style={{ paddingLeft: "0.5em", paddingRight: "0.5em" }}>
-              <Grid.Column width={4}>
-                <HospitalFilter />
-              </Grid.Column>
-              <Grid.Column width={8}>
-                <HospitalCard />
-              </Grid.Column>
-              <Grid.Column width={4}>
-                <SeoLink />
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
+        <section class="section">
+          <div class="container is-fullhd">
+            <Banner />
+          </div>
+        </section>
+
+        <div class="container">
+          <Filter transistor={false} filterList={this.props.filterList} />
         </div>
-        <Footer />
+
+        <section class="section">
+          <div class="columns">
+            <div class="column is-9">
+              <CardList
+                categoryList={this.props.categoryList}
+                category={1}
+                parentProps={this.props.parentProps}
+                parentState={this.props.parentState}
+                loadMoreDataApiCall={this.props.loadMoreDataApiCall}
+                postMobileRegister={this.props.postMobileRegister}
+                mobileRegister={this.props.mobileRegister}
+                postOtpVerify={this.props.postOtpVerify}
+                otpVerify={this.props.otpVerify}
+              />
+            </div>
+            <div class="column is-3">
+              <Same
+                sideBarList={this.props.sideBarList}
+                parentState={this.props.parentState}
+                parentProps={this.props.parentProps}
+              />
+            </div>
+          </div>
+        </section>
       </React.Fragment>
     );
   }

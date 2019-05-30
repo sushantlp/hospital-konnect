@@ -1,0 +1,17 @@
+.faq .title {
+  color: #565252;
+  font-weight: 500;
+  margin-top: 0em;
+}
+
+.faq .title:not(.is-spaced) + .subtitle {
+  margin-top: 0em;
+}
+
+.faq .subtitle {
+  line-height: 1.5em;
+}
+
+.spacer.is-2 {
+  height: 2rem;
+}

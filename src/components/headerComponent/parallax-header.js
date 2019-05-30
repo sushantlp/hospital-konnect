@@ -6,7 +6,7 @@ import { Menu } from "semantic-ui-react/dist/commonjs";
 import Sticky from "react-stickynode";
 
 import "semantic-ui-css/semantic.min.css";
-import "./static/css/header.css";
+import "./header.css";
 import "../../static/css/root.css";
 
 let lastScrollY = 0;

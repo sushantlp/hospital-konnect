@@ -1,0 +1,75 @@
+.tile.tall {
+  height: 500px;
+}
+
+.tile.is-child {
+  height: 150px;
+  border: 1px solid grey;
+}
+
+.adjustment {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+.mark {
+  color: white;
+  font-size: 1em;
+  line-height: 1.25em;
+}
+
+.tile.is-ancestor {
+  margin: 0px !important;
+  padding: 1px;
+}
+
+.tile.is-parent {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.tile {
+  border-radius: 0px;
+  margin: 0px;
+}
+
+.tile {
+  align-items: stretch;
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
+}
+.tile.is-ancestor {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-top: -0.75rem;
+}
+.tile.is-ancestor:last-child {
+  margin-bottom: -0.75rem;
+  display: flex;
+}
+.tile.is-ancestor:not(:last-child) {
+  margin-bottom: 0rem;
+}
+.tile.is-child {
+  margin: 0rem !important;
+  border: 5px solid white;
+}
+.tile.is-parent {
+  padding: 0.75rem;
+}
+.tile.is-vertical {
+  flex-direction: column;
+}
+.tile.is-vertical > .tile.is-child:not(:last-child) {
+  margin-bottom: 0rem !important;
+}
+.title-text {
+  text-align: center;
+  color: white;
+  background-color: #2b2a2a69;
+}

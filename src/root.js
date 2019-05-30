@@ -5,29 +5,44 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import "./static/css/root.css";
 
-import FrontPage from "./components/frontPageComponent/front-page";
-import Animation from "./components/animationComponent/animation";
-import Initial from "./components/indexComponent";
-import Faq from "./components/faqComponent/faq";
-import Privacy from "./components/privacyComponent/privacy";
-import Term from "./components/termComponent/term";
-import HospitalList from "./components/hospitalListComponent";
-import HospitalDetail from "./components/hospitalDetailComponent";
+// import Category from "./containers/category-container";
+import Landing from "./containers/index-container";
+import CategoryList from "./containers/category-list-container";
+import Feature from "./containers/feature-container";
+import Profile from "./containers/profile-container";
+import Faq from "./components/faqComponent";
+import Privacy from "./components/privacyComponent";
+import Term from "./components/termComponent";
+import Appointment from "./containers/appointment-container";
+import PackageBooking from "./containers/booking-container";
+import Address from "./containers/address-container";
 
-// Router root
 const Root = ({ store }) => (
   <Provider store={store}>
     <BrowserRouter>
       <div>
         <Switch>
-          <Route exact path="/" component={FrontPage} />
+          <Route exact path="/" component={Landing} />
           <Route exact path="/terms/" component={Term} />
           <Route exact path="/privacy/" component={Privacy} />
           <Route exact path="/faq/" component={Faq} />
-          <Route exact path="/animation/" component={Animation} />
-          <Route exact path="/initial/" component={Initial} />
-          <Route exact path="/list/" component={HospitalList} />
-          <Route exact path="/detail/" component={HospitalDetail} />
+          <Route exact path="/profile/" component={Profile} />
+          <Route exact path="/appointment/" component={Appointment} />
+          <Route exact path="/package-booking/" component={PackageBooking} />
+          <Route exact path="/address/" component={Address} />
+          <Route exact path="/web/" component={Landing} />
+          <Route exact path="/:city/:locality" component={Landing} />
+          <Route
+            exact
+            path="/:city/:locality/:category"
+            component={CategoryList}
+          />
+          <Route
+            exact
+            path="/:city/:locality/:category/:partner"
+            component={Feature}
+          />
+          <Route component={Landing} />
         </Switch>
       </div>
     </BrowserRouter>

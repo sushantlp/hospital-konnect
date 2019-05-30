@@ -1,11 +1,54 @@
 import React from "react";
-
-import { Container, Button, Grid } from "semantic-ui-react";
-import "../../../static/css/root.css";
-import "./static/css/specialization.css";
+import { Container, Grid } from "semantic-ui-react";
+import _ from "lodash";
+import "./specialization.css";
 
 export default class Specialization extends React.Component {
+  drawSpecialization = (key, header, image, obj) => {
+    return (
+      <Grid.Column
+        style={{ cursor: "pointer" }}
+        key={key}
+        obj={obj}
+        onClick={() => this.onClickSpecialization(obj)}
+      >
+        <div className="single_department">
+          <div className="dpmt-thumb">
+            <img src={image} alt={header} />
+          </div>
+
+          <h4>{header}</h4>
+        </div>
+      </Grid.Column>
+    );
+  };
+
+  loopSpecialization = collection => {
+    return collection.map((obj, key) => {
+      return this.drawSpecialization(obj.spl_id, obj.spl_name, obj.img, obj);
+    });
+  };
+
+  onClickSpecialization = obj => {
+    const categoryUrl = obj.spl_name.replace(/ /g, "-").toLowerCase();
+
+    // Url Change
+    this.props.parentProps.history.push({
+      pathname: `${
+        this.props.parentProps.match.params.locality
+      }/${categoryUrl}`,
+      search: `?city=${this.props.parentState.cityId}&locality=${
+        this.props.parentState.localityId
+      }&type=${obj.type}&category=${obj.cat_id}&q=${obj.key_id}`,
+      state: { data: obj }
+    });
+  };
   render() {
+    if (this.props.homeDetail.status === "START") return <div />;
+    else if (this.props.homeDetail.status === "FAIL") return <div />;
+
+    if (_.isEmpty(this.props.homeDetail.homeDetail.specializations))
+      return <div />;
     return (
       <Container className="specialization-container" style={{ width: "89em" }}>
         <div className="header-container">
@@ -15,95 +58,11 @@ export default class Specialization extends React.Component {
 
         <Grid stackable columns="6">
           <Grid.Row>
-            <Grid.Column style={{ cursor: "pointer" }}>
-              <div className="single_department">
-                <div className="dpmt-thumb">
-                  <img
-                    src="https://colorlib.com/preview/theme/medicare2/img/department/d-icon1.png"
-                    alt=""
-                  />
-                </div>
-
-                <h4>Cardiology</h4>
-              </div>
-            </Grid.Column>
-            <Grid.Column style={{ cursor: "pointer" }}>
-
-              <div className="single_department">
-                <div className="dpmt-thumb">
-                  <img
-                    src="https://colorlib.com/preview/theme/medicare2/img/department/d-icon2.png"
-                    alt=""
-                  />
-                </div>
-
-                <h4>Urology</h4>
-              </div>
-            </Grid.Column>
-            <Grid.Column style={{ cursor: "pointer" }}>
-              <div className="single_department">
-                <div className="dpmt-thumb">
-                  <img
-                    src="https://colorlib.com/preview/theme/medicare2/img/department/d-icon3.png"
-                    alt=""
-                  />
-                </div>
-
-                <h4>Dental Care</h4>
-              </div>
-            </Grid.Column>
-            <Grid.Column style={{ cursor: "pointer" }}>
-              <div className="single_department">
-                <div className="dpmt-thumb">
-                  <img
-                    src="https://colorlib.com/preview/theme/medicare2/img/department/d-icon4.png"
-                    alt=""
-                  />
-                </div>
-
-                <h4>Eye Care</h4>
-              </div>
-            </Grid.Column>
-            <Grid.Column style={{ cursor: "pointer" }}>
-              <div className="single_department">
-                <div className="dpmt-thumb">
-                  <img
-                    src="https://colorlib.com/preview/theme/medicare2/img/department/d-icon5.png"
-                    alt=""
-                  />
-                </div>
-
-                <h4>Neurology</h4>
-              </div>
-            </Grid.Column>
-            <Grid.Column style={{ cursor: "pointer" }}>
-              <div className="single_department">
-                <div className="dpmt-thumb">
-                  <img
-                    src="https://colorlib.com/preview/theme/medicare2/img/department/d-icon6.png"
-                    alt=""
-                  />
-                </div>
-
-                <h4>Dermatology</h4>
-              </div>
-            </Grid.Column>
+            {this.loopSpecialization(
+              this.props.homeDetail.homeDetail.specializations
+            )}
           </Grid.Row>
         </Grid>
-        {/*
-        <Button
-          size="large"
-          basic
-          color="black"
-          style={{
-            marginTop: "2em",
-            marginBottom: "2em",
-            marginLeft: "45%"
-          }}
-        >
-          View More
-        </Button>
-        */}
       </Container>
     );
   }

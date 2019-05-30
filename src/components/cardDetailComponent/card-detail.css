@@ -1,0 +1,70 @@
+.content .tag {
+  margin-left: 0.4em;
+  font-weight: 700;
+}
+
+.content .tag del {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.card-footer {
+  margin-top: 2em;
+}
+
+.card-footer .button {
+  border-color: white;
+}
+
+.card-footer .button:hover {
+  border-color: #dbdbdb;
+}
+
+.box-card-detail {
+  line-height: 1.66667;
+  margin-bottom: 2em;
+}
+
+.rating-container {
+  background-color: #f0f0f5;
+  padding: 3px 0 3px 3px;
+  margin-right: 3px;
+  border-radius: 3px;
+}
+
+.rating-container .rating-number {
+  color: #23d160;
+  font-weight: 700;
+  font-size: 14px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.location-price-open div {
+  margin-bottom: 0.4em;
+  font-weight: 300;
+}
+
+.location-price-open div span {
+  padding-left: 0.5em;
+}
+
+.box-card-detail .box {
+  padding: 0.2em;
+}
+
+.box-card-detail .box .card-footer {
+  margin-top: 0em;
+}
+
+.box-card-detail .box figure{
+    margin: 0.5em;
+}
+
+.box-card-detail .box .media-content .content{
+    margin-left: 1em;
+}
+
+.box-card-detail .box .media .right-box {
+  margin-right:1em;
+}
