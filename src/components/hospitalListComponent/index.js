@@ -18,6 +18,9 @@ export default class Index extends React.Component {
     this.state = {
       original_set: [],
       filter_set: [],
+
+      price_checkbox: [],
+      amenities_checkbox: []
     };
   }
   componentWillMount() {
@@ -32,9 +35,35 @@ export default class Index extends React.Component {
       })
     }
   }
+   
 
-  filterApply = (param) => {
-    console.log(param)
+  filterPricesPush = (e,obj) => {
+    this.pricesPushLogic(e.target.checked, obj, this.state.price_checkbox)
+  }
+
+  pricesPushLogic = (bool, pushValue, obj) => {
+    if (bool) {
+      obj.push(pushValue); 
+      this.setState({price_checkbox: obj});
+    } else {
+      const filter = obj.filter(id => id.label !== pushValue.label);
+      this.setState({price_checkbox: filter});
+    }
+
+  }
+  
+  filterAmenitiesPush = (e,obj) => {
+    this.amenitiesPushLogic(e.target.checked, obj, this.state.amenities_checkbox)
+  }
+
+  amenitiesPushLogic = (bool, pushValue, obj) => {
+    if (bool) {
+      obj.push(pushValue); 
+      this.setState({amenities_checkbox: obj});
+    } else {
+      const filter = obj.filter(id => id.amenity_id !== pushValue.amenity_id);
+      this.setState({amenities_checkbox: filter});
+    }
   }
 
   render() {
@@ -56,7 +85,9 @@ export default class Index extends React.Component {
         </section>
 
         <div class="container">
-          <Filter transistor={false} filterList={this.props.filterList} />
+          <Filter transistor={false} filterList={this.props.filterList} filterPricesPush={this.filterPricesPush} filterAmenitiesPush={this.filterAmenitiesPush}
+          amenities_checkbox={this.state.amenities_checkbox}
+          price_checkbox={this.state.price_checkbox}/>
         </div>
 
         <section class="section">

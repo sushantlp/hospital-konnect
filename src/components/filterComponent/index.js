@@ -12,6 +12,8 @@ export default class Filter extends React.Component {
     if (_.isEmpty(this.props.filterList.filterList)) return <div />;
 
     const object = this.props.filterList.filterList;
+
+    console.log(object)
     return (
       <div className="filter-container">
        <div
@@ -39,17 +41,18 @@ export default class Filter extends React.Component {
                   <a class="navbar-link">Amenities</a>
                   <div class="navbar-dropdown">
                     {object.amenities.map((obj, key) => {
+                       const name = obj.label.replace(/ /g, "-").toLowerCase()
                       return (
                         <div class="field" key={key}>
-                          <input class="is-checkradio" id="amenities" type="checkbox" name="exampleCheckboxDefault" style={{marginLeft:"1em"}}/>
-                          <label for="exampleCheckboxDefault" style={{marginLeft:"1em"}}>{obj.label}</label>
+                          <input class="is-checkradio" id={name} type="checkbox" name={name} style={{marginLeft:"1em"}} onChange={event => this.props.filterAmenitiesPush(event,obj)}/>
+                          <label for={name} style={{marginLeft:"1em"}}>{obj.label}</label>
                         </div>
                       );
                     })}
                      <hr class="navbar-divider" />
-                    <div class="has-text-centered">
+                    {/* <div class="has-text-centered">
                     <a class="button" style={{backgroundColor:"#6e7498", color:"white", float:"right", marginRight:"0.5em"}}>APPLY</a>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
 
@@ -57,23 +60,24 @@ export default class Filter extends React.Component {
                   <a class="navbar-link">Price</a>
                   <div class="navbar-dropdown">
                     {object.registration_charges.map((obj, key) => {
+                      const name = obj.label.replace(/ /g, "-").toLowerCase()
                       return (
                         <div class="field" key={key}>
-                          <input class="is-checkradio" id="prices" type="checkbox" name="exampleCheckboxDefault" style={{marginLeft:"1em"}} checked="checked"/>
-                          <label for="exampleCheckboxDefault" style={{marginLeft:"1em"}}>{obj.label}</label>
+                          <input class="is-checkradio" id={name} type="checkbox" name={name} style={{marginLeft:"1em"}} onChange={event => this.props.filterPricesPush(event,obj)}/>
+                          <label for={name} style={{marginLeft:"1em"}}>{obj.label}</label>
                         </div>
                       );
                     })}
                     <hr class="navbar-divider" />
-                     <div class="has-text-centered">
+                     {/* <div class="has-text-centered">
                       <a class="button" style={{backgroundColor:"#6e7498", color:"white", float:"right",marginRight:"0.5em"}}>APPLY</a>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 </div>
               </div>
-
-              <div class="navbar-end"> <div class="navbar-item"><p class="subtitle is-4" style={{float:"right"}}> <a class="button" style={{backgroundColor:"#ff3860", color:"white"}}>CLEAR ALL</a></p> </div> </div>
+              {this.props.price_checkbox.length === 0 && this.props.amenities_checkbox.length === 0 ? null : <div class="navbar-end"> <div class="navbar-item"><p class="subtitle is-4" style={{float:"right"}}> <a class="button" style={{backgroundColor:"#ff3860", color:"white"}}>CLEAR ALL</a></p> </div> </div> }
+              
             </div>  
           </div>
         </nav> 
