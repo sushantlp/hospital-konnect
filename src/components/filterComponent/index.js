@@ -16,13 +16,13 @@ export default class Filter extends React.Component {
     console.log(object)
     return (
       <div className="filter-container">
-      <div
+       <div
         class="panel-block"
         style={{
           cursor: this.props.transistor ? "not-allowed" : "auto",
           pointerEvents: this.props.transistor ? "none" : "auto"
         }}
-      >
+      > 
         <nav class="navbar" role="navigation" aria-label="main navigation">
           <div class="container">
             <div class="navbar-brand">
@@ -36,7 +36,7 @@ export default class Filter extends React.Component {
 
             <div id="navbar-menu-id" class="navbar-menu">
               <div class="navbar-start">
-             
+              <div class="navbar-item">
                 <div class="navbar-item has-dropdown is-hoverable">
                   <a class="navbar-link">Amenities</a>
                   <div class="navbar-dropdown">
@@ -50,7 +50,8 @@ export default class Filter extends React.Component {
                     })}
                      <hr class="navbar-divider" />
                     <div class="has-text-centered">
-                      <span class="subtitle is-5">Apply</span>
+                    <a class="button" style={{backgroundColor:"#6e7498", color:"white", float:"right", marginRight:"0.5em"}}>APPLY</a>
+
                     </div>
                   </div>
                 </div>
@@ -68,20 +69,18 @@ export default class Filter extends React.Component {
                     })}
                     <hr class="navbar-divider" />
                      <div class="has-text-centered">
-                      <span class="subtitle is-5">Apply</span>
+                      <a class="button" style={{backgroundColor:"#6e7498", color:"white", float:"right",marginRight:"0.5em"}}>APPLY</a>
                     </div>
                   </div>
                 </div>
+                </div>
               </div>
+
+              <div class="navbar-end"> <div class="navbar-item"><p class="subtitle is-4" style={{float:"right"}}> <a class="button" style={{backgroundColor:"#ff3860", color:"white"}}>CLEAR ALL</a></p> </div> </div>
             </div>  
           </div>
         </nav> 
-      </div>
-      
-       {/* <p class="subtitle is-4" style={{paddingTop: "0.5em", float:"right"}}>
-                  CLEAR ALL
-                </p> */}
-                
+       </div> 
       </div>
     );
   }
