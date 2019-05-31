@@ -48,3 +48,23 @@
 .location-price-open div span {
   padding-left: 0.5em;
 }
+
+.box-card-detail .box {
+  padding: 0.2em;
+}
+
+.box-card-detail .box .card-footer {
+  margin-top: 0em;
+}
+
+.box-card-detail .box figure{
+    margin: 0.5em;
+}
+
+.box-card-detail .box .media-content .content{
+    margin-left: 1em;
+}
+
+.box-card-detail .box .media .right-box {
+  margin-right:1em;
+}

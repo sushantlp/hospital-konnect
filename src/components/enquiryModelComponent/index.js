@@ -320,9 +320,7 @@ export default class EnquiryModal extends React.Component {
               <div class="control">
                 <textarea
                   class={
-                    this.state.enquiryError
-                      ? "textarea is-danger"
-                      : "textarea is-large"
+                    this.state.enquiryError ? "textarea is-danger" : "textarea is-large"
                   }
                   placeholder="Enquiry"
                   value={this.state.enquiry}
@@ -344,7 +342,7 @@ export default class EnquiryModal extends React.Component {
               }
               onClick={() => this.onClickApi()}
             >
-              Sumbit
+              SUBMIT
             </button>
           </footer>
         </div>

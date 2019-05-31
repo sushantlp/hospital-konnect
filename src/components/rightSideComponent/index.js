@@ -1,23 +1,25 @@
 import React from "react";
-
+import { Popup } from "semantic-ui-react";
 import "./right-side.css";
 
 const RightSideComponent = props => {
+  
   return (
     <React.Fragment>
+    <div className="right-side-box">
       <div class="box">
         <article class="media">
           <div class="media-left">
-            <figure class="image is-128x128">
+            <figure class="image is-200x200">
               <img src={props.thumbImage} alt="Image" />
             </figure>
           </div>
           <div class="media-content">
             <div class="content">
-              <p class="title is-4" style={{ fontWeight: "400" }}>
+              <p class="title is-4">
                 {props.rightHeader}
               </p>
-              <p class="subtitle is-6">{props.rightAddress}</p>
+              <p class="subtitle is-6" style={{color: "black"}}>{props.rightAddress}</p>
 
               {props.rightSpeciality === undefined ? null : (
                 <p class="subtitle is-6">{props.rightSpeciality}</p>
@@ -40,13 +42,25 @@ const RightSideComponent = props => {
             <p class="subtitle is-5">
               {props.feeTitle}
               {"  "}
-              <span>
+              <span style={{fontWeight: "bold"}}>
                 <del>&#x20b9;</del>
                 {props.rightCharge}
               </span>
+              
+              {props.hide ? null : props.priceSplit === undefined ? null : <Popup
+                  style={{ height: "1.66667" }}
+                  trigger={
+                    <img src="https://img.icons8.com/plasticine/20/000000/info-squared.png" />
+                  }
+                  header="Charge"
+                  content={props.priceSplit}
+                />}
+              
+                
             </p>
           </div>
         </article>
+      </div>
       </div>
     </React.Fragment>
   );

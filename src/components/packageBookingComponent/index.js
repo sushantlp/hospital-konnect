@@ -52,7 +52,9 @@ export default class PackageBooking extends React.Component {
 
       charge_apply: [],
       current_address: {},
-      destination_address: {}
+      destination_address: {},
+      
+      split_wise: undefined,
     };
   }
 
@@ -297,7 +299,8 @@ export default class PackageBooking extends React.Component {
       } else {
         this.setState({
           hospital_bed: true,
-          right_charge: packages.b_price,
+          right_charge: parseFloat(packages.b_price) + parseFloat(all.p_reg_charge),
+          split_wise : `Bed Price: ${parseFloat(packages.b_price)} + Registration Charge: ${parseFloat(all.p_reg_charge)}`,
           default_charge: packages.b_price,
           whichPackage: "Selected Bed",
           packageName: packages.b_title,
@@ -376,22 +379,29 @@ export default class PackageBooking extends React.Component {
   calculateAdditionalCharge = (price, charges) => {
     let value = 0;
     let percent = 0;
-
+    
+    let splitWise = `Base Price: ${parseFloat(price)}`;
+    
     const apply = charges.map((charge, index) => {
-      if (charge.type === 1)
+      if (charge.type === 1) {
         value = parseFloat(value) + parseFloat(charge.value);
-      else percent = parseFloat(percent) + parseFloat(charge.value);
+        splitWise = `${splitWise} + ${charge.name}: ${parseFloat(charge.value)}`;
+      }
+      else {
+        percent = parseFloat(percent) + parseFloat(charge.value);
+        splitWise = `${splitWise} + ${charge.name}: ${(parseFloat(price) * parseFloat(percent)) / 100}`;
+      }
 
       return charge.charge_id;
     });
-    console.log(apply);
+   
     this.setState({
-      charge_apply: apply
+      charge_apply: apply,
+      split_wise: splitWise
     });
 
     if (percent !== 0) {
-      const percentPrice = (price * percent) / 100;
-
+      const percentPrice = (parseFloat(price) * parseFloat(percent)) / 100;
       return parseFloat(price) + parseFloat(percentPrice) + parseFloat(value);
     } else return parseFloat(price) + parseFloat(value);
   };
@@ -914,6 +924,7 @@ export default class PackageBooking extends React.Component {
                   whichPackage={this.state.whichPackage}
                   packageName={this.state.packageName}
                   feeTitle="Booking price :"
+                  priceSplit={this.state.split_wise}
                 />
                 <section class="section">
                   <DatePicker

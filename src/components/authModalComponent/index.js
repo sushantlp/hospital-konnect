@@ -284,7 +284,7 @@ export default class AuthModal extends React.Component {
                   onClick={() => this.onClickApi()}
                   disabled
                 >
-                  Sumbit
+                  SUBMIT
                 </button>
               ) : (
                 <button
@@ -295,7 +295,7 @@ export default class AuthModal extends React.Component {
                   }
                   onClick={() => this.onClickApi()}
                 >
-                  Sumbit
+                  SUBMIT
                 </button>
               )
             ) : this.state.otpInput1 === -1 ||
@@ -311,7 +311,7 @@ export default class AuthModal extends React.Component {
                 onClick={() => this.onClickApi()}
                 disabled
               >
-                Sumbit
+                SUBMIT
               </button>
             ) : (
               <button
@@ -322,7 +322,7 @@ export default class AuthModal extends React.Component {
                 }
                 onClick={() => this.onClickApi()}
               >
-                Sumbit
+                SUBMIT
               </button>
             )}
           </footer>

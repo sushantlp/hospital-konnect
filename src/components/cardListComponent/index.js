@@ -62,7 +62,7 @@ export default class CardList extends React.Component {
         <div class="box">
           <article class="media">
             <div class="media-left">
-              <figure class="image is-128x128">
+              <figure class="image is-200x200">
                 <img
                   src={logo}
                   alt={name + " " + type + " " + working + " " + locality}
@@ -71,10 +71,10 @@ export default class CardList extends React.Component {
             </div>
             <div class="media-content">
               <div class="content">
-                <p class="title is-4" style={{ fontWeight: "400" }}>
+                <p class="title is-4">
                   {name}
                 </p>
-                <p class="subtitle is-6">{type}</p>
+                <p class="subtitle is-6" style={{color: "black"}}>{type}</p>
 
                 {category === 1 ? (
                   doc === 0 ? null : (
@@ -161,7 +161,7 @@ export default class CardList extends React.Component {
                   working === null ? null : (
                     <p>
                       <img src="https://img.icons8.com/ultraviolet/12/000000/timer.png" />
-                      <span>{working}</span>
+                      <span style={{fontWeight: "bold"}}>{working}</span>
                     </p>
                   )
                 ) : null}
@@ -174,7 +174,7 @@ export default class CardList extends React.Component {
                 {category === 1 ? (
                   <p>
                     <img src="https://img.icons8.com/ultraviolet/12/000000/cash-in-hand.png" />
-                    <span>
+                    <span style={{fontWeight: "bold"}}>
                       <del>&#x20b9;</del>
                       {registration}
                     </span>
@@ -233,8 +233,8 @@ export default class CardList extends React.Component {
 
   loopCardList = collection => {
     return collection.map((obj, key) => {
-      let logo = obj.p_logo;
-
+      let logo = obj.p_image_thumb;
+    
       let speciality = [];
       let fullRating = [];
       let emptyRating = [];

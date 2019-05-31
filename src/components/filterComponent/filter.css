@@ -14,3 +14,7 @@
   color: rgb(43, 191, 237);
   cursor: pointer;
 }
+
+.filter-container .navbar-dropdown {
+    width:20em;
+}

@@ -123,7 +123,7 @@ export default class BedModal extends React.Component {
           <footer class="modal-card-foot">
             {this.state.referal === "" ? (
               <button class="button is-medium" disabled>
-                Sumbit
+                SUBMIT
               </button>
             ) : (
               <button
@@ -134,7 +134,7 @@ export default class BedModal extends React.Component {
                 }
                 onClick={() => this.onClickApi()}
               >
-                Sumbit
+                SUBMIT
               </button>
             )}
           </footer>

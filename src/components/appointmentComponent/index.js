@@ -401,6 +401,7 @@ export default class Appointment extends React.Component {
                   rightCharge={rightCharge}
                   thumbImage={thumbImage}
                   feeTitle="Consultation fees :"
+                  hide={true}
                 />
                 <section class="section">
                   <DatePicker

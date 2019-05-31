@@ -74,3 +74,23 @@
 .doctor {
   font-weight: 300;
 }
+
+.box-card-list .box {
+  padding: 0.2em;
+}
+
+.box-card-list .box .card-footer {
+  margin-top: 0em;
+}
+
+.box-card-list .box figure{
+    margin: 0.5em;
+}
+
+.box-card-list .box .media-content .content{
+    margin-left: 1em;
+}
+
+.box-card-list .box .media .right-box {
+  margin-right:1em;
+}
