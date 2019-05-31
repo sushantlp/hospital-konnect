@@ -21,7 +21,8 @@ export default class ParentList extends React.Component {
         type: 0,
         category: 0,
         q: 0,
-        page: 1
+        page: 1,
+     
       };
     } else {
       const cityArray = splitArray[0].split("=");
@@ -35,7 +36,8 @@ export default class ParentList extends React.Component {
         type: parseInt(typeArray[1], 10),
         category: parseInt(categoryArray[1], 10),
         q: parseInt(qArray[1], 10),
-        page: 1
+        page: 1,
+      
       };
     }
   }
@@ -66,7 +68,9 @@ export default class ParentList extends React.Component {
     );
   };
 
+
   render() {
+  
     return (
       <React.Fragment>
         <Header />

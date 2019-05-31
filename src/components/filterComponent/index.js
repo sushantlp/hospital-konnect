@@ -12,8 +12,6 @@ export default class Filter extends React.Component {
     if (_.isEmpty(this.props.filterList.filterList)) return <div />;
 
     const object = this.props.filterList.filterList;
-    
-    console.log(object)
     return (
       <div className="filter-container">
        <div
@@ -43,15 +41,14 @@ export default class Filter extends React.Component {
                     {object.amenities.map((obj, key) => {
                       return (
                         <div class="field" key={key}>
-                          <input class="is-checkradio" id="amenities" type="checkbox" name="exampleCheckboxDefault"/>
-                          <label for="exampleCheckboxDefault">{obj.label}</label>
+                          <input class="is-checkradio" id="amenities" type="checkbox" name="exampleCheckboxDefault" style={{marginLeft:"1em"}}/>
+                          <label for="exampleCheckboxDefault" style={{marginLeft:"1em"}}>{obj.label}</label>
                         </div>
                       );
                     })}
                      <hr class="navbar-divider" />
                     <div class="has-text-centered">
                     <a class="button" style={{backgroundColor:"#6e7498", color:"white", float:"right", marginRight:"0.5em"}}>APPLY</a>
-
                     </div>
                   </div>
                 </div>
@@ -62,8 +59,8 @@ export default class Filter extends React.Component {
                     {object.registration_charges.map((obj, key) => {
                       return (
                         <div class="field" key={key}>
-                          <input class="is-checkradio" id="prices" type="checkbox" name="exampleCheckboxDefault"/>
-                          <label for="exampleCheckboxDefault">{obj.label}</label>
+                          <input class="is-checkradio" id="prices" type="checkbox" name="exampleCheckboxDefault" style={{marginLeft:"1em"}} checked="checked"/>
+                          <label for="exampleCheckboxDefault" style={{marginLeft:"1em"}}>{obj.label}</label>
                         </div>
                       );
                     })}
