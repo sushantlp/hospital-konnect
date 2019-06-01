@@ -18,7 +18,8 @@ export default class Index extends React.Component {
         </section>
 
         <div class="container">
-          <Filter transistor={true} filterList={this.props.filterList} />
+          <Filter transistor={true} filterList={this.props.filterList} amenities_checkbox={[]}
+          price_checkbox={[]}/>
         </div>
 
         <section class="section">

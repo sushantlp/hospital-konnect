@@ -23,6 +23,7 @@ export default class CardList extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    console.log(nextProps.categoryList)
     if (this.props.categoryList !== nextProps.categoryList) {
       this.updateisLoadingState();
     }
@@ -380,6 +381,7 @@ export default class CardList extends React.Component {
   };
 
   render() {
+  
     if (this.props.categoryList.status === "START") return <Spinner />;
     else if (this.props.categoryList.status === "FAIL") return <Spinner />;
 
