@@ -11,7 +11,7 @@ const FilterComponent = props => {
   if (_.isEmpty(props.filterList.filterList)) return <div />;
 
   const object = props.filterList.filterList;
-  console.log(props);
+
   return (
     <div className="filter-container">
       <div
@@ -121,7 +121,10 @@ const FilterComponent = props => {
               <span class="tag" style={{ marginLeft: "1em" }}>
                 {price.label}
               </span>
-              <a class="tag is-delete" />
+              <a
+                class="tag is-delete"
+                onClick={() => props.specificFilterRemove(price, "PRICE")}
+              />
             </React.Fragment>
           );
         })}
@@ -132,7 +135,10 @@ const FilterComponent = props => {
               <span class="tag" style={{ marginLeft: "1em" }}>
                 {amenitie.label}
               </span>
-              <a class="tag is-delete" />
+              <a
+                class="tag is-delete"
+                onClick={() => props.specificFilterRemove(amenitie, "AMENITIE")}
+              />
             </React.Fragment>
           );
         })}

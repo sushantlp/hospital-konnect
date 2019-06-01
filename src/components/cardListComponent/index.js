@@ -23,7 +23,6 @@ export default class CardList extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps.categoryList)
     if (this.props.categoryList !== nextProps.categoryList) {
       this.updateisLoadingState();
     }
@@ -72,10 +71,10 @@ export default class CardList extends React.Component {
             </div>
             <div class="media-content">
               <div class="content">
-                <p class="title is-4">
-                  {name}
+                <p class="title is-4">{name}</p>
+                <p class="subtitle is-6" style={{ color: "black" }}>
+                  {type}
                 </p>
-                <p class="subtitle is-6" style={{color: "black"}}>{type}</p>
 
                 {category === 1 ? (
                   doc === 0 ? null : (
@@ -162,7 +161,7 @@ export default class CardList extends React.Component {
                   working === null ? null : (
                     <p>
                       <img src="https://img.icons8.com/ultraviolet/12/000000/timer.png" />
-                      <span style={{fontWeight: "bold"}}>{working}</span>
+                      <span style={{ fontWeight: "bold" }}>{working}</span>
                     </p>
                   )
                 ) : null}
@@ -175,7 +174,7 @@ export default class CardList extends React.Component {
                 {category === 1 ? (
                   <p>
                     <img src="https://img.icons8.com/ultraviolet/12/000000/cash-in-hand.png" />
-                    <span style={{fontWeight: "bold"}}>
+                    <span style={{ fontWeight: "bold" }}>
                       <del>&#x20b9;</del>
                       {registration}
                     </span>
@@ -235,7 +234,7 @@ export default class CardList extends React.Component {
   loopCardList = collection => {
     return collection.map((obj, key) => {
       let logo = obj.p_image_thumb;
-    
+
       let speciality = [];
       let fullRating = [];
       let emptyRating = [];
@@ -381,7 +380,6 @@ export default class CardList extends React.Component {
   };
 
   render() {
-  
     if (this.props.categoryList.status === "START") return <Spinner />;
     else if (this.props.categoryList.status === "FAIL") return <Spinner />;
 
@@ -434,7 +432,7 @@ export default class CardList extends React.Component {
         {this.state.authOpen ? (
           <AuthModal
             mobileText="Enter your phone number (required)"
-            otpText="Enter your otp (required)"
+            otpText="Enter your OTP (required)"
             postMobileRegister={this.props.postMobileRegister}
             mobileRegister={this.props.mobileRegister}
             postOtpVerify={this.props.postOtpVerify}

@@ -53,8 +53,8 @@ export default class PackageBooking extends React.Component {
       charge_apply: [],
       current_address: {},
       destination_address: {},
-      
-      split_wise: undefined,
+
+      split_wise: undefined
     };
   }
 
@@ -299,8 +299,11 @@ export default class PackageBooking extends React.Component {
       } else {
         this.setState({
           hospital_bed: true,
-          right_charge: parseFloat(packages.b_price) + parseFloat(all.p_reg_charge),
-          split_wise : `Bed Price: ${parseFloat(packages.b_price)} + Registration Charge: ${parseFloat(all.p_reg_charge)}`,
+          right_charge:
+            parseFloat(packages.b_price) + parseFloat(all.p_reg_charge),
+          split_wise: `Bed Price: ${parseFloat(
+            packages.b_price
+          )} + Registration Charge: ${parseFloat(all.p_reg_charge)}`,
           default_charge: packages.b_price,
           whichPackage: "Selected Bed",
           packageName: packages.b_title,
@@ -379,22 +382,25 @@ export default class PackageBooking extends React.Component {
   calculateAdditionalCharge = (price, charges) => {
     let value = 0;
     let percent = 0;
-    
+
     let splitWise = `Base Price: ${parseFloat(price)}`;
-    
+
     const apply = charges.map((charge, index) => {
       if (charge.type === 1) {
         value = parseFloat(value) + parseFloat(charge.value);
-        splitWise = `${splitWise} + ${charge.name}: ${parseFloat(charge.value)}`;
-      }
-      else {
+        splitWise = `${splitWise} + ${charge.name}: ${parseFloat(
+          charge.value
+        )}`;
+      } else {
         percent = parseFloat(percent) + parseFloat(charge.value);
-        splitWise = `${splitWise} + ${charge.name}: ${(parseFloat(price) * parseFloat(percent)) / 100}`;
+        splitWise = `${splitWise} + ${charge.name}: ${(parseFloat(price) *
+          parseFloat(percent)) /
+          100}`;
       }
 
       return charge.charge_id;
     });
-   
+
     this.setState({
       charge_apply: apply,
       split_wise: splitWise
@@ -465,9 +471,28 @@ export default class PackageBooking extends React.Component {
 
     const count = endDate.diff(startDate, "days");
 
-    if (parseInt(count, 10) > 1)
-      this.updateRightCharge(this.state.right_charge * parseInt(count, 10));
-    else this.updateRightCharge(this.state.default_charge);
+    if (parseInt(count, 10) > 1) {
+      this.updateRightCharge(
+        parseFloat(this.state.default_charge) * parseInt(count, 10) +
+          parseFloat(this.state.all_data.p_reg_charge)
+      );
+      this.onSplitWise(
+        parseFloat(this.state.default_charge),
+        parseInt(count, 10),
+        parseFloat(this.state.all_data.p_reg_charge)
+      );
+    } else {
+      this.updateRightCharge(
+        parseFloat(this.state.default_charge) +
+          parseFloat(this.state.all_data.p_reg_charge)
+      );
+    }
+  };
+
+  onSplitWise = (defaultCharge, count, regCharge) => {
+    this.setState({
+      split_wise: `Bed Price: ${defaultCharge} + No of days: ${count} + Registration Charge: ${regCharge}`
+    });
   };
 
   onChangeRadio = (e, name) => {

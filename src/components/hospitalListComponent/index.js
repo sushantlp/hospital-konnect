@@ -1,13 +1,9 @@
 import React from "react";
-import _ from "lodash";
-import { Redirect } from "react-router-dom";
 
 import Same from "../sameComponent";
 import Filter from "../filterComponent";
 import Banner from "../bannerComponent";
 import CardList from "../cardListComponent";
-
-import Spinner from "../spinnerComponent";
 
 import "./hospital-list.css";
 
@@ -24,7 +20,6 @@ export default class Index extends React.Component {
   }
   componentWillMount() {
     window.scrollTo(0, 0);
-
     this.setState({
       original_set: this.props.categoryList,
       filter_set: this.props.categoryList
@@ -81,6 +76,11 @@ export default class Index extends React.Component {
       });
   };
 
+  specificFilterRemove = (obj, identifier) => {
+    console.log(obj);
+    console.log(identifier);
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -99,6 +99,7 @@ export default class Index extends React.Component {
             amenities_checkbox={this.state.amenities_checkbox}
             price_checkbox={this.state.price_checkbox}
             onClearAll={this.onClearAll}
+            specificFilterRemove={this.specificFilterRemove}
           />
         </div>
 
