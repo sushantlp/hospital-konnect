@@ -24,7 +24,7 @@ export default class CardList extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.categoryList !== nextProps.categoryList) {
-      this.updateisLoadingState();
+      this.updateisLoadingState(false);
     }
   }
 
@@ -317,13 +317,13 @@ export default class CardList extends React.Component {
   };
 
   onLoadMoreList = nextPage => {
-    this.updateisLoadingState();
+    this.updateisLoadingState(true);
     this.props.loadMoreDataApiCall(nextPage);
   };
 
-  updateisLoadingState = () => {
+  updateisLoadingState = bool => {
     this.setState({
-      isLoading: !this.state.isLoading
+      isLoading: bool
     });
   };
 
