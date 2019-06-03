@@ -13,7 +13,10 @@ const FilterComponent = props => {
   const object = props.filterList.filterList;
 
   return (
-    <div className="filter-container">
+    <div
+      className="filter-container"
+      style={{ display: props.transistor ? "none" : "auto" }}
+    >
       <div
         class="panel-block"
         style={{

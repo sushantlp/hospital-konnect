@@ -49,6 +49,7 @@ export default class Index extends React.Component {
       const filter = obj.filter(id => id.label !== pushValue.label);
       this.setState({ price_checkbox: filter }, () => {
         this.pricesFilterApply(this.state.price_checkbox);
+        this.amenitiesFilterApply(this.state.amenities_checkbox);
       });
     }
   };
@@ -71,6 +72,7 @@ export default class Index extends React.Component {
       const filter = obj.filter(id => id.amenity_id !== pushValue.amenity_id);
       this.setState({ amenities_checkbox: filter }, () => {
         this.amenitiesFilterApply(this.state.amenities_checkbox);
+        this.pricesFilterApply(this.state.price_checkbox);
       });
     }
   };
@@ -95,6 +97,44 @@ export default class Index extends React.Component {
 
     if (this.state.amenities_checkbox.length !== 0)
       arr = this.state.filter_set.categoryList;
+
+    if (prices.length !== 0) {
+      prices.map((price, index) => {
+        this.state.original_set.categoryList.map((list, index) => {
+          if (price.max === null) {
+            if (list.p_reg_charge >= price.min) {
+              let pushFlag = false;
+              arr.map((single, index) => {
+                if (single.p_id === list.p_id) pushFlag = true;
+              });
+
+              if (!pushFlag) arr.push(list);
+            }
+          } else {
+            if (
+              list.p_reg_charge >= price.min &&
+              list.p_reg_charge <= price.max
+            ) {
+              let pushFlag = false;
+              arr.map((single, index) => {
+                if (single.p_id === list.p_id) pushFlag = true;
+              });
+
+              if (!pushFlag) arr.push(list);
+            }
+          }
+        });
+      });
+
+      if (arr.length === 0) arr = this.state.filter_set.categoryList;
+
+      const filter = this.createFilterSet(arr);
+      this.updateFilterState(filter);
+    } else {
+      if (this.state.amenities_checkbox.length !== 0)
+        this.updateFilterState(this.state.filter_set);
+      else this.updateFilterState(this.state.original_set);
+    }
   };
 
   amenitiesFilterApply = amenities => {
@@ -103,39 +143,48 @@ export default class Index extends React.Component {
     if (this.state.price_checkbox.length !== 0)
       arr = this.state.filter_set.categoryList;
 
-    if (this.state.price_checkbox)
-      if (amenities.length !== 0) {
-        amenities.map((amenitie, index) => {
-          this.state.original_set.categoryList.map((list, index) => {
-            list.p_amenities.map((id, index) => {
-              if (amenitie.amenity_id === id) {
-                let pushFlag = false;
-                arr.map((single, index) => {
-                  if (single.p_id === list.p_id) pushFlag = true;
-                });
+    if (amenities.length !== 0) {
+      amenities.map((amenitie, index) => {
+        this.state.original_set.categoryList.map((list, index) => {
+          list.p_amenities.map((id, index) => {
+            if (amenitie.amenity_id === id) {
+              let pushFlag = false;
+              arr.map((single, index) => {
+                if (single.p_id === list.p_id) pushFlag = true;
+              });
 
-                if (!pushFlag) arr.push(list);
-              }
-            });
+              if (!pushFlag) arr.push(list);
+            }
           });
         });
+      });
 
-        const filter = {
-          categoryList: arr,
-          msg: this.state.filter_set.msg,
-          next_page: this.state.filter_set.next_page,
-          prev_page: this.state.filter_set.prev_page,
-          status: this.state.filter_set.status
-        };
+      if (arr.length === 0) arr = this.state.filter_set.categoryList;
 
-        this.setState({
-          filter_set: filter
-        });
-      } else {
-        this.setState({
-          filter_set: this.state.original_set
-        });
-      }
+      const filter = this.createFilterSet(arr);
+
+      this.updateFilterState(filter);
+    } else {
+      if (this.state.price_checkbox.length !== 0)
+        this.updateFilterState(this.state.filter_set);
+      else this.updateFilterState(this.state.original_set);
+    }
+  };
+
+  createFilterSet = arr => {
+    return {
+      categoryList: arr,
+      msg: this.state.filter_set.msg,
+      next_page: this.state.filter_set.next_page,
+      prev_page: this.state.filter_set.prev_page,
+      status: this.state.filter_set.status
+    };
+  };
+
+  updateFilterState = filter => {
+    this.setState({
+      filter_set: filter
+    });
   };
 
   render() {
