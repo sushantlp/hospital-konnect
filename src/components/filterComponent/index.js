@@ -13,7 +13,10 @@ const FilterComponent = props => {
   const object = props.filterList.filterList;
 
   return (
-    <div className="filter-container">
+    <div
+      className="filter-container"
+      style={{ display: props.transistor ? "none" : "auto" }}
+    >
       <div
         class="panel-block"
         style={{
@@ -43,10 +46,11 @@ const FilterComponent = props => {
                         return (
                           <div class="field" key={key}>
                             <input
-                              class="is-checkradio"
+                              class="is-checkradio is-danger"
                               id={name}
                               type="checkbox"
                               name={name}
+                              value={obj.label}
                               style={{ marginLeft: "1em" }}
                               onChange={event =>
                                 props.filterAmenitiesPush(event, obj)
@@ -73,10 +77,11 @@ const FilterComponent = props => {
                         return (
                           <div class="field" key={key}>
                             <input
-                              class="is-checkradio"
+                              class="is-checkradio is-danger"
                               id={name}
                               type="checkbox"
                               name={name}
+                              value={obj.label}
                               style={{ marginLeft: "1em" }}
                               onChange={event =>
                                 props.filterPricesPush(event, obj)
