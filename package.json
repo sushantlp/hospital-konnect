@@ -98,14 +98,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sushantlp/hospital-konnect.git"
+    "url": ""
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sushantlp/hospital-konnect/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/sushantlp/hospital-konnect#readme",
+  "homepage": "",
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
