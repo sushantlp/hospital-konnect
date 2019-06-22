@@ -51,6 +51,7 @@
 
 .box-card-detail .box {
   padding: 0.2em;
+  background-color: rgba(240, 241, 245, 1);
 }
 
 .box-card-detail .box .card-footer {

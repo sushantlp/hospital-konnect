@@ -83,10 +83,10 @@ const CardDetail = props => {
           </div>
           <div class="media-content">
             <div class="content">
-              <p class="title is-3">
-                {object.p_name}
+              <p class="title is-3">{object.p_name}</p>
+              <p class="subtitle is-6" style={{ color: "black" }}>
+                {object.p_type}
               </p>
-              <p class="subtitle is-6" style={{color: "black"}}>{object.p_type}</p>
 
               {object.p_cat === 1 ? (
                 object.p_doctors.length === 0 ? null : (
@@ -199,14 +199,16 @@ const CardDetail = props => {
               {object.p_cat === 1 && object.p_working_status !== null ? (
                 <div>
                   <img src="https://img.icons8.com/ultraviolet/12/000000/timer.png" />
-                  <span style={{fontWeight: "bold"}}>{object.p_working_status}</span>
+                  <span style={{ fontWeight: "bold" }}>
+                    {object.p_working_status}
+                  </span>
                 </div>
               ) : null}
 
               {object.p_cat === 1 ? (
                 <div>
                   <img src="https://img.icons8.com/ultraviolet/12/000000/cash-in-hand.png" />
-                  <span style={{fontWeight: "bold"}}>
+                  <span style={{ fontWeight: "bold" }}>
                     <del>&#x20b9;</del>
                     {object.p_reg_charge}
                   </span>
@@ -271,7 +273,7 @@ const CardDetail = props => {
           authOpen={props.authOpen}
           updateOpenState={props.updateOpenState}
           mobileText="Enter your phone number (required)"
-          otpText="Enter your otp (required)"
+          otpText="Enter your OTP (required)"
           postMobileRegister={props.postMobileRegister}
           mobileRegister={props.mobileRegister}
           postOtpVerify={props.postOtpVerify}

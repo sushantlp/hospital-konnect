@@ -175,7 +175,7 @@ export default class ParentAddress extends React.Component {
 
     if (e.target.value === "")
       this.setState({
-        c_fname: "",
+        addressOne: "",
         addressOneError: !this.state.addressOneError
       });
     else

@@ -1,8 +1,9 @@
 import React from "react";
-
+import { Popup } from "semantic-ui-react";
 import "./right-side.css";
 
 const RightSideComponent = props => {
+  
   return (
     <React.Fragment>
     <div className="right-side-box">
@@ -45,6 +46,17 @@ const RightSideComponent = props => {
                 <del>&#x20b9;</del>
                 {props.rightCharge}
               </span>
+              
+              {props.hide ? null : props.priceSplit === undefined ? null : <Popup
+                  style={{ height: "1.66667" }}
+                  trigger={
+                    <img src="https://img.icons8.com/plasticine/20/000000/info-squared.png" />
+                  }
+                  header="Charge"
+                  content={props.priceSplit}
+                />}
+              
+                
             </p>
           </div>
         </article>

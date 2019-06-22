@@ -194,7 +194,7 @@ const bedTab = props => {
           authOpen={props.authOpen}
           updateOpenState={props.updateOpenState}
           mobileText="Enter your phone number (required)"
-          otpText="Enter your otp (required)"
+          otpText="Enter your OTP (required)"
           postMobileRegister={props.postMobileRegister}
           mobileRegister={props.mobileRegister}
           postOtpVerify={props.postOtpVerify}
