@@ -1,7 +1,7 @@
 import getQueryString from "./paramParser";
 
-// const host = "https://hbo-ajayballyhoo.c9users.io/";
-const host = "https://solontech.in/orxNu3Vt5vQL/hospital-konnect/";
+//const host = "https://hbo-ajayballyhoo.c9users.io/";
+const host = "https://solontech.in/orxNu3Vt5vQL/hospital-konnect/hbo/public/";
 
 export default {
   cityLocalityApi: () => {

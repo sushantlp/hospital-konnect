@@ -33,7 +33,8 @@
 }
 
 .rating-container .rating-number {
-  color: #23d160;
+  /* color: #23d160; */
+  color: black;
   font-weight: 700;
   font-size: 14px;
   margin-left: 3px;
@@ -58,14 +59,14 @@
   margin-top: 0em;
 }
 
-.box-card-detail .box figure{
-    margin: 0.5em;
+.box-card-detail .box figure {
+  margin: 0.5em;
 }
 
-.box-card-detail .box .media-content .content{
-    margin-left: 1em;
+.box-card-detail .box .media-content .content {
+  margin-left: 1em;
 }
 
 .box-card-detail .box .media .right-box {
-  margin-right:1em;
+  margin-right: 1em;
 }

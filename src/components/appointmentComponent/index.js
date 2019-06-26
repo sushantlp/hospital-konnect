@@ -69,13 +69,7 @@ export default class Appointment extends React.Component {
           loading: !this.state.loading
         });
 
-        NotificationManager.success("Successful", "Successful");
-
-        setTimeout(() => {
-          this.props.history.push("/web/");
-        }, 3000);
-
-        // NotificationManager.error("Something wrong our side", "Error");
+        NotificationManager.error("Something wrong our side", "Error");
       }
     } else if (this.props.onlineAppointment !== nextProps.onlineAppointment) {
       if (nextProps.onlineAppointment.status === "SUCCESS") {
@@ -93,13 +87,7 @@ export default class Appointment extends React.Component {
           loading: !this.state.loading
         });
 
-        NotificationManager.success("Successful", "Successful");
-
-        setTimeout(() => {
-          this.props.history.push("/web/");
-        }, 3000);
-
-        // NotificationManager.error("Something wrong our side", "Error");
+        NotificationManager.error("Something wrong our side", "Error");
       }
     }
   }

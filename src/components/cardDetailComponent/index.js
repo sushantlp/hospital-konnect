@@ -36,16 +36,17 @@ const CardDetail = props => {
       topRating = topRating - 1;
 
       halfRating = (
-        <Icon
-          key={1}
-          name="star half"
-          style={{
-            color: "#23d160",
-            fontSize: "14px",
-            marginLeft: "3px",
-            marginRight: "3px"
-          }}
-        />
+        <img src="https://img.icons8.com/color/17/000000/star-half-empty.png" />
+        // <Icon
+        //   key={1}
+        //   name="star half"
+        //   style={{
+        //     color: "#23d160",
+        //     fontSize: "14px",
+        //     marginLeft: "3px",
+        //     marginRight: "3px"
+        //   }}
+        // />
       );
     }
   } else topRating = topRating - Number(ratingSplit[0]);
@@ -147,32 +148,34 @@ const CardDetail = props => {
               <span className="rating-number">{object.p_rating}</span>
               {fullRating.map(function(i) {
                 return (
-                  <Icon
-                    key={i}
-                    name="star"
-                    style={{
-                      color: "#23d160",
-                      fontSize: "14px",
-                      marginLeft: "3px",
-                      marginRight: "3px"
-                    }}
-                  />
+                  // <Icon
+                  //   key={i}
+                  //   name="star"
+                  //   style={{
+                  //     color: "#23d160",
+                  //     fontSize: "14px",
+                  //     marginLeft: "3px",
+                  //     marginRight: "3px"
+                  //   }}
+                  // />
+                  <img src="https://img.icons8.com/color/17/000000/filled-star.png" />
                 );
               })}
               <span>{halfRating}</span>
               <span>
                 {emptyRating.map(function(i) {
                   return (
-                    <Icon
-                      key={i}
-                      name="star outline"
-                      style={{
-                        color: "#23d160",
-                        fontSize: "14px",
-                        marginLeft: "3px",
-                        marginRight: "3px"
-                      }}
-                    />
+                    <img src="https://img.icons8.com/color/17/000000/star.png" />
+                    // <Icon
+                    //   key={i}
+                    //   name="star outline"
+                    //   style={{
+                    //     color: "#23d160",
+                    //     fontSize: "14px",
+                    //     marginLeft: "3px",
+                    //     marginRight: "3px"
+                    //   }}
+                    // />
                   );
                 })}
               </span>

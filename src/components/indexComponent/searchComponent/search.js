@@ -218,8 +218,16 @@ export default class Search extends React.Component {
                   // text={this.state.cityValue}
                   onChange={(event, data) => this.onChangeCity(event, data)}
                   icon={
-                    <Icon
-                      name="map marker alternate"
+                    // <Icon
+                    //   name="map marker alternate"
+                    // style={{
+                    //   marginRight: "-2vh",
+                    //   float: "right",
+                    //   color: "grey"
+                    // }}
+                    // />
+                    <img
+                      src="https://img.icons8.com/ios/20/000000/marker.png"
                       style={{
                         marginRight: "-2vh",
                         float: "right",
@@ -241,8 +249,17 @@ export default class Search extends React.Component {
                   // text={this.state.localityValue}
                   onChange={(event, data) => this.onChangeLocality(event, data)}
                   icon={
-                    <Icon
-                      name="map marker alternate"
+                    // <Icon
+                    //   name="map marker alternate"
+                    //   style={{
+                    //     marginRight: "-2vh",
+                    //     float: "right",
+                    //     color: "grey"
+                    //   }}
+                    // />
+
+                    <img
+                      src="https://img.icons8.com/ios/20/000000/marker.png"
                       style={{
                         marginRight: "-2vh",
                         float: "right",
@@ -263,10 +280,19 @@ export default class Search extends React.Component {
                   onChange={(event, data) => this.onChangeKeyword(event, data)}
                   style={{ height: "50px" }}
                   icon={
-                    <Icon
-                      name="search"
+                    // <Icon
+                    //   name="search"
+                    //   style={{
+                    //     marginTop: "-1.5vh",
+                    //     float: "right",
+                    //     color: "grey"
+                    //   }}
+                    // />
+
+                    <img
+                      src="https://img.icons8.com/ios/20/000000/google-web-search.png"
                       style={{
-                        marginTop: "-1.5vh",
+                        marginRight: "-2vh",
                         float: "right",
                         color: "grey"
                       }}

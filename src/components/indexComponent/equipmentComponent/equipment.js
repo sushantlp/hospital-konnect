@@ -26,7 +26,7 @@ function SampleNextArrow(props) {
       }}
       onClick={onClick}
     >
-      <Icon
+      {/* <Icon
         name="angle right"
         style={{
           color: "black",
@@ -34,10 +34,21 @@ function SampleNextArrow(props) {
           paddingLeft: "0.5em",
           paddingTop: "1em"
         }}
+      /> */}
+
+      <img
+        src="https://img.icons8.com/ios/20/000000/more-than-filled.png"
+        style={{
+          color: "black",
+          fontSize: "1.4em",
+          paddingLeft: "0.5em",
+          paddingTop: "0.5em"
+        }}
       />
     </div>
   );
 }
+
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
 
@@ -58,13 +69,22 @@ function SamplePrevArrow(props) {
       }}
       onClick={onClick}
     >
-      <Icon
+      {/* <Icon
         name="angle left"
         style={{
           color: "black",
           fontSize: "1.4em",
           paddingLeft: "0.5em",
           paddingTop: "1em"
+        }}
+      /> */}
+      <img
+        src="https://img.icons8.com/ios/20/000000/less-than-filled.png"
+        style={{
+          color: "black",
+          fontSize: "1.4em",
+          paddingLeft: "0.5em",
+          paddingTop: "0.5em"
         }}
       />
     </div>
